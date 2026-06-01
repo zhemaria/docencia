@@ -1,0 +1,2128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spanish ASE Math · Content Sequence by Level (Levels 1–4)</title>
+    <style>
+      :root {
+        --tinta: #1f2937;
+        --tinta-suave: #475569;
+        --linea: #e2e8f0;
+        --fondo: #ffffff;
+        --fondo-suave: #f8fafc;
+        --primario: #1e3a8a;
+        --foco: #f59e0b;
+        --n1: #1d4ed8;
+        --n2: #065f46;
+        --n3: #6d28d9;
+        --n4: #b91c1c;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+        color: var(--tinta);
+        background: var(--fondo);
+        line-height: 1.55;
+        margin: 0;
+        padding: 0 16px 64px;
+        font-size: 17px;
+      }
+      .contenedor {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      a.salto {
+        position: absolute;
+        left: -9999px;
+        background: var(--primario);
+        color: #fff;
+        padding: 10px 16px;
+        border-radius: 8px;
+        z-index: 100;
+      }
+      a.salto:focus {
+        left: 16px;
+        top: 16px;
+      }
+
+      header.cabecera {
+        padding: 28px 0 8px;
+        border-bottom: 4px solid var(--primario);
+      }
+      header.cabecera h1 {
+        font-size: 1.8rem;
+        line-height: 1.25;
+        margin: 0 0 6px;
+        color: var(--primario);
+      }
+      .subtitulo {
+        color: var(--tinta-suave);
+        margin: 0;
+      }
+      .subtitulo strong {
+        color: var(--tinta);
+      }
+      .fuente {
+        font-size: 0.85rem;
+        color: var(--tinta-suave);
+        margin: 10px 0 0;
+      }
+
+      .nota-nrs {
+        background: var(--fondo-suave);
+        border: 1px solid var(--linea);
+        border-left: 6px solid var(--primario);
+        border-radius: 10px;
+        padding: 12px 18px;
+        margin: 20px 0 8px;
+        font-size: 0.92rem;
+      }
+      .nota-nrs strong {
+        color: var(--tinta);
+      }
+      .como-usar {
+        font-size: 0.9rem;
+        color: var(--tinta-suave);
+        margin: 8px 2px 0;
+      }
+
+      .buscar-zona {
+        margin: 20px 0 8px;
+      }
+      .buscar-zona input {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px 14px;
+        border: 2px solid var(--linea);
+        border-radius: 10px;
+        background: var(--fondo);
+      }
+      .buscar-zona input:focus {
+        outline: 3px solid var(--foco);
+        outline-offset: 2px;
+        border-color: var(--primario);
+      }
+      .buscar-info {
+        font-size: 0.88rem;
+        color: var(--tinta-suave);
+        margin: 6px 2px 0;
+        min-height: 1.2em;
+      }
+
+      nav.temas-rapidos {
+        margin: 12px 0 6px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .nav-chip {
+        cursor: pointer;
+        border: 1px solid var(--linea);
+        background: var(--fondo);
+        border-left: 4px solid var(--accent);
+        border-radius: 999px;
+        padding: 7px 14px;
+        font-size: 0.86rem;
+        color: var(--tinta);
+        font-family: inherit;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .nav-chip span {
+        background: var(--accent);
+        color: #fff;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+      .nav-chip:hover {
+        background: var(--fondo-suave);
+      }
+      .nav-chip:focus {
+        outline: 3px solid var(--foco);
+        outline-offset: 2px;
+      }
+
+      .controles {
+        display: flex;
+        gap: 10px;
+        margin: 14px 0 18px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 0.92rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        padding: 9px 16px;
+        color: #fff;
+        background: var(--primario);
+      }
+      .btn.secundario {
+        background: #475569;
+      }
+      .btn:hover {
+        filter: brightness(1.08);
+      }
+      .btn:focus {
+        outline: 3px solid var(--foco);
+        outline-offset: 2px;
+      }
+
+      details.seccion-grande {
+        border: 1px solid var(--linea);
+        border-radius: 14px;
+        margin: 14px 0;
+        background: var(--fondo);
+        overflow: hidden;
+      }
+      details.seccion-grande > summary {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 16px 18px;
+        background: var(--fondo-suave);
+      }
+      details.seccion-grande > summary::-webkit-details-marker {
+        display: none;
+      }
+      details.seccion-grande[open] > summary {
+        border-bottom: 1px solid var(--linea);
+      }
+      .sec-num {
+        flex: 0 0 auto;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.05rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .sec-titulo {
+        margin: 0;
+        font-size: 1.2rem;
+        flex: 1 1 auto;
+        color: var(--tinta);
+      }
+      .sec-flecha {
+        transition: transform 0.2s ease;
+        color: var(--tinta-suave);
+        font-size: 1.2rem;
+      }
+      details.seccion-grande[open] .sec-flecha {
+        transform: rotate(180deg);
+      }
+      summary:hover {
+        background: #eef2f7;
+      }
+      summary:focus-visible {
+        outline: 3px solid var(--foco);
+        outline-offset: -3px;
+      }
+      .seccion-cuerpo {
+        padding: 8px 18px 20px;
+      }
+
+      .subtema {
+        padding: 18px 0 8px;
+        border-bottom: 1px dashed var(--linea);
+      }
+      .subtema:last-child {
+        border-bottom: none;
+      }
+      .subtema-titulo {
+        font-size: 1.06rem;
+        margin: 0 0 10px;
+        color: var(--tinta);
+      }
+
+      .tabla-wrap {
+        overflow-x: auto;
+      }
+      .tabla-wrap:focus {
+        outline: 3px solid var(--foco);
+        outline-offset: 2px;
+        border-radius: 8px;
+      }
+      table.tabla-niveles {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        min-width: 640px;
+      }
+      table.tabla-niveles th {
+        color: #fff;
+        font-size: 0.9rem;
+        padding: 8px 10px;
+        text-align: left;
+        width: 25%;
+      }
+      .th-n1 {
+        background: var(--n1);
+      }
+      .th-n2 {
+        background: var(--n2);
+      }
+      .th-n3 {
+        background: var(--n3);
+      }
+      .th-n4 {
+        background: var(--n4);
+      }
+      table.tabla-niveles td {
+        vertical-align: top;
+        padding: 10px;
+        border: 1px solid var(--linea);
+        width: 25%;
+      }
+      td.vacia {
+        background: repeating-linear-gradient(45deg, #f8fafc, #f8fafc 7px, #f1f5f9 7px, #f1f5f9 14px);
+      }
+      .celda-txt {
+        margin: 0;
+        font-size: 0.9rem;
+      }
+      td.celda-repaso .celda-txt {
+        color: var(--tinta-suave);
+        font-style: italic;
+      }
+      .celda-pie {
+        margin-top: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        align-items: center;
+      }
+      .horas {
+        background: #1e293b;
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 700;
+        border-radius: 5px;
+        padding: 2px 7px;
+      }
+      .rot-repaso {
+        background: #e2e8f0;
+        color: #334155;
+        font-size: 0.7rem;
+        font-weight: 600;
+        border-radius: 5px;
+        padding: 2px 7px;
+      }
+      .badge-nuevo {
+        background: #b91c1c;
+        color: #fff;
+        font-size: 0.7rem;
+        font-weight: 700;
+        border-radius: 5px;
+        padding: 2px 7px;
+        letter-spacing: 0.4px;
+      }
+      .celda-stds {
+        margin-top: 9px;
+        padding-top: 7px;
+        border-top: 1px dotted #cbd5e1;
+      }
+      .stds-rotulo {
+        display: block;
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        color: #94a3b8;
+      }
+      .stds-cod {
+        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+        font-size: 0.74rem;
+        color: #475569;
+        line-height: 1.4;
+      }
+
+      mark {
+        background: #fde68a;
+        color: var(--tinta);
+        padding: 0 2px;
+        border-radius: 3px;
+      }
+      .oculto {
+        display: none !important;
+      }
+
+      footer.pie {
+        margin-top: 34px;
+        padding-top: 18px;
+        border-top: 1px solid var(--linea);
+        font-size: 0.85rem;
+        color: var(--tinta-suave);
+      }
+
+      @media (max-width: 520px) {
+        body {
+          font-size: 16px;
+        }
+        header.cabecera h1 {
+          font-size: 1.45rem;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .sec-flecha {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="salto" href="#contenido">Skip to main content</a>
+    <div class="contenedor">
+      <header class="cabecera">
+        <h1>Spanish ASE Math: Content Sequence by Level (Levels 1–4)</h1>
+        <p class="subtitulo">
+          <strong>City Colleges of Chicago — Adult Education</strong>
+          · Levels 1–4 · 96 hours per level
+        </p>
+        <p class="fuente">
+          Standard Numbers correspond to the
+          <em>Illinois ABE/ASE Mathematics Content Standards</em>
+          (ICCB, rev. February 2021).
+        </p>
+      </header>
+
+      <main id="contenido">
+        <section class="nota-nrs" aria-label="Level correspondence">
+          <p style="margin: 0">
+            <strong>
+              Level-to-NRS correspondence:
+              <br />
+              <span style="color: #1d4ed8">Nivel 1 = NRS 1–2</span>
+              |
+              <span style="color: #065f46">Nivel 2 = NRS 2–3</span>
+              |
+              <span style="color: #6d28d9">Nivel 3 = NRS 3–4</span>
+              |
+              <span style="color: #b91c1c">Nivel 4 = NRS 4–5 (GED)</span>
+              .
+            </strong>
+          </p>
+          <p class="como-usar">
+            The Spanish ASE Math program condenses the six NRS levels into four 96-hour levels, with some content moving down and some moving up to fit the four authorized terms. Each topic below is
+            an accordion; within it, every subtopic shows a four-level table. An empty cell means the content is not addressed at that level, so the full row reveals the learning sequence. Each cell
+            lists its corresponding Standard Number.
+          </p>
+        </section>
+
+        <div class="buscar-zona">
+          <input type="search" id="buscador" autocomplete="off" aria-label="Search a content topic or subtopic" placeholder="Search a topic (e.g., fractions, Pythagorean theorem, percentages)…" />
+          <p class="buscar-info" id="buscar-info" role="status" aria-live="polite"></p>
+        </div>
+
+        <nav class="temas-rapidos" aria-label="Jump to a topic">
+          <button type="button" class="nav-chip" data-target="number-sense" style="--accent: #1e3a8a">
+            <span aria-hidden="true">1</span>
+            Number Sense and the Number System
+          </button>
+          <button type="button" class="nav-chip" data-target="ratios-proportions" style="--accent: #0f766e">
+            <span aria-hidden="true">2</span>
+            Ratios, Proportions, and Percentages
+          </button>
+          <button type="button" class="nav-chip" data-target="algebra" style="--accent: #6d28d9">
+            <span aria-hidden="true">3</span>
+            Algebra
+          </button>
+          <button type="button" class="nav-chip" data-target="geometry" style="--accent: #9a3412">
+            <span aria-hidden="true">4</span>
+            Geometry
+          </button>
+          <button type="button" class="nav-chip" data-target="functions" style="--accent: #be123c">
+            <span aria-hidden="true">5</span>
+            Functions and Modeling
+          </button>
+          <button type="button" class="nav-chip" data-target="statistics" style="--accent: #166534">
+            <span aria-hidden="true">6</span>
+            Statistics and Probability
+          </button>
+        </nav>
+
+        <div class="controles">
+          <button type="button" class="btn" id="abrir-todo">Expand all</button>
+          <button type="button" class="btn secundario" id="cerrar-todo">Collapse all</button>
+        </div>
+
+        <details class="seccion-grande" id="number-sense">
+          <summary>
+            <span class="sec-num" style="background: #1e3a8a" aria-hidden="true">1</span>
+            <h2 class="sec-titulo">Number Sense and the Number System</h2>
+            <span class="sec-flecha" aria-hidden="true">▾</span>
+          </summary>
+          <div class="seccion-cuerpo">
+            <div class="subtema" data-buscar="whole numbers and place value">
+              <h3 class="subtema-titulo">Whole numbers and place value</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Whole numbers and place value" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Whole numbers and place value.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="celda-instr" data-nivel="1">
+                        <p class="celda-txt">From ones to billions: read, write, compare, order, and round.</p>
+                        <div class="celda-pie"><span class="horas">4 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">1.NBT.1-3, 2.NBT.1-4, 3.NBT.1-3</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="2">
+                        <p class="celda-txt">Review integrated into operations with negative integers and PEMDAS.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.NS.1-3</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="3">
+                        <p class="celda-txt">Included in the quick review at the start of the course.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">5.N.RN.1</span>
+                        </div>
+                      </td>
+                      <td class="vacia" data-nivel="4"><span class="sr-only">Not addressed at this level.</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="whole-number operations">
+              <h3 class="subtema-titulo">Whole-number operations</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Whole-number operations" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Whole-number operations.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="celda-instr" data-nivel="1">
+                        <p class="celda-txt">Addition, subtraction, multiplication, and division; standard multi-digit algorithm.</p>
+                        <div class="celda-pie"><span class="horas">12 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">1.OA.1-13, 2.OA.1-13, 2.NBT.5-11, 3.NBT.4-6</span>
+                        </div>
+                      </td>
+                      <td class="celda-instr" data-nivel="2">
+                        <p class="celda-txt">Negative integers (+, −, ×, ÷).</p>
+                        <div class="celda-pie"><span class="horas">8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.NS.5-7</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="3">
+                        <p class="celda-txt">Review integrated into PEMDAS and algebra.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.EE.3</span>
+                        </div>
+                      </td>
+                      <td class="vacia" data-nivel="4"><span class="sr-only">Not addressed at this level.</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="decimals">
+              <h3 class="subtema-titulo">Decimals</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Decimals" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Decimals.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="celda-instr" data-nivel="1">
+                        <p class="celda-txt">Read, write, and compare; basic operations.</p>
+                        <div class="celda-pie"><span class="horas">8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">3.NBT.9-12, 3.NBT.15, 3.NS.2</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="2">
+                        <p class="celda-txt">Included in complex fractions and PEMDAS.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.NS.7</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="3">
+                        <p class="celda-txt">Integrated review.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                      <td class="vacia" data-nivel="4"><span class="sr-only">Not addressed at this level.</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="fractions">
+              <h3 class="subtema-titulo">Fractions</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Fractions" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Fractions.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="celda-instr" data-nivel="1">
+                        <p class="celda-txt">Fractions, mixed numbers, and improper fractions: +, −, ×, ÷.</p>
+                        <div class="celda-pie"><span class="horas">12 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">2.NF.1-3, 3.NF.1-15</span>
+                        </div>
+                      </td>
+                      <td class="celda-instr" data-nivel="2">
+                        <p class="celda-txt">Complex fractions.</p>
+                        <div class="celda-pie"><span class="horas">6 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.NS.7, 4.RP.2</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="3">
+                        <p class="celda-txt">Review within the context of radicals.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">6.N.RN.2</span>
+                        </div>
+                      </td>
+                      <td class="vacia" data-nivel="4"><span class="sr-only">Not addressed at this level.</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="exponents and square roots">
+              <h3 class="subtema-titulo">Exponents and square roots</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Exponents and square roots" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Exponents and square roots.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="2">
+                        <p class="celda-txt">Introduction: exponents and perfect square roots.</p>
+                        <div class="celda-pie"><span class="horas">6 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">3.EE.1, 4.EE.5-6</span>
+                        </div>
+                      </td>
+                      <td class="celda-instr" data-nivel="3">
+                        <p class="celda-txt">Complete rules (product, power, quotient; negative and zero exponents).</p>
+                        <div class="celda-pie"><span class="horas">8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">6.N.RN.1-2</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="4">
+                        <p class="celda-txt">Review integrated into polynomials and functions.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">6.A.SSE.2</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="scientific notation">
+              <h3 class="subtema-titulo">Scientific notation</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Scientific notation" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Scientific notation.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="3">
+                        <p class="celda-txt">Decimal ↔ scientific conversion; multiplication and division in scientific notation.</p>
+                        <div class="celda-pie"><span class="horas">6 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.EE.7-8</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="4">
+                        <p class="celda-txt">Review within the context of higher algebra.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="radicals and irrational numbers">
+              <h3 class="subtema-titulo">Radicals and irrational numbers</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Radicals and irrational numbers" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Radicals and irrational numbers.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="3">
+                        <p class="celda-txt">Simplifying radicals; approximation on the number line; irrational vs. rational numbers.</p>
+                        <div class="celda-pie"><span class="horas">8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.NS.8-9, 5.N.RN.4-5</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="4">
+                        <p class="celda-txt">Review in the discriminant and the quadratic formula.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">6.A.REI.2</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="pemdas / order of operations">
+              <h3 class="subtema-titulo">PEMDAS / order of operations</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: PEMDAS / order of operations" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic PEMDAS / order of operations.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="celda-instr" data-nivel="1">
+                        <p class="celda-txt">Basic operations (no exponents or roots).</p>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">3.OA.7-8</span>
+                        </div>
+                      </td>
+                      <td class="celda-instr" data-nivel="2">
+                        <p class="celda-txt">Complete PEMDAS, including exponents and elementary roots.</p>
+                        <div class="celda-pie">
+                          <span class="horas">8 h</span>
+                          <span class="badge-nuevo">NEW</span>
+                        </div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">3.EE.2</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="3">
+                        <p class="celda-txt">Integrated into algebra and expressions.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="4">
+                        <p class="celda-txt">Integrated throughout higher algebra.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="seccion-grande" id="ratios-proportions">
+          <summary>
+            <span class="sec-num" style="background: #0f766e" aria-hidden="true">2</span>
+            <h2 class="sec-titulo">Ratios, Proportions, and Percentages</h2>
+            <span class="sec-flecha" aria-hidden="true">▾</span>
+          </summary>
+          <div class="seccion-cuerpo">
+            <div class="subtema" data-buscar="ratios and unit rates">
+              <h3 class="subtema-titulo">Ratios and unit rates</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Ratios and unit rates" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Ratios and unit rates.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="celda-instr" data-nivel="1">
+                        <p class="celda-txt">Basic introduction through word problems.</p>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">3.RP.1-2</span>
+                        </div>
+                      </td>
+                      <td class="celda-instr" data-nivel="2">
+                        <p class="celda-txt">Ratios and unit rates.</p>
+                        <div class="celda-pie"><span class="horas">6 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.RP.1-2</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="3">
+                        <p class="celda-txt">Applied in similarity and scale drawings.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.G.1</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="4">
+                        <p class="celda-txt">Applied in rational equations and modeling.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">6.A.CED.1</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="direct and inverse proportions">
+              <h3 class="subtema-titulo">Direct and inverse proportions</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Direct and inverse proportions" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Direct and inverse proportions.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="2">
+                        <p class="celda-txt">Direct and inverse proportions.</p>
+                        <div class="celda-pie"><span class="horas">8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.RP.3</span>
+                        </div>
+                      </td>
+                      <td class="celda-instr" data-nivel="3">
+                        <p class="celda-txt">Similarity and scale (Thales&#x27; theorem).</p>
+                        <div class="celda-pie"><span class="horas">6 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.G.10, 5.G.SRT.5</span>
+                        </div>
+                      </td>
+                      <td class="vacia" data-nivel="4"><span class="sr-only">Not addressed at this level.</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="percentages">
+              <h3 class="subtema-titulo">Percentages</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Percentages" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Percentages.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="2">
+                        <p class="celda-txt">Fundamental concepts and calculations: the whole, the part, and the percent; percent change.</p>
+                        <div class="celda-pie"><span class="horas">8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.RP.1c, 4.RP.4</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="3">
+                        <p class="celda-txt">Review within the context of applications.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                      <td class="vacia" data-nivel="4"><span class="sr-only">Not addressed at this level.</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="financial mathematics">
+              <h3 class="subtema-titulo">Financial mathematics</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Financial mathematics" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Financial mathematics.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="2">
+                        <p class="celda-txt">Simple interest and depreciation.</p>
+                        <div class="celda-pie">
+                          <span class="horas">8 h</span>
+                          <span class="badge-nuevo">NEW</span>
+                        </div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.RP.4</span>
+                        </div>
+                      </td>
+                      <td class="vacia" data-nivel="3"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-repaso" data-nivel="4">
+                        <p class="celda-txt">Modeling with exponential functions (growth and decay).</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">6.F.LE.1, 6.F.LE.5</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="seccion-grande" id="algebra">
+          <summary>
+            <span class="sec-num" style="background: #6d28d9" aria-hidden="true">3</span>
+            <h2 class="sec-titulo">Algebra</h2>
+            <span class="sec-flecha" aria-hidden="true">▾</span>
+          </summary>
+          <div class="seccion-cuerpo">
+            <div class="subtema" data-buscar="algebraic language and expressions">
+              <h3 class="subtema-titulo">Algebraic language and expressions</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Algebraic language and expressions" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Algebraic language and expressions.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="celda-instr" data-nivel="1">
+                        <p class="celda-txt">Simple unknowns in one-step problems.</p>
+                        <div class="celda-pie"><span class="horas">12 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">1.OA.13, 2.OA.8</span>
+                        </div>
+                      </td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="3">
+                        <p class="celda-txt">Variables and translation into algebraic language; simplify, distribute, and combine like terms.</p>
+                        <div class="celda-pie"><span class="horas">6 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">3.EE.2-4, 4.EE.1-2</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="4">
+                        <p class="celda-txt">Review integrated throughout algebra.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="linear equations in one variable">
+              <h3 class="subtema-titulo">Linear equations in one variable</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Linear equations in one variable" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Linear equations in one variable.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="3">
+                        <p class="celda-txt">Properties of equality; variables on both sides; fractional and decimal coefficients; solving formulas.</p>
+                        <div class="celda-pie"><span class="horas">10 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.EE.11, 5.A.REI.1-2</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="4">
+                        <p class="celda-txt">Review as a basis for systems and quadratics.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="linear inequalities">
+              <h3 class="subtema-titulo">Linear inequalities</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Linear inequalities" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Linear inequalities.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="3">
+                        <p class="celda-txt">Solve and graph on the number line; translate and solve.</p>
+                        <div class="celda-pie"><span class="horas">8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">3.EE.8, 4.EE.4b, 5.A.REI.2</span>
+                        </div>
+                      </td>
+                      <td class="celda-instr" data-nivel="4">
+                        <p class="celda-txt">Systems of inequalities.</p>
+                        <div class="celda-pie"><span class="horas">6 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">6.A.REI.7</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="solving literal formulas">
+              <h3 class="subtema-titulo">Solving literal formulas</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Solving literal formulas" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Solving literal formulas.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="3">
+                        <p class="celda-txt">Solve for one variable in a formula.</p>
+                        <div class="celda-pie"><span class="horas">6 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">5.A.CED.4</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="4">
+                        <p class="celda-txt">Included in systems and modeling.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="polynomials">
+              <h3 class="subtema-titulo">Polynomials</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Polynomials" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Polynomials.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="3"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="4">
+                        <p class="celda-txt">Classify, add, subtract, and multiply (FOIL).</p>
+                        <div class="celda-pie"><span class="horas">8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">6.A.APR.1</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="factoring and special products">
+              <h3 class="subtema-titulo">Factoring and special products</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Factoring and special products" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Factoring and special products.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="3"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="4">
+                        <p class="celda-txt">Common factor; difference of squares; trinomials (a = 1 and a ≠ 1).</p>
+                        <div class="celda-pie"><span class="horas">8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">6.A.SSE.1-2</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="quadratic equations">
+              <h3 class="subtema-titulo">Quadratic equations</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Quadratic equations" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Quadratic equations.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="3"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="4">
+                        <p class="celda-txt">Completing the square; quadratic formula; interpreting the discriminant.</p>
+                        <div class="celda-pie"><span class="horas">10 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">6.A.REI.2</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="complex rational expressions">
+              <h3 class="subtema-titulo">Complex rational expressions</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Complex rational expressions" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Complex rational expressions.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="3"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="4">
+                        <p class="celda-txt">Simplify and operate; solve equations; modeling (rates, mixtures, and work problems).</p>
+                        <div class="celda-pie"><span class="horas">10 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">6.A.APR.6-7, 6.A.REI.1</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="systems of linear equations">
+              <h3 class="subtema-titulo">Systems of linear equations</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Systems of linear equations" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Systems of linear equations.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="3"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="4">
+                        <p class="celda-txt">Graphing, substitution, and elimination; classify (independent, inconsistent, dependent); applications.</p>
+                        <div class="celda-pie"><span class="horas">10 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.EE.12, 5.A.REI.3-4</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="systems of inequalities">
+              <h3 class="subtema-titulo">Systems of inequalities</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Systems of inequalities" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Systems of inequalities.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="3"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="4">
+                        <p class="celda-txt">Graph the solution region.</p>
+                        <div class="celda-pie"><span class="horas">6 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">6.A.REI.7</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="seccion-grande" id="geometry">
+          <summary>
+            <span class="sec-num" style="background: #9a3412" aria-hidden="true">4</span>
+            <h2 class="sec-titulo">Geometry</h2>
+            <span class="sec-flecha" aria-hidden="true">▾</span>
+          </summary>
+          <div class="seccion-cuerpo">
+            <div class="subtema" data-buscar="2d figures and classification">
+              <h3 class="subtema-titulo">2D figures and classification</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: 2D figures and classification" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic 2D figures and classification.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="celda-instr" data-nivel="1">
+                        <p class="celda-txt">Two-dimensional figures: classify by attributes.</p>
+                        <div class="celda-pie"><span class="horas">4 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">1.G.1-8, 2.G.1-4, 3.G.1-2</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="2">
+                        <p class="celda-txt">Review included in composite figures.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                      <td class="celda-instr" data-nivel="3">
+                        <p class="celda-txt">Angles; parallel and perpendicular lines.</p>
+                        <div class="celda-pie"><span class="horas">6 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">3.MD.6-8, 4.G.5</span>
+                        </div>
+                      </td>
+                      <td class="vacia" data-nivel="4"><span class="sr-only">Not addressed at this level.</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="perimeter and basic area">
+              <h3 class="subtema-titulo">Perimeter and basic area</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Perimeter and basic area" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Perimeter and basic area.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="celda-instr" data-nivel="1">
+                        <p class="celda-txt">Perimeter of polygons; area of rectangles and triangles.</p>
+                        <div class="celda-pie"><span class="horas">6 + 8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">2.MD.13-16, 3.MD.3</span>
+                        </div>
+                      </td>
+                      <td class="celda-instr" data-nivel="2">
+                        <p class="celda-txt">Area of composite figures.</p>
+                        <div class="celda-pie"><span class="horas">8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">3.G.8, 4.G.6</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="3">
+                        <p class="celda-txt">Included in Pythagoras and similarity.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="4">
+                        <p class="celda-txt">3D composite figures (included in volume).</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="measurement and conversions">
+              <h3 class="subtema-titulo">Measurement and conversions</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Measurement and conversions" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Measurement and conversions.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="celda-instr" data-nivel="1">
+                        <p class="celda-txt">U.S. customary and metric systems: length, weight, capacity, and time.</p>
+                        <div class="celda-pie"><span class="horas">10 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">1.MD.1-6, 2.MD.1-8, 3.MD.1-2</span>
+                        </div>
+                      </td>
+                      <td class="celda-instr" data-nivel="2">
+                        <p class="celda-txt">Metric and customary conversions.</p>
+                        <div class="celda-pie"><span class="horas">6 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">3.MD.9, 4.RP.1d</span>
+                        </div>
+                      </td>
+                      <td class="vacia" data-nivel="3"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-repaso" data-nivel="4">
+                        <p class="celda-txt">Applied in volume and modeling problems.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="circle: circumference and area">
+              <h3 class="subtema-titulo">Circle: circumference and area</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Circle: circumference and area" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Circle: circumference and area.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="2">
+                        <p class="celda-txt">Circumference and area of the circle with π.</p>
+                        <div class="celda-pie"><span class="horas">8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.G.4, 5.G.GMD.2</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="3">
+                        <p class="celda-txt">Review included in area of composite figures.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="4">
+                        <p class="celda-txt">Included in volume of spheres and cones.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="pythagorean theorem">
+              <h3 class="subtema-titulo">Pythagorean theorem</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Pythagorean theorem" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Pythagorean theorem.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="3">
+                        <p class="celda-txt">Unknown sides of right triangles; applications.</p>
+                        <div class="celda-pie"><span class="horas">8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.G.13-14, 5.G.SRT.4</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="4">
+                        <p class="celda-txt">Review in analytic geometry (distance) and 3D volume.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="similarity and scale">
+              <h3 class="subtema-titulo">Similarity and scale</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Similarity and scale" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Similarity and scale.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="3">
+                        <p class="celda-txt">Similarity and scale drawings; Thales&#x27; theorem.</p>
+                        <div class="celda-pie"><span class="horas">6 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.G.1, 4.G.10, 5.G.SRT.5</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="4">
+                        <p class="celda-txt">Applied in modeling and functions.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="volume (prisms and cylinders)">
+              <h3 class="subtema-titulo">Volume (prisms and cylinders)</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Volume (prisms and cylinders)" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Volume (prisms and cylinders).</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="3">
+                        <p class="celda-txt">Rectangular and triangular prisms; cylinders.</p>
+                        <div class="celda-pie"><span class="horas">8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">3.MD.10-12, 3.G.9, 4.G.6</span>
+                        </div>
+                      </td>
+                      <td class="celda-instr" data-nivel="4">
+                        <p class="celda-txt">Review; spheres, cones, and pyramids.</p>
+                        <div class="celda-pie"><span class="horas">8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">5.G.GMD.1, 5.G.GMD.3</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="analytic geometry (coordinate plane)">
+              <h3 class="subtema-titulo">Analytic geometry (coordinate plane)</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Analytic geometry (coordinate plane)" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Analytic geometry (coordinate plane).</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="celda-instr" data-nivel="1">
+                        <p class="celda-txt">Basic coordinate plane (ordered pairs).</p>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">3.G.4-5</span>
+                        </div>
+                      </td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="3"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="4">
+                        <p class="celda-txt">Rectangular system; slope and the equation of a line.</p>
+                        <div class="celda-pie"><span class="horas">4 + 8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.EE.9-10</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="seccion-grande" id="functions">
+          <summary>
+            <span class="sec-num" style="background: #be123c" aria-hidden="true">5</span>
+            <h2 class="sec-titulo">Functions and Modeling</h2>
+            <span class="sec-flecha" aria-hidden="true">▾</span>
+          </summary>
+          <div class="seccion-cuerpo">
+            <div class="subtema" data-buscar="patterns and basic relationships">
+              <h3 class="subtema-titulo">Patterns and basic relationships</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Patterns and basic relationships" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Patterns and basic relationships.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="celda-instr" data-nivel="1">
+                        <p class="celda-txt">Identify and extend numeric and figure patterns.</p>
+                        <div class="celda-pie"><span class="horas">4 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">2.OA.13, 3.OA.6, 3.OA.9</span>
+                        </div>
+                      </td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-repaso" data-nivel="3">
+                        <p class="celda-txt">Linear relationships (included in equations and inequalities).</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                      <td class="celda-instr" data-nivel="4">
+                        <p class="celda-txt">Relations vs. functions; f(x) notation; domain and range.</p>
+                        <div class="celda-pie"><span class="horas">6 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.F.1-2, 6.F.IF.1-2</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="linear functions and rate of change">
+              <h3 class="subtema-titulo">Linear functions and rate of change</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Linear functions and rate of change" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Linear functions and rate of change.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-repaso" data-nivel="2">
+                        <p class="celda-txt">Direct proportions as a special case of a linear function.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.RP.3, 4.F.3</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="3">
+                        <p class="celda-txt">Linear equations in one variable (basis for functions).</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.EE.11</span>
+                        </div>
+                      </td>
+                      <td class="celda-instr" data-nivel="4">
+                        <p class="celda-txt">Slope as rate of change; average rate of change.</p>
+                        <div class="celda-pie"><span class="horas">4 + 8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.F.4, 6.F.IF.4, 6.F.IF.7</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="quadratic functions">
+              <h3 class="subtema-titulo">Quadratic functions</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Quadratic functions" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Quadratic functions.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="3"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="4">
+                        <p class="celda-txt">Graphs of parabolas; vertex and axis of symmetry; intercepts.</p>
+                        <div class="celda-pie"><span class="horas">incl. in 14 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">6.F.IF.5, 6.F.IF.8a, 6.F.IF.9a</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="exponential and logarithmic functions">
+              <h3 class="subtema-titulo">Exponential and logarithmic functions</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Exponential and logarithmic functions" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Exponential and logarithmic functions.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-repaso" data-nivel="2">
+                        <p class="celda-txt">Simple interest as an introduction to growth (conceptual basis).</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.RP.4</span>
+                        </div>
+                      </td>
+                      <td class="vacia" data-nivel="3"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="4">
+                        <p class="celda-txt">Exponential graphs; growth and decay; introduction to logarithmic functions.</p>
+                        <div class="celda-pie"><span class="horas">incl. in 14 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">6.F.IF.8d, 6.F.LE.1, 6.F.LE.4</span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+        <details class="seccion-grande" id="statistics">
+          <summary>
+            <span class="sec-num" style="background: #166534" aria-hidden="true">6</span>
+            <h2 class="sec-titulo">Statistics and Probability</h2>
+            <span class="sec-flecha" aria-hidden="true">▾</span>
+          </summary>
+          <div class="seccion-cuerpo">
+            <div class="subtema" data-buscar="basic tables and graphs">
+              <h3 class="subtema-titulo">Basic tables and graphs</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Basic tables and graphs" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Basic tables and graphs.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="celda-instr" data-nivel="1">
+                        <p class="celda-txt">Simple tables; bar and line graphs.</p>
+                        <div class="celda-pie"><span class="horas">6 + 10 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">1.MD.7, 2.MD.9-10</span>
+                        </div>
+                      </td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="3"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="4"><span class="sr-only">Not addressed at this level.</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="circle (pie) graphs">
+              <h3 class="subtema-titulo">Circle (pie) graphs</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Circle (pie) graphs" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Circle (pie) graphs.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="2">
+                        <p class="celda-txt">Read and interpret circle (pie) graphs.</p>
+                        <div class="celda-pie"><span class="horas">4 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">3.MD.4</span>
+                        </div>
+                      </td>
+                      <td class="vacia" data-nivel="3"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="4"><span class="sr-only">Not addressed at this level.</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="measures of central tendency">
+              <h3 class="subtema-titulo">Measures of central tendency</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Measures of central tendency" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Measures of central tendency.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="2">
+                        <p class="celda-txt">Mean, median, and mode; range; weighted mean.</p>
+                        <div class="celda-pie"><span class="horas">8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">3.SP.2-3, 4.SP.1</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="3">
+                        <p class="celda-txt">Review within the context of histograms and box plots.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                      <td class="vacia" data-nivel="4"><span class="sr-only">Not addressed at this level.</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="box plots and histograms">
+              <h3 class="subtema-titulo">Box plots and histograms</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Box plots and histograms" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Box plots and histograms.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="3">
+                        <p class="celda-txt">Box-and-whisker plots; histograms; shape, center, and spread.</p>
+                        <div class="celda-pie"><span class="horas">8 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">3.SP.4, 5.S.ID.5, 5.S.ID.7</span>
+                        </div>
+                      </td>
+                      <td class="vacia" data-nivel="4"><span class="sr-only">Not addressed at this level.</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="simple probability">
+              <h3 class="subtema-titulo">Simple probability</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Simple probability" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Simple probability.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="2">
+                        <p class="celda-txt">P = favorable outcomes / total outcomes; sample space.</p>
+                        <div class="celda-pie"><span class="horas">4 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.SP.2-3</span>
+                        </div>
+                      </td>
+                      <td class="celda-repaso" data-nivel="3">
+                        <p class="celda-txt">Review in compound probability.</p>
+                        <div class="celda-pie"><span class="rot-repaso">Review / integrated</span></div>
+                      </td>
+                      <td class="vacia" data-nivel="4"><span class="sr-only">Not addressed at this level.</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="subtema" data-buscar="compound probability and combinatorics">
+              <h3 class="subtema-titulo">Compound probability and combinatorics</h3>
+              <div class="tabla-wrap" role="region" aria-label="Sequence by level: Compound probability and combinatorics" tabindex="0">
+                <table class="tabla-niveles">
+                  <caption class="sr-only">Learning sequence by level for the subtopic Compound probability and combinatorics.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col" class="th-n1">Level&nbsp;1</th>
+                      <th scope="col" class="th-n2">Level&nbsp;2</th>
+                      <th scope="col" class="th-n3">Level&nbsp;3</th>
+                      <th scope="col" class="th-n4">Level&nbsp;4</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="vacia" data-nivel="1"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="vacia" data-nivel="2"><span class="sr-only">Not addressed at this level.</span></td>
+                      <td class="celda-instr" data-nivel="3">
+                        <p class="celda-txt">Fundamental counting principle; permutations and combinations; with and without replacement.</p>
+                        <div class="celda-pie"><span class="horas">4 + 4 h</span></div>
+                        <div class="celda-stds">
+                          <span class="stds-rotulo">Standards</span>
+                          <span class="stds-cod">4.SP.5, 6.S.CP.1, 6.S.CP.9</span>
+                        </div>
+                      </td>
+                      <td class="vacia" data-nivel="4"><span class="sr-only">Not addressed at this level.</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </details>
+      </main>
+
+      <footer class="pie">
+        <p>Curricular reference document · Spanish ASE Mathematics, Levels 1–4 · City Colleges of Chicago, Adult Education.</p>
+      </footer>
+    </div>
+
+    <script>
+      (function () {
+        var secciones = Array.prototype.slice.call(document.querySelectorAll('details.seccion-grande'));
+        document.getElementById('abrir-todo').addEventListener('click', function () {
+          secciones.forEach(function (d) {
+            d.open = true;
+          });
+        });
+        document.getElementById('cerrar-todo').addEventListener('click', function () {
+          secciones.forEach(function (d) {
+            d.open = false;
+          });
+        });
+
+        Array.prototype.forEach.call(document.querySelectorAll('.nav-chip'), function (b) {
+          b.addEventListener('click', function () {
+            var t = document.getElementById(b.getAttribute('data-target'));
+            if (t) {
+              t.open = true;
+              t.scrollIntoView({behavior: 'smooth', block: 'start'});
+            }
+          });
+        });
+
+        if (location.hash) {
+          var dest = document.getElementById(location.hash.slice(1));
+          if (dest && dest.tagName === 'DETAILS') {
+            dest.open = true;
+          }
+        }
+
+        var input = document.getElementById('buscador');
+        var info = document.getElementById('buscar-info');
+        var subtemas = Array.prototype.slice.call(document.querySelectorAll('.subtema'));
+        function normaliza(s) {
+          return s
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '');
+        }
+        function quitarMarcas(el) {
+          Array.prototype.forEach.call(el.querySelectorAll('mark'), function (m) {
+            m.replaceWith(document.createTextNode(m.textContent));
+          });
+          el.normalize();
+        }
+        function resaltar(titulo, q) {
+          var nodo = titulo.firstChild;
+          if (!nodo || nodo.nodeType !== 3) return;
+          var txt = nodo.nodeValue,
+            idx = normaliza(txt).indexOf(q);
+          if (idx < 0) return;
+          var frag = document.createDocumentFragment();
+          frag.appendChild(document.createTextNode(txt.slice(0, idx)));
+          var mk = document.createElement('mark');
+          mk.textContent = txt.slice(idx, idx + q.length);
+          frag.appendChild(mk);
+          frag.appendChild(document.createTextNode(txt.slice(idx + q.length)));
+          titulo.replaceChild(frag, nodo);
+        }
+        input.addEventListener('input', function () {
+          var raw = input.value.trim(),
+            q = normaliza(raw);
+          subtemas.forEach(function (st) {
+            quitarMarcas(st.querySelector('.subtema-titulo'));
+          });
+          if (q === '') {
+            subtemas.forEach(function (st) {
+              st.classList.remove('oculto');
+            });
+            secciones.forEach(function (d) {
+              d.classList.remove('oculto');
+            });
+            info.textContent = '';
+            return;
+          }
+          var total = 0;
+          secciones.forEach(function (d) {
+            var vis = 0;
+            Array.prototype.forEach.call(d.querySelectorAll('.subtema'), function (st) {
+              if (normaliza(st.getAttribute('data-buscar')).indexOf(q) >= 0) {
+                st.classList.remove('oculto');
+                resaltar(st.querySelector('.subtema-titulo'), q);
+                vis++;
+                total++;
+              } else {
+                st.classList.add('oculto');
+              }
+            });
+            if (vis > 0) {
+              d.classList.remove('oculto');
+              d.open = true;
+            } else {
+              d.classList.add('oculto');
+            }
+          });
+          info.textContent = total === 0 ? 'No matches for «' + raw + '».' : total + (total === 1 ? ' subtopic found.' : ' subtopics found.');
+        });
+      })();
+    </script>
+  </body>
+</html>
