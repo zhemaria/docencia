@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<!--
+  Spanish ASE Math Curriculum Architecture (Levels 1-4)
+  Companion document for teacher professional development.
+  © José M. Fernández — Creative Commons BY-NC-SA 4.0 License
+  https://creativecommons.org/licenses/by-nc-sa/4.0/
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spanish ASE Math Curriculum Architecture: A Guide for Faculty</title>
+  <meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+  <meta name="license" content="CC BY-NC-SA 4.0">
+  <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+  <style>
+    :root{
+      --tinta:#1f2937; --tinta-suave:#555555; --linea:#e2e8f0;
+      --fondo:#ffffff; --fondo-suave:#f8fafc;
+      --primario:#00504a; --foco:#f59e0b;
+      --ambar-texto:#5C3900; --ambar-fondo:#fff8e1;
+      --s1:#00504a; --s2:#1a237e; --s3:#7c2d12;
+      --s4:#4a148c; --s5:#33691e; --s6:#37474f;
+    }
+    *{box-sizing:border-box;}
+    body{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;
+      color:var(--tinta);background:var(--fondo);line-height:1.6;
+      margin:0;padding:0 16px 64px;font-size:17px;}
+    .contenedor{max-width:1080px;margin:0 auto;}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+      overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+    a.salto{position:absolute;left:-9999px;background:var(--primario);color:#fff;
+      padding:10px 16px;border-radius:8px;z-index:100;}
+    a.salto:focus{left:16px;top:16px;}
+    header.cabecera{padding:28px 0 14px;border-bottom:4px solid var(--primario);}
+    header.cabecera h1{font-size:1.85rem;line-height:1.25;margin:0 0 8px;color:var(--primario);}
+    .subtitulo{color:var(--tinta-suave);margin:0;font-size:0.98rem;}
+    .subtitulo strong{color:var(--tinta);}
+    .resumen{background:var(--fondo-suave);border:1px solid var(--linea);
+      border-left:6px solid var(--primario);border-radius:10px;padding:16px 22px;margin:22px 0 6px;}
+    .resumen h2{margin:0 0 8px;font-size:1.15rem;color:var(--primario);}
+    .resumen p{margin:8px 0;font-size:0.97rem;}
+    nav.tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:12px;margin:22px 0 10px;}
+    .tarjeta{display:flex;align-items:center;gap:12px;text-align:left;cursor:pointer;
+      font-family:inherit;font-size:0.95rem;color:var(--tinta);
+      background:var(--tono,#f1f5f9);border:1px solid var(--linea);
+      border-radius:10px;padding:13px 16px;width:100%;}
+    .tarjeta .num{flex:0 0 auto;width:30px;height:30px;border-radius:50%;
+      background:var(--acento,#334155);color:#fff;font-weight:700;font-size:0.9rem;
+      display:flex;align-items:center;justify-content:center;}
+    .tarjeta .txt{flex:1 1 auto;}
+    .tarjeta .txt b{display:block;font-size:1rem;}
+    .tarjeta .txt span{font-size:0.83rem;color:#555;}
+    .tarjeta:hover{filter:brightness(0.96);}
+    .tarjeta:focus{outline:3px solid var(--foco);outline-offset:2px;}
+    .controles{display:flex;gap:10px;margin:6px 0 20px;flex-wrap:wrap;}
+    .btn{cursor:pointer;font-family:inherit;font-size:0.9rem;font-weight:600;border:none;
+      border-radius:8px;padding:9px 16px;color:#fff;background:var(--primario);}
+    .btn.secundario{background:#475569;}
+    .btn:hover{filter:brightness(1.1);}
+    .btn:focus{outline:3px solid var(--foco);outline-offset:2px;}
+    details.seccion{border:1px solid var(--linea);border-radius:14px;margin:14px 0;
+      background:var(--fondo);overflow:hidden;}
+    details.seccion>summary{list-style:none;cursor:pointer;display:flex;align-items:center;
+      gap:14px;padding:16px 18px;background:var(--fondo-suave);}
+    details.seccion>summary::-webkit-details-marker{display:none;}
+    details.seccion[open]>summary{border-bottom:1px solid var(--linea);}
+    .sec-num{flex:0 0 auto;width:36px;height:36px;border-radius:50%;color:#fff;
+      font-weight:700;font-size:1.05rem;display:flex;align-items:center;justify-content:center;}
+    .sec-titulo{margin:0;font-size:1.2rem;flex:1 1 auto;color:var(--tinta);}
+    .sec-flecha{transition:transform .2s ease;color:var(--tinta-suave);font-size:1.1rem;}
+    details.seccion[open] .sec-flecha{transform:rotate(180deg);}
+    summary:hover{background:#eef2f7;}
+    summary:focus-visible{outline:3px solid var(--foco);outline-offset:-3px;}
+    .cuerpo{padding:14px 22px 24px;}
+    .cuerpo h3{font-size:1.05rem;margin:22px 0 8px;color:var(--primario);}
+    .cuerpo h3:first-child{margin-top:6px;}
+    .cuerpo p{margin:8px 0;}
+    .cuerpo ul,.cuerpo ol{margin:8px 0;padding-left:24px;}
+    .cuerpo li{margin-bottom:7px;}
+    .clave{background:var(--ambar-fondo);border-left:5px solid var(--ambar-texto);
+      border-radius:0 10px 10px 0;padding:14px 18px;margin:16px 0;}
+    .clave b{color:var(--ambar-texto);}
+    .cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:12px;margin:16px 0;}
+    .cifra{background:var(--fondo-suave);border:1px solid var(--linea);
+      border-radius:10px;padding:14px;text-align:center;}
+    .cifra .n{display:block;font-size:1.9rem;font-weight:700;color:var(--primario);line-height:1.1;}
+    .cifra .e{display:block;font-size:0.82rem;color:#555;margin-top:4px;}
+    .tabla-wrap{overflow-x:auto;margin:14px 0;}
+    table{width:100%;border-collapse:collapse;font-size:0.9rem;min-width:520px;}
+    caption{text-align:left;font-size:0.85rem;color:#555;padding-bottom:6px;font-style:italic;}
+    th{background:var(--primario);color:#fff;padding:9px 11px;text-align:left;font-weight:600;}
+    td{padding:9px 11px;border:1px solid var(--linea);vertical-align:top;}
+    tbody tr:nth-child(even){background:var(--fondo-suave);}
+    .flujo{display:flex;flex-wrap:wrap;align-items:stretch;gap:10px;margin:16px 0;}
+    .paso{flex:1 1 190px;background:var(--fondo-suave);border:1px solid var(--linea);
+      border-radius:10px;padding:12px 14px;font-size:0.9rem;}
+    .paso b{display:block;color:var(--primario);margin-bottom:4px;}
+    footer.pie{margin-top:36px;padding-top:20px;border-top:1px solid var(--linea);
+      font-size:0.86rem;color:var(--tinta-suave);text-align:center;}
+    footer.pie a{color:var(--primario);}
+    @media (prefers-reduced-motion:reduce){.sec-flecha{transition:none;}}
+    @media print{
+      details.seccion{break-inside:avoid;}
+      .controles,nav.tarjetas,a.salto{display:none;}
+      details.seccion>summary{background:#eee;}
+    }
+  </style>
+</head>
+<body>
+<a class="salto" href="#contenido">Skip to main content</a>
+<div class="contenedor">
+
+  <header class="cabecera">
+    <h1>Spanish ASE Math Curriculum Architecture: A Guide for Faculty</h1>
+    <p class="subtitulo">
+      <strong>City Colleges of Chicago — Adult Education</strong> ·
+      Levels 1–4 · Brightspace D2L + MyOpenMath<br>
+      Professional development companion document. Reference example: Level 2, Unit 1.
+    </p>
+  </header>
+
+  <main id="contenido">
+
+    <section class="resumen" aria-labelledby="res-t">
+      <h2 id="res-t">What you will find in this document</h2>
+      <p>This material captures what was presented during the sixty-minute session. It does not
+      replace the discussion: it complements it and lets you revisit any points that call for review.</p>
+      <p>The central claim is simple: <strong>all four levels share a single
+      architecture</strong>. Anyone who masters the structure of one level can move to
+      any other without relearning the platform, and a student who advances loses no time
+      reorienting.</p>
+    </section>
+
+    <nav class="tarjetas" aria-label="Jump to a section">
+      <button type="button" class="tarjeta" data-destino="s1" style="--acento:#00504a;--tono:#e0f2f1">
+        <span class="num" aria-hidden="true">1</span>
+        <span class="txt"><b>The starting point</b><span>Who our student is</span></span>
+      </button>
+      <button type="button" class="tarjeta" data-destino="s2" style="--acento:#1a237e;--tono:#e8eaf6">
+        <span class="num" aria-hidden="true">2</span>
+        <span class="txt"><b>The architecture of the four levels</b><span>Coherence, NRS, and SLOs</span></span>
+      </button>
+      <button type="button" class="tarjeta" data-destino="s3" style="--acento:#7c2d12;--tono:#fff3e0">
+        <span class="num" aria-hidden="true">3</span>
+        <span class="txt"><b>Anatomy of a unit</b><span>Level 2, Unit 1</span></span>
+      </button>
+      <button type="button" class="tarjeta" data-destino="s4" style="--acento:#4a148c;--tono:#f3e5f5">
+        <span class="num" aria-hidden="true">4</span>
+        <span class="txt"><b>Brightspace and MyOpenMath</b><span>The classroom and the gym</span></span>
+      </button>
+      <button type="button" class="tarjeta" data-destino="s5" style="--acento:#33691e;--tono:#f1f8e9">
+        <span class="num" aria-hidden="true">5</span>
+        <span class="txt"><b>UDL is not decoration</b><span>Verifiable design decisions</span></span>
+      </button>
+      <button type="button" class="tarjeta" data-destino="s6" style="--acento:#37474f;--tono:#eceff1">
+        <span class="num" aria-hidden="true">6</span>
+        <span class="txt"><b>Artificial intelligence in production</b><span>What it does and does not do</span></span>
+      </button>
+    </nav>
+
+    <div class="controles">
+      <button type="button" class="btn" id="abrir-todo">Expand all</button>
+      <button type="button" class="btn secundario" id="cerrar-todo">Collapse all</button>
+    </div>
+
+    <details class="seccion" id="s1" open>
+      <summary>
+        <span class="sec-num" style="background:var(--s1)" aria-hidden="true">1</span>
+        <h2 class="sec-titulo">The starting point</h2>
+        <span class="sec-flecha" aria-hidden="true">▾</span>
+      </summary>
+      <div class="cuerpo">
+        <h3>Who our student is</h3>
+        <p>The Spanish-speaking adult preparing for the GED in Spanish arrives in the classroom
+        with three conditions that no textbook takes into account:</p>
+        <ul>
+          <li>They have been <strong>out of the school system for years or decades</strong>. The
+          mathematics they remember is fragmented, and what remains is often
+          memorized rules with no understanding behind them.</li>
+          <li>They study <strong>after a full workday</strong>. The available cognitive
+          load is limited, and so is their time.</li>
+          <li>Quality materials, practice generators, and interactive tools are, for the
+          overwhelming part, <strong>in English</strong>.</li>
+        </ul>
+        <div class="clave">
+          <p style="margin:0"><b>Design consequence:</b> the curriculum cannot be a
+          translation of a course designed for full-time adolescents. It must be built
+          from the ground up for an adult with little time, abundant life experience, and a
+          damaged relationship with the subject.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="seccion" id="s2">
+      <summary>
+        <span class="sec-num" style="background:var(--s2)" aria-hidden="true">2</span>
+        <h2 class="sec-titulo">The architecture of the four levels</h2>
+        <span class="sec-flecha" aria-hidden="true">▾</span>
+      </summary>
+      <div class="cuerpo">
+
+        <h3>A single skeleton across the four levels</h3>
+        <p>Levels 1, 2, 3, and 4 are not four independent courses built to different
+        criteria. They share exactly the same structure:</p>
+
+        <div class="cifras">
+          <div class="cifra"><span class="n">96</span><span class="e">hours per level<br>(48 synchronous + 48 asynchronous)</span></div>
+          <div class="cifra"><span class="n">16</span><span class="e">weeks</span></div>
+          <div class="cifra"><span class="n">8</span><span class="e">12-hour topics<br>(≈ 2 weeks each)</span></div>
+          <div class="cifra"><span class="n">3</span><span class="e">4-hour lessons<br>per topic</span></div>
+          <div class="cifra"><span class="n">4</span><span class="e">components<br>per lesson</span></div>
+        </div>
+
+        <p>Added to this, at every level, is the same <strong>objectives and skills</strong>
+        page at the opening of each unit, the same logic of quizzes split by skill, and
+        the same accessible styling system.</p>
+
+        <div class="clave">
+          <p style="margin:0"><b>Why it matters:</b> the instructor teaching Level 2 today
+          can take on Level 4 next semester without relearning the platform. And the
+          student who advances immediately recognizes where everything is. Structural
+          coherence is not an aesthetic preference: it is time saved and anxiety not created.</p>
+        </div>
+
+        <h3>Anchoring to the NRS</h3>
+        <p>Each level corresponds to a band of the <em>National Reporting System
+        Educational Functioning Levels</em>. The bands overlap deliberately:</p>
+
+        <div class="tabla-wrap">
+          <table>
+            <caption>Correspondence between course levels and NRS levels.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Course level</th>
+                <th scope="col">NRS</th>
+                <th scope="col">Dominant mathematical focus</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Level 1</td><td>NRS 1–2</td><td>Whole numbers, fractions, decimals, measurement, basic graphs</td></tr>
+              <tr><td>Level 2</td><td>NRS 2–3</td><td>Signed integers, order of operations, ratios, percentages, transitional geometry, descriptive statistics</td></tr>
+              <tr><td>Level 3</td><td>NRS 3–4</td><td>Linear algebra, radicals, scientific notation, Pythagorean theorem, similarity, compound probability</td></tr>
+              <tr><td>Level 4</td><td>NRS 4–5 (GED)</td><td>Polynomials, factoring, quadratics, systems, functions and modeling</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The overlap is intentional. A student who advances does not fall through the
+        cracks: the next level picks up as integrated review what the previous one taught
+        as new content.</p>
+
+        <h3>Anchoring to standards and SLOs</h3>
+        <p>Every topic in the curriculum plan explicitly declares:</p>
+        <ol>
+          <li>Its <strong>Illinois ABE/ASE Mathematics Content Standards</strong> (ICCB,
+          February 2021 revision), with the corresponding <em>Standard Number</em> code.</li>
+          <li>Its <strong>Student Learning Outcomes</strong> from the official course syllabus.</li>
+          <li>Its section of the sixteen-week <em>Topical Outline</em>.</li>
+        </ol>
+        <p>This is not compliance documentation added at the end. It is the scaffolding on
+        which the decision of what enters each level, and in what order, was made.</p>
+
+        <h3>An empty cell is information too</h3>
+        <p>The content-sequence document presents each subtopic in a table spanning the
+        four levels. A cell can have one of three states:</p>
+        <div class="flujo">
+          <div class="paso"><b>Instruction</b>The content is taught as new material, with assigned hours and declared standards.</div>
+          <div class="paso"><b>Integrated review</b>The content is not taught anew: it is applied within a later topic that requires it.</div>
+          <div class="paso"><b>Empty cell</b>The content is not addressed at that level. And that absence is a decision, not an oversight.</div>
+        </div>
+        <p>Reading a full row reveals the entire life of a piece of content: where it is
+        born, where it is consolidated, and where it is taken as mastered. Content does not
+        appear and disappear at random.</p>
+
+      </div>
+    </details>
+
+    <details class="seccion" id="s3">
+      <summary>
+        <span class="sec-num" style="background:var(--s3)" aria-hidden="true">3</span>
+        <h2 class="sec-titulo">Anatomy of a unit</h2>
+        <span class="sec-flecha" aria-hidden="true">▾</span>
+      </summary>
+      <div class="cuerpo">
+
+        <p>We take as our example <strong>Unit 1 of Level 2</strong>: "Signed integers:
+        the number line and the four operations" (weeks 1–2, 12 hours).</p>
+
+        <h3>The first thing the student sees: objectives and skills</h3>
+        <p>Every unit opens with an objectives page. It is not an administrative formality:
+        it answers the question the adult always asks — "what is this good for?" — before
+        any effort is demanded.</p>
+        <ul>
+          <li>A <strong>contextualization</strong> paragraph that anchors the content in
+          real experience (below-zero temperatures, debts, depth below sea level).</li>
+          <li>An <strong>objectives</strong> accordion: what the student will be able to do.</li>
+          <li>A <strong>skills</strong> accordion: what they will develop in order to do it.</li>
+        </ul>
+        <p>The distinction between objective and skill is not rhetorical. The objective is
+        the observable outcome; the skill is the capacity that makes it possible and that
+        transfers to other content.</p>
+
+        <h3>The four components of each lesson</h3>
+        <p>Every four-hour lesson declares the same four components, across all levels and
+        all topics:</p>
+
+        <div class="tabla-wrap">
+          <table>
+            <caption>The four required components of every lesson.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Component</th>
+                <th scope="col">What it specifies</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Materials and resources</strong></td><td>Manipulatives, tables, the TI-30XS calculator, MyOpenMath exercises, textbook references, and — crucially — the <em>modality</em>: the specific sequence of representation (real context → visual model → formal algorithm).</td></tr>
+              <tr><td><strong>Guided practice</strong></td><td>An activity with its own name and a recognizable context, with its synchronous and its asynchronous parts.</td></tr>
+              <tr><td><strong>Quiz or assignment</strong></td><td>Number of questions, distribution by skill, time, attempts allowed, and whether a calculator is permitted.</td></tr>
+              <tr><td><strong>Rubric</strong></td><td>Checklist or analytic rubric with explicit criteria and performance levels.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>One skill, one quiz</h3>
+        <p>This is the point where the Brightspace implementation deliberately departs from
+        the curriculum plan, and it is worth pausing on.</p>
+        <p>The plan groups content by <strong>class hour</strong>: one lesson equals four
+        hours. But a four-hour lesson can cover two or three distinct skills. Assessment,
+        therefore, is organized not by lesson but <strong>by skill</strong>.</p>
+
+        <div class="tabla-wrap">
+          <table>
+            <caption>Splitting of assessment in Unit 1 of Level 2.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Lesson (curriculum plan)</th>
+                <th scope="col">Assessment (Brightspace implementation)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Lesson 1.1 · The number line, absolute value, and opposites</td>
+                <td>Quiz 1.1.a · Signed integers: number line<br>
+                    Quiz 1.1.b · Signed integers: absolute value</td>
+              </tr>
+              <tr>
+                <td>Lesson 1.2 · Addition and subtraction of signed integers</td>
+                <td>Quiz 1.2 · Addition and subtraction of signed integers</td>
+              </tr>
+              <tr>
+                <td>Lesson 1.3 · Multiplication and division of integers; applications</td>
+                <td>Practice: Build fluency with the rule of signs<br>
+                    Quiz 1.3.a · Multiplication of integers<br>
+                    Quiz 1.3.b · Division of integers<br>
+                    Quiz 1.3.c · Multiplication and division word problems</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="clave">
+          <p style="margin:0 0 8px"><b>Three reasons to split:</b></p>
+          <ol style="margin:0">
+            <li><strong>Clean diagnosis.</strong> If a student scores 6 out of 10 on a quiz
+            that mixes the number line and absolute value, the instructor cannot tell where
+            the difficulty lies. One quiz per skill does tell.</li>
+            <li><strong>Lower cognitive load.</strong> Short, focused assessments — not
+            twenty-five-question exams mixing everything together at the end of a workday.</li>
+            <li><strong>Surgical remediation.</strong> If a student fails Quiz 1.3.b, they
+            review division of integers. There is no need to repeat the entire lesson.</li>
+          </ol>
+        </div>
+
+        <p>The lettered numbering (1.1.a, 1.1.b, 1.3.a…) preserves <strong>traceability</strong>:
+        anyone can see at a glance which lesson each assessment belongs to, and the
+        Brightspace gradebook stays ordered with no additional intervention.</p>
+
+        <h3>The discussion forum as asynchronous practice</h3>
+        <p>The forum is not decorative filler. It serves a function the self-graded quiz
+        cannot: it requires the student to <strong>produce</strong> a problem, not merely
+        solve one, and to <strong>read critically</strong> a peer's work.</p>
+        <p>Standard forum structure across all units:</p>
+        <ol>
+          <li>The student finds or constructs a real situation related to the content.</li>
+          <li>They post it to the forum as a new entry, with their solution.</li>
+          <li>They respond to at least one peer's post with their own point of view.</li>
+          <li>They review the responses they receive.</li>
+        </ol>
+        <p>The instructions sit inside a collapsed accordion: anyone who already knows them
+        does not have to scroll past them every time they enter.</p>
+
+      </div>
+    </details>
+
+    <details class="seccion" id="s4">
+      <summary>
+        <span class="sec-num" style="background:var(--s4)" aria-hidden="true">4</span>
+        <h2 class="sec-titulo">Brightspace and MyOpenMath: the classroom and the gym</h2>
+        <span class="sec-flecha" aria-hidden="true">▾</span>
+      </summary>
+      <div class="cuerpo">
+
+        <p>The two platforms do not compete. They do different things, and confusing them
+        produces duplicated work.</p>
+
+        <div class="tabla-wrap">
+          <table>
+            <caption>Division of functions between the two platforms.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Brightspace D2L — the classroom</th>
+                <th scope="col">MyOpenMath — the gym</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Expository content: interactive lessons, objectives, materials.</td>
+                <td>Algorithmic practice: each student receives a different version of the same exercise.</td>
+              </tr>
+              <tr>
+                <td>Formal assessment: quizzes by skill, with controlled attempts and time.</td>
+                <td>Unlimited repetition with immediate feedback and no penalty.</td>
+              </tr>
+              <tr>
+                <td>Interaction: forums, discussion, student writing.</td>
+                <td>Self-grading: consumes no instructor time.</td>
+              </tr>
+              <tr>
+                <td>Official gradebook and institutional reporting.</td>
+                <td>Detection of the specific difficulty before it reaches the quiz.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="clave">
+          <p style="margin:0"><b>The practical rule:</b> if the activity requires the
+          student to <em>build</em>, <em>explain</em>, or <em>be formally assessed</em>, it
+          goes in Brightspace. If it requires <em>drilling until automatic</em>, it goes in
+          MyOpenMath. The common mistake is using Brightspace for repetitive practice: it
+          turns into endless manual grading.</p>
+        </div>
+
+        <h3>The student's typical week</h3>
+        <div class="flujo">
+          <div class="paso"><b>1. Live class</b>Real context, visual model, formalization. The instructor leads.</div>
+          <div class="paso"><b>2. Guided practice</b>A named activity, in pairs or groups, within class.</div>
+          <div class="paso"><b>3. MyOpenMath</b>Unlimited asynchronous drilling, with step-by-step feedback.</div>
+          <div class="paso"><b>4. Quiz in Brightspace</b>One skill, defined time, graded to the book.</div>
+          <div class="paso"><b>5. Forum</b>Their own production and critical reading of a peer's work.</div>
+        </div>
+
+      </div>
+    </details>
+
+    <details class="seccion" id="s5">
+      <summary>
+        <span class="sec-num" style="background:var(--s5)" aria-hidden="true">5</span>
+        <h2 class="sec-titulo">UDL is not decoration</h2>
+        <span class="sec-flecha" aria-hidden="true">▾</span>
+      </summary>
+      <div class="cuerpo">
+
+        <p>Universal Design for Learning is often presented as a list of good intentions.
+        In this curriculum it is a set of <strong>verifiable decisions</strong>, and many
+        of them are checked with a tool, not with an opinion.</p>
+
+        <h3>The three principles, applied</h3>
+        <div class="tabla-wrap">
+          <table>
+            <caption>The UDL principles and their concrete expression in the course.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Principle</th>
+                <th scope="col">How it is applied</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Multiple means of representation</strong></td>
+                <td>Every concept is presented in at least two modalities: real context, visual model (number line, two-color counters, grid), and formal algorithm. The sequence is declared in each lesson's "Materials" component.</td>
+              </tr>
+              <tr>
+                <td><strong>Multiple means of action and expression</strong></td>
+                <td>The student demonstrates learning through different channels: self-graded quiz, hands-on practice, written production in the forum, oral presentation in the final project.</td>
+              </tr>
+              <tr>
+                <td><strong>Multiple means of engagement</strong></td>
+                <td>Contexts anchored in real adult life (loans, receipts, household budget, travel). Short assessments that reduce threat. Multiple attempts where pedagogically sound.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>What is verified, not opined</h3>
+        <ul>
+          <li><strong>Contrast.</strong> All text over color must reach a contrast ratio of
+          4.5:1 (WCAG AA). Light amber and orange tones <strong>fail</strong> with white
+          text. Dark browns are used instead — #5C3900 reaches 10.29:1. This is measured, not
+          eyeballed.</li>
+          <li><strong>Heading hierarchy.</strong> The h1 → h2 → h3 sequence is never skipped.
+          A screen reader navigates by headings; a skipped level leaves it without a map.</li>
+          <li><strong>Tables.</strong> Every table carries its <code>caption</code> element
+          (even when visually hidden) and the <code>scope="col"</code> attribute on each
+          heading. Without them, a table is an unordered list of cells to anyone who cannot see it.</li>
+          <li><strong>Decorative symbols.</strong> Ornamental emoji and icons carry
+          <code>aria-hidden="true"</code>: the screen reader should not read "pencil emoji"
+          before every instruction.</li>
+          <li><strong>Keyboard navigation.</strong> Every interactive element is reachable
+          with Tab and activatable with Enter or Space, with a visible focus indicator.</li>
+        </ul>
+
+        <div class="clave">
+          <p style="margin:0"><b>Brightspace's Ally is an ally.</b> Its accessibility
+          indicator is not a bureaucratic obstacle: it is a free reviewer that catches
+          precisely the defects that shut part of the student body out. All course material
+          is built to reach 100%.</p>
+        </div>
+
+        <h3>Brightspace technical constraints worth knowing</h3>
+        <ul>
+          <li>The Brightspace editor <strong>strips <code>&lt;label&gt;</code> tags</strong>.
+          For interactive elements, <code>&lt;div&gt;</code> elements with click handlers are used.</li>
+          <li>Gradients and colors with transparency (<code>rgba</code>) are unreliable in
+          critical CSS. Solid hexadecimal colors are used.</li>
+          <li>Native <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> accordions
+          work correctly and are accessible by default. This is the preferred solution.</li>
+        </ul>
+
+      </div>
+    </details>
+
+    <details class="seccion" id="s6">
+      <summary>
+        <span class="sec-num" style="background:var(--s6)" aria-hidden="true">6</span>
+        <h2 class="sec-titulo">Artificial intelligence in producing the course</h2>
+        <span class="sec-flecha" aria-hidden="true">▾</span>
+      </summary>
+      <div class="cuerpo">
+
+        <p>It is worth saying plainly: a good part of this curriculum's material was produced
+        with the assistance of artificial intelligence. Hiding it would be dishonest, and
+        presenting it as a magic wand would be too.</p>
+
+        <h3>What the tool does well</h3>
+        <ul>
+          <li>Writing and debugging the <strong>code</strong> of the interactive pages, the
+          exercise generators, and the import files.</li>
+          <li>Producing <strong>variants</strong> of a single exercise and verifying the
+          consistency of the answers.</li>
+          <li>Applying the <strong>accessibility rules</strong> systematically to dozens of
+          documents without fatigue or oversight.</li>
+        </ul>
+
+        <h3>What it does not do, and must not do</h3>
+        <ul>
+          <li>It does not decide <strong>what is taught</strong> or <strong>in what order</strong>.
+          That is a curricular decision anchored in the standards, in the NRS, and in
+          knowledge of the student body.</li>
+          <li>It does not know that the Spanish-speaking adult in Chicago has real experience
+          with loans and receipts, and that this is a doorway into percentages. The
+          instructor knows that.</li>
+          <li>It does not detect when a "real-world" problem rings false. It errs with
+          confidence and good prose, which is the most dangerous way to err.</li>
+          <li>It does not replace <strong>review</strong>. Everything published is read,
+          verified, and corrected.</li>
+        </ul>
+
+        <div class="clave">
+          <p style="margin:0"><b>The analogy I propose:</b> no one would say an engineer
+          "stopped being an engineer" for using a scientific calculator. The calculator
+          computes faster and without arithmetic errors, but it does not decide which
+          equation to set up or what the result means. The same holds here: the tool
+          accelerates execution, but the design of the course — what is taught, in what
+          order, for which student — is an entirely instructional decision.</p>
+        </div>
+
+        <div class="clave">
+          <p style="margin:0"><b>In one sentence:</b> the tool is an extension of the
+          capacity to execute, not of judgment. It multiplies what the instructor has
+          already decided; it does not decide for them. An instructor with good judgment and
+          this tool produces far more, and better. An instructor without judgment produces
+          far more, and worse.</p>
+        </div>
+
+      </div>
+    </details>
+
+    <section class="resumen" aria-labelledby="disc-t" style="margin-top:26px">
+      <h2 id="disc-t">Questions for discussion</h2>
+      <p>The questions that opened the debate in the session, for anyone who wants to revisit them:</p>
+      <ol style="margin:10px 0 0;padding-left:22px">
+        <li style="margin-bottom:8px">In your level, is there a lesson that assesses two or three skills with a single quiz? How would you split it?</li>
+        <li style="margin-bottom:8px">What content in your level would benefit from a context anchored in real adult experience that is currently presented abstractly?</li>
+        <li style="margin-bottom:8px">Where are you doing manual grading of repetitive practice that could move to MyOpenMath?</li>
+        <li style="margin-bottom:8px">What element of your current material would not pass a contrast or heading-hierarchy review?</li>
+        <li style="margin-bottom:8px">On AI-assisted production: what concerns you, and what appeals to you?</li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p>
+      <strong>José M. Fernández</strong>, ABE/ASE Math Master Teacher<br>
+      Harry S. Truman College — City Colleges of Chicago
+    </p>
+    <p>
+      This work is licensed under a
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license noopener" target="_blank">
+        Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)</a>.
+    </p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var secciones = Array.prototype.slice.call(document.querySelectorAll('details.seccion'));
+
+  document.getElementById('abrir-todo').addEventListener('click', function(){
+    secciones.forEach(function(d){ d.open = true; });
+  });
+  document.getElementById('cerrar-todo').addEventListener('click', function(){
+    secciones.forEach(function(d){ d.open = false; });
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('.tarjeta'), function(b){
+    b.addEventListener('click', function(){
+      var t = document.getElementById(b.getAttribute('data-destino'));
+      if (t) {
+        t.open = true;
+        t.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    });
+  });
+
+  if (location.hash) {
+    var dest = document.getElementById(location.hash.slice(1));
+    if (dest && dest.tagName === 'DETAILS') { dest.open = true; }
+  }
+})();
+</script>
+</body>
+</html>
