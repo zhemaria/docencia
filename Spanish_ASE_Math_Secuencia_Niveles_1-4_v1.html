@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spanish ASE Math · Secuencia de contenidos por nivel (1–4)</title>
+<style>
+  :root {
+    --tinta:#1f2937; --tinta-suave:#475569; --linea:#e2e8f0;
+    --fondo:#ffffff; --fondo-suave:#f8fafc; --primario:#1e3a8a; --foco:#f59e0b;
+    --n1:#1d4ed8; --n2:#065f46; --n3:#6d28d9; --n4:#b91c1c;
+  }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    color:var(--tinta); background:var(--fondo); line-height:1.55; margin:0; padding:0 16px 64px; font-size:17px; }
+  .contenedor { max-width:1080px; margin:0 auto; }
+  .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+    clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  a.salto { position:absolute; left:-9999px; background:var(--primario); color:#fff; padding:10px 16px; border-radius:8px; z-index:100; }
+  a.salto:focus { left:16px; top:16px; }
+
+  header.cabecera { padding:28px 0 8px; border-bottom:4px solid var(--primario); }
+  header.cabecera h1 { font-size:1.8rem; line-height:1.25; margin:0 0 6px; color:var(--primario); }
+  .subtitulo { color:var(--tinta-suave); margin:0; }
+  .subtitulo strong { color:var(--tinta); }
+  .fuente { font-size:.85rem; color:var(--tinta-suave); margin:10px 0 0; }
+
+  .nota-nrs { background:var(--fondo-suave); border:1px solid var(--linea); border-left:6px solid var(--primario);
+    border-radius:10px; padding:12px 18px; margin:20px 0 8px; font-size:.92rem; }
+  .nota-nrs strong { color:var(--tinta); }
+  .como-usar { font-size:.9rem; color:var(--tinta-suave); margin:8px 2px 0; }
+
+  .buscar-zona { margin:20px 0 8px; }
+  .buscar-zona input { width:100%; font-size:1rem; padding:12px 14px; border:2px solid var(--linea); border-radius:10px; background:var(--fondo); }
+  .buscar-zona input:focus { outline:3px solid var(--foco); outline-offset:2px; border-color:var(--primario); }
+  .buscar-info { font-size:.88rem; color:var(--tinta-suave); margin:6px 2px 0; min-height:1.2em; }
+
+  nav.temas-rapidos { margin:12px 0 6px; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-chip { cursor:pointer; border:1px solid var(--linea); background:var(--fondo); border-left:4px solid var(--accent);
+    border-radius:999px; padding:7px 14px; font-size:.86rem; color:var(--tinta); font-family:inherit;
+    display:inline-flex; align-items:center; gap:7px; }
+  .nav-chip span { background:var(--accent); color:#fff; border-radius:50%; width:20px; height:20px;
+    display:inline-flex; align-items:center; justify-content:center; font-size:.75rem; font-weight:700; }
+  .nav-chip:hover { background:var(--fondo-suave); }
+  .nav-chip:focus { outline:3px solid var(--foco); outline-offset:2px; }
+
+  .controles { display:flex; gap:10px; margin:14px 0 18px; flex-wrap:wrap; }
+  .btn { cursor:pointer; font-family:inherit; font-size:.92rem; font-weight:600; border:none; border-radius:8px;
+    padding:9px 16px; color:#fff; background:var(--primario); }
+  .btn.secundario { background:#475569; }
+  .btn:hover { filter:brightness(1.08); }
+  .btn:focus { outline:3px solid var(--foco); outline-offset:2px; }
+
+  details.seccion-grande { border:1px solid var(--linea); border-radius:14px; margin:14px 0; background:var(--fondo); overflow:hidden; }
+  details.seccion-grande > summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:14px; padding:16px 18px; background:var(--fondo-suave); }
+  details.seccion-grande > summary::-webkit-details-marker { display:none; }
+  details.seccion-grande[open] > summary { border-bottom:1px solid var(--linea); }
+  .sec-num { flex:0 0 auto; width:36px; height:36px; border-radius:50%; color:#fff; font-weight:700; font-size:1.05rem;
+    display:flex; align-items:center; justify-content:center; }
+  .sec-titulo { margin:0; font-size:1.2rem; flex:1 1 auto; color:var(--tinta); }
+  .sec-flecha { transition:transform .2s ease; color:var(--tinta-suave); font-size:1.2rem; }
+  details.seccion-grande[open] .sec-flecha { transform:rotate(180deg); }
+  summary:hover { background:#eef2f7; }
+  summary:focus-visible { outline:3px solid var(--foco); outline-offset:-3px; }
+  .seccion-cuerpo { padding:8px 18px 20px; }
+
+  .subtema { padding:18px 0 8px; border-bottom:1px dashed var(--linea); }
+  .subtema:last-child { border-bottom:none; }
+  .subtema-cab { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:10px; margin:0 0 10px; }
+  .subtema-titulo { font-size:1.06rem; margin:0; color:var(--tinta); }
+  .std-num { font-size:.82rem; color:var(--tinta-suave); background:var(--fondo-suave);
+    border:1px solid var(--linea); border-radius:6px; padding:3px 10px; white-space:nowrap; }
+  .std-num strong { color:var(--primario); }
+
+  .tabla-wrap { overflow-x:auto; }
+  .tabla-wrap:focus { outline:3px solid var(--foco); outline-offset:2px; border-radius:8px; }
+  table.tabla-niveles { width:100%; border-collapse:collapse; table-layout:fixed; min-width:560px; }
+  table.tabla-niveles th { color:#fff; font-size:.9rem; padding:8px 10px; text-align:left; width:25%; }
+  .th-n1 { background:var(--n1); } .th-n2 { background:var(--n2); }
+  .th-n3 { background:var(--n3); } .th-n4 { background:var(--n4); }
+  table.tabla-niveles td { vertical-align:top; padding:10px; border:1px solid var(--linea); width:25%; }
+  td.vacia { background:repeating-linear-gradient(45deg,#f8fafc,#f8fafc 7px,#f1f5f9 7px,#f1f5f9 14px); }
+  .celda-txt { margin:0; font-size:.9rem; }
+  td.celda-repaso .celda-txt { color:var(--tinta-suave); font-style:italic; }
+  .celda-pie { margin-top:8px; display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+  .horas { background:#1e293b; color:#fff; font-size:.72rem; font-weight:700; border-radius:5px; padding:2px 7px; }
+  .rot-repaso { background:#e2e8f0; color:#334155; font-size:.7rem; font-weight:600; border-radius:5px; padding:2px 7px; }
+  .badge-nuevo { background:#b91c1c; color:#fff; font-size:.7rem; font-weight:700; border-radius:5px; padding:2px 7px; letter-spacing:.4px; }
+
+  mark { background:#fde68a; color:var(--tinta); padding:0 2px; border-radius:3px; }
+  .oculto { display:none !important; }
+
+  footer.pie { margin-top:34px; padding-top:18px; border-top:1px solid var(--linea); font-size:.85rem; color:var(--tinta-suave); }
+
+  @media (max-width:520px) { body { font-size:16px; } header.cabecera h1 { font-size:1.45rem; } }
+  @media (prefers-reduced-motion:reduce) { .sec-flecha { transition:none; } }
+</style>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido principal</a>
+<div class="contenedor">
+
+  <header class="cabecera">
+    <h1>Spanish ASE Math: secuencia de contenidos por nivel (1–4)</h1>
+    <p class="subtitulo"><strong>City Colleges of Chicago — Adult Education</strong> · Niveles 1–4 · 96 horas por nivel</p>
+    <p class="fuente"><em>Standard Number</em> según los <em>Illinois ABE/ASE Mathematics Content Standards</em> (ICCB, rev. febrero 2021).</p>
+  </header>
+
+  <main id="contenido">
+
+  <section class="nota-nrs" aria-label="Correspondencia de niveles">
+    <p style="margin:0"><strong>Correspondencia de niveles (NRS):</strong>
+      Nivel 1 = NRS 1–2 · Nivel 2 = NRS 2–3 · Nivel 3 = NRS 3–4 · Nivel 4 = NRS 4–5 (GED).</p>
+    <p class="como-usar">Cada tema es un acordeón. Dentro, cada subtema muestra una tabla con los cuatro niveles:
+      una celda vacía significa que el contenido no se aborda en ese nivel, de modo que la fila completa
+      deja ver la secuencia de aprendizaje. El <em>Standard Number</em> aparece junto al título del subtema.</p>
+  </section>
+
+  <div class="buscar-zona">
+    <input type="search" id="buscador" autocomplete="off"
+      aria-label="Buscar un contenido o subtema"
+      placeholder="Buscar un contenido (p. ej. fracciones, Pitágoras, porcentajes)…">
+    <p class="buscar-info" id="buscar-info" role="status" aria-live="polite"></p>
+  </div>
+
+  <nav class="temas-rapidos" aria-label="Ir a un tema"><button type="button" class="nav-chip" data-target="sentido-numerico" style="--accent:#1e3a8a"><span aria-hidden="true">1</span>Sentido numérico y sistema de números</button><button type="button" class="nav-chip" data-target="razones-proporciones" style="--accent:#0f766e"><span aria-hidden="true">2</span>Razones, proporciones y porcentajes</button><button type="button" class="nav-chip" data-target="algebra" style="--accent:#6d28d9"><span aria-hidden="true">3</span>Álgebra</button><button type="button" class="nav-chip" data-target="geometria" style="--accent:#9a3412"><span aria-hidden="true">4</span>Geometría</button><button type="button" class="nav-chip" data-target="funciones" style="--accent:#be123c"><span aria-hidden="true">5</span>Funciones y modelado</button><button type="button" class="nav-chip" data-target="estadistica" style="--accent:#166534"><span aria-hidden="true">6</span>Estadística y probabilidad</button></nav>
+
+  <div class="controles">
+    <button type="button" class="btn" id="abrir-todo">Abrir todo</button>
+    <button type="button" class="btn secundario" id="cerrar-todo">Cerrar todo</button>
+  </div>
+
+  
+      <details class="seccion-grande" id="sentido-numerico" open>
+        <summary>
+          <span class="sec-num" style="background:#1e3a8a" aria-hidden="true">1</span>
+          <h2 class="sec-titulo">Sentido numérico y sistema de números</h2>
+          <span class="sec-flecha" aria-hidden="true">▾</span>
+        </summary>
+        <div class="seccion-cuerpo">
+        <div class="subtema" data-buscar="números enteros y valor posicional">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Números enteros y valor posicional</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>NBT</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Números enteros y valor posicional" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Números enteros y valor posicional.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">De las unidades a los miles de millones: leer, escribir, comparar, ordenar y redondear.</p><div class="celda-pie"><span class="horas">4 h</span></div></td><td class="celda-repaso" data-nivel="2"><p class="celda-txt">Repaso integrado en operaciones con enteros negativos y PEMDAS.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="celda-repaso" data-nivel="3"><p class="celda-txt">Incluido en el repaso rápido del inicio del curso.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="vacia" data-nivel="4"><span class="sr-only">No se aborda en este nivel.</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="operaciones con números enteros">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Operaciones con números enteros</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>NBT · NS</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Operaciones con números enteros" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Operaciones con números enteros.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Suma, resta, multiplicación y división; algoritmo estándar multidígito.</p><div class="celda-pie"><span class="horas">12 h</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Números enteros negativos (+, −, ×, ÷).</p><div class="celda-pie"><span class="horas">8 h</span></div></td><td class="celda-repaso" data-nivel="3"><p class="celda-txt">Repaso integrado en PEMDAS y álgebra.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="vacia" data-nivel="4"><span class="sr-only">No se aborda en este nivel.</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="decimales">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Decimales</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>NBT</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Decimales" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Decimales.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Leer, escribir y comparar; operaciones básicas.</p><div class="celda-pie"><span class="horas">8 h</span></div></td><td class="celda-repaso" data-nivel="2"><p class="celda-txt">Incluidos en fracciones complejas y PEMDAS.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="celda-repaso" data-nivel="3"><p class="celda-txt">Repaso integrado.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="vacia" data-nivel="4"><span class="sr-only">No se aborda en este nivel.</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="fracciones">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Fracciones</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>NF</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Fracciones" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Fracciones.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Fracciones, números mixtos e impropios: +, −, ×, ÷.</p><div class="celda-pie"><span class="horas">12 h</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Fracciones complejas.</p><div class="celda-pie"><span class="horas">6 h</span></div></td><td class="celda-repaso" data-nivel="3"><p class="celda-txt">Repaso en el contexto de los radicales.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="vacia" data-nivel="4"><span class="sr-only">No se aborda en este nivel.</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="exponentes y raíces cuadradas">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Exponentes y raíces cuadradas</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>EE · NS</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Exponentes y raíces cuadradas" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Exponentes y raíces cuadradas.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Introducción: exponentes y raíces cuadradas perfectas.</p><div class="celda-pie"><span class="horas">6 h</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Reglas completas (producto, potencia, cociente; exponentes negativos y nulos).</p><div class="celda-pie"><span class="horas">8 h</span></div></td><td class="celda-repaso" data-nivel="4"><p class="celda-txt">Repaso integrado en polinomios y funciones.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="notación científica">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Notación científica</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>NS · EE</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Notación científica" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Notación científica.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Conversión decimal ↔ científica; multiplicación y división en notación científica.</p><div class="celda-pie"><span class="horas">6 h</span></div></td><td class="celda-repaso" data-nivel="4"><p class="celda-txt">Repaso en el contexto del álgebra superior.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="radicales e irracionales">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Radicales e irracionales</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>NS</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Radicales e irracionales" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Radicales e irracionales.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Simplificación de radicales; aproximación en la recta numérica; números irracionales frente a racionales.</p><div class="celda-pie"><span class="horas">8 h</span></div></td><td class="celda-repaso" data-nivel="4"><p class="celda-txt">Repaso en el discriminante y la fórmula cuadrática.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="pemdas / orden de operaciones">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">PEMDAS / orden de operaciones</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>OA · EE</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: PEMDAS / orden de operaciones" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema PEMDAS / orden de operaciones.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Operaciones básicas (sin potencias ni raíces).</p></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">PEMDAS completo, incluyendo potencias y raíces elementales.</p><div class="celda-pie"><span class="horas">8 h</span><span class="badge-nuevo">NUEVO</span></div></td><td class="celda-repaso" data-nivel="3"><p class="celda-txt">Integrado en álgebra y expresiones.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="celda-repaso" data-nivel="4"><p class="celda-txt">Integrado en todo el álgebra superior.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div></div>
+      </details>
+      <details class="seccion-grande" id="razones-proporciones">
+        <summary>
+          <span class="sec-num" style="background:#0f766e" aria-hidden="true">2</span>
+          <h2 class="sec-titulo">Razones, proporciones y porcentajes</h2>
+          <span class="sec-flecha" aria-hidden="true">▾</span>
+        </summary>
+        <div class="seccion-cuerpo">
+        <div class="subtema" data-buscar="razones y tasas unitarias">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Razones y tasas unitarias</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>RP</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Razones y tasas unitarias" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Razones y tasas unitarias.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Introducción básica en problemas verbales.</p></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Razones y tasas unitarias.</p><div class="celda-pie"><span class="horas">6 h</span></div></td><td class="celda-repaso" data-nivel="3"><p class="celda-txt">Aplicadas en semejanza y dibujos a escala.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="celda-repaso" data-nivel="4"><p class="celda-txt">Aplicadas en ecuaciones racionales y modelado.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="proporciones directas e inversas">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Proporciones directas e inversas</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>RP</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Proporciones directas e inversas" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Proporciones directas e inversas.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Proporciones directas e inversas.</p><div class="celda-pie"><span class="horas">8 h</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Semejanza y escala (teorema de Thales).</p><div class="celda-pie"><span class="horas">6 h</span></div></td><td class="vacia" data-nivel="4"><span class="sr-only">No se aborda en este nivel.</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="porcentajes">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Porcentajes</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>RP</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Porcentajes" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Porcentajes.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Conceptos y cálculos fundamentales: el total, la parte y el porcentaje; cambio porcentual.</p><div class="celda-pie"><span class="horas">8 h</span></div></td><td class="celda-repaso" data-nivel="3"><p class="celda-txt">Repaso en el contexto de aplicaciones.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="vacia" data-nivel="4"><span class="sr-only">No se aborda en este nivel.</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="matemáticas financieras">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Matemáticas financieras</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>RP · F</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Matemáticas financieras" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Matemáticas financieras.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Interés simple y depreciación.</p><div class="celda-pie"><span class="horas">8 h</span><span class="badge-nuevo">NUEVO</span></div></td><td class="vacia" data-nivel="3"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-repaso" data-nivel="4"><p class="celda-txt">Modelado con funciones exponenciales (crecimiento y decaimiento).</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div></div>
+      </details>
+      <details class="seccion-grande" id="algebra">
+        <summary>
+          <span class="sec-num" style="background:#6d28d9" aria-hidden="true">3</span>
+          <h2 class="sec-titulo">Álgebra</h2>
+          <span class="sec-flecha" aria-hidden="true">▾</span>
+        </summary>
+        <div class="seccion-cuerpo">
+        <div class="subtema" data-buscar="lenguaje algebraico y expresiones">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Lenguaje algebraico y expresiones</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>EE · A</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Lenguaje algebraico y expresiones" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Lenguaje algebraico y expresiones.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Incógnitas simples en problemas de un paso.</p><div class="celda-pie"><span class="horas">12 h</span></div></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Variables y traducción al lenguaje algebraico; simplificar, distribuir y combinar términos semejantes.</p><div class="celda-pie"><span class="horas">6 h</span></div></td><td class="celda-repaso" data-nivel="4"><p class="celda-txt">Repaso integrado en todo el álgebra.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="ecuaciones lineales en una variable">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Ecuaciones lineales en una variable</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>EE · A</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Ecuaciones lineales en una variable" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Ecuaciones lineales en una variable.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Propiedades de igualdad; variables en ambos lados; coeficientes fraccionarios y decimales; despeje de fórmulas.</p><div class="celda-pie"><span class="horas">10 h</span></div></td><td class="celda-repaso" data-nivel="4"><p class="celda-txt">Repaso como base para sistemas y cuadráticas.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="inecuaciones lineales">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Inecuaciones lineales</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>EE · A</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Inecuaciones lineales" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Inecuaciones lineales.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Resolver y graficar en la recta numérica; traducir y resolver.</p><div class="celda-pie"><span class="horas">8 h</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Sistemas de desigualdades.</p><div class="celda-pie"><span class="horas">6 h</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="despeje de fórmulas literales">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Despeje de fórmulas literales</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>EE · A</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Despeje de fórmulas literales" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Despeje de fórmulas literales.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Despejar una variable en una fórmula.</p><div class="celda-pie"><span class="horas">6 h</span></div></td><td class="celda-repaso" data-nivel="4"><p class="celda-txt">Incluido en sistemas y modelado.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="polinomios">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Polinomios</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>A</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Polinomios" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Polinomios.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="3"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Clasificar, sumar, restar y multiplicar (FOIL).</p><div class="celda-pie"><span class="horas">8 h</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="factorización y productos notables">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Factorización y productos notables</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>A</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Factorización y productos notables" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Factorización y productos notables.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="3"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Factor común; diferencia de cuadrados; trinomios (a = 1 y a ≠ 1).</p><div class="celda-pie"><span class="horas">8 h</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="ecuaciones cuadráticas">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Ecuaciones cuadráticas</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>A</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Ecuaciones cuadráticas" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Ecuaciones cuadráticas.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="3"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Completar el cuadrado; fórmula cuadrática; interpretar el discriminante.</p><div class="celda-pie"><span class="horas">10 h</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="expresiones racionales complejas">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Expresiones racionales complejas</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>A</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Expresiones racionales complejas" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Expresiones racionales complejas.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="3"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Simplificar y operar; resolver ecuaciones; modelado (tasas, mezclas y problemas de trabajo).</p><div class="celda-pie"><span class="horas">10 h</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="sistemas de ecuaciones lineales">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Sistemas de ecuaciones lineales</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>A</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Sistemas de ecuaciones lineales" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Sistemas de ecuaciones lineales.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="3"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Método gráfico, sustitución y eliminación; clasificar (independiente, inconsistente, dependiente); aplicaciones.</p><div class="celda-pie"><span class="horas">10 h</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="sistemas de desigualdades">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Sistemas de desigualdades</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>A</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Sistemas de desigualdades" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Sistemas de desigualdades.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="3"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Graficar la región solución.</p><div class="celda-pie"><span class="horas">6 h</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div></div>
+      </details>
+      <details class="seccion-grande" id="geometria">
+        <summary>
+          <span class="sec-num" style="background:#9a3412" aria-hidden="true">4</span>
+          <h2 class="sec-titulo">Geometría</h2>
+          <span class="sec-flecha" aria-hidden="true">▾</span>
+        </summary>
+        <div class="seccion-cuerpo">
+        <div class="subtema" data-buscar="figuras 2d y clasificación">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Figuras 2D y clasificación</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>G</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Figuras 2D y clasificación" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Figuras 2D y clasificación.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Figuras bidimensionales: clasificar por atributos.</p><div class="celda-pie"><span class="horas">4 h</span></div></td><td class="celda-repaso" data-nivel="2"><p class="celda-txt">Repaso incluido en figuras compuestas.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Ángulos; rectas paralelas y perpendiculares.</p><div class="celda-pie"><span class="horas">6 h</span></div></td><td class="vacia" data-nivel="4"><span class="sr-only">No se aborda en este nivel.</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="perímetro y área básica">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Perímetro y área básica</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>MD · G</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Perímetro y área básica" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Perímetro y área básica.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Perímetro de polígonos; área de rectángulos y triángulos.</p><div class="celda-pie"><span class="horas">6 + 8 h</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Área de figuras compuestas.</p><div class="celda-pie"><span class="horas">8 h</span></div></td><td class="celda-repaso" data-nivel="3"><p class="celda-txt">Incluido en Pitágoras y semejanza.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="celda-repaso" data-nivel="4"><p class="celda-txt">Figuras compuestas 3D (incluido en volumen).</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="medidas y conversiones">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Medidas y conversiones</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>MD</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Medidas y conversiones" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Medidas y conversiones.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Sistema inglés y métrico: longitud, peso, capacidad y tiempo.</p><div class="celda-pie"><span class="horas">10 h</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Conversiones métricas y del sistema usual.</p><div class="celda-pie"><span class="horas">6 h</span></div></td><td class="vacia" data-nivel="3"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-repaso" data-nivel="4"><p class="celda-txt">Aplicadas en problemas de volumen y modelado.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="círculo: circunferencia y área">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Círculo: circunferencia y área</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>G</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Círculo: circunferencia y área" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Círculo: circunferencia y área.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Circunferencia y área del círculo con π.</p><div class="celda-pie"><span class="horas">8 h</span></div></td><td class="celda-repaso" data-nivel="3"><p class="celda-txt">Repaso incluido en área de figuras compuestas.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="celda-repaso" data-nivel="4"><p class="celda-txt">Incluido en volumen de esferas y conos.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="teorema de pitágoras">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Teorema de Pitágoras</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>G</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Teorema de Pitágoras" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Teorema de Pitágoras.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Lados desconocidos de triángulos rectángulos; aplicaciones.</p><div class="celda-pie"><span class="horas">8 h</span></div></td><td class="celda-repaso" data-nivel="4"><p class="celda-txt">Repaso en geometría analítica (distancia) y volumen 3D.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="semejanza y escala">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Semejanza y escala</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>G · RP</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Semejanza y escala" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Semejanza y escala.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Semejanza y dibujos a escala; teorema de Thales.</p><div class="celda-pie"><span class="horas">6 h</span></div></td><td class="celda-repaso" data-nivel="4"><p class="celda-txt">Aplicado en modelado y funciones.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="volumen (prismas y cilindros)">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Volumen (prismas y cilindros)</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>G</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Volumen (prismas y cilindros)" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Volumen (prismas y cilindros).</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Prismas rectangulares y triangulares; cilindros.</p><div class="celda-pie"><span class="horas">8 h</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Repaso; esferas, conos y pirámides.</p><div class="celda-pie"><span class="horas">8 h</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="geometría analítica (plano cartesiano)">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Geometría analítica (plano cartesiano)</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>G</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Geometría analítica (plano cartesiano)" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Geometría analítica (plano cartesiano).</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Plano cartesiano básico (pares ordenados).</p></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="3"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Sistema rectangular; pendiente y ecuación de la recta.</p><div class="celda-pie"><span class="horas">4 + 8 h</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div></div>
+      </details>
+      <details class="seccion-grande" id="funciones">
+        <summary>
+          <span class="sec-num" style="background:#be123c" aria-hidden="true">5</span>
+          <h2 class="sec-titulo">Funciones y modelado</h2>
+          <span class="sec-flecha" aria-hidden="true">▾</span>
+        </summary>
+        <div class="seccion-cuerpo">
+        <div class="subtema" data-buscar="patrones y relaciones básicas">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Patrones y relaciones básicas</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>OA · F</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Patrones y relaciones básicas" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Patrones y relaciones básicas.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Identificar y extender patrones numéricos y de figuras.</p><div class="celda-pie"><span class="horas">4 h</span></div></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-repaso" data-nivel="3"><p class="celda-txt">Relaciones lineales (incluidas en ecuaciones y desigualdades).</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Relaciones frente a funciones; notación f(x); dominio y rango.</p><div class="celda-pie"><span class="horas">6 h</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="funciones lineales y tasa de cambio">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Funciones lineales y tasa de cambio</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>F</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Funciones lineales y tasa de cambio" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Funciones lineales y tasa de cambio.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-repaso" data-nivel="2"><p class="celda-txt">Proporciones directas como caso especial de función lineal.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="celda-repaso" data-nivel="3"><p class="celda-txt">Ecuaciones lineales en una variable (base para funciones).</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Pendiente como tasa de cambio; tasa de cambio promedio.</p><div class="celda-pie"><span class="horas">4 + 8 h</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="funciones cuadráticas">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Funciones cuadráticas</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>F</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Funciones cuadráticas" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Funciones cuadráticas.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="3"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Gráficas de parábolas; vértice y eje de simetría; intercepciones.</p><div class="celda-pie"><span class="horas">incl. en 14 h</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="funciones exponenciales y logarítmicas">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Funciones exponenciales y logarítmicas</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>F</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Funciones exponenciales y logarítmicas" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Funciones exponenciales y logarítmicas.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-repaso" data-nivel="2"><p class="celda-txt">Interés simple como introducción al crecimiento (base conceptual).</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="vacia" data-nivel="3"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Gráficas exponenciales; crecimiento y decaimiento; introducción a las logarítmicas.</p><div class="celda-pie"><span class="horas">incl. en 14 h</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div></div>
+      </details>
+      <details class="seccion-grande" id="estadistica">
+        <summary>
+          <span class="sec-num" style="background:#166534" aria-hidden="true">6</span>
+          <h2 class="sec-titulo">Estadística y probabilidad</h2>
+          <span class="sec-flecha" aria-hidden="true">▾</span>
+        </summary>
+        <div class="seccion-cuerpo">
+        <div class="subtema" data-buscar="tablas y gráficas básicas">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Tablas y gráficas básicas</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>MD · SP</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Tablas y gráficas básicas" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Tablas y gráficas básicas.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Tablas simples; gráficas de barras y de líneas.</p><div class="celda-pie"><span class="horas">6 + 10 h</span></div></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="3"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="4"><span class="sr-only">No se aborda en este nivel.</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="gráficos circulares">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Gráficos circulares</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>SP</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Gráficos circulares" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Gráficos circulares.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Leer e interpretar gráficos circulares.</p><div class="celda-pie"><span class="horas">4 h</span></div></td><td class="vacia" data-nivel="3"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="4"><span class="sr-only">No se aborda en este nivel.</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="medidas de tendencia central">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Medidas de tendencia central</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>SP</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Medidas de tendencia central" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Medidas de tendencia central.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Media, mediana y moda; rango; media ponderada.</p><div class="celda-pie"><span class="horas">8 h</span></div></td><td class="celda-repaso" data-nivel="3"><p class="celda-txt">Repaso en el contexto de histogramas y diagramas de caja.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="vacia" data-nivel="4"><span class="sr-only">No se aborda en este nivel.</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="diagramas de caja e histogramas">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Diagramas de caja e histogramas</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>SP</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Diagramas de caja e histogramas" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Diagramas de caja e histogramas.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Diagramas de caja y bigotes; histogramas; forma, centro y dispersión.</p><div class="celda-pie"><span class="horas">8 h</span></div></td><td class="vacia" data-nivel="4"><span class="sr-only">No se aborda en este nivel.</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="probabilidad simple">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Probabilidad simple</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>SP</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Probabilidad simple" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Probabilidad simple.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">P = casos favorables / casos totales; espacio muestral.</p><div class="celda-pie"><span class="horas">4 h</span></div></td><td class="celda-repaso" data-nivel="3"><p class="celda-txt">Repaso en probabilidad compuesta.</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="vacia" data-nivel="4"><span class="sr-only">No se aborda en este nivel.</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="probabilidad compuesta y combinatoria">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Probabilidad compuesta y combinatoria</h3>
+            <span class="std-num" title="Standard Number (dominio del estándar)">Standard&nbsp;No.: <strong>SP</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Probabilidad compuesta y combinatoria" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Probabilidad compuesta y combinatoria.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Principio fundamental del conteo; permutaciones y combinaciones; con y sin reemplazo.</p><div class="celda-pie"><span class="horas">4 + 4 h</span></div></td><td class="vacia" data-nivel="4"><span class="sr-only">No se aborda en este nivel.</span></td></tr></tbody>
+            </table>
+          </div>
+        </div></div>
+      </details>
+
+  </main>
+
+  <footer class="pie">
+    <p>Documento de referencia curricular · Spanish ASE Mathematics, Niveles 1–4 · City Colleges of Chicago, Adult Education.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var secciones = Array.prototype.slice.call(document.querySelectorAll("details.seccion-grande"));
+  document.getElementById("abrir-todo").addEventListener("click", function () { secciones.forEach(function (d) { d.open = true; }); });
+  document.getElementById("cerrar-todo").addEventListener("click", function () { secciones.forEach(function (d) { d.open = false; }); });
+
+  Array.prototype.forEach.call(document.querySelectorAll(".nav-chip"), function (b) {
+    b.addEventListener("click", function () {
+      var t = document.getElementById(b.getAttribute("data-target"));
+      if (t) { t.open = true; t.scrollIntoView({behavior:"smooth", block:"start"}); }
+    });
+  });
+
+  if (location.hash) {
+    var dest = document.getElementById(location.hash.slice(1));
+    if (dest && dest.tagName === "DETAILS") { dest.open = true; }
+  }
+
+  var input = document.getElementById("buscador");
+  var info = document.getElementById("buscar-info");
+  var subtemas = Array.prototype.slice.call(document.querySelectorAll(".subtema"));
+  function normaliza(s) { return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
+  function quitarMarcas(el) {
+    Array.prototype.forEach.call(el.querySelectorAll("mark"), function (m) { m.replaceWith(document.createTextNode(m.textContent)); });
+    el.normalize();
+  }
+  function resaltar(titulo, q) {
+    var nodo = titulo.firstChild; if (!nodo || nodo.nodeType !== 3) return;
+    var txt = nodo.nodeValue, idx = normaliza(txt).indexOf(q); if (idx < 0) return;
+    var frag = document.createDocumentFragment();
+    frag.appendChild(document.createTextNode(txt.slice(0, idx)));
+    var mk = document.createElement("mark"); mk.textContent = txt.slice(idx, idx + q.length); frag.appendChild(mk);
+    frag.appendChild(document.createTextNode(txt.slice(idx + q.length)));
+    titulo.replaceChild(frag, nodo);
+  }
+  input.addEventListener("input", function () {
+    var raw = input.value.trim(), q = normaliza(raw);
+    subtemas.forEach(function (st) { quitarMarcas(st.querySelector(".subtema-titulo")); });
+    if (q === "") {
+      subtemas.forEach(function (st) { st.classList.remove("oculto"); });
+      secciones.forEach(function (d) { d.classList.remove("oculto"); });
+      info.textContent = ""; return;
+    }
+    var total = 0;
+    secciones.forEach(function (d) {
+      var vis = 0;
+      Array.prototype.forEach.call(d.querySelectorAll(".subtema"), function (st) {
+        if (normaliza(st.getAttribute("data-buscar")).indexOf(q) >= 0) {
+          st.classList.remove("oculto"); resaltar(st.querySelector(".subtema-titulo"), q); vis++; total++;
+        } else { st.classList.add("oculto"); }
+      });
+      if (vis > 0) { d.classList.remove("oculto"); d.open = true; } else { d.classList.add("oculto"); }
+    });
+    info.textContent = total === 0 ? "Sin coincidencias para «" + raw + "»."
+      : total + (total === 1 ? " subtema encontrado." : " subtemas encontrados.");
+  });
+})();
+</script>
+</body>
+</html>
