@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curriculum Plan — Spanish ASE Math 4 (Level 4)</title>
+  <style>
+    :root {
+      --t1:  #1a237e; --t1bg: #e8eaf6;
+      --t2:  #004d40; --t2bg: #e0f2f1;
+      --t3:  #bf360c; --t3bg: #fbe9e7;
+      --t4:  #880e4f; --t4bg: #fce4ec;
+      --t5:  #37474f; --t5bg: #eceff1;
+      --t6:  #1b5e20; --t6bg: #e8f5e9;
+      --t7:  #4a148c; --t7bg: #f3e5f5;
+      --t8:  #b71c1c; --t8bg: #ffebee;
+      --acento: #c62828;
+      --bg:   #f5f7fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      margin: 0; background: var(--bg); color: #222;
+      line-height: 1.55; font-size: 16px;
+    }
+    .contenedor { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+    header.principal {
+      background: linear-gradient(135deg, #7f0000 0%, #c62828 50%, #e53935 100%);
+      color: #fff; padding: 36px 32px; border-radius: 14px;
+      margin-bottom: 24px; box-shadow: 0 4px 14px rgba(183,28,28,.28);
+    }
+    header.principal h1 { margin: 0 0 8px; font-size: 28px; font-weight: 700; }
+    header.principal .meta { font-size: 14px; opacity: .92; margin-top: 8px; }
+    header.principal .ged-badge {
+      display: inline-block; background: #fff3; border: 2px solid #fff8;
+      border-radius: 8px; padding: 6px 14px; margin-top: 10px;
+      font-size: 13px; font-weight: 700; letter-spacing: .5px;
+    }
+
+    .intro {
+      background: #fff; padding: 20px 24px; border-radius: 10px;
+      border-left: 5px solid var(--acento); margin-bottom: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
+    }
+    .intro h2 { margin-top: 0; color: var(--acento); font-size: 20px; }
+    .intro p { margin: 8px 0; }
+
+    .tabla-resumen {
+      width: 100%; border-collapse: collapse; background: #fff;
+      border-radius: 10px; overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05); margin-bottom: 32px; font-size: 14px;
+    }
+    .tabla-resumen th, .tabla-resumen td {
+      padding: 10px 12px; text-align: left;
+      border-bottom: 1px solid #eee; vertical-align: top;
+    }
+    .tabla-resumen th {
+      background: #37474f; color: #fff; font-weight: 600;
+      font-size: 13px; text-transform: uppercase; letter-spacing: .4px;
+    }
+    .tabla-resumen tr:last-child td { border-bottom: none; }
+    .tabla-resumen td.num { text-align: center; width: 44px; }
+    .pildora {
+      display: inline-block; padding: 2px 10px; border-radius: 12px;
+      font-size: 12px; font-weight: 700; color: #fff;
+    }
+    .ged-tag {
+      display: inline-block; background: #c62828; color: #fff;
+      font-size: 11px; font-weight: 700; padding: 1px 7px;
+      border-radius: 4px; margin-left: 6px; vertical-align: middle;
+    }
+
+    details.tema {
+      background: #fff; border-radius: 12px; margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07); overflow: hidden;
+      border-top: 6px solid #ccc;
+    }
+    details.tema > summary {
+      padding: 20px 24px; cursor: pointer; list-style: none;
+      background: var(--bgtema, #eceff1); outline: none;
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    details.tema > summary::-webkit-details-marker { display: none; }
+    details.tema > summary .chevron {
+      font-size: 20px; flex-shrink: 0; margin-top: 2px;
+      transition: transform .25s;
+    }
+    details.tema[open] > summary .chevron { transform: rotate(90deg); }
+    details.tema > summary .sum-body { flex: 1; }
+    details.tema > summary h2 {
+      margin: 0 0 5px; font-size: 21px; font-weight: 700;
+      color: var(--coltema, #37474f);
+    }
+    details.tema > summary .subtitulo { font-size: 14px; color: #555; font-weight: 500; }
+    details.tema > summary .standards { font-size: 12px; color: #666; margin-top: 6px; font-style: italic; }
+
+    details.tema.t1 { border-top-color: var(--t1); }
+    details.tema.t1 > summary { background: var(--t1bg); }
+    details.tema.t1 > summary h2 { color: var(--t1); }
+    details.tema.t2 { border-top-color: var(--t2); }
+    details.tema.t2 > summary { background: var(--t2bg); }
+    details.tema.t2 > summary h2 { color: var(--t2); }
+    details.tema.t3 { border-top-color: var(--t3); }
+    details.tema.t3 > summary { background: var(--t3bg); }
+    details.tema.t3 > summary h2 { color: var(--t3); }
+    details.tema.t4 { border-top-color: var(--t4); }
+    details.tema.t4 > summary { background: var(--t4bg); }
+    details.tema.t4 > summary h2 { color: var(--t4); }
+    details.tema.t5 { border-top-color: var(--t5); }
+    details.tema.t5 > summary { background: var(--t5bg); }
+    details.tema.t5 > summary h2 { color: var(--t5); }
+    details.tema.t6 { border-top-color: var(--t6); }
+    details.tema.t6 > summary { background: var(--t6bg); }
+    details.tema.t6 > summary h2 { color: var(--t6); }
+    details.tema.t7 { border-top-color: var(--t7); }
+    details.tema.t7 > summary { background: var(--t7bg); }
+    details.tema.t7 > summary h2 { color: var(--t7); }
+    details.tema.t8 { border-top-color: var(--t8); }
+    details.tema.t8 > summary { background: var(--t8bg); }
+    details.tema.t8 > summary h2 { color: var(--t8); }
+
+    .lecciones { padding: 14px 20px 18px; }
+
+    details.leccion {
+      border-left: 4px solid #ccc; border-radius: 0 8px 8px 0;
+      background: #fafafa; margin-bottom: 10px; overflow: hidden;
+    }
+    .t1 details.leccion { border-left-color: var(--t1); }
+    .t2 details.leccion { border-left-color: var(--t2); }
+    .t3 details.leccion { border-left-color: var(--t3); }
+    .t4 details.leccion { border-left-color: var(--t4); }
+    .t5 details.leccion { border-left-color: var(--t5); }
+    .t6 details.leccion { border-left-color: var(--t6); }
+    .t7 details.leccion { border-left-color: var(--t7); }
+    .t8 details.leccion { border-left-color: var(--t8); }
+
+    details.leccion > summary {
+      padding: 12px 16px; cursor: pointer; list-style: none;
+      display: flex; align-items: center; gap: 10px; outline: none;
+    }
+    details.leccion > summary::-webkit-details-marker { display: none; }
+    details.leccion > summary .chevron-s {
+      font-size: 13px; transition: transform .2s; flex-shrink: 0;
+    }
+    details.leccion[open] > summary .chevron-s { transform: rotate(90deg); }
+    details.leccion > summary h3 {
+      margin: 0; font-size: 16px; color: #263238; font-weight: 600; flex: 1;
+    }
+    details.leccion > summary .dur {
+      font-size: 12px; color: #888; font-style: italic; white-space: nowrap;
+    }
+
+    .leccion-body { padding: 10px 18px 16px 18px; }
+    .obj {
+      font-size: 14px; color: #37474f; margin: 0 0 12px;
+      padding: 8px 12px; background: #fff;
+      border-radius: 6px; border: 1px solid #e0e0e0;
+    }
+    .componente {
+      margin: 8px 0; padding-left: 26px; position: relative;
+      font-size: 14px; line-height: 1.55;
+    }
+    .componente::before { position: absolute; left: 0; top: 0; font-size: 15px; }
+    .componente.material::before  { content: '📐'; }
+    .componente.practica::before  { content: '💬'; }
+    .componente.quiz::before      { content: '✅'; }
+    .componente.rubrica::before   { content: '📊'; }
+    .componente strong { color: #263238; font-weight: 600; }
+
+    .notas {
+      background: #fff8e1; border-left: 4px solid #f9a825;
+      padding: 14px 18px; margin: 8px 0 24px;
+      border-radius: 0 8px 8px 0; font-size: 14px;
+    }
+    .notas strong { color: #e65100; }
+    .notas li { margin-bottom: 6px; }
+
+    footer {
+      text-align: center; padding: 24px; color: #666;
+      font-size: 13px; margin-top: 16px; border-top: 1px solid #ddd;
+    }
+
+    @media print {
+      body { background: #fff; }
+      details.tema, details.leccion { box-shadow: none; border: 1px solid #ccc; }
+    }
+  
+    /* Visually hidden text for screen readers (added for Ally compliance) */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="contenedor">
+
+  <header class="principal">
+    <h1>Curriculum Plan — Mathematics, Level 4</h1>
+    <div class="meta">
+      <strong>Spanish ASE Math 4</strong> · AE 0170-0324 · City Colleges of Chicago<br>
+      96 total hours (48 synchronous + 48 asynchronous) · 16 weeks · NRS Levels 4–5<br>
+      Platform: Brightspace D2L · Prof. José M. Fernández, with Claude
+    </div>
+    <div class="ged-badge">🎓 Capstone course — Complete preparation for the GED® Mathematical Reasoning test</div>
+  </header>
+
+  <section class="intro">
+    <h2>How this plan is organized</h2>
+    <p>Content is distributed across <strong>8 major topics of 12 hours each</strong> (≈ 2 weeks per topic), following the <em>Topical Outline v2</em> and the Student Learning Outcomes. This is the <strong>capstone</strong> level of the sequence: students who complete it are ready to take the GED® Mathematical Reasoning test.</p>
+    <p>Each topic contains <strong>3 lessons</strong> of 4 hours. For every lesson: <strong>📐 Materials/Resources</strong>, <strong>💬 Guided practice</strong>, <strong>✅ Quiz/Assignment</strong> and <strong>📊 Rubric</strong>.</p>
+    <p>Topics 1–2 complete analytic geometry and advanced 3D volume. Topics 3–5 develop higher algebra (polynomials, quadratics, rational expressions). Topics 6–7 cover algebraic systems and the world of functions. Topic 8 integrates the modeling of quadratic and exponential functions with the final project and the GED practice test.</p>
+    <p><strong>Using the accordion:</strong> click a topic heading to expand it; click each lesson to view its components. The first topic is already open.</p>
+  </section>
+
+  <table class="tabla-resumen">
+    <caption class="sr-only">Summary of the eight topics of the Level 4 curriculum plan, with the weeks, hours, and main focus of each.</caption>
+    <thead>
+      <tr><th scope="col">#</th><th scope="col">Topic</th><th scope="col">Weeks</th><th scope="col">Hours</th><th scope="col">Main focus</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#1a237e">1</span></td>
+        <td><strong>Analytic geometry: the coordinate plane, slope, and equations of lines</strong></td>
+        <td>1–2</td><td>12 h</td>
+        <td>Ordered pairs, distance, midpoint; slope; forms of the equation of a line</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#004d40">2</span></td>
+        <td><strong>Advanced 3D volume and introduction to polynomials</strong></td>
+        <td>3–4</td><td>12 h</td>
+        <td>Spheres, cones, pyramids; composite 3D figures; classifying polynomials; adding and subtracting</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#bf360c">3</span></td>
+        <td><strong>Multiplication of polynomials and factoring</strong></td>
+        <td>5–6</td><td>12 h</td>
+        <td>FOIL; special products; greatest common factor; difference of squares; factoring trinomials</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#880e4f">4</span></td>
+        <td><strong>Quadratic equations</strong></td>
+        <td>7–8</td><td>12 h</td>
+        <td>Factoring; completing the square; the quadratic formula; the discriminant; applications</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#37474f">5</span></td>
+        <td><strong>Complex rational expressions</strong></td>
+        <td>9–10</td><td>12 h</td>
+        <td>Simplifying; +, -, ×, ÷ of algebraic fractions; solving rational equations; modeling</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#1b5e20">6</span></td>
+        <td><strong>Systems of linear equations</strong></td>
+        <td>11–12</td><td>12 h</td>
+        <td>Substitution, elimination, graphing; classifying; applications and algebraic modeling</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#4a148c">7</span></td>
+        <td><strong>Systems of inequalities and functions</strong></td>
+        <td>13–14</td><td>12 h</td>
+        <td>Graphing systems of inequalities; relations vs. functions; f(x); average rate of change</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#b71c1c">8</span></td>
+        <td><strong>Function modeling, culminating integrative project, and GED practice test</strong> <span class="ged-tag">GED</span></td>
+        <td>15–16</td><td>12 h</td>
+        <td>Parabolas; exponential functions; logarithmic functions (intro); final project; GED practice test</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOPIC 1 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t1" open>
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Topic 1 · Analytic geometry: the coordinate plane, slope, and equations of lines</h2>
+        <div class="subtitulo">Weeks 1–2 · 12 hours (6 synchronous + 6 asynchronous)</div>
+        <div class="standards">Standards: G · EE · SLO Geometry (Analytic) 1–3 · Sections 1.1 and 1.2 of the Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 1.1 · The coordinate plane: ordered pairs, distance, and midpoint</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students graph ordered pairs in all four quadrants, calculate the distance between two points using the formula derived from the Pythagorean Theorem (d = √[(x₂-x₁)² + (y₂-y₁)²]), calculate the midpoint of a segment (M = ((x₁+x₂)/2, (y₁+y₂)/2)), and identify geometric figures in the coordinate plane.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> grid paper with clearly marked axes; a map of Chicago on a grid to give context to "coordinates"; point cards for graphing; the distance and midpoint formulas derived from the Pythagorean Theorem (a link back to L3); MyOpenMath. <em>Modality:</em> the map as context before the mathematical abstraction.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The city grid" — students work with a coordinate map of a fictional city: how far is the library from the hospital? what is the exact midpoint between two schools? Constructing figures: graph a triangle from three given points and calculate its perimeter using the distance formula. Asynchronous: 10 exercises in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 3 on graphing and identifying points, 3 on calculating the distance between two points, 2 on calculating the midpoint, 2 applied (the perimeter of a figure in the plane). TI-30XS calculator allowed. Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> basic analytic geometry (3 criteria × 4 levels): graphs ordered pairs correctly in all 4 quadrants · applies the distance formula without substitution errors · calculates the midpoint correctly and interprets it geometrically.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 1.2 · Slope: concept, formula, and interpretation</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students calculate the slope of a line from its graph (rise/run) and from two points (m = (y₂-y₁)/(x₂-x₁)); interpret slope as a rate of change ($ per hour, meters per second, cost per unit); identify lines with positive, negative, zero, and undefined slope; and compare the slopes of two lines to determine which is steeper.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> graphs of real situations with interpretable slopes (gasoline price vs. liters, wages vs. hours); the quadrant rule for identifying the sign of the slope visually; the formula m = Δy/Δx; MyOpenMath. <em>Modality:</em> slope as "change per unit" before the algebraic formula.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Ramp, price, and speed" — students calculate the slope in 6 real situations (an accessibility ramp, the price of electricity per kWh, the speed of a car in km/h) and interpret its meaning. Activity: given m = 3/5, how many different lines can have that slope? (infinitely many). What distinguishes them? (the intercept). Asynchronous: 10 exercises in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 3 on calculating slope from a graph, 3 from two points, 2 on identifying the type (positive/negative/zero/undefined), 2 on interpreting slope in context. Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> slope (3 criteria × 4 levels): calculates the slope correctly (rise ÷ run; Δy ÷ Δx) · identifies the type of slope from the graph or from the points · interprets slope as a rate of change with units appropriate to the context.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 1.3 · Equations of lines: slope-intercept, point-slope, and standard form</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students write the equation of a line in slope-intercept form (y = mx + b) given the slope and the intercept; use point-slope form (y - y₁ = m(x - x₁)) given a point and the slope or given two points; convert among standard form (Ax + By = C), point-slope, and slope-intercept; and write the equations of parallel and perpendicular lines.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> table of the three forms of the equation of a line with examples of converting among them; the properties of parallel lines (equal slopes) and perpendicular lines (negative reciprocal slopes: m₁ × m₂ = -1); Steck-Vaughn GED Mathematics; MyOpenMath. <em>Modality:</em> the form y = mx + b as the starting point; the others as transformations of it.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The function GPS" — students receive data from a linear situation (taxi fare: $2.50 flag drop + $1.80 per km) and write the equation in all three forms. They then determine whether two lines are parallel, perpendicular, or neither. GED practice: 4 GED-style questions on equations of lines. Asynchronous: 12 exercises in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 questions in Brightspace — 3 on writing an equation given the slope and intercept, 3 given two points, 3 on converting among forms, 3 on parallel and perpendicular lines. Time: 25 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> equations of lines (4 criteria × 4 levels): writes y = mx + b identifying m and b correctly · applies point-slope form with correct substitution · converts among the three forms without algebraic errors · determines whether two lines are parallel or perpendicular using their slopes.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOPIC 2 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t2">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Topic 2 · Advanced 3D volume and introduction to polynomials</h2>
+        <div class="subtitulo">Weeks 3–4 · 12 hours (6 synchronous + 6 asynchronous)</div>
+        <div class="standards">Standards: G · A · SLO Geometry 5–6 · SLO Higher Algebra 1 · Sections 1.3 and 2.1 of the Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 2.1 · Volume of spheres, cones, and pyramids</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students calculate the volume of spheres (V = 4/3 πr³), cones (V = 1/3 πr²h), and pyramids (V = 1/3 × base area × h) using the formulas from the GED formula sheet; solve for r or h when the volume is known; and solve applied problems (the capacity of a spherical tank, the volume of an ice cream cone, the amount of material for a pyramid).</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> the official GED Mathematical Reasoning formula sheet (the same one students will receive on the exam); the relationships V_cone = (1/3) V_cylinder and V_pyramid = (1/3) V_prism; TI-30XS calculator; MyOpenMath. <em>Modality:</em> use the GED formula sheet starting now — build the habit of locating the formula on the sheet before solving.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Architecture and design" — students calculate: how many liters of water fit in a spherical tank with a radius of 1.2 m? how many cm³ of ice cream fit in a cone with a radius of 4 cm and a height of 10 cm? how many m³ of stone were used in the Great Pyramid of Giza (base 230 m × 230 m, height 146 m)? Asynchronous: 8 exercises in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 3 on the volume of spheres, 3 on cones, 3 on pyramids, 1 on solving for r or h. The GED formula sheet and the TI-30XS calculator are allowed. Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> advanced 3D volume (3 criteria × 4 levels): locates and applies the correct formula from the GED sheet · substitutes the dimensions correctly and calculates with π · states the result in cubic units with appropriate precision.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 2.2 · Composite 3D figures and surface area</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students calculate the volume of composite 3D figures (prism + hemisphere, cylinder + cone, etc.) by adding or subtracting partial volumes; calculate the lateral surface area of cylinders, cones, and pyramids; and solve basic optimization problems (minimizing material for a given volume).</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> real images of farm silos (cylinder + cone), medicine capsules (cylinder + two hemispheres), coffee cups (truncated cylinder); the GED formula sheet; MyOpenMath; Steck-Vaughn GED Mathematics. <em>Modality:</em> decompose the 3D figure into simple solids before calculating.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The farmer's silo" — students calculate the total volume of a silo (a cylinder with a radius of 3 m and a height of 8 m + a cone on top with a height of 2 m) and how many tons of corn it holds (density provided). Surface area problem: how much paint do I need for the exterior of the cylinder? Asynchronous: 6 composite figure problems + 2 on surface area in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 8 questions in Brightspace — 4 on the volume of composite 3D figures, 2 on surface area, 2 on contextual applications (material cost, storage capacity). Calculator and formula sheet allowed. Time: 25 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> composite 3D figures (3 criteria × 4 levels): decomposes the figure correctly, identifying its parts · adds or subtracts the partial volumes correctly · calculates the surface area using the correct lateral formula.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 2.3 · Polynomials: classification, addition, subtraction, and basic multiplication</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students classify polynomials (monomial, binomial, trinomial; degree of the polynomial); add and subtract polynomials by combining like terms; multiply a monomial by a polynomial using the distributive property; and evaluate a polynomial by substituting a numerical value.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> terminology chart: degree of a term, degree of the polynomial, leading coefficient; polynomial cards for classification; MyOpenMath: polynomials lesson. <em>Modality:</em> the analogy with like terms in linear algebra — "you already know how to combine 3x + 5x; now you will combine 3x² + 5x²."</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The algebraic perimeter" — students express the perimeter of a polygon whose sides are given as polynomial expressions and simplify it. They then multiply monomial × binomial and monomial × trinomial in 6 exercises. Evaluation activity: what is the perimeter if x = 4? Asynchronous: 10 exercises in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 2 on classifying and determining the degree, 3 on adding/subtracting polynomials, 3 on monomial × polynomial, 2 on evaluating with a given value. Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> basic polynomials (3 criteria × 4 levels): classifies the polynomial correctly (name and degree) · combines like terms correctly in addition/subtraction · applies the distributive property in monomial × polynomial without sign errors.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOPIC 3 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t3">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Topic 3 · Multiplication of polynomials and factoring</h2>
+        <div class="subtitulo">Weeks 5–6 · 12 hours (6 synchronous + 6 asynchronous)</div>
+        <div class="standards">Standards: A · SLO Higher Algebra 1–2 · Sections 2.1 and 2.2 of the Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 3.1 · Multiplying binomials: FOIL and special products</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students multiply binomials using the FOIL method (First, Outer, Inner, Last); apply the three special products: (a+b)² = a²+2ab+b², (a-b)² = a²-2ab+b², and (a+b)(a-b) = a²-b²; and recognize these patterns in given expressions in order to shorten the computation.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> the area model (a rectangle divided into 4 parts) for visualizing FOIL before the algorithm; table of the three special products with a demonstration by FOIL; MyOpenMath. <em>Modality:</em> visual area model → mechanical FOIL → recognizing the special products in order to use the shortcut.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Can I use a shortcut?" — students receive 12 products of binomials and classify them: general FOIL or a special product? They then apply the appropriate method. Verification: expand (x+5)² with FOIL and with the special product — do they give the same result? Asynchronous: 10 exercises in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 questions in Brightspace — 5 on general FOIL, 3 on (a±b)², 4 on (a+b)(a-b). Time: 20 min. No calculator.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> multiplication of polynomials (3 criteria × 4 levels): applies FOIL correctly with all 4 products · identifies and uses the appropriate special product · simplifies by combining like terms in the result.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 3.2 · Factoring: greatest common factor and difference of squares</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students factor by extracting the greatest common factor from all terms (identifying the GCF of the coefficients and the lowest exponent of each variable); factor differences of perfect squares (a²-b² = (a+b)(a-b)); and check the factorization by expanding to recover the original polynomial.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> checking strategy: factor → expand → is it the same as the original? (always); list of perfect squares up to 225 for reference; MyOpenMath. <em>Modality:</em> factoring as the inverse of multiplication — always check by expanding.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The factor detective" — students identify which type of factoring to apply (GCF or difference of squares) before factoring. 8 polynomials to factor and check. Connection activity: factor x²-25 → what value of x makes the result zero? (preparing for factoring trinomials). Asynchronous: 10 exercises in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 4 on the greatest common factor, 4 on the difference of squares, 2 of mixed type (GCF first, then difference of squares). Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> basic factoring (3 criteria × 4 levels): extracts the GCF correctly (coefficient and variables) · recognizes and identifies the difference of squares · checks the factorization by expanding and recovering the original polynomial.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 3.3 · Factoring trinomials (a=1 and a≠1)</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students factor trinomials of the form x²+bx+c by finding two numbers whose product is c and whose sum is b; factor trinomials of the form ax²+bx+c (a≠1) using factoring by grouping (or the ac product-and-sum method); and combine factoring techniques in expressions that require multiple steps.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> a "two numbers that multiply to ___ and add to ___" table as an organizer; the ac method for a≠1 explained step by step; Steck-Vaughn GED Mathematics; MyOpenMath. <em>Modality:</em> reach fluency factoring with a=1 before moving on to a≠1. Always check by expanding.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The factoring ladder" — Level 1: x²+7x+12, x²-5x+6. Level 2: x²-x-12, x²+3x-10. Level 3: 2x²+7x+3, 3x²-10x+8. Level 4: 4x²-12x+9 (a perfect square). Students advance through the levels at their own pace. Asynchronous: 10 trinomials of both types in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 4 with a=1 (with +, -, and mixed signs), 4 with a≠1, 2 on complete factoring (GCF first, then the trinomial). Time: 25 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> factoring trinomials (4 criteria × 4 levels): identifies the two numbers correctly for a=1 · applies the ac method or grouping for a≠1 · combines the GCF with trinomial factoring when necessary · checks the factorization by expanding.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOPIC 4 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t4">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Topic 4 · Quadratic equations</h2>
+        <div class="subtitulo">Weeks 7–8 · 12 hours (6 synchronous + 6 asynchronous)</div>
+        <div class="standards">Standards: A · SLO Higher Algebra 3–4 · Section 2.3 of the Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 4.1 · Solving quadratic equations by factoring</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students solve quadratic equations of the form ax²+bx+c=0 by applying the Zero Product Property (if A·B=0, then A=0 or B=0): they put the equation in standard form, factor the trinomial or the difference of squares, apply the property, and check both solutions by substituting into the original equation.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> the Zero Product Property explained with numerical examples before the algebraic ones; steps: (1) standard form ax²+bx+c=0; (2) factor; (3) set each factor equal to zero; (4) solve each linear equation; (5) check both solutions; MyOpenMath; Steck-Vaughn GED Mathematics. <em>Modality:</em> the 5 steps as a mandatory procedure.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Two solutions, one, or none by factoring?" — students solve 8 quadratic equations by factoring, including cases requiring rearrangement first (x²=9 → x²-9=0; x²=5x → x²-5x=0). Applied problem: the area of a rectangle whose length is 3 more than its width is 54. Asynchronous: 10 equations in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 4 on solving directly, 4 requiring standard form first, 2 applied (area, trajectory). Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> quadratic equations by factoring (4 criteria × 4 levels): puts the equation in standard form · factors correctly · applies the Zero Product Property to each factor · checks both solutions in the original equation.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 4.2 · Completing the square</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students solve quadratic equations by completing the square: (1) put the equation in the form x²+bx = -c, (2) add (b/2)² to both sides, (3) write the left side as (x + b/2)², (4) take the square root of both sides with ±, (5) solve for x; and they understand that completing the square is the origin of the quadratic formula.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> visual area model for completing the square (a square with a rectangle beside it and the "missing space" needed to complete it); laminated 5-step procedure; MyOpenMath. <em>Modality:</em> visual first, algebraic second; demonstrate that the quadratic formula is derived by completing the square on ax²+bx+c=0.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "From the figure to the algorithm" — students complete the square with the visual model for 2 equations, then apply the algebraic procedure to 6 equations. Derivation activity: in pairs, the instructor guides them step by step through the derivation of the quadratic formula by completing the square on the general equation. Asynchronous: 8 equations in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 8 questions in Brightspace — 4 on solving by completing the square (a=1), 2 with a≠1 (dividing by a first), 2 on identifying how much must be added to complete the square. Time: 25 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> completing the square (4 criteria × 4 levels): calculates (b/2)² correctly · maintains equality by adding to both sides · writes the perfect square trinomial as a squared binomial · takes the root with ± and solves correctly for x.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 4.3 · The quadratic formula, the discriminant, and applications</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students apply the quadratic formula x = (-b ± √(b²-4ac)) / 2a to solve any quadratic equation; use the discriminant (b²-4ac) to determine in advance the number of real solutions (2, 1, or 0); and solve applied problems that model situations with quadratic equations (the trajectory of a projectile, area, geometry).</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> the quadratic formula from the official GED sheet; discriminant table (b²-4ac &gt; 0 → 2 solutions, = 0 → 1, &lt; 0 → 0 real solutions); TI-30XS calculator (for the discriminant and the root); Steck-Vaughn GED Mathematics. <em>Modality:</em> calculate the discriminant BEFORE solving — "how many solutions should I expect?"</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The projectile" — given h(t) = -16t²+96t+5 (height in feet, t in seconds), calculate: when does it hit the ground? when does it reach 120 feet? Classify 6 equations by their number of solutions using the discriminant before solving. Compare the 3 methods: when do I prefer factoring? when the formula? Asynchronous: 10 exercises in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 questions in Brightspace — 3 on calculating and interpreting the discriminant, 5 on solving with the quadratic formula, 4 on contextual applications. Calculator and formula sheet allowed. Time: 25 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> the quadratic formula (4 criteria × 4 levels): identifies a, b, and c correctly · calculates the discriminant and interprets the number of solutions · applies the full formula without substitution errors · solves the applied problem and interprets the solutions in context.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOPIC 5 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t5">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Topic 5 · Complex rational expressions</h2>
+        <div class="subtitulo">Weeks 9–10 · 12 hours (6 synchronous + 6 asynchronous)</div>
+        <div class="standards">Standards: A · SLO Higher Algebra 5–7 · Section 2.4 of the Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 5.1 · Simplifying rational expressions: factor and cancel</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students simplify algebraic rational expressions (fractions containing polynomials) by factoring the numerator and the denominator and canceling common factors; identify the excluded values (those that make the denominator zero) and state them alongside the simplified result.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> analogy with numerical fractions: 12/18 = (2·6)/(3·6) = 2/3 → the same with polynomials; warning: only factors (multiplication) may be canceled, never terms (addition/subtraction); MyOpenMath. <em>Modality:</em> the numerical fraction as a model → algebraic fraction with monomials → fraction containing a trinomial.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Which values do I exclude?" — students simplify 8 rational expressions and identify the values excluded from the domain. Trap error: (x+2)/(x²-4) → factor the denominator → can I cancel? Asynchronous: 10 exercises in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 4 on simplifying algebraic fractions, 4 on identifying excluded values, 2 on detecting incorrect cancellations. Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> simplifying rational expressions (3 criteria × 4 levels): factors the numerator and denominator correctly · cancels factors only (not terms) · identifies every value excluded from the domain.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 5.2 · Adding, subtracting, multiplying, and dividing rational expressions</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students multiply algebraic fractions (factor → cancel → multiply); divide (multiply by the reciprocal); add and subtract with identical denominators; and add and subtract with unlike denominators by finding the LCM of the polynomial denominators and rewriting with a common denominator.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> procedure for addition/subtraction with unlike denominators (an exact parallel to numerical fractions); methods for finding the LCM of algebraic expressions; MyOpenMath. <em>Modality:</em> every operation is modeled first with numerical fractions, then with algebraic ones of the same type.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Four algebraic stations" — the class rotates through 4 stations: (1) multiplying, (2) dividing, (3) adding with like denominators, (4) adding with unlike denominators. 3 problems per station. Pair work with cross-checking. Asynchronous: 12 mixed exercises in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 questions in Brightspace — 3 on multiplication, 3 on division, 3 on addition/subtraction with like denominators, 3 with unlike denominators. Time: 30 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> operations with rational expressions (4 criteria × 4 levels): multiplies by factoring and canceling before multiplying · inverts correctly when dividing · finds the LCM of the denominators · adds/subtracts by rewriting with a common denominator without errors.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 5.3 · Solving equations with rational expressions and modeling</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students solve equations containing algebraic fractions by multiplying both sides by the LCM of all the denominators to eliminate them, check that the solutions are not excluded values (extraneous solutions), and apply rational equations to modeling problems (work rates, mixtures, distance-rate-time variants).</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> the LCM method for "clearing" algebraic denominators; checking for extraneous solutions; 6 classic GED applied problems (working together: if A takes 3 h and B takes 4 h alone, how long together?); MyOpenMath; Steck-Vaughn GED Mathematics. <em>Modality:</em> rational equation → multiply by the LCM → linear or quadratic equation → check.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Working together?" — students solve 4 work-rate problems with the equation 1/a + 1/b = 1/t and 4 distance/speed problems with variations (with and against the current). They identify and discard extraneous solutions. Asynchronous: 8 problems in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 4 on solving rational equations, 2 on identifying extraneous solutions, 4 applied (work, mixtures, distance). Calculator allowed. Time: 25 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> rational equations (4 criteria × 4 levels): multiplies correctly by the LCM to eliminate denominators · solves the resulting equation · verifies that the solutions are not excluded values · models and solves an applied problem with a rational equation.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOPIC 6 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t6">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Topic 6 · Systems of linear equations</h2>
+        <div class="subtitulo">Weeks 11–12 · 12 hours (6 synchronous + 6 asynchronous)</div>
+        <div class="standards">Standards: A · SLO Systems 1–5 · Section 3.1 of the Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 6.1 · Solving systems of equations by substitution</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students solve systems of two linear equations in two variables using the substitution method: solve one equation for one variable, substitute into the other, solve for the first variable, and then calculate the second; they check the solution in BOTH original equations.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> 5-step procedure: (1) solve for one variable; (2) substitute into the other equation; (3) solve for that variable; (4) substitute back to find the first; (5) check in both equations; context problems (two prices, two speeds); MyOpenMath. <em>Modality:</em> always choose the variable that is easiest to isolate (the one with a coefficient of 1 or -1).</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The price system" — two stores charge different prices for coffee and tea; from the data of two different purchases, students set up and solve the system to find the price of each product. 6 systems to solve by substitution. Asynchronous: 8 systems in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 8 questions in Brightspace — 3 on solving the system by substitution, 2 on verifying whether an ordered pair is a solution of the system, 3 on setting up and solving a contextual problem. Time: 25 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> substitution (4 criteria × 4 levels): solves for the variable correctly in the chosen equation · substitutes without sign errors · solves for both variables · checks the solution in both original equations.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 6.2 · Solving systems by elimination and classifying systems</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students solve systems by the elimination method (linear combination): they multiply one or both equations so that the coefficients of one variable are opposites and eliminate it by adding; classify systems as independent (1 solution), inconsistent (0 solutions, parallel lines), or dependent (∞ solutions, the same line); and choose the most efficient method based on the structure of the system.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> comparison table of substitution vs. elimination (when is each method easier?); system classification table with examples of all 3 types; MyOpenMath. <em>Modality:</em> eliminate the easiest variable (the one whose coefficients are opposites or easily manipulated).</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "How many solutions does it have?" — students solve 6 systems and classify the result: do the lines intersect at a point, are they parallel, or are they the same line? Method-choice activity: given a system, do I eliminate or substitute? Justify in 2 sentences. Asynchronous: 10 systems in MyOpenMath (a mix of methods).</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 4 on solving by elimination, 3 on classifying the system (type), 3 applied (mixtures, coins, speeds). Time: 25 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> elimination and classification (4 criteria × 4 levels): multiplies the equations by the correct factors to create opposites · eliminates the variable and solves · classifies the system correctly with justification · chooses the most efficient method for a given system.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 6.3 · The graphing method, applications, and modeling with systems</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students solve systems of equations by graphing both lines on the same plane and reading the point of intersection; connect the graphical solution with the algebraic one; model real situations with systems of equations (price-demand equilibrium analysis, the break-even point of costs and revenue, mixture problems); and translate complex word problems into systems of equations.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> grid paper for graphing; table of values for each line; modeling problems in economic and financial contexts; Steck-Vaughn GED Mathematics; MyOpenMath. <em>Modality:</em> graph first to visualize, then verify algebraically.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The break-even point" — a company has fixed + variable costs and a revenue function; students graph both lines, find the break-even point, and interpret it: how many units must it sell to make money? Word problem: set up two systems from the text and solve them by the preferred method. Asynchronous: 6 systems in MyOpenMath, including 2 with graphs.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 3 on identifying the solution of a system from its graph, 3 on setting up the system from a word problem, 4 on solving and modeling. Calculator allowed. Time: 25 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> modeling with systems (4 criteria × 4 levels): graphs both lines correctly and reads the point of intersection · connects the graphical solution with the algebraic one · correctly translates a word problem into a system of two equations · interprets the solution of the system in the context of the problem.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOPIC 7 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t7">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Topic 7 · Systems of inequalities and functions</h2>
+        <div class="subtitulo">Weeks 13–14 · 12 hours (6 synchronous + 6 asynchronous)</div>
+        <div class="standards">Standards: A · F · SLO Systems 6 · SLO Functions 1–3 · Sections 3.2, 4.1, and 4.2 of the Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 7.1 · Systems of linear inequalities: graphing the solution region</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students graph a linear inequality in the plane (solid or dashed line; shading the correct half-plane using a test point); graph a system of two or more inequalities and determine the feasible region (the intersection of the half-planes); verify whether a given point belongs to the solution region; and apply systems of inequalities to basic linear programming problems.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> rule for distinguishing &lt; (dashed) from ≤ (solid); the (0,0) test point method for choosing the correct side of the line; grid paper; MyOpenMath. <em>Modality:</em> graph each inequality separately → identify the intersection → verify a point.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The production budget" — a company can produce x chairs and y tables subject to time and material constraints (a system of inequalities). Students graph the feasible region and determine which (x, y) combinations are viable. They test 4 candidate points. Asynchronous: 6 systems of inequalities in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 8 questions in Brightspace — 3 on graphing an inequality (identifying the correct graph), 3 on determining the feasible region of a system, 2 on verifying whether a point is a solution of the system. Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> systems of inequalities (3 criteria × 4 levels): graphs the line correctly (solid vs. dashed) · identifies the correct half-plane using the test point · determines the feasible intersection region and verifies a point.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 7.2 · Relations vs. functions, f(x) notation, and domain/range</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students distinguish relations from functions (a function assigns exactly one output value to each input); use the vertical line test to identify functions from a graph; use f(x) notation to evaluate functions; identify the domain and range of a function from a table, graph, or equation; and classify linear, quadratic, exponential, and rational functions by their form.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> function machine diagram (input → rule → output); illustrated vertical line test; correspondence table with examples of functions and non-functions; MyOpenMath. <em>Modality:</em> the function machine as a metaphor before the formal definition.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Function or not?" — students classify 10 relations (tables, graphs, mapping diagrams) as function/not a function. They then evaluate f(x) = 2x²-3x+1 for x = 0, 1, -2, 1/2. They identify the domain and range of 4 functions. Activity: compare f(3) vs. f(-3) across different types of function. Asynchronous: 10 exercises in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 3 on identifying function/not a function (table, graph), 4 on evaluating f(x) for different types of function, 3 on domain and range. Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> basic functions (3 criteria × 4 levels): applies the definition of a function correctly (the vertical line test and the table test) · evaluates f(x) by substituting and simplifying with PEMDAS · identifies the domain and range correctly from a graph, table, or equation.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 7.3 · Average rate of change and identifying types of functions</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students calculate the average rate of change of a function over an interval ([a,b]) as (f(b)-f(a))/(b-a) and interpret the result in context ($ per year, meters per second); distinguish linear functions (constant rate), quadratic functions (variable rate, parabolic shape), and exponential functions (multiplicative growth) by examining tables and graphs; and connect the slope of a line with the constant rate of change of a linear function.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> comparison table of the three types of function: linear (constant difference in y), quadratic (constant second difference), exponential (constant ratio of change); the average rate of change formula; MyOpenMath; Steck-Vaughn GED Mathematics. <em>Modality:</em> build tables for all three types and observe the pattern before the formal classification.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Investment, free fall, and going viral" — students calculate the average rate of change in three situations: (1) a savings account with simple interest (linear), (2) the height of an object in free fall (quadratic), (3) a viral social media post (exponential). They classify 6 data tables by type of function. Asynchronous: 8 exercises in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 4 on calculating the average rate of change over an interval, 3 on classifying the type of function from a table, 3 on interpreting the rate in context. Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> rate of change (3 criteria × 4 levels): calculates (f(b)-f(a))/(b-a) correctly · interprets the result with units and meaning in context · classifies the function as linear, quadratic, or exponential based on the pattern of differences or ratios.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOPIC 8 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t8">
+    <summary>
+      <span class="chevron">▶</span>
+      <div class="sum-body">
+        <h2>Topic 8 · Function modeling, culminating integrative project, and GED practice test <span class="ged-tag">GED</span></h2>
+        <div class="subtitulo">Weeks 15–16 · 12 hours (6 synchronous + 6 asynchronous)</div>
+        <div class="standards">Standards: F · SLO Functions 4–8 · Section 4.3 of the Topical Outline · GED Mathematical Reasoning</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 8.1 · Quadratic functions: the parabola, the vertex, and the intercepts</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students graph quadratic functions f(x)=ax²+bx+c by identifying the vertex (x=-b/2a; y=f(-b/2a)), the axis of symmetry (x=-b/2a), and the intercepts with the axes (finding the x-intercepts with the quadratic formula; finding the y-intercept by setting x=0); determine whether the parabola opens upward (a&gt;0) or downward (a&lt;0); and use the vertex to solve maximum/minimum problems.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> table of values for graphing parabolas; the connection between the quadratic formula (Topic 4) and the x-intercepts of the parabola; the vertex formula; grid paper; Steck-Vaughn GED Mathematics; MyOpenMath. <em>Modality:</em> build the table → graph → identify the vertex and axis → confirm with the formula.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The projectile and the profit" — (1) h(t)=-16t²+64t+5: graph it, find the maximum height (the vertex) and when it hits the ground (the x-intercepts); (2) P(x)=-2x²+120x-800: how many units maximize the profit? Asynchronous: 8 quadratic functions in MyOpenMath, including graphing and identifying key features.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 3 on calculating the vertex and the axis of symmetry, 3 on graphing and identifying key features, 4 on maximum/minimum problems (projectile, profit, maximum area). Calculator allowed. Time: 25 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> quadratic functions (4 criteria × 4 levels): calculates the vertex correctly (x=-b/2a → substitute) · identifies whether the parabola opens upward or downward · correctly finds the x-intercepts and the y-intercept · interprets the vertex as a maximum or minimum in the context of the problem.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 8.2 · Exponential functions, growth/decay, and an introduction to logarithms</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students graph and characterize exponential functions f(x)=a·bˣ (growth: b&gt;1; decay: 0&lt;b&lt;1); apply exponential growth/decay in real contexts (compound interest, half-life, population growth); and are introduced to the logarithmic function as the inverse of the exponential (if b^y=x, then log_b(x)=y), connecting base-10 logarithms with the calculator.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> table of values for y=2ˣ vs. y=f(x)=(1/2)ˣ to see growth vs. decay; the compound interest formula A=P(1+r/n)^(nt); an introduction to the logarithm as "to what exponent must the base be raised to obtain x?"; TI-30XS calculator (log key); MyOpenMath. <em>Modality:</em> the exponential function in a real context before the formal definition of the logarithm.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The bank and time" — students calculate how $1,000 grows at 5% interest compounded annually over 1, 5, 10, and 20 years, graph the points, and describe the shape. Then: in how many years does it double? (an introduction to the logarithm as the answer). Calculate log₁₀(1000)=3 with the TI-30XS. Asynchronous: 6 exercises on exponential functions + 4 on basic logarithms in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 4 on graphing/characterizing exponential functions, 4 on applied problems (compound interest, population, half-life), 2 introducing logarithms (what exponent...?). Calculator allowed. Time: 25 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> exponential functions (3 criteria × 4 levels): distinguishes growth from decay by the value of the base · applies the compound interest formula or an equivalent in a real context · connects the logarithmic function with the exponential as inverses.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s">▶</span>
+          <h3>Lesson 8.3 · Culminating integrative project + GED Mathematical Reasoning practice test <span class="ged-tag">GED</span></h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objective:</strong> Students present the culminating integrative project "My Mathematical Model" (a real situation modeled with a quadratic or exponential function + a graph + algebraic analysis + a written interpretation), answer 10 advanced-level GED Mathematical Reasoning questions, and demonstrate command of the official GED formula sheet and the TI-30XS calculator under exam conditions.</div>
+          <div class="componente material"><strong>Materials/Resources:</strong> the official GED Mathematical Reasoning formula sheet (used exactly as on the exam); template for the final project "My Mathematical Model"; a bank of 10 advanced-level GED-style questions (a mix of all Level 4 topics); GED strategy guide (time management, eliminating answer choices, using the formula sheet); Steck-Vaughn GED Mathematics. <em>Modality:</em> simulated exam conditions (timed, with only the permitted materials).</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "It's exam time!" — Oral presentation of the project (3–4 min per student, with questions from the group). A 10-question GED-style practice test under real conditions (45 min, TI-30XS calculator and formula sheet only). Analysis of the results: which topics do I need to review? An individual final preparation plan. Asynchronous: students upload the project to Brightspace and complete the summative final assessment.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> <strong>Summative final assessment</strong> — 30 questions in Brightspace covering ALL topics from the 4 levels with emphasis on those of Level 4: 5 on analytic geometry and 3D volume, 5 on polynomials and factoring, 5 on quadratic equations, 5 on rational expressions, 5 on systems of equations, 5 on functions and modeling. Time: 90 min (the GED time limit). 1 attempt. TI-30XS calculator and the GED formula sheet are allowed.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> <strong>analytic rubric for the final project "My Mathematical Model"</strong> (5 criteria × 4 levels = 20 pts): (1) a real situation, well described and justified as quadratic or exponential · (2) a correct graph with all labels (axes, scale, units, name of the function) · (3) correct algebraic analysis (vertex, growth rate, value at a specific point) · (4) a coherent, complete written interpretation in the real context · (5) a clear, precise, confident oral presentation using appropriate mathematical vocabulary. The project grade (20 pts) is combined with the summative assessment for the final course grade.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- NOTES -->
+  <div class="notas">
+    <strong>📝 Pedagogical notes for review:</strong>
+    <ul>
+      <li><strong>50/50 distribution:</strong> each lesson = 2 sync. hours + 2 async. hours = 4 h. Total: 48 sync. + 48 async. = 96 h.</li>
+      <li><strong>GED formula sheet:</strong> beginning with Topic 2, always use the official sheet exactly as it appears on the exam. The goal is for students to arrive at the GED already accustomed to using it efficiently, without losing time hunting for formulas.</li>
+      <li><strong>TI-30XS calculator:</strong> this level makes extensive use of the advanced functions: x², √x, xⁿ, log, and basic graphing functions. Always remember: CLEAR THE MEMORY before each calculation.</li>
+      <li><strong>Vertical coherence:</strong> the 4 curriculum plans (L1–L4) form a coherent system. Topic 1.3 of L4 (equations of lines) connects with Topic 5 of L3 (linear algebra). Topic 4 of L4 (quadratics) uses the factoring from Topic 3 of L4. Topic 8 integrates the entire system.</li>
+      <li><strong>GED practice test in L8.3:</strong> this is the first time students face real exam conditions (timing, permitted materials, a single attempt). Prepare the group emotionally with a motivational talk before the practice test.</li>
+      <li><strong>Brightspace HTML:</strong> solid hex colors only; no rgba() or gradients; &lt;details&gt;/&lt;summary&gt; for accordions; do not use &lt;label&gt;. The red ged-tag can be adapted as &lt;span class="pildora"&gt; for Brightspace.</li>
+    </ul>
+  </div>
+
+  <footer>
+    Curriculum plan prepared for Prof. José M. Fernández (Truman College, CCC) — with Claude.<br>
+    Spanish ASE Math 4 · AE 0170-0324 · Adult Education · Brightspace D2L<br>
+    🎓 Completing this level = ready for the GED® Mathematical Reasoning test
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<!--
+  Curriculum Plan — Spanish ASE Math: Level 1
+  © José M. Fernández, ABE/ASE Math Master Teacher,
+  Harry S. Truman College — City Colleges of Chicago.
+  License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+  International (CC BY-NC-SA 4.0)
+  https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
+-->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Complete curriculum plan for Spanish ASE Math: Level 1 (AE 0170-0321), 8 topics and 24 lessons, 96 hours, for Brightspace D2L at City Colleges of Chicago." />
+  <meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago" />
+  <meta name="license" content="CC BY-NC-SA 4.0" />
+  <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" />
+  <title>Curriculum Plan — Spanish ASE Math 1 (Level 1)</title>
+  <style>
+    :root {
+      --t1:   #1565c0; --t1bg:  #e3f2fd;
+      --t2:   #00695c; --t2bg:  #e0f2f1;
+      --t3:   #283593; --t3bg:  #e8eaf6;
+      --t4:   #6a1b9a; --t4bg:  #f3e5f5;
+      --t5:   #a13d00; --t5bg:  #fff3e0;
+      --t6:   #4e342e; --t6bg:  #efebe9;
+      --t7:   #37474f; --t7bg:  #eceff1;
+      --t8:   #1b5e20; --t8bg:  #e8f5e9;
+      --acento: #0d47a1;
+      --bg:   #f5f7fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      margin: 0; background: var(--bg); color: #222;
+      line-height: 1.55; font-size: 16px;
+    }
+    .contenedor { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+    /* ── HEADER ──────────────────────────────────────────────── */
+    header.principal {
+      background: #0d47a1;
+      background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #283593 100%);
+      color: #fff; padding: 36px 32px; border-radius: 14px;
+      margin-bottom: 24px; box-shadow: 0 4px 14px rgba(13,71,161,.25);
+    }
+    header.principal h1 { margin: 0 0 8px; font-size: 28px; font-weight: 700; }
+    header.principal .meta { font-size: 14px; opacity: .92; margin-top: 8px; }
+
+    /* ── INTRO ───────────────────────────────────────────────── */
+    .intro {
+      background: #fff; padding: 20px 24px; border-radius: 10px;
+      border-left: 5px solid var(--acento); margin-bottom: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
+    }
+    .intro h2 { margin-top: 0; color: var(--acento); font-size: 20px; }
+    .intro p  { margin: 8px 0; }
+
+    /* ── TABLA RESUMEN ───────────────────────────────────────── */
+    .tabla-resumen {
+      width: 100%; border-collapse: collapse; background: #fff;
+      border-radius: 10px; overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05); margin-bottom: 32px; font-size: 14px;
+    }
+    .tabla-resumen th, .tabla-resumen td {
+      padding: 10px 12px; text-align: left;
+      border-bottom: 1px solid #eee; vertical-align: top;
+    }
+    .tabla-resumen th {
+      background: #37474f; color: #fff; font-weight: 600;
+      font-size: 13px; text-transform: uppercase; letter-spacing: .4px;
+    }
+    .tabla-resumen tr:last-child td { border-bottom: none; }
+    .tabla-resumen td.num { text-align: center; width: 44px; }
+    .pildora {
+      display: inline-block; padding: 2px 10px; border-radius: 12px;
+      font-size: 12px; font-weight: 700; color: #fff;
+    }
+
+    /* ── ACORDEÓN TEMA (nivel 1) ──────────────────────────────── */
+    details.tema {
+      background: #fff; border-radius: 12px; margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.07); overflow: hidden;
+      border-top: 6px solid #ccc;
+    }
+    details.tema > summary {
+      padding: 20px 24px; cursor: pointer; list-style: none;
+      background: var(--bgtema, #eceff1);
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    details.tema > summary::-webkit-details-marker { display: none; }
+    details.tema > summary .chevron {
+      font-size: 20px; flex-shrink: 0; margin-top: 2px;
+      transition: transform .25s;
+    }
+    details.tema[open] > summary .chevron { transform: rotate(90deg); }
+    details.tema > summary .sum-body { flex: 1; }
+    details.tema > summary h2 {
+      margin: 0 0 5px; font-size: 21px; font-weight: 700;
+      color: var(--coltema, #37474f);
+    }
+    details.tema > summary .subtitulo { font-size: 14px; color: #555; font-weight: 500; }
+    details.tema > summary .standards { font-size: 12px; color: #555; margin-top: 6px; font-style: italic; }
+
+    /* color variants */
+    details.tema.t1 { border-top-color: var(--t1); }
+    details.tema.t1 > summary { background: var(--t1bg); }
+    details.tema.t1 > summary h2 { color: var(--t1); }
+    details.tema.t2 { border-top-color: var(--t2); }
+    details.tema.t2 > summary { background: var(--t2bg); }
+    details.tema.t2 > summary h2 { color: var(--t2); }
+    details.tema.t3 { border-top-color: var(--t3); }
+    details.tema.t3 > summary { background: var(--t3bg); }
+    details.tema.t3 > summary h2 { color: var(--t3); }
+    details.tema.t4 { border-top-color: var(--t4); }
+    details.tema.t4 > summary { background: var(--t4bg); }
+    details.tema.t4 > summary h2 { color: var(--t4); }
+    details.tema.t5 { border-top-color: var(--t5); }
+    details.tema.t5 > summary { background: var(--t5bg); }
+    details.tema.t5 > summary h2 { color: var(--t5); }
+    details.tema.t6 { border-top-color: var(--t6); }
+    details.tema.t6 > summary { background: var(--t6bg); }
+    details.tema.t6 > summary h2 { color: var(--t6); }
+    details.tema.t7 { border-top-color: var(--t7); }
+    details.tema.t7 > summary { background: var(--t7bg); }
+    details.tema.t7 > summary h2 { color: var(--t7); }
+    details.tema.t8 { border-top-color: var(--t8); }
+    details.tema.t8 > summary { background: var(--t8bg); }
+    details.tema.t8 > summary h2 { color: var(--t8); }
+
+    /* ── ACORDEÓN LECCIÓN (nivel 2 — anidado) ─────────────────── */
+    .lecciones { padding: 14px 20px 18px; }
+
+    details.leccion {
+      border-left: 4px solid #ccc; border-radius: 0 8px 8px 0;
+      background: #fafafa; margin-bottom: 10px; overflow: hidden;
+    }
+    .t1 details.leccion { border-left-color: var(--t1); }
+    .t2 details.leccion { border-left-color: var(--t2); }
+    .t3 details.leccion { border-left-color: var(--t3); }
+    .t4 details.leccion { border-left-color: var(--t4); }
+    .t5 details.leccion { border-left-color: var(--t5); }
+    .t6 details.leccion { border-left-color: var(--t6); }
+    .t7 details.leccion { border-left-color: var(--t7); }
+    .t8 details.leccion { border-left-color: var(--t8); }
+
+    details.leccion > summary {
+      padding: 12px 16px; cursor: pointer; list-style: none;
+      display: flex; align-items: center; gap: 10px;
+    }
+    details.leccion > summary::-webkit-details-marker { display: none; }
+    details.leccion > summary .chevron-s {
+      font-size: 13px; transition: transform .2s; flex-shrink: 0;
+    }
+    details.leccion[open] > summary .chevron-s { transform: rotate(90deg); }
+    details.leccion > summary h3 {
+      margin: 0; font-size: 16px; color: #263238; font-weight: 600; flex: 1;
+    }
+    details.leccion > summary .dur {
+      font-size: 12px; color: #555; font-style: italic; white-space: nowrap;
+    }
+
+    /* ── CONTENIDO DE LECCIÓN ─────────────────────────────────── */
+    .leccion-body { padding: 10px 18px 16px 18px; }
+    .obj {
+      font-size: 14px; color: #37474f; margin: 0 0 12px;
+      padding: 8px 12px; background: #fff;
+      border-radius: 6px; border: 1px solid #e0e0e0;
+    }
+    .obj h4 {
+      margin: 0 0 4px; font-size: 14px; font-weight: 700; color: #263238;
+    }
+    .obj p { margin: 0; }
+    .componente {
+      margin: 8px 0; padding-left: 26px; position: relative;
+      font-size: 14px; line-height: 1.55;
+    }
+    .componente::before { position: absolute; left: 0; top: 0; font-size: 15px; }
+    .componente.material::before  { content: '📐'; content: '📐' / ''; }
+    .componente.practica::before  { content: '💬'; content: '💬' / ''; }
+    .componente.quiz::before      { content: '✅'; content: '✅' / ''; }
+    .componente.rubrica::before   { content: '📊'; content: '📊' / ''; }
+    .componente strong { color: #263238; font-weight: 600; }
+
+    /* ── NOTAS ───────────────────────────────────────────────── */
+    .notas {
+      background: #fff8e1; border-left: 4px solid #f9a825;
+      padding: 14px 18px; margin: 8px 0 24px;
+      border-radius: 0 8px 8px 0; font-size: 14px;
+    }
+    .notas strong { color: #8f3a00; }
+    .notas li { margin-bottom: 6px; }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      text-align: center; padding: 24px; color: #555;
+      font-size: 13px; margin-top: 16px; border-top: 1px solid #ddd;
+    }
+
+    /* ── ACCESIBILIDAD (DUA / WCAG 2.1 AA) ───────────────────── */
+    /* Indicador de foco visible para navegación por teclado */
+    summary:focus-visible {
+      outline: 3px solid #0d47a1;
+      outline-offset: -3px;
+    }
+    summary:focus:not(:focus-visible) { outline: none; }
+
+    /* Enlace de salto al contenido */
+    .salto {
+      position: absolute; left: -9999px;
+      background: #0d47a1; color: #fff; padding: 10px 16px;
+      border-radius: 0 0 8px 0; z-index: 100; font-weight: 600;
+    }
+    .salto:focus { left: 0; top: 0; }
+
+    /* Botones abrir/cerrar todo */
+    .controles { margin: 0 0 18px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .controles button {
+      font-family: inherit; font-size: 14px; font-weight: 600;
+      padding: 9px 18px; border: 2px solid #0d47a1; border-radius: 8px;
+      background: #fff; color: #0d47a1; cursor: pointer;
+    }
+    .controles button:hover { background: #0d47a1; color: #fff; }
+    .controles button:focus-visible { outline: 3px solid #0d47a1; outline-offset: 2px; }
+
+    /* Título de la tabla resumen */
+    .tabla-resumen caption {
+      caption-side: top; text-align: left; font-weight: 700;
+      font-size: 15px; color: #0d47a1; padding: 12px 12px 10px;
+      background: #fff;
+    }
+
+    /* Encabezados de sección */
+    h2.seccion { color: #0d47a1; font-size: 20px; margin: 0 0 12px; }
+
+    /* Respeta la preferencia de movimiento reducido */
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      details.tema { box-shadow: none; border: 1px solid #ccc; }
+      details.tema[open], details.leccion[open] { display: block; }
+    }
+  </style>
+</head>
+<body>
+<a class="salto" href="#contenido">Skip to main content</a>
+<div class="contenedor">
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="principal">
+    <h1>Curriculum Plan — Mathematics, Level 1</h1>
+    <div class="meta">
+      <strong>Spanish ASE Math: Level 1</strong> · AE 0170-0321 · City Colleges of Chicago<br>
+      96 total hours (48 synchronous + 48 asynchronous) · 16 weeks · NRS Levels 1–2<br>
+      Platform: Brightspace D2L · Prof. José M. Fernández, with Claude
+    </div>
+  </header>
+
+  <main id="contenido">
+
+  <!-- ═══════════════ INTRO ═══════════════ -->
+  <section class="intro">
+    <h2>How this plan is organized</h2>
+    <p>Content is distributed across <strong>8 major topics of 12 hours each</strong> (≈ 2 weeks per topic),
+       following the progression of the <em>Topical Outline v2</em> of the 16-week syllabus and the Student Learning Outcomes.</p>
+    <p>Each topic contains <strong>3 lessons</strong> of 4 hours each. Four components are specified for every lesson:
+       <strong>📐 Materials/Resources</strong>, <strong>💬 Guided practice</strong>,
+       <strong>✅ Quiz/Assignment</strong> and <strong>📊 Rubric</strong>.</p>
+    <p>Topics 1–4 develop arithmetic (whole numbers, decimals, fractions).
+       Topics 5–6 work on reasoning, patterns, and measurement.
+       Topics 7–8 close with geometry, data, and the culminating integrative project.</p>
+    <p><strong>Using the accordion:</strong> click each topic heading to expand it. Inside, click each lesson to view its components. The first topic is already open.</p>
+  </section>
+
+  <!-- ═══════════════ SUMMARY TABLE ═══════════════ -->
+  <h2 class="seccion">Summary of the eight topics</h2>
+
+  <table class="tabla-resumen">
+    <caption>Distribution of the eight Level 1 topics: number, title, weeks, hours, and main focus of each.</caption>
+    <thead>
+      <tr>
+        <th scope="col">Topic number</th>
+        <th scope="col">Topic</th>
+        <th scope="col">Weeks</th>
+        <th scope="col">Hours</th>
+        <th scope="col">Main focus</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#1565c0">1</span></td>
+        <th scope="row"><strong>Whole numbers: place value and addition/subtraction</strong></th>
+        <td>1–2</td><td>12 h</td>
+        <td>Read, write, compare, round; addition and subtraction with regrouping; word problems</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#00695c">2</span></td>
+        <th scope="row"><strong>Multiplication and division of whole numbers</strong></th>
+        <td>3–4</td><td>12 h</td>
+        <td>Standard algorithm; remainders; properties; word problems</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#283593">3</span></td>
+        <th scope="row"><strong>Decimals: concepts and operations</strong></th>
+        <td>5–6</td><td>12 h</td>
+        <td>Read, write, compare; the 4 operations; fraction-decimal equivalences</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#6a1b9a">4</span></td>
+        <th scope="row"><strong>Fractions: concepts and operations</strong></th>
+        <td>7–8</td><td>12 h</td>
+        <td>Equivalent fractions, simplifying; +, -, ×; mixed numbers; word problems</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#a13d00">5</span></td>
+        <th scope="row"><strong>Patterns and one-step word problems</strong></th>
+        <td>9–10</td><td>12 h</td>
+        <td>Number and figure patterns; algebraic language; simple unknowns</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#4e342e">6</span></td>
+        <th scope="row"><strong>Measurement systems and time</strong></th>
+        <td>11–12</td><td>12 h</td>
+        <td>U.S. customary system, metric system, time, temperature; conversions and applications</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#37474f">7</span></td>
+        <th scope="row"><strong>Geometry: 2D figures, perimeter, and area</strong></th>
+        <td>13–14</td><td>12 h</td>
+        <td>Classifying figures; perimeter; area of rectangles and triangles</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#1b5e20">8</span></td>
+        <th scope="row"><strong>Tables, graphs, and culminating integrative project</strong></th>
+        <td>15–16</td><td>12 h</td>
+        <td>Data tables; bar and line graphs; final project; intro to the GED</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="controles">
+    <button type="button" id="btn-abrir">Expand all topics</button>
+    <button type="button" id="btn-cerrar">Collapse all topics</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOPIC 1 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t1" open>
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Topic 1 · Whole numbers: place value and addition/subtraction</h2>
+        <div class="subtitulo">Weeks 1–2 · 12 hours (6 synchronous + 6 asynchronous)</div>
+        <div class="standards">Standards: NBT · SLO Number &amp; Operations 1–3 · Sections 1–2 of the Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 1.1 · Place value: reading, writing, comparing, and rounding</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students read, write, compare, and order whole numbers up to the billions, identify the value of each digit in its position, and round to any indicated place.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> place value chart (ones → billions) printed and in Brightspace; number cards (manipulative); MyOpenMath: introductory place value lesson. <em>Modality:</em> the instructor demonstrates with the projected chart; students complete their own chart on paper.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "What is it worth?" — each student receives a 6–9 digit number and must break it down position by position in the chart. In pairs, one student dictates a number and the other writes it in words and then in standard notation. Asynchronous: 3 exercises on ordering from greatest to least and rounding to the nearest ten, hundred, and thousand in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 multiple-choice questions in Brightspace — 3 on identifying place value, 2 on writing the number in words, 2 on comparing with &gt; / &lt; / =, 3 on rounding to the indicated place. Time: 15 min. 2 attempts.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> place value checklist (4 criteria): correctly identifies ones/tens/hundreds/thousands ✓ · writes the number in words with no major errors ✓ · compares two numbers using the correct symbol ✓ · rounds correctly to the indicated place ✓.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 1.2 · Addition and subtraction of multi-digit whole numbers</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students add and subtract multi-digit whole numbers using the standard algorithm with regrouping (carrying and borrowing), and check their answers using the inverse operation.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> Base-10 Blocks (unit, ten, and hundred blocks) for modeling regrouping visually; MyOpenMath: addition and subtraction with the standard algorithm. <em>Modality:</em> demonstration with physical blocks → work on aligned grid paper → without grid paper.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Three rounds": Round 1 (no regrouping, 4 operations), Round 2 (with regrouping, 6 operations), Round 3 (checking with the inverse operation). Pair activity: one student solves, the other verifies. Asynchronous: 8 addition and subtraction problems in MyOpenMath with immediate feedback.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 problems in Brightspace — 4 on addition without regrouping, 4 on addition with regrouping, 4 on subtraction with regrouping (including zeros in the subtrahend). Time: 20 min. 2 attempts. Calculator allowed for checking only.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> analytic process rubric (4 criteria × 4 levels): aligns digits correctly · applies regrouping in addition · applies borrowing in subtraction · checks the result with the inverse operation.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 1.3 · Addition and subtraction in word problems</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students identify whether a word problem calls for addition or subtraction, translate it into an equation, solve it with the standard algorithm, and check that the answer makes sense in context.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> "key word" cards (total, in all, how many more, how many are left, difference, increased, decreased); 10 authentic real-context problems (household expenses, distances between cities, populations); Steck-Vaughn GED Mathematics. <em>Modality:</em> reading the problem aloud → identifying key words → setting up the equation.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "4 steps" (modeled first by the instructor, then in pairs): (1) I read and underline what is being asked; (2) I identify the operation; (3) I solve; (4) Does it make sense? Each pair solves 4 problems using the 4-step card as a guide. Asynchronous: Brightspace discussion — each student posts a word problem they invented using data from their own life and solves a classmate's problem.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 multiple-choice word problems in Brightspace — a mix of addition, subtraction, and combined (2-operation) problems. Some include unnecessary information the student must disregard. Time: 25 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> problem-solving process rubric (4 steps × 4 levels = 16 pts): (1) correctly identifies what is being asked · (2) selects the correct operation · (3) calculates without arithmetic errors · (4) interprets and states the answer with units and context.</div>
+        </div>
+      </details>
+
+    </div><!-- fin lecciones tema 1 -->
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOPIC 2 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t2">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Topic 2 · Multiplication and division of whole numbers</h2>
+        <div class="subtitulo">Weeks 3–4 · 12 hours (6 synchronous + 6 asynchronous)</div>
+        <div class="standards">Standards: NBT · OA · SLO Number &amp; Operations 1–2 · Section 2 of the Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 2.1 · Multiplication of multi-digit whole numbers</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students multiply multi-digit whole numbers using the standard algorithm, master the multiplication tables through 12×12, and apply the commutative, associative, and distributive properties to simplify calculations.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> 12×12 multiplication table (as a reference, not as a crutch); MyOpenMath: multi-digit multiplication lesson. <em>Modality:</em> demonstration of the algorithm with 2×2, 3×2, and 3×3 digit numbers; identifying when the distributive property simplifies mental calculation.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Multiplication ladder" — students begin with 2×1 digits, then 3×1, then 2×2, then 3×2. Multiplication Bingo game (5×5 cards, the instructor calls out factors). Asynchronous: 10 problems in MyOpenMath with feedback at each step of the algorithm.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 problems in Brightspace — 3 with 2×1 digits, 4 with 3×2 digits, 3 with 4×2 digits, 2 applying the distributive property. Time: 20 min. No calculator.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> analytic rubric for the multiplication algorithm (4 criteria × 4 levels): masters basic tables through 12×12 · applies partial products correctly · adds partial products without errors · checks with estimation (round and multiply).</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 2.2 · Division of whole numbers and interpreting the remainder</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students divide whole numbers by 1- and 2-digit divisors using long division, identify the remainder, and interpret it correctly according to the context of the problem (how many are left over? how many complete groups?)</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> the "DMSR" model (Divide, Multiply, Subtract, Repeat) with a visual mnemonic; physical counters for modeling groups and remainders; MyOpenMath: long division lesson. <em>Modality:</em> physical modeling with counters → algorithm on paper → MyOpenMath.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "What do I do with the remainder?" — students solve 6 division problems and for each one decide, according to context: (a) report it as a remainder, (b) round the quotient up, (c) discard it. Example: "24 chairs in groups of 5 — how many complete groups? how many chairs are left over?" Asynchronous: 8 problems in MyOpenMath with varied contexts.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 problems in Brightspace — 5 on long division (result only), 5 on interpreting the remainder in context. Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> process and comprehension rubric (3 criteria × 4 levels): applies the DMSR algorithm correctly · calculates the remainder without errors · interprets the remainder according to the context of the problem.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 2.3 · Multiplication and division in word problems; properties</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students identify whether a word problem calls for multiplication or division, apply the properties of operations to simplify calculations, and solve one-step problems with all 4 operations.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> key word cards for multiplication (for each, total number of groups, times as many) and division (shared equally, per person, how many groups); Steck-Vaughn GED Mathematics; properties chart (commutative, associative, distributive, zero, and identity). <em>Modality:</em> whole-group think-aloud analysis of each problem before solving individually.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Do I multiply or divide?" — cards with 12 problems; students sort them first (×  ÷) before solving them. Then they check with the inverse operation. Properties activity: which property helps me calculate 25 × 4 mentally? Asynchronous: discussion — create a multiplication or division word problem with real data (work, cooking, travel).</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 word problems in Brightspace — 4 on multiplication, 4 on division, 4 mixed (× and ÷ combined). 2 additional questions on properties (which property does this equation illustrate?). Time: 25 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> problem solving (4 criteria × 4 levels): identifies the correct operation · sets up the equation · calculates without errors · checks and interprets the result with units.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOPIC 3 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t3">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Topic 3 · Decimals: concepts and operations</h2>
+        <div class="subtitulo">Weeks 5–6 · 12 hours (6 synchronous + 6 asynchronous)</div>
+        <div class="standards">Standards: NBT · SLO Number &amp; Operations 4, 9 · Section 3 of the Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 3.1 · Reading, writing, comparing, ordering, and rounding decimals</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students read and write decimals to the thousandths, compare and order them on the number line, and round them to the nearest tenth or hundredth.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> extended place value chart (ones · tenths · hundredths · thousandths); number line from 0 to 2 marked in tenths; cards with real product prices (0.99, 1.25, 2.50...). <em>Modality:</em> connect decimals to real money — "how much is $1.75?" — before abstract notation.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Put the right price on it" — cards of items with prices out of order; students arrange them from least to greatest and place them on the number line. Rounding exercise: "What does this price round to at the nearest dollar?" Asynchronous: 10 exercises on comparing, ordering, and rounding decimals in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 2 on reading/writing decimals, 2 on place value (what is the value of the 7 in 3.571?), 3 on comparing and ordering, 3 on rounding. Time: 15 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> checklist (4 criteria): correctly reads a 3-place decimal ✓ · identifies the value of a digit in a decimal place ✓ · compares two decimals with &gt; / &lt; / = correctly ✓ · rounds to the indicated place ✓.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 3.2 · Addition, subtraction, multiplication, and division of decimals</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students add, subtract, multiply, and divide decimals by applying the principle of aligning the decimal point in addition/subtraction and the rule for placing the point in multiplication and division. They use the TI-30XS calculator to check their work, not to replace the process.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> grid paper for aligning the decimal point; rules poster: "addition/subtraction → align the point · multiplication → count the decimal places · division → move the point." TI-30XS calculator (instruction: clear the memory before calculating). <em>Modality:</em> every operation is modeled on paper before using the calculator.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Four stations" — the class divides into 4 groups, each at one station (addition, subtraction, multiplication, division of decimals); they rotate every 15 min. At each station: 4 problems without a calculator + verification with the calculator. Asynchronous: 12 varied problems in MyOpenMath with automatic feedback.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 problems without a calculator in Brightspace — 3 on addition, 3 on subtraction, 3 on multiplication, 3 on division with decimals. Time: 25 min. 2 attempts.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> analytic process rubric (4 criteria × 4 levels): aligns the decimal point correctly in addition/subtraction · places the point correctly in multiplication · shifts the point correctly in division · exact result with correct units.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 3.3 · Decimals in context and fraction–decimal equivalences</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students convert common fractions to decimals and vice versa, and solve real-context problems with decimals (prices, distances, measurements, making change).</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> chart of the most common fraction-decimal equivalences (1/2 = 0.5, 1/4 = 0.25, 3/4 = 0.75, 1/3 ≈ 0.333, 1/5 = 0.2...); real receipts and bills as contextual reading material; Steck-Vaughn GED Mathematics. <em>Modality:</em> connect to real shopping experiences before algorithmic conversion.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Grocery shopping" — a shopping simulation with 8 items priced in decimals; students calculate the total, the change from $20, and the price of "half" of each item (fraction → decimal). Asynchronous: "price and fraction" discussion — each student finds a real price in an online store and writes the equivalent fraction.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 4 on fraction↔decimal conversion (no calculator), 6 applied problems with decimals (shopping, distances, measurements). Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> conversion and application (3 criteria × 4 levels): correctly converts fraction → decimal by dividing numerator ÷ denominator · converts decimal → simplified fraction · solves real-context problems with decimals accurately and with units.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOPIC 4 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t4">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Topic 4 · Fractions: concepts and operations</h2>
+        <div class="subtitulo">Weeks 7–8 · 12 hours (6 synchronous + 6 asynchronous)</div>
+        <div class="standards">Standards: NF · SLO Number &amp; Operations 5–9 · Section 4 of the Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 4.1 · Equivalent fractions, simplifying, and comparing</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students identify and generate equivalent fractions using visual models and the algebraic procedure; simplify fractions to lowest terms; compare and order fractions with unlike denominators; and convert between mixed numbers and improper fractions.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> Fraction Towers (physical fraction towers) for visualizing equivalences; fraction number line; MyOpenMath: equivalent fractions lesson. <em>Modality:</em> first with the physical towers → then area diagrams → then the algorithm (× or ÷ numerator and denominator by the same number).</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The fraction fair" — students use the towers to find 3 fractions equivalent to 1/2, 2/3, and 3/4. Then they simplify 8 fractions using the GCF. Mixed↔improper conversion activity with matching cards. Asynchronous: 10 exercises in MyOpenMath on simplifying, comparing, and converting.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 2 on equivalent fractions (write one), 3 on simplifying to lowest terms, 3 on comparing with &gt; / &lt; / = including a mix of fractions and decimals, 2 on converting mixed↔improper. Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> conceptual and procedural (4 criteria × 3 levels): explains with a visual model why two fractions are equivalent · simplifies correctly using the GCF · compares fractions with unlike denominators using the least common denominator · converts between mixed and improper without errors.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 4.2 · Addition, subtraction, and multiplication of fractions</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students add and subtract fractions with like and unlike denominators (including mixed numbers), multiply fractions by whole numbers and by other fractions, and simplify the result to lowest terms.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> area diagrams for visualizing addition and multiplication of fractions; the LCM rule for finding the common denominator; MyOpenMath: lessons on addition/subtraction and multiplication of fractions; Steck-Vaughn GED Mathematics. <em>Modality:</em> visual with diagrams → procedural with the algorithm → contextual with problems.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Kitchen recipe" — students adjust a recipe for ½ a serving and for 3 servings (addition and multiplication of fractions in context). Then they practice 8 mixed operations: 2 addition with like denominators, 2 addition with unlike denominators, 2 subtraction with mixed numbers, 2 multiplication. Asynchronous: 10 problems in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 problems in Brightspace — 3 on addition (like denominators), 3 on addition (unlike denominators), 3 on subtraction with mixed numbers, 3 on multiplication of fractions. Time: 25 min. Always simplify the result.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> analytic rubric for operations with fractions (4 criteria × 4 levels): finds the LCM correctly for unlike denominators · adds/subtracts without numerator errors · multiplies using the rule "numerator × numerator / denominator × denominator" · simplifies the result to lowest terms.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 4.3 · Fractions in word problems</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students identify which fraction operation a word problem calls for, solve it by applying the correct process, and state the answer with units in the context of the problem.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> 10 authentic-context problems (recipes, construction, time, distances); 4-step strategy card adapted to fractions; Steck-Vaughn GED Mathematics. <em>Modality:</em> the instructor solves 2 problems out loud, thinking aloud ("first I identify what is being asked, then..."), and then students solve in pairs.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The carpenter and the cook" — 6 real-context problems with fractions (measuring lumber, calculating ingredients, dividing time). Students work in pairs: one sets up the equation, the other solves, and both verify. Asynchronous: discussion — invent a word problem with fractions based on an everyday situation and solve it.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 word problems in Brightspace — a mix of addition, subtraction, and multiplication of fractions in context. Includes problems with unnecessary information. Time: 25 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> problem solving with fractions (4 steps × 4 levels): identifies the data and what is being asked · selects the correct fraction operation · calculates correctly · states the answer with units and in the context of the problem.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOPIC 5 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t5">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Topic 5 · Mathematical patterns and one-step word problems</h2>
+        <div class="subtitulo">Weeks 9–10 · 12 hours (6 synchronous + 6 asynchronous)</div>
+        <div class="standards">Standards: OA · SLO Operations &amp; Algebraic Thinking 1–4 · Sections 5–6 of the Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 5.1 · Number and figure patterns</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students identify the rule of a number or figure sequence, extend the sequence by at least 3 more terms, and communicate the rule in words.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> cards with number sequences (arithmetic: +3, ×2, -5...) and figure sequences (growing squares); simple input-output tables; MyOpenMath: patterns lesson. <em>Modality:</em> first with physical figures (counters or blocks), then numerically, then with input/output tables.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Guess the rule" — in pairs, one student creates a sequence with a secret rule and the other guesses it in 3 tries or fewer. Then they use input-output tables to record the rule. Whole-group activity: "The classroom pattern" — counting objects in the room that form patterns (rows of chairs, floor tiles). Asynchronous: 8 sequences to identify and extend in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 3 on extending a number sequence, 3 on identifying the missing middle term, 2 on describing the rule in words, 2 on input-output tables. Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> early algebraic thinking (3 criteria × 4 levels): correctly identifies the rule of the sequence · extends the sequence without errors · communicates the rule in clear words.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 5.2 · Algebraic language and simple unknowns</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students translate number phrases into algebraic language, write one-step equations with one unknown (□ or x), solve them using the inverse operation, and check by substituting the value found.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> translation chart (twice x = 2x; five more than n = n + 5; x divided by 3 = x/3); visual equation balance scale; MyOpenMath: one-step equations lesson. <em>Modality:</em> a physical or drawn balance scale before algebraic notation.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The mystery balance" — the instructor places weights (numbers) on one side and a mystery box (□) on the other; students find the value of the box. Translation of 8 phrases into equations and solving them. Checking: "If I substitute my answer for □, does the equation hold?" Asynchronous: 10 exercises in MyOpenMath on translating and solving.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 4 on translating a phrase → equation, 4 on solving the equation, and 2 on checking (given a value, is it the solution?). Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> introduction to algebra (3 criteria × 4 levels): correctly translates the phrase into algebraic language · applies the inverse operation to solve · checks by substituting the value into the original equation.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 5.3 · One-step word problems with the 4 operations</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students identify the correct operation in a word problem involving any of the 4 operations, set up the equation with one unknown, solve it, and check that the answer makes sense.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> complete key word map (all 4 operations); 12 graduated word problems in authentic contexts (work, home, city, sports); Steck-Vaughn GED Mathematics. <em>Modality:</em> sort the problems by type before solving them.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Problem-solving tournament" — students work in teams of 3; each team receives 4 problem cards (one per operation); they must solve them all and explain which operation they used and why. Asynchronous: "My problem of the week" discussion — each student invents a real-life problem, posts it, and solves a classmate's.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 word problems in Brightspace — 3 per operation, presented in random order. Students must also indicate which operation they used (one extra question per problem). Time: 30 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> integrative problem-solving rubric (4 criteria × 4 levels): identifies the correct operation · sets up the appropriate equation or expression · calculates correctly · states the answer with units and meaning in context.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOPIC 6 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t6">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Topic 6 · Measurement systems and time</h2>
+        <div class="subtitulo">Weeks 11–12 · 12 hours (6 synchronous + 6 asynchronous)</div>
+        <div class="standards">Standards: MD · SLO Measurement &amp; Geometry 1–3 · Section 7 of the Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 6.1 · U.S. customary system: length, weight, and capacity</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students identify U.S. customary units for length, weight, and capacity, choose the appropriate unit for each context, and convert between units within the same system using equivalence tables.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> U.S. customary equivalence table (12 in = 1 ft, 3 ft = 1 yd, 5,280 ft = 1 mi · 16 oz = 1 lb, 2,000 lb = 1 ton · 8 oz = 1 cup, 2 cups = 1 pint, 2 pints = 1 qt, 4 qt = 1 gal); physical objects for comparison (an inch, a foot, an empty gallon jug). <em>Modality:</em> measure real objects in the classroom before working on abstract conversions.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The master carpenter" and "The mother in the kitchen" — two scenarios with 5 conversion problems each. Method: "Am I moving to a larger or a smaller unit?" → multiply or divide. Pair work with cross-checking. Asynchronous: 10 conversion exercises in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 4 on choosing the correct unit for the context (inches or miles?), 6 on converting within the U.S. customary system (length, weight, and capacity mixed). Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> practical measurement (3 criteria × 4 levels): identifies the most appropriate unit for the context · converts correctly (multiplies when moving to a smaller unit, divides when moving to a larger one) · states the result with the correct unit.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 6.2 · Metric system, time, and temperature</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students convert between metric units using the prefixes (kilo-, hecto-, deca-, deci-, centi-, milli-), tell time on analog and digital clocks, calculate elapsed time, and convert between °F and °C in everyday contexts.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> "metric staircase" (kilo → milli) with the ×10 and ÷10 rule for each step; analog wall clock; bus/train schedule cards; thermometer with a dual °F/°C scale. <em>Modality:</em> the metric staircase as a permanent visual tool throughout the topic.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The bus trip" — using a real schedule, students calculate: how long does the trip take? What time do I arrive if I leave at 8:45 am and the trip takes 1 h 20 min? Temperature activity: "What should I wear?" — temperature cards in °F and °C that students translate into clothing recommendations. Asynchronous: 8 metric exercises + 4 on time in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 questions in Brightspace — 6 on metric conversions, 4 on time (telling time and calculating elapsed time), 2 on temperature (converting °F ↔ °C with the formula provided). Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> metric and time measurement (3 criteria × 4 levels): applies the metric staircase correctly (×10 or ÷10 per step) · reads an analog clock and calculates elapsed time with and without crossing the hour · interprets a temperature in an everyday context.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 6.3 · Applied measurement problems in real contexts</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students solve applied problems that require selecting the correct unit, performing a conversion, and calculating the answer in an authentic context (cooking, health, construction, travel, work).</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> 10 mixed real-context problems (customary and metric); real product labels (nutrition facts in ounces and grams, instructions in feet and meters); Steck-Vaughn GED Mathematics. <em>Modality:</em> careful reading of the prompt to identify the measurement system in use before solving.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The building technician" — a scenario in which a maintenance technician needs to know how many meters of cable to buy (given in feet), how many pounds their materials weigh (given in kg), and how many hours they will work (schedule in 24-hour format). Asynchronous: discussion — each student brings a measurement problem from their job or daily life and shares it.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 applied problems in Brightspace — a mix of all the measurement types covered in the topic. Time: 25 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> integrative measurement rubric (4 criteria × 4 levels): identifies the correct measurement system · selects the appropriate unit · converts correctly when necessary · calculates the final result with units.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOPIC 7 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t7">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Topic 7 · Geometry: 2D figures, perimeter, and area</h2>
+        <div class="subtitulo">Weeks 13–14 · 12 hours (6 synchronous + 6 asynchronous)</div>
+        <div class="standards">Standards: G · MD · SLO Measurement &amp; Geometry 3–5 · Sections 8–10 of the Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 7.1 · Classifying 2D figures: attributes and vocabulary</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students identify and classify polygons (triangles, quadrilaterals, pentagons, hexagons) by number of sides, type of angles, and side lengths; and distinguish among triangles (equilateral, isosceles, scalene) and quadrilaterals (square, rectangle, rhombus, trapezoid, parallelogram).</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> set of plane geometric figures (tangram or laminated cards); polygon classification chart with definitions and visual examples; MyOpenMath: 2D figures lesson. <em>Modality:</em> physical manipulation of the figures before formal classification.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The figure museum" — students create a "museum placard" for an assigned figure (with its name, number of sides, type of angles, and a real-life example). Classification activity in "decision tree" style (does it have 3 sides? → triangle → are they all equal? → equilateral...). Asynchronous: 10 classification questions in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 4 on identifying the figure from its description, 3 on naming the attributes of a figure shown, 3 on classifying (what kind of triangle/quadrilateral is it?). Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> geometric vocabulary (3 criteria × 4 levels): correctly uses the terms side, vertex, right angle, acute, obtuse · classifies triangles by sides and angles · classifies quadrilaterals accurately.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 7.2 · Perimeter of polygons</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students calculate the perimeter of triangles, rectangles, squares, and irregular polygons using the appropriate formula or the sum of the sides, state the result in linear units, and solve applied problems (fencing, framing, edging).</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> centimeter grid paper for drawing figures; ruler; perimeter formula chart (P = 4s for a square; P = 2l + 2w for a rectangle; P = the sum of all sides for polygons); MyOpenMath. <em>Modality:</em> measure drawn figures with a ruler → calculate with the formula → verify by measuring physically.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The gardener" — students receive the plan of an irregular garden (a 5-sided polygon) and must calculate how many meters of fencing they need. Then they design their own rectangular garden with a given perimeter (e.g., 24 meters): how many different sets of dimensions are possible? Asynchronous: 8 perimeter problems in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions in Brightspace — 3 on calculating the perimeter with all sides given, 3 on finding an unknown side given the perimeter, 4 applied (fencing, framing, installing molding). Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> perimeter calculation (4 criteria × 4 levels): identifies and applies the correct formula · adds all the sides without omitting any · states the result in linear units (cm, m, ft) · solves the applied problem with contextual sense.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 7.3 · Area of rectangles and triangles</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students calculate the area of rectangles, squares, and triangles using the corresponding formulas, state the result in square units, clearly distinguish perimeter from area, and solve applied problems (carpeting, painting, lots).</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> centimeter grid paper (counting squares as a visual demonstration of area before the formula); formulas: A = b × h for a rectangle, A = ½ × b × h for a triangle; MyOpenMath; Steck-Vaughn GED Mathematics. <em>Modality:</em> count squares on the grid → verify with the formula → apply the formula directly.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Apartment remodel" — students receive the plan of a simple apartment (rectangular living room + triangular bedroom) and must calculate: how many m² of hardwood flooring they need for the living room, and how many m² of carpet for the bedroom. Distinction activity: given a rectangle, calculate both perimeter AND area, then explain the difference. Asynchronous: 10 problems in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 questions in Brightspace — 3 on the area of rectangles, 3 on the area of triangles, 3 applied (carpet, wall paint, a lot), 3 on distinguishing perimeter vs. area (which one do I need for fencing? which one for carpeting?). Time: 25 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> analytic area rubric (4 criteria × 4 levels): identifies the base and height correctly · applies the formula without errors · states the result in square units (cm², m², ft²) · distinguishes when to use perimeter and when to use area according to context.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- TOPIC 8 -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <details class="tema t8">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Topic 8 · Tables, graphs, and the culminating integrative project</h2>
+        <div class="subtitulo">Weeks 15–16 · 12 hours (6 synchronous + 6 asynchronous)</div>
+        <div class="standards">Standards: SP · SLO Statistics &amp; Data 1–4 · Sections 11–12 of the Topical Outline</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 8.1 · Reading and interpreting data tables</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students read and interpret data tables with 2–4 columns, answer comprehension questions (locating data, comparing, calculating a total/simple average, finding the maximum and minimum), and explain what the data show in complete sentences.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> 3 real data tables of increasing complexity: (1) a price table for 5 products, (2) a table of temperatures for 7 cities across 3 months, (3) a table of grades for 4 students in 5 subjects; Steck-Vaughn GED Mathematics. <em>Modality:</em> "read the table before reading the questions" — students first describe in their own words what the table shows.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "The data reporter" — in pairs, one student plays the reporter (asking 5 questions about the table) and the other answers using data from the table. Then they switch roles. Calculation activity: find the average and the range of a simple data column (no calculator). Asynchronous: 3 tables with 10 comprehension questions in Brightspace.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 questions about two tables in Brightspace — locating specific data, comparing two values, calculating a column total, identifying the maximum and minimum, and writing a sentence that describes one data point. Time: 20 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> table reading (3 criteria × 4 levels): locates specific data without errors · compares and calculates using the table data correctly · describes in words what the data show using appropriate mathematical language.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 8.2 · Bar graphs and line graphs</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students read and interpret bar graphs (vertical and horizontal) and line graphs, identify the title, axes, and scale, compare values, identify trends (increasing, decreasing, steady), and build a simple bar graph from given data.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> 4 real graphs from newspapers/the internet: 2 bar graphs (vertical and horizontal) and 2 line graphs with time series; grid paper for creating graphs; MyOpenMath. <em>Modality:</em> "read the graph in 5 steps": (1) title, (2) axes and what they measure, (3) scale, (4) read values, (5) overall trend.</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "My graph of the month" — over two weeks, each student collects one daily data point (temperature, daily spending, minutes of study) and records it in a table. In this lesson, they use that data to create their own line graph. They then interpret a bar graph of employment levels in Chicago over the past 6 months. Asynchronous: 10 graph interpretation questions in MyOpenMath.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 questions in Brightspace — 5 about a bar graph, 5 about a line graph, 2 on construction (completing a bar graph with given data). Time: 25 min.</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> graph reading and creation (4 criteria × 4 levels): correctly identifies title, axes, and scale · reads specific values accurately · identifies and describes the trend · builds a correctly labeled bar graph.</div>
+        </div>
+      </details>
+
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lesson 8.3 · Culminating integrative project + introduction to the GED</h3>
+          <span class="dur">4 hours (2 sync. + 2 async.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><h4>Objective</h4><p>Students present the integrative project "My Graph of Life" (personal data table + bar graph + descriptive paragraph + basic calculations) and answer 10 basic-level GED-style questions that combine all the topics of the level.</p></div>
+          <div class="componente material"><strong>Materials/Resources:</strong> template for the "My Graph of Life" project (a table of 5 measurable personal data points, e.g., hours of sleep per day over 5 days, weekly expenses, etc.); 10 basic-level GED-style questions (a mix of arithmetic, fractions, decimals, geometry, and tables/graphs); Steck-Vaughn GED Mathematics. <em>Modality:</em> oral presentation of the project to the group (3–4 min per student).</div>
+          <div class="componente practica"><strong>Guided practice:</strong> "Sharing my graph" — synchronous activity: each student presents their project orally to the group in 3–4 minutes and answers 1–2 questions from classmates. The group gives feedback using the project rubric. Asynchronous: each student uploads their complete project to Brightspace and comments on two classmates' projects using sentence frames ("I understood that... / I want to ask you about... / Your graph shows...").</div>
+          <div class="componente quiz"><strong>Quiz:</strong> <strong>Summative final assessment</strong> — 25 questions in Brightspace covering all topics: 5 on whole number operations, 5 on fractions and decimals, 5 on measurement, 5 on geometry (perimeter and area), 5 on tables and graphs. Time: 60 min. 2 attempts. TI-30XS calculator allowed (clear memory first).</div>
+          <div class="componente rubrica"><strong>Rubric:</strong> <strong>analytic rubric for the final project</strong> (5 criteria × 4 levels = 20 pts): (1) complete and accurate data table · (2) correctly labeled bar graph (title, axes, scale) · (3) descriptive paragraph citing at least 3 data points from the graph · (4) correct calculations (total, average, difference) · (5) clear and audible oral presentation. The project grade (20 pts) is combined with the summative quiz grade.</div>
+        </div>
+      </details>
+
+    </div>
+  </details>
+
+  <!-- ═══════════════ PEDAGOGICAL NOTES ═══════════════ -->
+  <div class="notas">
+    <h2 class="seccion" style="color:#8f3a00;"><span aria-hidden="true">📝</span> Pedagogical notes for review</h2>
+    <ul>
+      <li><strong>50/50 distribution:</strong> each lesson suggests 2 synchronous + 2 asynchronous hours, totaling 4 hours. This matches the 48 + 48 hours of syllabus v2.</li>
+      <li><strong>Alignment with Topical Outline v2:</strong> the 8 pedagogical topics follow the outline's 4 sections exactly (Arithmetic 36 h → Topics 1–4; Patterns 16 h → Topic 5; Measurement 10 h + Geometry 18 h → Topics 6–7; Data 16 h → Topic 8).</li>
+      <li><strong>TI-30XS calculator:</strong> introduced in Topic 3 for checking operations with decimals. Always remember the instruction to clear the memory before calculating.</li>
+      <li><strong>Continuity with Level 2:</strong> this plan respects the longitudinal progression. Complete PEMDAS (with powers and roots), advanced complex fractions, proportions, and simple interest are reserved for Level 2.</li>
+      <li><strong>UDL rubrics:</strong> all follow a simple analytic pattern (3–5 criteria × 3–4 levels) compatible with Brightspace Ally. Use &lt;h2&gt; headings for the criteria in Brightspace.</li>
+      <li><strong>Brightspace HTML:</strong> when porting this plan to Brightspace pages, use only solid hexadecimal colors, with no rgba() or gradients; replace &lt;details&gt;/&lt;summary&gt; with .caja-acordeon + onClick on &lt;div&gt; elements if Brightspace filters out native &lt;details&gt;.</li>
+      <li><strong>Steck-Vaughn:</strong> in a second phase, align each lesson with specific pages of the <em>GED Mathematics</em> workbook so that students have a reference to the physical book.</li>
+    </ul>
+  </div>
+
+  </main>
+
+  <footer>
+    Curriculum plan prepared by José M. Fernández, ABE/ASE Math Master Teacher,<br>
+    Harry S. Truman College — City Colleges of Chicago.<br>
+    Spanish ASE Math: Level 1 · AE 0170-0321 · Adult Education · Brightspace D2L
+    <p>
+      This work is licensed under a
+      <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">
+        Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0)</a>.
+    </p>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var temas = document.querySelectorAll('details.tema');
+    var abrir = document.getElementById('btn-abrir');
+    var cerrar = document.getElementById('btn-cerrar');
+    if (abrir) abrir.addEventListener('click', function () {
+      temas.forEach(function (d) { d.open = true; });
+    });
+    if (cerrar) cerrar.addEventListener('click', function () {
+      temas.forEach(function (d) { d.open = false; });
+    });
+  })();
+</script>
+
+</body>
+</html>
