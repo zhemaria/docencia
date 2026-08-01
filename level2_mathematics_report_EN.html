@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<!--
+  Level 2 Mathematics — Faculty Report — Spanish ASE Math
+  © José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.
+  Licensed under Creative Commons BY-NC-SA 4.0.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 2 Mathematics — Faculty Report — Spanish ASE Math</title>
+  <meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+  <meta name="license" content="CC BY-NC-SA 4.0">
+  <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">
+  <meta name="description" content="Faculty report on Level 2 of the Spanish ASE Math program: characteristics, topics, continuity with Level 1, preparation for Level 3, and the integrative final project.">
+  <style>
+    :root {
+      --tinta:      #1f2937;
+      --acento:     #00504a;
+      --acento2:    #007a70;
+      --acento-cl:  #e3f1ef;
+      --ambar-bg:   #fff3d6;
+      --ambar-tx:   #5c3900;
+      --muted:      #555;
+      --linea:      #dddddd;
+      --bg:         #f4f7f6;
+      /* Per-topic color identities */
+      --t1: #b71c1c; --t1bg: #ffebee;
+      --t2: #4a148c; --t2bg: #f3e5f5;
+      --t3: #1a237e; --t3bg: #e8eaf6;
+      --t4: #004d40; --t4bg: #e0f2f1;
+      --t5: #e65100; --t5bg: #fff3e0;
+      --t6: #33691e; --t6bg: #f1f8e9;
+      --t7: #37474f; --t7bg: #eceff1;
+      --t8: #4e342e; --t8bg: #efebe9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      margin: 0; background: var(--bg); color: var(--tinta);
+      line-height: 1.6; font-size: 16px;
+    }
+    .saltar {
+      position: absolute; left: -999px; top: 0; background: var(--tinta);
+      color: #fff; padding: 10px 16px; z-index: 100; border-radius: 0 0 6px 0;
+    }
+    .saltar:focus { left: 0; }
+    .contenedor { max-width: 980px; margin: 0 auto; padding: 24px; }
+
+    header.principal {
+      background: linear-gradient(135deg, #003b34 0%, #00504a 55%, #007a70 100%);
+      color: #fff; padding: 40px 34px; border-radius: 14px;
+      margin-bottom: 28px; box-shadow: 0 4px 16px rgba(0,64,58,.28);
+    }
+    header.principal .etiqueta {
+      display: inline-block; background: rgba(255,255,255,.16);
+      padding: 4px 14px; border-radius: 20px; font-size: 13px;
+      font-weight: 700; letter-spacing: .6px; text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    header.principal h1 { margin: 0 0 10px; font-size: 30px; font-weight: 700; line-height: 1.2; }
+    header.principal .sub { font-size: 17px; opacity: .95; margin: 0 0 16px; }
+    header.principal .meta { font-size: 13.5px; opacity: .9; border-top: 1px solid rgba(255,255,255,.25); padding-top: 14px; }
+
+    section { margin-bottom: 34px; }
+    h2 {
+      font-size: 23px; color: var(--acento); margin: 0 0 6px;
+      padding-bottom: 10px; border-bottom: 2px solid var(--acento-cl);
+    }
+    h2 .numsec {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px; background: var(--acento); color: #fff;
+      border-radius: 9px; font-size: 16px; margin-right: 12px; vertical-align: middle;
+    }
+    h3 { font-size: 18px; color: var(--acento2); margin: 22px 0 8px; }
+    p { margin: 10px 0; }
+
+    .tarjeta {
+      background: #fff; border-radius: 12px; padding: 22px 26px;
+      box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-top: 14px;
+    }
+
+    /* Key figures */
+    .cifras {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 14px; margin: 18px 0;
+    }
+    .cifra {
+      background: #fff; border-radius: 12px; padding: 18px 16px; text-align: center;
+      box-shadow: 0 1px 5px rgba(0,0,0,.06);
+    }
+    .cifra .n { font-size: 30px; font-weight: 800; color: var(--acento); line-height: 1; }
+    .cifra .l { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+    /* Levels bar */
+    .niveles { display: flex; gap: 10px; margin: 18px 0; flex-wrap: wrap; }
+    .nivel {
+      flex: 1 1 150px; background: #fff; border-radius: 10px; padding: 14px 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06); border-top: 5px solid var(--linea);
+    }
+    .nivel.actual { border-top-color: var(--acento); background: var(--acento-cl); }
+    .nivel .rot { font-weight: 700; font-size: 15px; }
+    .nivel.actual .rot { color: var(--acento); }
+    .nivel .nrs { font-size: 12.5px; color: var(--muted); margin-top: 3px; }
+    .nivel .desc { font-size: 13px; margin-top: 6px; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; background: #fff;
+      border-radius: 10px; overflow: hidden; box-shadow: 0 1px 5px rgba(0,0,0,.06);
+      margin: 16px 0; font-size: 14.5px; }
+    caption {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+    th, td { padding: 11px 14px; text-align: left; border-bottom: 1px solid #eee; vertical-align: top; }
+    thead th { background: var(--tinta); color: #fff; font-size: 13px; text-transform: uppercase; letter-spacing: .4px; }
+    tbody tr:last-child td { border-bottom: none; }
+    td.c { text-align: center; }
+
+    /* Topics table: color bar per topic */
+    .barra { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: middle; }
+
+    /* Two-column continuity */
+    .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 16px; }
+    .duo .col { background: #fff; border-radius: 12px; padding: 20px 22px; box-shadow: 0 1px 5px rgba(0,0,0,.06); }
+    .duo .col h3 { margin-top: 0; }
+    .col.venimos h3 { color: #6a4e00; }
+    .col.anade  h3 { color: var(--acento); }
+    ul.limpia { margin: 8px 0 0; padding-left: 20px; }
+    ul.limpia li { margin-bottom: 8px; }
+    .nuevo { display: inline-block; background: var(--ambar-bg); color: var(--ambar-tx);
+      font-size: 11px; font-weight: 800; padding: 1px 7px; border-radius: 8px; letter-spacing: .4px; margin-left: 4px; }
+
+    /* Flow (connecting thread / preparation) */
+    .flujo { display: flex; align-items: stretch; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+    .paso {
+      flex: 1 1 160px; background: #fff; border-radius: 10px; padding: 14px 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06); border-left: 5px solid var(--acento2); position: relative;
+    }
+    .paso .et { font-size: 12px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: .4px; }
+    .paso .tx { font-size: 14px; margin-top: 4px; }
+    .flecha { align-self: center; color: var(--acento2); font-size: 22px; font-weight: 700; }
+
+    /* Highlight box (project / amber) */
+    .destacado {
+      background: var(--ambar-bg); border-left: 6px solid #f9a825;
+      border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 16px 0; color: #3d2600;
+    }
+    .destacado h3 { color: var(--ambar-tx); margin-top: 0; }
+    .destacado strong { color: var(--ambar-tx); }
+
+    .caja-acento {
+      background: var(--acento-cl); border-left: 6px solid var(--acento);
+      border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 16px 0;
+    }
+    .caja-acento h3 { margin-top: 0; color: var(--acento); }
+
+    footer {
+      text-align: center; padding: 26px 20px; color: var(--muted);
+      font-size: 13px; margin-top: 20px; border-top: 1px solid var(--linea);
+    }
+    footer a { color: var(--acento); }
+
+    @media (max-width: 720px) {
+      .duo { grid-template-columns: 1fr; }
+    }
+    @media print {
+      body { background: #fff; }
+      .tarjeta, .cifra, .nivel, table, .paso, .duo .col { box-shadow: none; border: 1px solid #ccc; }
+      header.principal { box-shadow: none; }
+      .saltar { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="saltar" href="#principal">Skip to main content</a>
+
+  <div class="contenedor">
+    <header class="principal">
+      <span class="etiqueta">Faculty briefing</span>
+      <h1>Level 2 Mathematics: the bridge from arithmetic to algebra</h1>
+      <p class="sub">Spanish ASE Math · City Colleges of Chicago · NRS 2–3 · 96 hours · 16 weeks</p>
+      <p class="meta">Support document for the professional development session · Prof. José M. Fernández, ABE/ASE Math Master Teacher · Harry S. Truman College</p>
+    </header>
+
+    <main id="principal">
+
+      <!-- 0. Purpose -->
+      <section>
+        <div class="caja-acento">
+          <h3>Purpose of this report</h3>
+          <p>This document accompanies the professional development presentation on Level 2 mathematics. It brings together, in a single place, the <strong>characteristics</strong> of the level, the <strong>topics</strong> that make it up, its <strong>continuity with Level 1</strong>, its role in <strong>preparing students for Level 3</strong>, and a detailed description of the <strong>integrative final project</strong>, a new form of assessment in which students apply what they have learned in real time. It is intended as a reference for faculty before, during, and after the session.</p>
+        </div>
+      </section>
+
+      <!-- 1. What Level 2 is -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">1</span>What Level 2 is</h2>
+        <p>Level 2 is the second stage of a single four-level sequence. It corresponds to <strong>NRS levels 2 and 3</strong> and occupies the space between the concrete arithmetic students bring with them and the algebraic thinking that is formalized later. In other words: it is the level where mathematics stops being only “counting and calculating” and becomes “reasoning with structure.”</p>
+
+        <div class="cifras">
+          <div class="cifra"><div class="n">96 h</div><div class="l">48 synchronous + 48 asynchronous</div></div>
+          <div class="cifra"><div class="n">16</div><div class="l">weeks of instruction</div></div>
+          <div class="cifra"><div class="n">8</div><div class="l">topics of 12 hours (≈ 2 weeks)</div></div>
+          <div class="cifra"><div class="n">3 × 4</div><div class="l">three four-hour lessons per topic</div></div>
+        </div>
+
+        <p>Each four-hour lesson keeps the program’s <strong>four components</strong>: materials and resources, guided practice, quiz or assignment, and rubric. The level is delivered in <strong>Brightspace D2L</strong> with practice in <strong>MyOpenMath</strong>, and it fully introduces the <strong>TI-30XS</strong> calculator for percentages, interest, and geometry with π.</p>
+
+        <h3>Placement within the four-level sequence</h3>
+        <div class="niveles">
+          <div class="nivel"><div class="rot">Level 1</div><div class="nrs">NRS 1–2</div><div class="desc">Integers, decimals, fractions, and basic operations.</div></div>
+          <div class="nivel actual"><div class="rot">Level 2 ← we are here</div><div class="nrs">NRS 2–3</div><div class="desc">Signed integers, full order of operations, proportions, percentages, finance, geometry, and statistics.</div></div>
+          <div class="nivel"><div class="rot">Level 3</div><div class="nrs">NRS 3–4</div><div class="desc">Algebra, radicals, scientific notation, Pythagorean theorem, similarity, and volume.</div></div>
+          <div class="nivel"><div class="rot">Level 4</div><div class="nrs">NRS 4–5</div><div class="desc">Higher algebra, functions, and modeling (GED preparation).</div></div>
+        </div>
+      </section>
+
+      <!-- 2. Identity -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">2</span>The identity of Level 2: three defining ideas</h2>
+        <div class="tarjeta">
+          <h3>1 · The sign appears</h3>
+          <p>Students work for the first time with the <strong>full number line</strong>: negative integers, absolute value, opposites, and the four operations with signs. Debt, sub-zero temperature, and depth below sea level stop being metaphors and become numbers to operate with.</p>
+          <h3>2 · The order of operations is completed</h3>
+          <p>The order of operations extends to <strong>powers, perfect square roots, nested parentheses, and fractions</strong>. PEMDAS becomes the connecting thread that supports every later calculation in the level.</p>
+          <h3>3 · Mathematics becomes financial</h3>
+          <p>With proportions, percentages, and <strong>simple interest</strong>, the subject connects directly to adult life: receipts, discounts, taxes, loans, savings, and depreciation. For an adult Spanish-speaking learner, this is the level where mathematics “is good for something” right away.</p>
+        </div>
+      </section>
+
+      <!-- 3. The eight topics -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">3</span>The eight topics of the level</h2>
+        <p>Content is distributed across eight major topics of twelve hours each, following the progression of the <em>Topical Outline</em> in the 16-week <em>syllabus</em> and the <em>Student Learning Outcomes</em>. Topics 1–3 build the signed-number system and PEMDAS; topics 4–6 develop proportional reasoning, percentages, and financial mathematics; topics 7–8 close with geometry, statistics, and the final project.</p>
+        <table>
+          <caption>The eight topics of Level 2 Mathematics, with their weeks, standards, and main focus.</caption>
+          <thead>
+            <tr><th scope="col">#</th><th scope="col">Topic</th><th scope="col">Weeks</th><th scope="col">Standard</th><th scope="col">Main focus</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="c">1</td><td><span class="barra" style="background:var(--t1)" aria-hidden="true"></span>Signed integers</td><td class="c">1–2</td><td class="c">NS</td><td>Absolute value, opposites, and the four operations with negative integers.</td></tr>
+            <tr><td class="c">2</td><td><span class="barra" style="background:var(--t2)" aria-hidden="true"></span>Complex fractions, exponents, and roots</td><td class="c">3–4</td><td class="c">NS · EE</td><td>Signed fractions; powers; roots of perfect squares up to √225.</td></tr>
+            <tr><td class="c">3</td><td><span class="barra" style="background:var(--t3)" aria-hidden="true"></span>Full PEMDAS</td><td class="c">5–6</td><td class="c">OA · NS</td><td>Order of operations with powers, roots, fractions, and nested parentheses.</td></tr>
+            <tr><td class="c">4</td><td><span class="barra" style="background:var(--t4)" aria-hidden="true"></span>Ratios, unit rates, and proportions</td><td class="c">7–8</td><td class="c">RP</td><td>Direct and inverse proportions; the rule of three; applications.</td></tr>
+            <tr><td class="c">5</td><td><span class="barra" style="background:var(--t5)" aria-hidden="true"></span>Percentages</td><td class="c">9–10</td><td class="c">RP</td><td>The three percentage cases; percent change; discount and tax.</td></tr>
+            <tr><td class="c">6</td><td><span class="barra" style="background:var(--t6)" aria-hidden="true"></span>Financial mathematics and conversions</td><td class="c">11–12</td><td class="c">RP · MD</td><td>Simple interest; depreciation; U.S. customary ↔ metric conversions.</td></tr>
+            <tr><td class="c">7</td><td><span class="barra" style="background:var(--t7)" aria-hidden="true"></span>Transitional geometry and the circle</td><td class="c">13–14</td><td class="c">G</td><td>Area of composite figures; circumference and area of the circle with π.</td></tr>
+            <tr><td class="c">8</td><td><span class="barra" style="background:var(--t8)" aria-hidden="true"></span>Statistics, circle graphs, and simple probability</td><td class="c">15–16</td><td class="c">SP</td><td>Central tendency; circle graphs; simple probability; final project.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 4. Connecting thread PEMDAS -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">4</span>The connecting thread: from the sign to PEMDAS</h2>
+        <p>The first three topics are not isolated blocks: they form a single construction line. The full PEMDAS of Topic 3 is possible only because Topics 1 and 2 prepared it step by step. From Topic 4 onward, the order of operations is applied tacitly in every calculation of the level.</p>
+        <div class="flujo">
+          <div class="paso"><div class="et">Topic 1</div><div class="tx">Operations with signed integers on the number line.</div></div>
+          <div class="flecha" aria-hidden="true">→</div>
+          <div class="paso"><div class="et">Topic 2</div><div class="tx">Powers and roots of perfect squares.</div></div>
+          <div class="flecha" aria-hidden="true">→</div>
+          <div class="paso"><div class="et">Topic 3</div><div class="tx">Full PEMDAS with powers, roots, and nested parentheses.</div></div>
+          <div class="flecha" aria-hidden="true">→</div>
+          <div class="paso" style="border-left-color:#f9a825"><div class="et">Topics 4–8</div><div class="tx">PEMDAS is applied implicitly in every calculation.</div></div>
+        </div>
+        <p>This design avoids the classic error of “teaching PEMDAS once and considering it learned.” Here it is installed as a habit, not as a memorized rule.</p>
+      </section>
+
+      <!-- 5. Continuity with Level 1 -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">5</span>Continuity with Level 1</h2>
+        <p>Level 2 builds on what students already master and extends it with new content. The design rule is clear: what was learned in Level 1 is treated as consolidated and revisited only as a foundation; the new effort concentrates on the sign, on structure, and on application.</p>
+        <div class="duo">
+          <div class="col venimos">
+            <h3>Assumed mastered (Level 1)</h3>
+            <ul class="limpia">
+              <li>Integers, place value, reading, and rounding.</li>
+              <li>The four operations with positive integers (standard algorithm).</li>
+              <li>Decimals: reading, writing, comparing, and operating.</li>
+              <li>Fractions, mixed and improper numbers (+, −, ×, ÷).</li>
+              <li>Basic order of operations (without powers or roots).</li>
+              <li>Perimeter and area of rectangles and triangles.</li>
+              <li>Measurement conversions; bar and line graphs.</li>
+            </ul>
+          </div>
+          <div class="col anade">
+            <h3>Level 2 adds or extends</h3>
+            <ul class="limpia">
+              <li>Negative integers: the four operations with signs.<span class="nuevo">New</span></li>
+              <li>Complex fractions with negative coefficients.</li>
+              <li>Exponents and perfect square roots.<span class="nuevo">New</span></li>
+              <li>Full PEMDAS with powers and roots.<span class="nuevo">New</span></li>
+              <li>Ratios, direct and inverse proportions, percentages.</li>
+              <li>Simple interest and depreciation.<span class="nuevo">New</span></li>
+              <li>Circle (circumference and area with π) and composite figures.</li>
+              <li>Descriptive statistics, circle graphs, and simple probability.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. The financial block -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">6</span>The financial block: mathematics for adult life</h2>
+        <p>Topic 6 —simple interest, depreciation, and conversions— is especially relevant for the adult Spanish-speaking learner, who arrives in the classroom with real experiences of loans, savings, receipts, and household budgeting. It is also new content relative to Level 1.</p>
+        <div class="destacado">
+          <h3>The sample lesson: simple interest and depreciation</h3>
+          <p>The level’s financial lesson illustrates the program’s approach well. It starts from <strong>vocabulary</strong> (principal, rate, time), formalizes the essential idea that <strong>interest is always a percentage of the principal</strong>, and only then introduces the formula <strong>I = C · r · t</strong>. Linear depreciation is presented as “the other side of the coin”: the same structure with the opposite sign. Students build year-by-year growth and book-value tables before using the formula directly, and they always work from authentic contexts: the savings account, the bank loan, the car that loses value.</p>
+        </div>
+      </section>
+
+      <!-- 7. The integrative final project -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">7</span>The integrative final project: applying in real time</h2>
+        <p>The level culminates, in lesson 8.3, with an <strong>integrative final project</strong>. It is not one more exam: it is an interactive worksheet in which students bring together tools from several topics and apply them to their own data. The project grade is combined with the summative quiz to form the level’s final grade, and the project replaces the lesson’s asynchronous assignment.</p>
+
+        <h3>What students do</h3>
+        <p>They choose a personally meaningful theme —“My monthly budget” or “A week of my time”— and work through five sections:</p>
+        <table>
+          <caption>The five sections of the integrative final project and what students produce in each.</caption>
+          <thead>
+            <tr><th scope="col">Section</th><th scope="col">What the student produces</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>1 · Personal data</strong></td><td>At least five categories with their absolute values (in dollars or hours).</td></tr>
+            <tr><td><strong>2 · Central tendency</strong></td><td>At least two measures (mean, median, range, or weighted mean) with written work shown.</td></tr>
+            <tr><td><strong>3 · Circle graph</strong></td><td>A sector graph labeled with name and percentage, with its central angles calculated.</td></tr>
+            <tr><td><strong>4 · Interpretation</strong></td><td>At least five complete sentences interpreting the graph and drawing a conclusion.</td></tr>
+            <tr><td><strong>5 · Applied calculation</strong></td><td>A percentage (discount and tax) or a simple-interest calculation on their situation.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Why it is a new form of assessment</h3>
+        <div class="caja-acento">
+          <p>The worksheet <strong>calculates in real time</strong> as students type: when they enter their data in Section 1, the <strong>totals, percentages, and circle-graph angles update on their own</strong>, and an <strong>automatic check</strong> appears that students use to verify their own work. They see the effect of each data point immediately, but they must show their work in writing: the tool checks, it does not replace reasoning.</p>
+        </div>
+        <p>The result is an authentic close to the level that combines, in a single task, central tendency, graphical representation, written interpretation, and applied financial calculation. The worksheet <strong>saves work automatically in the browser</strong> and allows <strong>exporting to PDF</strong>. Submission accepts three formats —oral presentation, written forum, or a document in the assignment dropbox— and is assessed with a <strong>five-criterion rubric</strong>, which respects different modes of expression (the UDL principle of multiple means of action and expression).</p>
+      </section>
+
+      <!-- 8. Preparing for Level 3 -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">8</span>Preparing for Level 3</h2>
+        <p>Each new Level 2 content area seeds a competency that Level 3 takes up and expands. The level does not end in itself: it prepares the ground for algebra and formal geometry.</p>
+        <table>
+          <caption>Correspondence between Level 2 content and its continuation in Level 3.</caption>
+          <thead>
+            <tr><th scope="col">What Level 2 introduces</th><th scope="col">How Level 3 develops it</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Exponents and roots of perfect squares</td><td>Full exponent rules, radicals, irrationals, and scientific notation.</td></tr>
+            <tr><td>Signed integers and full PEMDAS</td><td>Algebraic language, expressions, linear equations, and inequalities.</td></tr>
+            <tr><td>Ratios and direct/inverse proportions</td><td>Similarity, scale drawings, and Thales’s theorem.</td></tr>
+            <tr><td>Circle and area of composite figures</td><td>Pythagorean theorem and volume of prisms and cylinders.</td></tr>
+            <tr><td>Simple interest as linear growth</td><td>Conceptual basis for exponential modeling (Level 4).</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 9. Pedagogical notes -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">9</span>Pedagogical notes for the instructor</h2>
+        <div class="tarjeta">
+          <ul class="limpia">
+            <li><strong>Context before symbol.</strong> Each topic opens with a real situation —thermometer, debt, receipt, budget— before formalizing. The symbol comes after the experience.</li>
+            <li><strong>50/50 distribution.</strong> Each lesson suggests 2 synchronous hours and 2 asynchronous: 48 and 48 in total.</li>
+            <li><strong>TI-30XS calculator.</strong> Fully introduced for percentages, interest, and geometry with π. Always remember to clear the memory before calculating.</li>
+            <li><strong>Alignment with Steck-Vaughn.</strong> Each lesson can be linked to the pages of the GED Mathematics workbook for physical-book reference.</li>
+            <li><strong>UDL design.</strong> Authentic contexts, automatic checks, multiple submission formats, and accessible materials in Brightspace with Ally compliance.</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>Level 2 Report — Spanish ASE Math · Harry S. Truman College, City Colleges of Chicago.</p>
+      <p>© José M. Fernández, ABE/ASE Math Master Teacher. Licensed under
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license">Creative Commons BY-NC-SA 4.0</a>.</p>
+    </footer>
+  </div>
+</body>
+</html>

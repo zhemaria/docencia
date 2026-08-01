@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<!--
+  Informe pedagógico del Nivel 2 — Spanish ASE Math
+  © José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.
+  Licencia Creative Commons BY-NC-SA 4.0.
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informe del Nivel 2 de Matemáticas — Spanish ASE Math</title>
+  <meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+  <meta name="license" content="CC BY-NC-SA 4.0">
+  <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+  <meta name="description" content="Informe para el profesorado sobre el Nivel 2 de matemáticas del programa Spanish ASE Math: características, temas, continuidad con el Nivel 1, preparación para el Nivel 3 y el proyecto final integrador.">
+  <style>
+    :root {
+      --tinta:      #1f2937;
+      --acento:     #00504a;
+      --acento2:    #007a70;
+      --acento-cl:  #e3f1ef;
+      --ambar-bg:   #fff3d6;
+      --ambar-tx:   #5c3900;
+      --muted:      #555;
+      --linea:      #dddddd;
+      --bg:         #f4f7f6;
+      /* Identidades cromáticas por tema */
+      --t1: #b71c1c; --t1bg: #ffebee;
+      --t2: #4a148c; --t2bg: #f3e5f5;
+      --t3: #1a237e; --t3bg: #e8eaf6;
+      --t4: #004d40; --t4bg: #e0f2f1;
+      --t5: #e65100; --t5bg: #fff3e0;
+      --t6: #33691e; --t6bg: #f1f8e9;
+      --t7: #37474f; --t7bg: #eceff1;
+      --t8: #4e342e; --t8bg: #efebe9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      margin: 0; background: var(--bg); color: var(--tinta);
+      line-height: 1.6; font-size: 16px;
+    }
+    .saltar {
+      position: absolute; left: -999px; top: 0; background: var(--tinta);
+      color: #fff; padding: 10px 16px; z-index: 100; border-radius: 0 0 6px 0;
+    }
+    .saltar:focus { left: 0; }
+    .contenedor { max-width: 980px; margin: 0 auto; padding: 24px; }
+
+    header.principal {
+      background: linear-gradient(135deg, #003b34 0%, #00504a 55%, #007a70 100%);
+      color: #fff; padding: 40px 34px; border-radius: 14px;
+      margin-bottom: 28px; box-shadow: 0 4px 16px rgba(0,64,58,.28);
+    }
+    header.principal .etiqueta {
+      display: inline-block; background: rgba(255,255,255,.16);
+      padding: 4px 14px; border-radius: 20px; font-size: 13px;
+      font-weight: 700; letter-spacing: .6px; text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    header.principal h1 { margin: 0 0 10px; font-size: 30px; font-weight: 700; line-height: 1.2; }
+    header.principal .sub { font-size: 17px; opacity: .95; margin: 0 0 16px; }
+    header.principal .meta { font-size: 13.5px; opacity: .9; border-top: 1px solid rgba(255,255,255,.25); padding-top: 14px; }
+
+    section { margin-bottom: 34px; }
+    h2 {
+      font-size: 23px; color: var(--acento); margin: 0 0 6px;
+      padding-bottom: 10px; border-bottom: 2px solid var(--acento-cl);
+    }
+    h2 .numsec {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px; background: var(--acento); color: #fff;
+      border-radius: 9px; font-size: 16px; margin-right: 12px; vertical-align: middle;
+    }
+    h3 { font-size: 18px; color: var(--acento2); margin: 22px 0 8px; }
+    p { margin: 10px 0; }
+
+    .tarjeta {
+      background: #fff; border-radius: 12px; padding: 22px 26px;
+      box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-top: 14px;
+    }
+
+    /* Cifras destacadas */
+    .cifras {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 14px; margin: 18px 0;
+    }
+    .cifra {
+      background: #fff; border-radius: 12px; padding: 18px 16px; text-align: center;
+      box-shadow: 0 1px 5px rgba(0,0,0,.06);
+    }
+    .cifra .n { font-size: 30px; font-weight: 800; color: var(--acento); line-height: 1; }
+    .cifra .l { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+    /* Barra de niveles */
+    .niveles { display: flex; gap: 10px; margin: 18px 0; flex-wrap: wrap; }
+    .nivel {
+      flex: 1 1 150px; background: #fff; border-radius: 10px; padding: 14px 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06); border-top: 5px solid var(--linea);
+    }
+    .nivel.actual { border-top-color: var(--acento); background: var(--acento-cl); }
+    .nivel .rot { font-weight: 700; font-size: 15px; }
+    .nivel.actual .rot { color: var(--acento); }
+    .nivel .nrs { font-size: 12.5px; color: var(--muted); margin-top: 3px; }
+    .nivel .desc { font-size: 13px; margin-top: 6px; }
+
+    /* Tablas */
+    table { width: 100%; border-collapse: collapse; background: #fff;
+      border-radius: 10px; overflow: hidden; box-shadow: 0 1px 5px rgba(0,0,0,.06);
+      margin: 16px 0; font-size: 14.5px; }
+    caption {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+    th, td { padding: 11px 14px; text-align: left; border-bottom: 1px solid #eee; vertical-align: top; }
+    thead th { background: var(--tinta); color: #fff; font-size: 13px; text-transform: uppercase; letter-spacing: .4px; }
+    tbody tr:last-child td { border-bottom: none; }
+    td.c { text-align: center; }
+    .pild { display: inline-block; padding: 2px 9px; border-radius: 11px; font-size: 12px; font-weight: 700; color: #fff; }
+
+    /* Tabla temas: barra de color por tema */
+    .barra { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: middle; }
+
+    /* Dos columnas continuidad */
+    .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 16px; }
+    .duo .col { background: #fff; border-radius: 12px; padding: 20px 22px; box-shadow: 0 1px 5px rgba(0,0,0,.06); }
+    .duo .col h3 { margin-top: 0; }
+    .col.venimos h3 { color: #6a4e00; }
+    .col.anade  h3 { color: var(--acento); }
+    ul.limpia { margin: 8px 0 0; padding-left: 20px; }
+    ul.limpia li { margin-bottom: 8px; }
+    .nuevo { display: inline-block; background: var(--ambar-bg); color: var(--ambar-tx);
+      font-size: 11px; font-weight: 800; padding: 1px 7px; border-radius: 8px; letter-spacing: .4px; margin-left: 4px; }
+
+    /* Flujo (hilo conductor / preparación) */
+    .flujo { display: flex; align-items: stretch; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+    .paso {
+      flex: 1 1 160px; background: #fff; border-radius: 10px; padding: 14px 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06); border-left: 5px solid var(--acento2); position: relative;
+    }
+    .paso .et { font-size: 12px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: .4px; }
+    .paso .tx { font-size: 14px; margin-top: 4px; }
+    .flecha { align-self: center; color: var(--acento2); font-size: 22px; font-weight: 700; }
+
+    /* Caja destacada (proyecto / ámbar) */
+    .destacado {
+      background: var(--ambar-bg); border-left: 6px solid #f9a825;
+      border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 16px 0; color: #3d2600;
+    }
+    .destacado h3 { color: var(--ambar-tx); margin-top: 0; }
+    .destacado strong { color: var(--ambar-tx); }
+
+    .caja-acento {
+      background: var(--acento-cl); border-left: 6px solid var(--acento);
+      border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 16px 0;
+    }
+    .caja-acento h3 { margin-top: 0; color: var(--acento); }
+
+    footer {
+      text-align: center; padding: 26px 20px; color: var(--muted);
+      font-size: 13px; margin-top: 20px; border-top: 1px solid var(--linea);
+    }
+    footer a { color: var(--acento); }
+
+    @media (max-width: 720px) {
+      .duo { grid-template-columns: 1fr; }
+    }
+    @media print {
+      body { background: #fff; }
+      .tarjeta, .cifra, .nivel, table, .paso, .duo .col { box-shadow: none; border: 1px solid #ccc; }
+      header.principal { box-shadow: none; }
+      .saltar { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="saltar" href="#principal">Saltar al contenido principal</a>
+
+  <div class="contenedor">
+    <header class="principal">
+      <span class="etiqueta">Informe para el profesorado</span>
+      <h1>El Nivel 2 de Matemáticas: el puente entre la aritmética y el álgebra</h1>
+      <p class="sub">Spanish ASE Math · City Colleges of Chicago · NRS 2–3 · 96 horas · 16 semanas</p>
+      <p class="meta">Documento de apoyo para la sesión de desarrollo profesional · Prof. José M. Fernández, ABE/ASE Math Master Teacher · Harry S. Truman College</p>
+    </header>
+
+    <main id="principal">
+
+      <!-- 0. Propósito -->
+      <section>
+        <div class="caja-acento">
+          <h3>Propósito de este informe</h3>
+          <p>Este documento acompaña la presentación de desarrollo profesional sobre el Nivel 2 de matemáticas. Reúne, en un solo lugar, las <strong>características</strong> del nivel, los <strong>temas</strong> que lo componen, su <strong>continuidad con el Nivel 1</strong>, su función de <strong>preparación para el Nivel 3</strong> y una descripción detallada del <strong>proyecto final integrador</strong>, una forma nueva de evaluar en la que el estudiante aplica lo aprendido en tiempo real. Está pensado como referencia para el profesorado antes, durante y después de la sesión.</p>
+        </div>
+      </section>
+
+      <!-- 1. Qué es el Nivel 2 -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">1</span>Qué es el Nivel 2</h2>
+        <p>El Nivel 2 es el segundo tramo de una secuencia única de cuatro niveles. Se corresponde con los <strong>niveles 2 y 3 del NRS</strong> y ocupa el espacio entre la aritmética concreta con la que llega el estudiante y el pensamiento algebraico que se formaliza más adelante. Dicho de otro modo: es el nivel en el que la matemática deja de ser solo «contar y calcular» para convertirse en «razonar con estructura».</p>
+
+        <div class="cifras">
+          <div class="cifra"><div class="n">96 h</div><div class="l">48 sincrónicas + 48 asincrónicas</div></div>
+          <div class="cifra"><div class="n">16</div><div class="l">semanas de curso</div></div>
+          <div class="cifra"><div class="n">8</div><div class="l">temas de 12 horas (≈ 2 semanas)</div></div>
+          <div class="cifra"><div class="n">3 × 4</div><div class="l">3 lecciones de 4 h por tema</div></div>
+        </div>
+
+        <p>Cada lección de cuatro horas conserva los <strong>cuatro componentes</strong> del modelo del programa: material y recursos, práctica guiada, quiz o tarea, y rúbrica. El nivel se imparte en <strong>Brightspace D2L</strong> con práctica en <strong>MyOpenMath</strong>, e introduce de forma plena la calculadora <strong>TI-30XS</strong> para porcentajes, interés y geometría con π.</p>
+
+        <h3>Ubicación en la secuencia de cuatro niveles</h3>
+        <div class="niveles">
+          <div class="nivel"><div class="rot">Nivel 1</div><div class="nrs">NRS 1–2</div><div class="desc">Números enteros, decimales, fracciones y operaciones básicas.</div></div>
+          <div class="nivel actual"><div class="rot">Nivel 2 ← estamos aquí</div><div class="nrs">NRS 2–3</div><div class="desc">Enteros con signo, PEMDAS completo, proporciones, porcentajes, finanzas, geometría y estadística.</div></div>
+          <div class="nivel"><div class="rot">Nivel 3</div><div class="nrs">NRS 3–4</div><div class="desc">Álgebra, radicales, notación científica, Pitágoras, semejanza y volumen.</div></div>
+          <div class="nivel"><div class="rot">Nivel 4</div><div class="nrs">NRS 4–5</div><div class="desc">Álgebra superior, funciones y modelado (preparación GED).</div></div>
+        </div>
+      </section>
+
+      <!-- 2. La identidad del nivel -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">2</span>La identidad del Nivel 2: tres ideas que lo definen</h2>
+        <div class="tarjeta">
+          <h3>1 · Aparece el signo</h3>
+          <p>El estudiante trabaja por primera vez con la <strong>recta numérica completa</strong>: enteros negativos, valor absoluto, opuestos y las cuatro operaciones con signo. La deuda, la temperatura bajo cero y la altura bajo el nivel del mar dejan de ser metáforas para convertirse en números con los que se opera.</p>
+          <h3>2 · Se completa el PEMDAS</h3>
+          <p>El orden de operaciones se extiende a <strong>potencias, raíces cuadradas perfectas, paréntesis anidados y fracciones</strong>. El PEMDAS se convierte en el hilo conductor que sostiene todos los cálculos posteriores del nivel.</p>
+          <h3>3 · La matemática se vuelve financiera</h3>
+          <p>Con las proporciones, los porcentajes y el <strong>interés simple</strong>, la asignatura se conecta directamente con la vida adulta: recibos, descuentos, impuestos, préstamos, ahorros y depreciación. Para un estudiante adulto hispanohablante, este es el nivel en el que las matemáticas «sirven para algo» de forma inmediata.</p>
+        </div>
+      </section>
+
+      <!-- 3. Mapa de los 8 temas -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">3</span>Los ocho temas del nivel</h2>
+        <p>El contenido se distribuye en ocho grandes temas de doce horas, respetando la progresión del <em>Topical Outline</em> del <em>syllabus</em> de 16 semanas y los <em>Student Learning Outcomes</em>. Los temas 1–3 construyen el sistema de números con signo y el PEMDAS; los temas 4–6 desarrollan el razonamiento proporcional, los porcentajes y las matemáticas financieras; los temas 7–8 cierran con geometría, estadística y el proyecto final.</p>
+        <table>
+          <caption>Los ocho temas del Nivel 2 de Matemáticas, con sus semanas, estándares y foco principal.</caption>
+          <thead>
+            <tr><th scope="col">#</th><th scope="col">Tema</th><th scope="col">Semanas</th><th scope="col">Estándar</th><th scope="col">Foco principal</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="c">1</td><td><span class="barra" style="background:var(--t1)" aria-hidden="true"></span>Enteros con signo</td><td class="c">1–2</td><td class="c">NS</td><td>Valor absoluto, opuestos y las cuatro operaciones con enteros negativos.</td></tr>
+            <tr><td class="c">2</td><td><span class="barra" style="background:var(--t2)" aria-hidden="true"></span>Fracciones complejas, exponentes y raíces</td><td class="c">3–4</td><td class="c">NS · EE</td><td>Fracciones con signo; potencias; raíces de cuadrados perfectos hasta √225.</td></tr>
+            <tr><td class="c">3</td><td><span class="barra" style="background:var(--t3)" aria-hidden="true"></span>PEMDAS completo</td><td class="c">5–6</td><td class="c">OA · NS</td><td>Orden de operaciones con potencias, raíces, fracciones y paréntesis anidados.</td></tr>
+            <tr><td class="c">4</td><td><span class="barra" style="background:var(--t4)" aria-hidden="true"></span>Razones, tasas unitarias y proporciones</td><td class="c">7–8</td><td class="c">RP</td><td>Proporciones directas e inversas; regla de tres; aplicaciones.</td></tr>
+            <tr><td class="c">5</td><td><span class="barra" style="background:var(--t5)" aria-hidden="true"></span>Porcentajes</td><td class="c">9–10</td><td class="c">RP</td><td>Los tres casos del porcentaje; cambio porcentual; descuento e impuesto.</td></tr>
+            <tr><td class="c">6</td><td><span class="barra" style="background:var(--t6)" aria-hidden="true"></span>Matemáticas financieras y conversiones</td><td class="c">11–12</td><td class="c">RP · MD</td><td>Interés simple; depreciación; conversiones inglés ↔ métrico.</td></tr>
+            <tr><td class="c">7</td><td><span class="barra" style="background:var(--t7)" aria-hidden="true"></span>Geometría transicional y el círculo</td><td class="c">13–14</td><td class="c">G</td><td>Área de figuras compuestas; circunferencia y área del círculo con π.</td></tr>
+            <tr><td class="c">8</td><td><span class="barra" style="background:var(--t8)" aria-hidden="true"></span>Estadística, gráficos circulares y probabilidad</td><td class="c">15–16</td><td class="c">SP</td><td>Tendencia central; gráficos circulares; probabilidad simple; proyecto final.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 4. Hilo conductor PEMDAS -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">4</span>El hilo conductor: del signo al PEMDAS</h2>
+        <p>Los tres primeros temas no son bloques aislados: forman una única línea de construcción. El PEMDAS completo del Tema 3 solo es posible porque los Temas 1 y 2 lo prepararon paso a paso. A partir del Tema 4, el orden de operaciones se aplica de forma tácita en todos los cálculos del nivel.</p>
+        <div class="flujo">
+          <div class="paso"><div class="et">Tema 1</div><div class="tx">Operaciones con enteros con signo en la recta numérica.</div></div>
+          <div class="flecha" aria-hidden="true">→</div>
+          <div class="paso"><div class="et">Tema 2</div><div class="tx">Potencias y raíces de cuadrados perfectos.</div></div>
+          <div class="flecha" aria-hidden="true">→</div>
+          <div class="paso"><div class="et">Tema 3</div><div class="tx">PEMDAS completo con potencias, raíces y paréntesis anidados.</div></div>
+          <div class="flecha" aria-hidden="true">→</div>
+          <div class="paso" style="border-left-color:#f9a825"><div class="et">Temas 4–8</div><div class="tx">El PEMDAS se aplica de forma implícita en todo cálculo.</div></div>
+        </div>
+        <p>Este diseño evita el error clásico de «enseñar el PEMDAS una vez y darlo por aprendido». Aquí se instala como hábito, no como regla memorizada.</p>
+      </section>
+
+      <!-- 5. Continuidad con el Nivel 1 -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">5</span>Continuidad con el Nivel 1</h2>
+        <p>El Nivel 2 se apoya en lo que el estudiante ya domina y lo extiende con contenido nuevo. La regla de diseño es clara: lo aprendido en el Nivel 1 se da por consolidado y se retoma solo como base; el esfuerzo nuevo se concentra en el signo, la estructura y la aplicación.</p>
+        <div class="duo">
+          <div class="col venimos">
+            <h3>Se da por dominado (Nivel 1)</h3>
+            <ul class="limpia">
+              <li>Números enteros, valor posicional, lectura y redondeo.</li>
+              <li>Las cuatro operaciones con enteros positivos (algoritmo estándar).</li>
+              <li>Decimales: leer, escribir, comparar y operar.</li>
+              <li>Fracciones, números mixtos e impropios (+, −, ×, ÷).</li>
+              <li>Orden de operaciones básico (sin potencias ni raíces).</li>
+              <li>Perímetro y área de rectángulos y triángulos.</li>
+              <li>Conversiones de medida y gráficas de barras y de líneas.</li>
+            </ul>
+          </div>
+          <div class="col anade">
+            <h3>El Nivel 2 añade o extiende</h3>
+            <ul class="limpia">
+              <li>Enteros negativos: las cuatro operaciones con signo.<span class="nuevo">Nuevo</span></li>
+              <li>Fracciones complejas con coeficientes negativos.</li>
+              <li>Exponentes y raíces cuadradas perfectas.<span class="nuevo">Nuevo</span></li>
+              <li>PEMDAS completo con potencias y raíces.<span class="nuevo">Nuevo</span></li>
+              <li>Razones, proporciones directas e inversas, porcentajes.</li>
+              <li>Interés simple y depreciación.<span class="nuevo">Nuevo</span></li>
+              <li>Círculo (circunferencia y área con π) y figuras compuestas.</li>
+              <li>Estadística descriptiva, gráficos circulares y probabilidad simple.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. El bloque financiero -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">6</span>El bloque financiero: matemáticas para la vida adulta</h2>
+        <p>El Tema 6 —interés simple, depreciación y conversiones— es especialmente pertinente para el estudiante adulto hispanohablante, que llega al aula con experiencias reales de préstamos, ahorros, recibos y presupuesto familiar. Es también un contenido nuevo respecto del Nivel 1.</p>
+        <div class="destacado">
+          <h3>La lección de muestra: interés simple y depreciación</h3>
+          <p>La lección financiera del nivel ilustra bien el enfoque del programa. Parte del <strong>vocabulario</strong> (capital, tasa, tiempo), formaliza la idea esencial de que <strong>el interés es siempre un porcentaje del capital</strong> y solo entonces introduce la fórmula <strong>I = C · r · t</strong>. La depreciación lineal se presenta como «el otro lado de la moneda»: la misma estructura con signo opuesto. El estudiante construye tablas de crecimiento y de valor contable año por año antes de usar la fórmula de forma directa, y trabaja siempre desde contextos auténticos: la cuenta de ahorros, el préstamo del banco, el auto que pierde valor.</p>
+        </div>
+      </section>
+
+      <!-- 7. El proyecto final integrador -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">7</span>El proyecto final integrador: aplicar en tiempo real</h2>
+        <p>El nivel culmina, en la lección 8.3, con un <strong>proyecto final integrador</strong>. No es un examen más: es una plantilla de trabajo interactiva en la que el estudiante reúne herramientas de varios temas y las aplica a datos propios. La nota del proyecto se combina con la del quiz sumativo para formar la calificación final del nivel, y el proyecto sustituye la tarea asincrónica de la lección.</p>
+
+        <h3>Qué hace el estudiante</h3>
+        <p>Elige un tema con sentido personal —«Mi presupuesto mensual» o «Una semana de mi tiempo»— y trabaja cinco secciones:</p>
+        <table>
+          <caption>Las cinco secciones del proyecto final integrador y lo que el estudiante produce en cada una.</caption>
+          <thead>
+            <tr><th scope="col">Sección</th><th scope="col">Lo que produce el estudiante</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>1 · Datos personales</strong></td><td>Al menos cinco categorías con sus valores absolutos (en dólares o en horas).</td></tr>
+            <tr><td><strong>2 · Tendencia central</strong></td><td>Al menos dos medidas (media, mediana, rango o media ponderada) con el procedimiento escrito.</td></tr>
+            <tr><td><strong>3 · Gráfico circular</strong></td><td>Un gráfico de sectores etiquetado con nombre y porcentaje, con sus ángulos calculados.</td></tr>
+            <tr><td><strong>4 · Interpretación</strong></td><td>Al menos cinco oraciones completas que interpreten el gráfico y extraigan una conclusión.</td></tr>
+            <tr><td><strong>5 · Cálculo aplicado</strong></td><td>Un cálculo de porcentaje (descuento e impuesto) o de interés simple sobre su situación.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Por qué es una forma nueva de evaluar</h3>
+        <div class="caja-acento">
+          <p>La plantilla <strong>calcula en tiempo real</strong> mientras el estudiante escribe: al introducir sus datos en la Sección 1, los <strong>totales, los porcentajes y los ángulos del gráfico circular se actualizan solos</strong>, y aparece una <strong>comprobación automática</strong> que el estudiante usa para verificar su propio trabajo. El estudiante ve el efecto de cada dato de inmediato, pero debe mostrar el procedimiento por escrito: la herramienta comprueba, no sustituye el razonamiento.</p>
+        </div>
+        <p>El resultado es un cierre auténtico del nivel que combina, en una sola tarea, tendencia central, representación gráfica, interpretación escrita y cálculo financiero aplicado. La plantilla <strong>guarda el trabajo automáticamente en el navegador</strong> y permite <strong>exportarlo a PDF</strong>. La entrega admite tres formatos —presentación oral, foro escrito o documento en el buzón de tareas— y se evalúa con una <strong>rúbrica de cinco criterios</strong>, lo que respeta distintos estilos de expresión (principio DUA de acción y expresión múltiples).</p>
+      </section>
+
+      <!-- 8. Preparación para el Nivel 3 -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">8</span>Preparación para el Nivel 3</h2>
+        <p>Cada contenido nuevo del Nivel 2 siembra una competencia que el Nivel 3 recoge y amplía. El nivel no termina en sí mismo: prepara el terreno del álgebra y de la geometría formal.</p>
+        <table>
+          <caption>Correspondencia entre los contenidos del Nivel 2 y su continuación en el Nivel 3.</caption>
+          <thead>
+            <tr><th scope="col">Lo que siembra el Nivel 2</th><th scope="col">Lo que cosecha el Nivel 3</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Exponentes y raíces de cuadrados perfectos</td><td>Reglas completas de exponentes, radicales, irracionales y notación científica.</td></tr>
+            <tr><td>Enteros con signo y PEMDAS completo</td><td>Lenguaje algebraico, expresiones, ecuaciones e inecuaciones lineales.</td></tr>
+            <tr><td>Razones y proporciones directas e inversas</td><td>Semejanza, dibujos a escala y teorema de Thales.</td></tr>
+            <tr><td>Círculo y área de figuras compuestas</td><td>Teorema de Pitágoras y volumen de prismas y cilindros.</td></tr>
+            <tr><td>Interés simple como crecimiento lineal</td><td>Base conceptual del modelado exponencial (Nivel 4).</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 9. Notas para el docente -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">9</span>Notas pedagógicas para el docente</h2>
+        <div class="tarjeta">
+          <ul class="limpia">
+            <li><strong>Contexto antes que símbolo.</strong> Cada tema abre con una situación real —termómetro, deuda, recibo, presupuesto— antes de formalizar. El símbolo llega después de la experiencia.</li>
+            <li><strong>Distribución 50/50.</strong> Cada lección sugiere 2 horas sincrónicas y 2 asincrónicas: 48 y 48 en total.</li>
+            <li><strong>Calculadora TI-30XS.</strong> Se introduce plenamente para porcentajes, interés y geometría con π. Recordar siempre limpiar la memoria antes de calcular.</li>
+            <li><strong>Alineación con Steck-Vaughn.</strong> Cada lección puede vincularse con las páginas del <em>workbook</em> de Matemáticas GED para referencia del libro físico.</li>
+            <li><strong>Diseño DUA.</strong> Contextos auténticos, comprobaciones automáticas, entrega en múltiples formatos y materiales accesibles en Brightspace con cumplimiento Ally.</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>Informe del Nivel 2 — Spanish ASE Math · Harry S. Truman College, City Colleges of Chicago.</p>
+      <p>© José M. Fernández, ABE/ASE Math Master Teacher. Licencia
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">Creative Commons BY-NC-SA 4.0</a>.</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<!--
+  Level 1 Mathematics — Faculty Report — Spanish ASE Math
+  © José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.
+  Licensed under Creative Commons BY-NC-SA 4.0.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 1 Mathematics — Faculty Report — Spanish ASE Math</title>
+  <meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+  <meta name="license" content="CC BY-NC-SA 4.0">
+  <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">
+  <meta name="description" content="Faculty report on Level 1 of the Spanish ASE Math program: characteristics, topics, starting point, preparation for Level 2, and the integrative final project 'My Graph of Life.'">
+  <style>
+    :root {
+      --tinta:      #1f2937;
+      --acento:     #00504a;
+      --acento2:    #007a70;
+      --acento-cl:  #e3f1ef;
+      --ambar-bg:   #fff3d6;
+      --ambar-tx:   #5c3900;
+      --muted:      #555;
+      --linea:      #dddddd;
+      --bg:         #f4f7f6;
+      /* Per-topic color identities */
+      --t1: #b71c1c; --t1bg: #ffebee;
+      --t2: #4a148c; --t2bg: #f3e5f5;
+      --t3: #1a237e; --t3bg: #e8eaf6;
+      --t4: #004d40; --t4bg: #e0f2f1;
+      --t5: #e65100; --t5bg: #fff3e0;
+      --t6: #33691e; --t6bg: #f1f8e9;
+      --t7: #37474f; --t7bg: #eceff1;
+      --t8: #4e342e; --t8bg: #efebe9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      margin: 0; background: var(--bg); color: var(--tinta);
+      line-height: 1.6; font-size: 16px;
+    }
+    .saltar {
+      position: absolute; left: -999px; top: 0; background: var(--tinta);
+      color: #fff; padding: 10px 16px; z-index: 100; border-radius: 0 0 6px 0;
+    }
+    .saltar:focus { left: 0; }
+    .contenedor { max-width: 980px; margin: 0 auto; padding: 24px; }
+
+    header.principal {
+      background: linear-gradient(135deg, #003b34 0%, #00504a 55%, #007a70 100%);
+      color: #fff; padding: 40px 34px; border-radius: 14px;
+      margin-bottom: 28px; box-shadow: 0 4px 16px rgba(0,64,58,.28);
+    }
+    header.principal .etiqueta {
+      display: inline-block; background: rgba(255,255,255,.16);
+      padding: 4px 14px; border-radius: 20px; font-size: 13px;
+      font-weight: 700; letter-spacing: .6px; text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    header.principal h1 { margin: 0 0 10px; font-size: 30px; font-weight: 700; line-height: 1.2; }
+    header.principal .sub { font-size: 17px; opacity: .95; margin: 0 0 16px; }
+    header.principal .meta { font-size: 13.5px; opacity: .9; border-top: 1px solid rgba(255,255,255,.25); padding-top: 14px; }
+
+    section { margin-bottom: 34px; }
+    h2 {
+      font-size: 23px; color: var(--acento); margin: 0 0 6px;
+      padding-bottom: 10px; border-bottom: 2px solid var(--acento-cl);
+    }
+    h2 .numsec {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px; background: var(--acento); color: #fff;
+      border-radius: 9px; font-size: 16px; margin-right: 12px; vertical-align: middle;
+    }
+    h3 { font-size: 18px; color: var(--acento2); margin: 22px 0 8px; }
+    p { margin: 10px 0; }
+
+    .tarjeta {
+      background: #fff; border-radius: 12px; padding: 22px 26px;
+      box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-top: 14px;
+    }
+
+    /* Key figures */
+    .cifras {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 14px; margin: 18px 0;
+    }
+    .cifra {
+      background: #fff; border-radius: 12px; padding: 18px 16px; text-align: center;
+      box-shadow: 0 1px 5px rgba(0,0,0,.06);
+    }
+    .cifra .n { font-size: 30px; font-weight: 800; color: var(--acento); line-height: 1; }
+    .cifra .l { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+    /* Levels bar */
+    .niveles { display: flex; gap: 10px; margin: 18px 0; flex-wrap: wrap; }
+    .nivel {
+      flex: 1 1 150px; background: #fff; border-radius: 10px; padding: 14px 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06); border-top: 5px solid var(--linea);
+    }
+    .nivel.actual { border-top-color: var(--acento); background: var(--acento-cl); }
+    .nivel .rot { font-weight: 700; font-size: 15px; }
+    .nivel.actual .rot { color: var(--acento); }
+    .nivel .nrs { font-size: 12.5px; color: var(--muted); margin-top: 3px; }
+    .nivel .desc { font-size: 13px; margin-top: 6px; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; background: #fff;
+      border-radius: 10px; overflow: hidden; box-shadow: 0 1px 5px rgba(0,0,0,.06);
+      margin: 16px 0; font-size: 14.5px; }
+    caption {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+    th, td { padding: 11px 14px; text-align: left; border-bottom: 1px solid #eee; vertical-align: top; }
+    thead th { background: var(--tinta); color: #fff; font-size: 13px; text-transform: uppercase; letter-spacing: .4px; }
+    tbody tr:last-child td { border-bottom: none; }
+    td.c { text-align: center; }
+
+    /* Topics table: color bar per topic */
+    .barra { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: middle; }
+
+    /* Two-column */
+    .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 16px; }
+    .duo .col { background: #fff; border-radius: 12px; padding: 20px 22px; box-shadow: 0 1px 5px rgba(0,0,0,.06); }
+    .duo .col h3 { margin-top: 0; }
+    .col.venimos h3 { color: #6a4e00; }
+    .col.anade  h3 { color: var(--acento); }
+    ul.limpia { margin: 8px 0 0; padding-left: 20px; }
+    ul.limpia li { margin-bottom: 8px; }
+    .nuevo { display: inline-block; background: var(--ambar-bg); color: var(--ambar-tx);
+      font-size: 11px; font-weight: 800; padding: 1px 7px; border-radius: 8px; letter-spacing: .4px; margin-left: 4px; }
+
+    /* Flow */
+    .flujo { display: flex; align-items: stretch; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+    .paso {
+      flex: 1 1 160px; background: #fff; border-radius: 10px; padding: 14px 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06); border-left: 5px solid var(--acento2); position: relative;
+    }
+    .paso .et { font-size: 12px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: .4px; }
+    .paso .tx { font-size: 14px; margin-top: 4px; }
+    .flecha { align-self: center; color: var(--acento2); font-size: 22px; font-weight: 700; }
+
+    /* Highlight box (amber) */
+    .destacado {
+      background: var(--ambar-bg); border-left: 6px solid #f9a825;
+      border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 16px 0; color: #3d2600;
+    }
+    .destacado h3 { color: var(--ambar-tx); margin-top: 0; }
+    .destacado strong { color: var(--ambar-tx); }
+
+    .caja-acento {
+      background: var(--acento-cl); border-left: 6px solid var(--acento);
+      border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 16px 0;
+    }
+    .caja-acento h3 { margin-top: 0; color: var(--acento); }
+
+    footer {
+      text-align: center; padding: 26px 20px; color: var(--muted);
+      font-size: 13px; margin-top: 20px; border-top: 1px solid var(--linea);
+    }
+    footer a { color: var(--acento); }
+
+    @media (max-width: 720px) {
+      .duo { grid-template-columns: 1fr; }
+    }
+    @media print {
+      body { background: #fff; }
+      .tarjeta, .cifra, .nivel, table, .paso, .duo .col { box-shadow: none; border: 1px solid #ccc; }
+      header.principal { box-shadow: none; }
+      .saltar { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="saltar" href="#principal">Skip to main content</a>
+
+  <div class="contenedor">
+    <header class="principal">
+      <span class="etiqueta">Faculty briefing</span>
+      <h1>Level 1 Mathematics: the foundations of number and reasoning</h1>
+      <p class="sub">Spanish ASE Math · City Colleges of Chicago · NRS 1–2 · 96 hours · 16 weeks</p>
+      <p class="meta">Support document for the professional development session · Prof. José M. Fernández, ABE/ASE Math Master Teacher · Harry S. Truman College</p>
+    </header>
+
+    <main id="principal">
+
+      <!-- 0. Purpose -->
+      <section>
+        <div class="caja-acento">
+          <h3>Purpose of this report</h3>
+          <p>This document accompanies the professional development presentation on Level 1 mathematics. It brings together, in a single place, the <strong>characteristics</strong> of the level, the <strong>topics</strong> that make it up, its role as the <strong>starting point</strong> of the sequence, its part in <strong>preparing students for Level 2</strong>, and a description of the <strong>integrative final project “My Graph of Life,”</strong> the first occasion on which students bring together and present everything they have learned. It is intended as a reference for faculty before, during, and after the session.</p>
+        </div>
+      </section>
+
+      <!-- 1. What Level 1 is -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">1</span>What Level 1 is</h2>
+        <p>Level 1 is the first stage of a single four-level sequence. It corresponds to <strong>NRS levels 1 and 2</strong> and is the program’s point of entry: here the adult learner <strong>rebuilds number sense from the ground up</strong> —place value and the four operations— and takes the first steps toward mathematical reasoning. It is the level that turns a fragmented, half-remembered arithmetic into a solid, understood foundation.</p>
+
+        <div class="cifras">
+          <div class="cifra"><div class="n">96 h</div><div class="l">48 synchronous + 48 asynchronous</div></div>
+          <div class="cifra"><div class="n">16</div><div class="l">weeks of instruction</div></div>
+          <div class="cifra"><div class="n">8</div><div class="l">topics of 12 hours (≈ 2 weeks)</div></div>
+          <div class="cifra"><div class="n">3 × 4</div><div class="l">three four-hour lessons per topic</div></div>
+        </div>
+
+        <p>Each four-hour lesson keeps the program’s <strong>four components</strong>: materials and resources, guided practice, quiz or assignment, and rubric. The level is delivered in <strong>Brightspace D2L</strong> with practice in <strong>MyOpenMath</strong>, and it introduces the <strong>TI-30XS</strong> calculator in Topic 3 to verify operations with decimals.</p>
+
+        <h3>Placement within the four-level sequence</h3>
+        <div class="niveles">
+          <div class="nivel actual"><div class="rot">Level 1 ← we are here</div><div class="nrs">NRS 1–2</div><div class="desc">Integers, decimals, fractions, measurement, basic geometry, and data.</div></div>
+          <div class="nivel"><div class="rot">Level 2</div><div class="nrs">NRS 2–3</div><div class="desc">Signs, full PEMDAS, proportions, percentages, finance, and statistics.</div></div>
+          <div class="nivel"><div class="rot">Level 3</div><div class="nrs">NRS 3–4</div><div class="desc">Algebra, radicals, Pythagorean theorem, similarity, and volume.</div></div>
+          <div class="nivel"><div class="rot">Level 4</div><div class="nrs">NRS 4–5</div><div class="desc">Higher algebra, functions, and modeling (GED).</div></div>
+        </div>
+      </section>
+
+      <!-- 2. Identity -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">2</span>The identity of Level 1: three defining ideas</h2>
+        <div class="tarjeta">
+          <h3>1 · Number is rebuilt from the ground up</h3>
+          <p>Students work on <strong>place value</strong> and the <strong>four operations</strong> with whole numbers, decimals, and fractions, with understanding rather than memorized rules. For an adult who has been away from the classroom for years, a fragmented arithmetic becomes a firm foundation.</p>
+          <h3>2 · Calculation begins to become reasoning</h3>
+          <p>With <strong>patterns</strong>, a first <strong>algebraic language</strong> using simple unknowns, and <strong>one-step word problems</strong>, the habit of thinking —not just computing— takes hold. This is the seed of the mathematical reasoning that will mature in the levels that follow.</p>
+          <h3>3 · Mathematics anchors in everyday life</h3>
+          <p><strong>Measurement</strong>, <strong>time</strong>, <strong>basic geometry</strong> (perimeter and area), and reading <strong>tables and graphs</strong> connect the subject to the tangible situations the adult learner already handles day to day.</p>
+        </div>
+      </section>
+
+      <!-- 3. The eight topics -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">3</span>The eight topics of the level</h2>
+        <p>Content is distributed across eight major topics of twelve hours each, following the progression of the <em>Topical Outline</em> in the 16-week <em>syllabus</em> and the <em>Student Learning Outcomes</em>. Topics 1–4 develop arithmetic (whole numbers, decimals, and fractions); topics 5–6 work on reasoning, patterns, and measurement; topics 7–8 close with geometry, data, and the final project.</p>
+        <table>
+          <caption>The eight topics of Level 1 Mathematics, with their weeks, standards, and main focus.</caption>
+          <thead>
+            <tr><th scope="col">#</th><th scope="col">Topic</th><th scope="col">Weeks</th><th scope="col">Standard</th><th scope="col">Main focus</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="c">1</td><td><span class="barra" style="background:var(--t1)" aria-hidden="true"></span>Whole numbers: place value and addition/subtraction</td><td class="c">1–2</td><td class="c">NBT</td><td>Reading, writing, comparing, and rounding; addition and subtraction with regrouping; word problems.</td></tr>
+            <tr><td class="c">2</td><td><span class="barra" style="background:var(--t2)" aria-hidden="true"></span>Multiplication and division of whole numbers</td><td class="c">3–4</td><td class="c">NBT · OA</td><td>Standard algorithm; remainders; properties; word problems.</td></tr>
+            <tr><td class="c">3</td><td><span class="barra" style="background:var(--t3)" aria-hidden="true"></span>Decimals: concepts and operations</td><td class="c">5–6</td><td class="c">NBT</td><td>Reading, writing, and comparing; the four operations; fraction–decimal equivalences.</td></tr>
+            <tr><td class="c">4</td><td><span class="barra" style="background:var(--t4)" aria-hidden="true"></span>Fractions: concepts and operations</td><td class="c">7–8</td><td class="c">NF</td><td>Equivalent fractions and simplifying; +, −, ×; mixed numbers; word problems.</td></tr>
+            <tr><td class="c">5</td><td><span class="barra" style="background:var(--t5)" aria-hidden="true"></span>Patterns and one-step word problems</td><td class="c">9–10</td><td class="c">OA</td><td>Number and shape patterns; algebraic language; simple unknowns.</td></tr>
+            <tr><td class="c">6</td><td><span class="barra" style="background:var(--t6)" aria-hidden="true"></span>Measurement systems and time</td><td class="c">11–12</td><td class="c">MD</td><td>U.S. customary and metric systems; time and temperature; conversions and applications.</td></tr>
+            <tr><td class="c">7</td><td><span class="barra" style="background:var(--t7)" aria-hidden="true"></span>Geometry: 2D figures, perimeter, and area</td><td class="c">13–14</td><td class="c">G · MD</td><td>Classifying figures; perimeter of polygons; area of rectangles and triangles.</td></tr>
+            <tr><td class="c">8</td><td><span class="barra" style="background:var(--t8)" aria-hidden="true"></span>Tables, graphs, and integrative final project</td><td class="c">15–16</td><td class="c">SP</td><td>Data tables; bar and line graphs; final project; introduction to the GED.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 4. Connecting thread -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">4</span>The connecting thread: the four operations, from whole numbers to fractions</h2>
+        <p>The first four topics are not isolated blocks: they share one spine, the <strong>four operations</strong>. These are consolidated first with whole numbers, then extended to decimals and fractions, and from Topic 5 onward applied to measurement, geometry, and data. Mastering the operations here, with understanding, is what makes everything later possible.</p>
+        <div class="flujo">
+          <div class="paso"><div class="et">Topics 1–2</div><div class="tx">The four operations with whole numbers.</div></div>
+          <div class="flecha" aria-hidden="true">→</div>
+          <div class="paso"><div class="et">Topic 3</div><div class="tx">The operations extend to decimals.</div></div>
+          <div class="flecha" aria-hidden="true">→</div>
+          <div class="paso"><div class="et">Topic 4</div><div class="tx">The operations extend to fractions.</div></div>
+          <div class="flecha" aria-hidden="true">→</div>
+          <div class="paso" style="border-left-color:#f9a825"><div class="et">Topics 5–8</div><div class="tx">Applied to patterns, measurement, geometry, and data.</div></div>
+        </div>
+        <p>The design avoids any abrupt jump: each new kind of number reuses operations the student already knows, so learners advance on familiar ground.</p>
+      </section>
+
+      <!-- 5. The starting point -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">5</span>The starting point: where students come from</h2>
+        <p>As the first level, Level 1 does not build on a previous stage but on the adult learner’s life experience. The design rule is to start from what students already bring —often informally— and give it structure and understanding.</p>
+        <div class="duo">
+          <div class="col venimos">
+            <h3>What students bring</h3>
+            <ul class="limpia">
+              <li>Life experience and practical handling of money, time, and measurement.</li>
+              <li>Often years or decades away from the school system.</li>
+              <li>A fragmented arithmetic: rules memorized without understanding.</li>
+              <li>Intuitive notions of quantity, comparison, and sharing.</li>
+              <li>Concrete motivation: the GED, work, family.</li>
+            </ul>
+          </div>
+          <div class="col anade">
+            <h3>What Level 1 builds</h3>
+            <ul class="limpia">
+              <li>Place value and the four operations, with understanding.</li>
+              <li>Decimals and fractions from the concept, not the rule.</li>
+              <li>Patterns, first algebraic language, and simple unknowns.</li>
+              <li>Measurement, time, and applied conversions.</li>
+              <li>Basic geometry and reading and interpreting data.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. The arithmetic heart -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">6</span>The arithmetic heart: decimals and fractions</h2>
+        <p>Topics 3 and 4 —decimals and fractions— are the pivotal block of the level and, in large part, of the whole path toward the GED. It is where many adult learners have stumbled in the past, and for that reason the program treats it with special care and from real contexts.</p>
+        <div class="destacado">
+          <h3>The program’s approach in this block</h3>
+          <p>The sequence always runs <strong>from concept to symbol</strong>: first the meaning (a part of a whole, a decimal place), then the procedure. Students work with <strong>fraction–decimal equivalences</strong> as two forms of the same quantity, with <strong>mixed numbers</strong>, and with <strong>word problems</strong> set in everyday situations (recipes, money, measurement). The <strong>TI-30XS</strong> calculator is introduced here, in Topic 3, not to replace calculation but to <strong>verify</strong> operations with decimals once the procedure is understood.</p>
+        </div>
+      </section>
+
+      <!-- 7. The integrative final project -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">7</span>The integrative final project: “My Graph of Life”</h2>
+        <p>The level culminates, in lesson 8.3, with the integrative project <strong>“My Graph of Life”</strong> and an introduction to the GED format. It is the <strong>first time</strong> students bring together everything they have learned into a single task using their own data and <strong>present it to the group</strong>.</p>
+
+        <h3>What students do</h3>
+        <p>They build a graph from measurable personal data (for example, hours of sleep over five days, or the week’s expenses) and work through five elements:</p>
+        <table>
+          <caption>The five elements of the Level 1 integrative final project and what students produce in each.</caption>
+          <thead>
+            <tr><th scope="col">Element</th><th scope="col">What the student produces</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>1 · Data table</strong></td><td>A complete, correct table of five measurable personal data points.</td></tr>
+            <tr><td><strong>2 · Bar graph</strong></td><td>A well-labeled graph, with title, axes, and scale.</td></tr>
+            <tr><td><strong>3 · Descriptive paragraph</strong></td><td>A paragraph with at least three data points read from their own graph.</td></tr>
+            <tr><td><strong>4 · Basic calculations</strong></td><td>Total, average, and difference, calculated correctly.</td></tr>
+            <tr><td><strong>5 · Oral presentation</strong></td><td>A 3–4 minute presentation to the group, with peer feedback.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Why it is a new way of applying what has been learned</h3>
+        <div class="caja-acento">
+          <p>It is the level’s <strong>first authentic integration</strong>: in a single task, students bring together arithmetic, calculation, graphical representation, and written and oral expression. The <strong>presentation to the group</strong>, with peer feedback (using sentence frames), develops mathematical communication, and the accompanying <strong>10 GED-style questions</strong> offer a first contact with the exam format. The project grade (20 pts) is combined with the summative quiz to form the level’s final grade.</p>
+        </div>
+        <p>Submission allows for the oral presentation in the synchronous session and for posting the complete project in Brightspace, where each student comments on two peers’ work. It is assessed with a <strong>five-criterion analytic rubric</strong>, which respects different modes of expression (the UDL principle of multiple means of action and expression).</p>
+      </section>
+
+      <!-- 8. Preparing for Level 2 -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">8</span>Preparing for Level 2</h2>
+        <p>Each Level 1 content area seeds a competency that Level 2 takes up and expands. The level does not end in itself: it builds the arithmetic base on which the work with signs, structure, and application will stand.</p>
+        <table>
+          <caption>Correspondence between Level 1 content and its continuation in Level 2.</caption>
+          <thead>
+            <tr><th scope="col">What Level 1 introduces</th><th scope="col">How Level 2 develops it</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>The four operations with whole numbers</td><td>Signed integers: the four operations with negatives.</td></tr>
+            <tr><td>Decimals and fractions</td><td>Complex fractions and the foundation for percentages.</td></tr>
+            <tr><td>Basic order of operations</td><td>Full PEMDAS with powers and roots.</td></tr>
+            <tr><td>Perimeter and area of rectangles and triangles</td><td>Composite figures and the circle (circumference and area with π).</td></tr>
+            <tr><td>Tables and bar/line graphs</td><td>Circle graphs and descriptive statistics.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 9. Pedagogical notes -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">9</span>Pedagogical notes for the instructor</h2>
+        <div class="tarjeta">
+          <ul class="limpia">
+            <li><strong>Context before symbol.</strong> Each topic opens with a real situation —money, time, measurement, personal data— before formalizing. The symbol comes after the experience.</li>
+            <li><strong>50/50 distribution.</strong> Each lesson suggests 2 synchronous hours and 2 asynchronous: 48 and 48 in total, aligned with the four sections of the Topical Outline.</li>
+            <li><strong>TI-30XS calculator.</strong> Introduced in Topic 3 to verify operations with decimals. Always remember to clear the memory before calculating.</li>
+            <li><strong>Alignment with Steck-Vaughn.</strong> Each lesson can be linked to the pages of the GED Mathematics workbook for physical-book reference.</li>
+            <li><strong>UDL design.</strong> Simple analytic rubrics (3–5 criteria × 3–4 levels) compatible with Brightspace Ally, authentic contexts, and multiple submission formats.</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>Level 1 Report — Spanish ASE Math · Harry S. Truman College, City Colleges of Chicago.</p>
+      <p>© José M. Fernández, ABE/ASE Math Master Teacher. Licensed under
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="license">Creative Commons BY-NC-SA 4.0</a>.</p>
+    </footer>
+  </div>
+</body>
+</html>

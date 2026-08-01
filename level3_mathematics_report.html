@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!--
+  Level 3 Pedagogical Report — Spanish ASE Math (English version)
+  © José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.
+  Creative Commons BY-NC-SA 4.0 License.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 3 Mathematics Report — Spanish ASE Math</title>
+  <meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+  <meta name="license" content="CC BY-NC-SA 4.0">
+  <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">
+  <meta name="description" content="Faculty report on Level 3 of the Spanish ASE Math program: level characteristics, topics, continuity with Level 2, preparation for Level 4, and the culminating integrative project &quot;My Data Analysis.&quot;">
+  <style>
+    :root {
+      --tinta:      #1f2937;
+      --acento:     #1a237e;
+      --acento2:    #303f9f;
+      --acento-cl:  #e8eaf6;
+      --ambar-bg:   #fff3d6;
+      --ambar-tx:   #5c3900;
+      --muted:      #555;
+      --linea:      #dddddd;
+      --bg:         #f4f6fa;
+      /* Color identity per topic */
+      --t1: #b71c1c; --t1bg: #ffebee;
+      --t2: #4a148c; --t2bg: #f3e5f5;
+      --t3: #1a237e; --t3bg: #e8eaf6;
+      --t4: #004d40; --t4bg: #e0f2f1;
+      --t5: #e65100; --t5bg: #fff3e0;
+      --t6: #33691e; --t6bg: #f1f8e9;
+      --t7: #37474f; --t7bg: #eceff1;
+      --t8: #4e342e; --t8bg: #efebe9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      margin: 0; background: var(--bg); color: var(--tinta);
+      line-height: 1.6; font-size: 16px;
+    }
+    .saltar {
+      position: absolute; left: -999px; top: 0; background: var(--tinta);
+      color: #fff; padding: 10px 16px; z-index: 100; border-radius: 0 0 6px 0;
+    }
+    .saltar:focus { left: 0; }
+    .contenedor { max-width: 980px; margin: 0 auto; padding: 24px; }
+
+    header.principal {
+      background: linear-gradient(135deg, #0d1440 0%, #1a237e 55%, #303f9f 100%);
+      color: #fff; padding: 40px 34px; border-radius: 14px;
+      margin-bottom: 28px; box-shadow: 0 4px 16px rgba(16,22,68,.28);
+    }
+    header.principal .etiqueta {
+      display: inline-block; background: rgba(255,255,255,.16);
+      padding: 4px 14px; border-radius: 20px; font-size: 13px;
+      font-weight: 700; letter-spacing: .6px; text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    header.principal h1 { margin: 0 0 10px; font-size: 30px; font-weight: 700; line-height: 1.2; }
+    header.principal .sub { font-size: 17px; opacity: .95; margin: 0 0 16px; }
+    header.principal .meta { font-size: 13.5px; opacity: .9; border-top: 1px solid rgba(255,255,255,.25); padding-top: 14px; }
+
+    section { margin-bottom: 34px; }
+    h2 {
+      font-size: 23px; color: var(--acento); margin: 0 0 6px;
+      padding-bottom: 10px; border-bottom: 2px solid var(--acento-cl);
+    }
+    h2 .numsec {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px; background: var(--acento); color: #fff;
+      border-radius: 9px; font-size: 16px; margin-right: 12px; vertical-align: middle;
+    }
+    h3 { font-size: 18px; color: var(--acento2); margin: 22px 0 8px; }
+    p { margin: 10px 0; }
+
+    .tarjeta {
+      background: #fff; border-radius: 12px; padding: 22px 26px;
+      box-shadow: 0 1px 5px rgba(0,0,0,.06); margin-top: 14px;
+    }
+
+    /* Highlighted figures */
+    .cifras {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 14px; margin: 18px 0;
+    }
+    .cifra {
+      background: #fff; border-radius: 12px; padding: 18px 16px; text-align: center;
+      box-shadow: 0 1px 5px rgba(0,0,0,.06);
+    }
+    .cifra .n { font-size: 30px; font-weight: 800; color: var(--acento); line-height: 1; }
+    .cifra .l { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+    /* Level bar */
+    .niveles { display: flex; gap: 10px; margin: 18px 0; flex-wrap: wrap; }
+    .nivel {
+      flex: 1 1 150px; background: #fff; border-radius: 10px; padding: 14px 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06); border-top: 5px solid var(--linea);
+    }
+    .nivel.actual { border-top-color: var(--acento); background: var(--acento-cl); }
+    .nivel .rot { font-weight: 700; font-size: 15px; }
+    .nivel.actual .rot { color: var(--acento); }
+    .nivel .nrs { font-size: 12.5px; color: var(--muted); margin-top: 3px; }
+    .nivel .desc { font-size: 13px; margin-top: 6px; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; background: #fff;
+      border-radius: 10px; overflow: hidden; box-shadow: 0 1px 5px rgba(0,0,0,.06);
+      margin: 16px 0; font-size: 14.5px; }
+    caption {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+    th, td { padding: 11px 14px; text-align: left; border-bottom: 1px solid #eee; vertical-align: top; }
+    thead th { background: var(--tinta); color: #fff; font-size: 13px; text-transform: uppercase; letter-spacing: .4px; }
+    tbody tr:last-child td { border-bottom: none; }
+    td.c { text-align: center; }
+    .pild { display: inline-block; padding: 2px 9px; border-radius: 11px; font-size: 12px; font-weight: 700; color: #fff; }
+
+    /* Topic table: color bar per topic */
+    .barra { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: middle; }
+
+    /* Two-column continuity */
+    .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 16px; }
+    .duo .col { background: #fff; border-radius: 12px; padding: 20px 22px; box-shadow: 0 1px 5px rgba(0,0,0,.06); }
+    .duo .col h3 { margin-top: 0; }
+    .col.venimos h3 { color: #6a4e00; }
+    .col.anade  h3 { color: var(--acento); }
+    ul.limpia { margin: 8px 0 0; padding-left: 20px; }
+    ul.limpia li { margin-bottom: 8px; }
+    .nuevo { display: inline-block; background: var(--ambar-bg); color: var(--ambar-tx);
+      font-size: 11px; font-weight: 800; padding: 1px 7px; border-radius: 8px; letter-spacing: .4px; margin-left: 4px; }
+
+    /* Flow (through-line / preparation) */
+    .flujo { display: flex; align-items: stretch; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+    .paso {
+      flex: 1 1 160px; background: #fff; border-radius: 10px; padding: 14px 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06); border-left: 5px solid var(--acento2); position: relative;
+    }
+    .paso .et { font-size: 12px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: .4px; }
+    .paso .tx { font-size: 14px; margin-top: 4px; }
+    .flecha { align-self: center; color: var(--acento2); font-size: 22px; font-weight: 700; }
+
+    /* Highlight box (project / amber) */
+    .destacado {
+      background: var(--ambar-bg); border-left: 6px solid #f9a825;
+      border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 16px 0; color: #3d2600;
+    }
+    .destacado h3 { color: var(--ambar-tx); margin-top: 0; }
+    .destacado strong { color: var(--ambar-tx); }
+
+    .caja-acento {
+      background: var(--acento-cl); border-left: 6px solid var(--acento);
+      border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 16px 0;
+    }
+    .caja-acento h2 {
+      margin-top: 0; font-size: 19px; color: var(--acento);
+      border-bottom: none; padding-bottom: 0;
+    }
+    .caja-acento h3 { margin-top: 0; color: var(--acento); }
+
+    footer {
+      text-align: center; padding: 26px 20px; color: var(--muted);
+      font-size: 13px; margin-top: 20px; border-top: 1px solid var(--linea);
+    }
+    footer a { color: var(--acento); }
+
+    @media (max-width: 720px) {
+      .duo { grid-template-columns: 1fr; }
+    }
+    @media print {
+      body { background: #fff; }
+      .tarjeta, .cifra, .nivel, table, .paso, .duo .col { box-shadow: none; border: 1px solid #ccc; }
+      header.principal { box-shadow: none; }
+      .saltar { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="saltar" href="#principal">Skip to main content</a>
+
+  <div class="contenedor">
+    <header class="principal">
+      <span class="etiqueta">Faculty Report</span>
+      <h1>Level 3 Mathematics: The Level Where Algebra Becomes the Language of the Course</h1>
+      <p class="sub">Spanish ASE Math · City Colleges of Chicago · AE 0170-0323 · NRS 3–4 · 96 hours · 16 weeks</p>
+      <p class="meta">Supporting document for the professional development session · Prof. José M. Fernández, ABE/ASE Math Master Teacher · Harry S. Truman College</p>
+    </header>
+
+    <main id="principal">
+
+      <!-- 0. Purpose -->
+      <section>
+        <div class="caja-acento">
+          <h2>Purpose of This Report</h2>
+          <p>This document accompanies the professional development presentation on Level 3 Mathematics. It brings together, in a single place, the <strong>characteristics</strong> of the level, the <strong>topics</strong> that make it up, its <strong>continuity with Level 2</strong>, its role in <strong>preparing students for Level 4</strong>, and a detailed description of the <strong>culminating integrative project, <span lang="es">«Mi análisis de datos»</span> (My Data Analysis)</strong>. It also includes a sample lesson — the Pythagorean Theorem — that illustrates the dual-modality model, in-person and online, on which the entire level has been built. It is intended as a reference for faculty before, during, and after the session.</p>
+        </div>
+      </section>
+
+      <!-- 1. What Level 3 is -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">1</span>What Level 3 Is</h2>
+        <p>Level 3 is the third segment of a single four-level sequence. It corresponds to <strong>NRS levels 3 and 4</strong> and occupies the space between the proportional reasoning consolidated in Level 2 and the mathematics of functions and modeling in Level 4. It is the turning point of the entire program: the level at which students stop operating exclusively with numbers and begin to <strong>operate with symbols that represent numbers</strong>. Put another way, if Level 2 was the bridge to algebra, Level 3 is the moment of crossing it.</p>
+
+        <div class="cifras">
+          <div class="cifra"><div class="n">96 h</div><div class="l">48 synchronous + 48 asynchronous</div></div>
+          <div class="cifra"><div class="n">16</div><div class="l">weeks of instruction</div></div>
+          <div class="cifra"><div class="n">8</div><div class="l">12-hour topics (≈ 2 weeks each)</div></div>
+          <div class="cifra"><div class="n">3 × 4</div><div class="l">3 four-hour lessons per topic</div></div>
+        </div>
+
+        <p>Each four-hour lesson retains the <strong>four components</strong> of the program model: materials and resources, guided practice, quiz or assignment, and rubric. The level is delivered in <strong>Brightspace D2L</strong> with practice in <strong>MyOpenMath</strong>, and it consolidates use of the <strong>TI-30XS calculator</strong>, which here displays its full repertoire: roots, powers, scientific notation with the EE key, and the nPr and nCr functions for combinatorics. Beginning with Topic 6, the <strong>official formula sheet for the GED Mathematical Reasoning test</strong> is also introduced, so that students become familiar with it well before facing the exam.</p>
+
+        <h3>Placement Within the Four-Level Sequence</h3>
+        <div class="niveles">
+          <div class="nivel"><div class="rot">Level 1</div><div class="nrs">NRS 1–2</div><div class="desc">Whole numbers, decimals, fractions, and basic operations.</div></div>
+          <div class="nivel"><div class="rot">Level 2</div><div class="nrs">NRS 2–3</div><div class="desc">Signed integers, complete PEMDAS, proportions, percentages, finance, geometry, and statistics.</div></div>
+          <div class="nivel actual"><div class="rot">Level 3 ← we are here</div><div class="nrs">NRS 3–4</div><div class="desc">Exponents, scientific notation, radicals, complete linear algebra, Pythagorean Theorem, similarity, volume, data, and probability.</div></div>
+          <div class="nivel"><div class="rot">Level 4</div><div class="nrs">NRS 4–5</div><div class="desc">Higher algebra, functions, and modeling (GED preparation).</div></div>
+        </div>
+      </section>
+
+      <!-- 2. The identity of the level -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">2</span>The Identity of Level 3: Three Defining Ideas</h2>
+        <div class="tarjeta">
+          <h3>1 · The Real Number System Is Completed</h3>
+          <p>The first three topics close out the number system students have been building since Level 1. Here appear the <strong>complete rules of exponents</strong> (including the zero and negative exponents), <strong>scientific notation</strong> for handling the very large and the very small, and <strong>irrational radicals</strong>. With √2 and π placed on the number line, students see the complete set of real numbers for the first time: there are no gaps left.</p>
+          <h3>2 · Algebra Stops Being "Arithmetic With Letters"</h3>
+          <p>Topics 4 and 5 formalize linear algebra in its full extent: translation from verbal to symbolic language, properties of equality, <strong>equations with variables on both sides</strong>, special cases (no solution and infinitely many solutions), inequalities with their critical sign-change rule, and <strong>solving literal formulas for a given variable</strong>. Solving <em>A = bh</em> for <em>h</em> is the moment when the letter stops being an unknown to be "found" and becomes a quantity that can be operated on.</p>
+          <h3>3 · Geometry Becomes Demonstrative</h3>
+          <p>With the <strong>Pythagorean Theorem and its converse</strong>, <strong>similarity</strong>, and <strong>Thales' Theorem (the Basic Proportionality Theorem)</strong>, geometry stops being a catalog of area formulas and becomes reasoning with justification. Students no longer simply calculate: they verify, check, and argue why their result is correct.</p>
+        </div>
+      </section>
+
+      <!-- 3. Map of the 8 topics -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">3</span>The Eight Topics of the Level</h2>
+        <p>Content is distributed across eight major twelve-hour topics, following the progression of the Topical Outline v2 of the 16-week syllabus and the Student Learning Outcomes. Topics 1–3 complete advanced number sense; topics 4–5 develop complete linear algebra; topics 6–7 cover spatial geometry and data analysis; topic 8 closes with combinatorics, compound probability, and the culminating integrative project.</p>
+
+        <table>
+          <caption>The eight topics of Level 3 Mathematics, with their weeks, standards, and main focus.</caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Topic</th>
+              <th scope="col">Weeks</th>
+              <th scope="col">Standard</th>
+              <th scope="col">Main Focus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="c"><span class="barra" style="background: var(--t1);" aria-hidden="true"></span>1</td>
+              <td>Rules of exponents</td>
+              <td class="c">1–2</td>
+              <td class="c">NS</td>
+              <td>Product, quotient, and power rules; zero and negative exponents; simplification using multiple rules.</td>
+            </tr>
+            <tr>
+              <td class="c"><span class="barra" style="background: var(--t2);" aria-hidden="true"></span>2</td>
+              <td>Scientific notation</td>
+              <td class="c">3–4</td>
+              <td class="c">NS · EE</td>
+              <td>Decimal ↔ scientific conversion; the four operations; real scientific applications.</td>
+            </tr>
+            <tr>
+              <td class="c"><span class="barra" style="background: var(--t3);" aria-hidden="true"></span>3</td>
+              <td>Irrational radicals and the real number system</td>
+              <td class="c">5–6</td>
+              <td class="c">NS</td>
+              <td>Simplifying and operating with radicals; rational versus irrational; the complete number line.</td>
+            </tr>
+            <tr>
+              <td class="c"><span class="barra" style="background: var(--t4);" aria-hidden="true"></span>4</td>
+              <td>Linear algebra: variables, expressions, and equations</td>
+              <td class="c">7–8</td>
+              <td class="c">EE</td>
+              <td>Translating and simplifying; properties of equality; variables on both sides; special cases.</td>
+            </tr>
+            <tr>
+              <td class="c"><span class="barra" style="background: var(--t5);" aria-hidden="true"></span>5</td>
+              <td>Linear inequalities, literal formulas, and general strategy</td>
+              <td class="c">9–10</td>
+              <td class="c">EE</td>
+              <td>Solving and graphing inequalities; word problems; solving GED formulas for a given variable.</td>
+            </tr>
+            <tr>
+              <td class="c"><span class="barra" style="background: var(--t6);" aria-hidden="true"></span>6</td>
+              <td>Advanced geometry: angles, Pythagorean Theorem, and similarity</td>
+              <td class="c">11–12</td>
+              <td class="c">G</td>
+              <td>Angles and parallel lines; the Pythagorean Theorem and its converse; similar figures; Thales' Theorem.</td>
+            </tr>
+            <tr>
+              <td class="c"><span class="barra" style="background: var(--t7);" aria-hidden="true"></span>7</td>
+              <td>Volume of solids and complex data analysis</td>
+              <td class="c">13–14</td>
+              <td class="c">G · SP</td>
+              <td>Volume of prisms and cylinders; box plots; histograms; comparing distributions.</td>
+            </tr>
+            <tr>
+              <td class="c"><span class="barra" style="background: var(--t8);" aria-hidden="true"></span>8</td>
+              <td>Combinatorics, compound probability, and final project</td>
+              <td class="c">15–16</td>
+              <td class="c">SP</td>
+              <td>Counting; permutations and combinations; probability with and without replacement; integrative project.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 4. The through-line -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">4</span>The Through-Line: From the Exponent to Algebra</h2>
+        <p>The eight topics are not eight separate compartments: they form a single line of construction. The first three topics manipulate symbolic expressions — simplifying (2x³y⁻²)⁴ is already algebra, even if it is not yet called that — and in doing so they prepare the ground. When algebra is formalized in Topic 4, students have already spent six weeks working with letters without having noticed it. From Topic 6 onward, algebra becomes a tool: it is used to solve for a leg of a right triangle, to find the side of a similar triangle, and to find the radius of a cylinder from its volume.</p>
+
+        <div class="flujo">
+          <div class="paso"><div class="et">Topics 1–3</div><div class="tx">Symbolic manipulation with exponents, scientific notation, and radicals.</div></div>
+          <div class="flecha" aria-hidden="true">→</div>
+          <div class="paso"><div class="et">Topics 4–5</div><div class="tx">Linear algebra is formalized: equations, inequalities, and literal formulas.</div></div>
+          <div class="flecha" aria-hidden="true">→</div>
+          <div class="paso"><div class="et">Topics 6–7</div><div class="tx">Algebra is applied: Pythagorean Theorem, similarity, volume, and data analysis.</div></div>
+          <div class="flecha" aria-hidden="true">→</div>
+          <div class="paso"><div class="et">Topic 8</div><div class="tx">Everything converges in probability and in the culminating integrative project.</div></div>
+        </div>
+
+        <p>This design avoids the classic error of presenting algebra as a separate subject that arrives all at once. Here the symbol is introduced through progressive familiarity and justified by usefulness: by the time students reach the formal linear equation, they already need it to solve problems they themselves have posed.</p>
+      </section>
+
+      <!-- 5. Continuity with Level 2 -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">5</span>Continuity With Level 2</h2>
+        <p>Level 3 builds on what students already command and extends it with new content. The design rule is the same as throughout the program: what was learned in Level 2 is treated as consolidated and revisited only as a foundation; the new effort is concentrated on the symbol, on algebraic structure, and on geometric justification. PEMDAS, in particular, is no longer taught: it is applied without being mentioned, in every simplification at this level.</p>
+
+        <div class="duo">
+          <div class="col venimos">
+            <h3>Assumed Mastered (Level 2)</h3>
+            <ul class="limpia">
+              <li>Signed integers: the four operations and absolute value.</li>
+              <li>Complete PEMDAS, including powers and elementary roots.</li>
+              <li>Complex fractions and operations with decimals.</li>
+              <li>Exponents and roots of perfect squares (introduction).</li>
+              <li>Ratios, unit rates, and direct and inverse proportions.</li>
+              <li>Percentages, percent change, simple interest, and depreciation.</li>
+              <li>Area of composite figures; circumference and area of the circle.</li>
+              <li>Central tendency, pie charts, and simple probability.</li>
+            </ul>
+          </div>
+          <div class="col anade">
+            <h3>What Level 3 Adds or Extends</h3>
+            <ul class="limpia">
+              <li>Complete rules of exponents: quotient, zero, and negative exponents.<span class="nuevo">New</span></li>
+              <li>Scientific notation and the four operations with it.<span class="nuevo">New</span></li>
+              <li>Irrational radicals; rational versus irrational numbers.<span class="nuevo">New</span></li>
+              <li>Algebraic language, expressions, and like terms.<span class="nuevo">New</span></li>
+              <li>Linear equations with variables on both sides and special cases.<span class="nuevo">New</span></li>
+              <li>Linear inequalities and solving literal formulas.<span class="nuevo">New</span></li>
+              <li>The Pythagorean Theorem and its converse; similarity and Thales' Theorem.<span class="nuevo">New</span></li>
+              <li>Volume of prisms and cylinders; box plots and histograms.<span class="nuevo">New</span></li>
+              <li>Combinatorics and compound probability with and without replacement.<span class="nuevo">New</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. The geometry block and the sample lesson -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">6</span>The Geometry Block: The Sample Lesson</h2>
+        <p>Topic 6 is the heart of the level and the one that best shows how the lessons have been built. <strong>Lesson 6.2, devoted to the Pythagorean Theorem</strong>, serves as a reference for faculty because in it, within a single four-hour session, all the features of the program's design are visible.</p>
+
+        <div class="tarjeta">
+          <h3>How Lesson 6.2 Is Built</h3>
+          <p>The lesson opens by stating its <strong>objectives</strong> and an <strong>explicit connection to the previous lesson</strong>: in 6.1 the angles of the right triangle were studied; now the relationship among its sides is studied. That connection extends backward across the level — solving for a leg uses the algebra of Topics 4 and 5, and extracting the root uses Topic 3 — so that students perceive the course as a fabric rather than a list.</p>
+          <p>Content advances in short, verifiable steps: identifying the hypotenuse and the legs, calculating the hypotenuse, calculating a leg, recognizing the <strong>Pythagorean triples</strong> (3-4-5, 5-12-13, 8-15-17, 7-24-25), and applying the <strong>converse</strong> to decide whether a triangle is a right triangle. Each block includes worked examples numbered step by step and warnings about the most frequent errors, such as adding when subtraction is called for while solving for a leg.</p>
+          <p>Interspersed throughout the text are <strong>interactive practice items with immediate feedback</strong>, along with a link to a visual resource on the GEDparaHispanos portal that allows students to manipulate the theorem. The lesson closes with the <strong>asynchronous assignment in MyOpenMath</strong> and its corresponding rubric.</p>
+        </div>
+
+        <div class="destacado">
+          <h3>Dual Modality: In-Person and Online</h3>
+          <p>The most distinctive feature of the Level 3 lessons is that every guided practice activity is presented in <strong>two parallel versions</strong>: one for the in-person classroom and one for the online session. The visual demonstration of the theorem, for example, is done with <strong>paper squares constructed on each side</strong> of a 3-4-5 triangle in the classroom, and with the <strong>portal's interactive tool</strong> in the remote session. The activity "The Builder" solves eight real construction problems in class and four in small breakout rooms in pairs, recording the calculation on a shared sheet.</p>
+          <p>This is not an add-on: it is a design decision that responds to the reality of the program. Faculty can deliver the same lesson in either modality without redoing the planning, and students receive the same instructional experience regardless of how they attend. It is also a direct application of the UDL (Universal Design for Learning) principle of <strong>multiple means of representation and engagement</strong>.</p>
+        </div>
+      </section>
+
+      <!-- 7. Culminating integrative project -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">7</span>The Culminating Integrative Project: <span lang="es">«Mi análisis de datos»</span> (My Data Analysis)</h2>
+        <p>The level culminates, in Lesson 8.3, with a <strong>culminating integrative project</strong> that replaces the traditional assessment as the closing of the course. As in Level 2, the project grade is combined with the summative quiz grade to form the final grade. The difference lies in the object of study: while the Level 2 project centered on the personal budget and central tendency, the Level 3 project focuses on the <strong>analysis of a complete distribution</strong>.</p>
+
+        <p>Students choose a real data set — personal, family, or work-related — and produce five elements:</p>
+
+        <table>
+          <caption>The five components of the Level 3 culminating integrative project and what students produce in each.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Component</th>
+              <th scope="col">What the Student Produces</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1 · Data set</td><td>A real data set, described with its source, its unit of measure, and its context.</td></tr>
+            <tr><td>2 · Graphical representation</td><td>A box-and-whisker plot or a histogram, with all labels and its scale.</td></tr>
+            <tr><td>3 · Statistics</td><td>At least three calculated measures (mean, median, interquartile range, or others) with the procedure shown.</td></tr>
+            <tr><td>4 · Written interpretation</td><td>A coherent analysis of the shape of the distribution: symmetry, skew, and outliers.</td></tr>
+            <tr><td>5 · Probability calculation</td><td>A probability calculation tied to the context of the student's own data.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="destacado">
+          <h3>Why This Project Closes the Level Well</h3>
+          <p>The project requires students to <strong>travel through the entire level in a single task</strong>. Building the box plot requires the ordering and quartiles of Topic 7; calculating the mean requires consolidated arithmetic; expressing a probability as a fraction, decimal, and percentage requires the proportional reasoning of Level 2; and justifying in writing that a distribution is skewed requires the technical vocabulary acquired in the final two weeks.</p>
+          <p>The <strong>three- to four-minute oral presentation</strong> before classmates, with one required question from the audience, adds a communicative dimension uncommon in mathematics and highly valuable for adult learners. Submissions also accept alternative formats and are assessed with an <strong>analytic rubric of five criteria across four levels</strong>, which respects different styles of expression (the UDL principle of multiple means of action and expression). In Brightspace, each student comments on two classmates' projects, making peer assessment part of the learning itself.</p>
+        </div>
+      </section>
+
+      <!-- 8. Preparation for Level 4 -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">8</span>Preparation for Level 4</h2>
+        <p>Every new content strand in Level 3 plants a competency that Level 4 takes up and extends all the way to the GED exam. Level 3 does not end in itself: it delivers to Level 4 a student who already thinks algebraically.</p>
+
+        <table>
+          <caption>Correspondence between Level 3 content and its continuation in Level 4.</caption>
+          <thead>
+            <tr>
+              <th scope="col">What Level 3 Plants</th>
+              <th scope="col">What Level 4 Harvests</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Complete rules of exponents and scientific notation</td><td>Operations with polynomials, factoring, and exponential functions.</td></tr>
+            <tr><td>Radicals and irrational numbers</td><td>The discriminant and the quadratic formula.</td></tr>
+            <tr><td>Linear equations in one variable</td><td>Systems of equations and quadratic equations.</td></tr>
+            <tr><td>Inequalities and solving literal formulas</td><td>Modeling with constraints and manipulation of functions.</td></tr>
+            <tr><td>Similarity, the Pythagorean Theorem, and volume</td><td>Analytic geometry, distance in the plane, and basic trigonometry.</td></tr>
+            <tr><td>Combinatorics and compound probability</td><td>Conditional probability and elementary inference.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="caja-acento">
+          <h3>Two Deliberate Decisions About Scope</h3>
+          <p><strong>Factoring polynomials, quadratic equations, and systems of equations</strong> are expressly left outside Level 3 and reserved for Level 4. This is a conscious decision: attempting to cover them here would compromise the consolidation of linear algebra, which is the real objective of the level. Likewise, the <strong>GED formula sheet</strong> is introduced in Topic 6 and not before, so that students first understand where the formulas come from and only afterward learn to locate them quickly.</p>
+        </div>
+      </section>
+
+      <!-- 9. Pedagogical notes -->
+      <section>
+        <h2><span class="numsec" aria-hidden="true">9</span>Pedagogical Notes for the Instructor</h2>
+        <div class="tarjeta">
+          <ul class="limpia">
+            <li><strong>Discovery before the rule.</strong> Several topics open by asking students to find the pattern before the rule is stated: the table of decreasing powers of 2 reveals on its own why a⁰ = 1 and what a negative exponent means. The rule arrives as a conclusion, not as an imposition.</li>
+            <li><strong>Error as instructional material.</strong> Activities such as "The Exponent Referee" and "The Error Detector" present solutions with planted mistakes for students to identify and correct. Analyzing someone else's error is safer and more effective than waiting to commit it.</li>
+            <li><strong>50/50 distribution.</strong> Each lesson suggests 2 synchronous hours and 2 asynchronous hours: 48 and 48 in total.</li>
+            <li><strong>Dual modality in every guided practice.</strong> Each activity has its in-person version and its online version, ready to use without prior adaptation.</li>
+            <li><strong>TI-30XS calculator.</strong> It is used extensively at this level. It is worth practicing √x, x², xⁿ, the EE key for scientific notation, nPr, nCr, and π. Always remember to clear the memory before calculating.</li>
+            <li><strong>GED formula sheet.</strong> Beginning with Topic 6, get students accustomed to using it exactly as it appears on the exam.</li>
+            <li><strong>Alignment with Steck-Vaughn.</strong> Each lesson can be linked to the pages of the GED Mathematics workbook for reference to the physical book.</li>
+            <li><strong>UDL design.</strong> Authentic contexts, immediate verification, dual modality, submission in multiple formats, and accessible materials in Brightspace with Ally compliance.</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>Level 3 Report — Spanish ASE Math · Harry S. Truman College, City Colleges of Chicago.</p>
+      <p>© José M. Fernández, ABE/ASE Math Master Teacher. Licensed under
+        <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Creative Commons BY-NC-SA 4.0</a>.</p>
+    </footer>
+  </div>
+</body>
+</html>
