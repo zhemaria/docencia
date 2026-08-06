@@ -1,0 +1,691 @@
+<!doctype html>
+<!--
+  Plan curricular · Spanish ASE Language Arts, Nivel 4 (formato acordeón)
+  Autor: José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0).
+  https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+  <meta name="license" content="CC BY-NC-SA 4.0">
+  <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+  <title>Plan curricular — Artes del Lenguaje, Nivel 4</title>
+  <style>
+    :root { --acento:#9d174d; --bg:#faf6f8; --tinta:#222; --linea:#e2d5db; --foco:#f59e0b; }
+    * { box-sizing:border-box; }
+    body { font-family:'Segoe UI', system-ui, sans-serif; margin:0; background:var(--bg); color:var(--tinta); line-height:1.55; font-size:16px; }
+    .contenedor { max-width:1100px; margin:0 auto; padding:24px; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    a.salto { position:absolute; left:-9999px; background:var(--acento); color:#fff; padding:10px 16px; border-radius:8px; z-index:100; }
+    a.salto:focus { left:16px; top:16px; }
+
+    header.principal { background:#7a1338; background:linear-gradient(135deg,#7a1338 0%,#9d174d 55%,#be185d 100%);
+      color:#fff; padding:36px 32px; border-radius:14px; margin-bottom:24px; box-shadow:0 4px 14px rgba(122,19,56,.25); }
+    header.principal h1 { margin:0 0 8px; font-size:28px; font-weight:700; }
+    header.principal .meta { font-size:14px; opacity:.94; margin-top:8px; }
+    header.principal .meta strong { font-weight:600; }
+
+    .intro { background:#fff; padding:20px 24px; border-radius:10px; border-left:5px solid var(--acento); margin-bottom:24px; box-shadow:0 1px 4px rgba(0,0,0,.05); }
+    .intro h2 { margin-top:0; color:var(--acento); font-size:20px; }
+    .intro p { margin:8px 0; }
+
+    .tabla-resumen { width:100%; border-collapse:collapse; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,.05); margin-bottom:32px; font-size:14px; }
+    .tabla-resumen caption { text-align:left; padding:12px 12px 0; font-weight:600; color:#555; }
+    .tabla-resumen th, .tabla-resumen td { padding:10px 12px; text-align:left; border-bottom:1px solid #eee; vertical-align:top; }
+    .tabla-resumen th { background:#5c2536; color:#fff; font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.4px; }
+    .tabla-resumen tr:last-child td { border-bottom:none; }
+    .tabla-resumen td.num { text-align:center; width:44px; }
+    .pildora { display:inline-block; padding:2px 10px; border-radius:12px; font-size:12px; font-weight:700; color:#fff; }
+
+    .controles { display:flex; gap:10px; margin:0 0 20px; flex-wrap:wrap; }
+    .btn { cursor:pointer; font-family:inherit; font-size:.92rem; font-weight:600; border:none; border-radius:8px; padding:9px 16px; color:#fff; background:var(--acento); }
+    .btn.secundario { background:#5c2536; }
+    .btn:hover { filter:brightness(1.08); }
+    .btn:focus { outline:3px solid var(--foco); outline-offset:2px; }
+
+    details.tema { background:#fff; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 8px rgba(0,0,0,.07); overflow:hidden; border-top:6px solid #ccc; }
+    details.tema > summary { padding:20px 24px; cursor:pointer; list-style:none; background:#eceff1; outline:none; display:flex; align-items:flex-start; gap:14px; }
+    details.tema > summary::-webkit-details-marker { display:none; }
+    details.tema > summary .chevron { font-size:20px; flex-shrink:0; margin-top:2px; transition:transform .25s; }
+    details.tema[open] > summary .chevron { transform:rotate(90deg); }
+    details.tema > summary .sum-body { flex:1; }
+    details.tema > summary h2 { margin:0 0 5px; font-size:21px; font-weight:700; color:#37474f; }
+    details.tema > summary .subtitulo { font-size:14px; color:#555; font-weight:500; }
+    details.tema > summary .standards { font-size:12px; color:#555; margin-top:6px; font-style:italic; }
+    summary:focus-visible { outline:3px solid var(--foco); outline-offset:-3px; }
+
+    details.tema.t1 { border-top-color:#1565c0; }
+    details.tema.t1 > summary { background:#e3f2fd; }
+    details.tema.t1 > summary h2 { color:#1565c0; }
+    .t1 details.leccion { border-left-color:#1565c0; }
+    details.tema.t2 { border-top-color:#00695c; }
+    details.tema.t2 > summary { background:#e0f2f1; }
+    details.tema.t2 > summary h2 { color:#00695c; }
+    .t2 details.leccion { border-left-color:#00695c; }
+    details.tema.t3 { border-top-color:#2e7d32; }
+    details.tema.t3 > summary { background:#e8f5e9; }
+    details.tema.t3 > summary h2 { color:#2e7d32; }
+    .t3 details.leccion { border-left-color:#2e7d32; }
+    details.tema.t4 { border-top-color:#827717; }
+    details.tema.t4 > summary { background:#f9fbe7; }
+    details.tema.t4 > summary h2 { color:#827717; }
+    .t4 details.leccion { border-left-color:#827717; }
+    details.tema.t5 { border-top-color:#e65100; }
+    details.tema.t5 > summary { background:#fff3e0; }
+    details.tema.t5 > summary h2 { color:#e65100; }
+    .t5 details.leccion { border-left-color:#e65100; }
+    details.tema.t6 { border-top-color:#bf360c; }
+    details.tema.t6 > summary { background:#fbe9e7; }
+    details.tema.t6 > summary h2 { color:#bf360c; }
+    .t6 details.leccion { border-left-color:#bf360c; }
+    details.tema.t7 { border-top-color:#c2185b; }
+    details.tema.t7 > summary { background:#fce4ec; }
+    details.tema.t7 > summary h2 { color:#c2185b; }
+    .t7 details.leccion { border-left-color:#c2185b; }
+    details.tema.t8 { border-top-color:#6a1b9a; }
+    details.tema.t8 > summary { background:#f3e5f5; }
+    details.tema.t8 > summary h2 { color:#6a1b9a; }
+    .t8 details.leccion { border-left-color:#6a1b9a; }
+
+    .lecciones { padding:14px 20px 18px; }
+    details.leccion { border-left:4px solid #ccc; border-radius:0 8px 8px 0; background:#fafafa; margin-bottom:10px; overflow:hidden; }
+    details.leccion > summary { padding:12px 16px; cursor:pointer; list-style:none; display:flex; align-items:center; gap:10px; outline:none; }
+    details.leccion > summary::-webkit-details-marker { display:none; }
+    details.leccion > summary .chevron-s { font-size:13px; transition:transform .2s; flex-shrink:0; }
+    details.leccion[open] > summary .chevron-s { transform:rotate(90deg); }
+    details.leccion > summary h3 { margin:0; font-size:16px; color:#263238; font-weight:600; flex:1; }
+    details.leccion > summary .dur { font-size:12px; color:#555; font-style:italic; white-space:nowrap; }
+
+    .leccion-body { padding:10px 18px 16px; }
+    .obj { font-size:14px; color:#37474f; margin:0 0 12px; padding:8px 12px; background:#fff; border-radius:6px; border:1px solid #e0e0e0; }
+    .componente { margin:8px 0; padding-left:26px; position:relative; font-size:14px; line-height:1.55; }
+    .componente::before { position:absolute; left:0; top:0; font-size:15px; }
+    .componente.lectura::before { content:'📖'; }
+    .componente.discusion::before { content:'💬'; }
+    .componente.quiz::before { content:'✅'; }
+    .componente.rubrica::before { content:'📊'; }
+    .componente strong { color:#263238; font-weight:600; }
+
+    .notas { background:#fff8e1; border-left:4px solid #f9a825; padding:14px 18px; margin:8px 0 24px; border-radius:0 8px 8px 0; font-size:14px; }
+    .notas > strong { color:#8a4b00; }
+    .notas li { margin-bottom:6px; }
+    .notas code { background:#f1f5f9; padding:1px 5px; border-radius:4px; font-size:.9em; }
+
+    footer { text-align:center; padding:24px; color:#555; font-size:13px; margin-top:16px; border-top:1px solid #ddd; }
+    footer a { color:var(--acento); }
+
+    @media print {
+      body { background:#fff; }
+      details.tema { box-shadow:none; border:1px solid #ccc; }
+      details.tema[open], details.leccion[open] { display:block; }
+      header.principal { background:#5c2536 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    }
+    @media (prefers-reduced-motion:reduce) { .chevron, .chevron-s { transition:none; } }
+  </style>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido principal</a>
+<div class="contenedor">
+
+  <header class="principal">
+    <h1>Plan curricular — Artes del Lenguaje, Nivel 4</h1>
+    <div class="meta"><strong>Spanish ASE Language Arts 4</strong> · ABE/GED 0170-0314 · City Colleges of Chicago<br>
+      96 horas totales (48 sincrónicas + 48 asincrónicas) · 16 semanas · NRS Levels 4–5 (GED)<br>
+      Plataforma: Brightspace D2L · Prof. José M. Fernández, con Claude</div>
+  </header>
+
+  <main id="contenido">
+
+  <section class="intro">
+    <h2>Cómo está organizado este plan</h2>
+    <p>El contenido se distribuye en <strong>8 grandes temas de 12 horas cada uno</strong> (≈ 2 semanas por tema), respetando la progresión del syllabus de 16 semanas y los Student Learning Outcomes, y en coherencia con el documento de comparación de contenidos 1–4.</p>
+    <p>Cada tema contiene <strong>3 lecciones</strong> de 4 horas y, para cada lección, se especifican cuatro componentes: <strong>📖 tipo de lectura</strong>, <strong>💬 formato de discusión</strong>, <strong>✅ tipo de quiz</strong> y <strong>📊 rúbrica sugerida</strong>.</p>
+    <p>Los temas 1–2 consolidan la sintaxis compleja, las convenciones expertas y el vocabulario avanzado. Los temas 3–6 desarrollan la comprensión crítica, el análisis retórico, la evaluación y síntesis de fuentes y el análisis cuantitativo en las materias. Los temas 7–8 culminan con la escritura argumentativa disciplinar, la investigación extensa y la preparación específica del examen GED, incluida la Respuesta Extendida.</p>
+    <p>El Nivel 4 corresponde a la preparación directa para el examen de Razonamiento a través de las Artes del Lenguaje (RLA) del GED® y consolida la autonomía del estudiante como lector crítico y escritor argumentativo.</p>
+    <p><strong>Uso del acordeón:</strong> pulse el encabezado de cada tema para expandirlo; dentro, pulse cada lección para ver sus componentes. El primer tema ya está abierto. Los botones «Abrir todos / Cerrar todos» controlan todo el plan a la vez.</p>
+  </section>
+
+  <table class="tabla-resumen">
+    <caption>Resumen de los ocho temas del Nivel 4: número, tema, semanas, horas y foco principal.</caption>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tema</th>
+        <th scope="col">Semanas</th>
+        <th scope="col">Horas</th>
+        <th scope="col">Foco principal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#1565c0">1</span></td>
+        <td><strong>Sintaxis compleja y control experto de convenciones</strong></td>
+        <td>1–2</td><td>12 h</td>
+        <td>Cláusulas variadas, estructura paralela, puntuación superior y ortografía académica</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#00695c">2</span></td>
+        <td><strong>Vocabulario avanzado y lenguaje figurado</strong></td>
+        <td>3–4</td><td>12 h</td>
+        <td>Etimologías y referencias especializadas, ironía, sátira y paradoja, connotación y matices</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#2e7d32">3</span></td>
+        <td><strong>Comprensión crítica: temas en interacción e inferencia compleja</strong></td>
+        <td>5–6</td><td>12 h</td>
+        <td>Dos o más temas, evidencia sólida y exhaustiva, inferencias complejas, incertidumbre del texto</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#827717">4</span></td>
+        <td><strong>Estructura, retórica y estilo</strong></td>
+        <td>7–8</td><td>12 h</td>
+        <td>Tramas paralelas y retrospección, retórica y estilo, punto de vista y persuasión</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#e65100">5</span></td>
+        <td><strong>Evaluar argumentos y sintetizar fuentes</strong></td>
+        <td>9–10</td><td>12 h</td>
+        <td>Validez, relevancia y suficiencia, documentos fundacionales, análisis crítico y comparación de fuentes</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#bf360c">6</span></td>
+        <td><strong>Análisis cuantitativo y científico en las materias</strong></td>
+        <td>11–12</td><td>12 h</td>
+        <td>Traducir datos ↔ visual, evaluar hipótesis y conclusiones, sintetizar fuentes diversas</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#c2185b">7</span></td>
+        <td><strong>Escritura argumentativa y disciplinar</strong></td>
+        <td>13–14</td><td>12 h</td>
+        <td>Afirmación y contrargumento, texto informativo complejo, argumento disciplinar y proceso independiente</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#6a1b9a">8</span></td>
+        <td><strong>Investigación extensa, oralidad y preparación GED</strong></td>
+        <td>15–16</td><td>12 h</td>
+        <td>Credibilidad y citación, estrategias de examen, Respuesta Extendida y proyecto final</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="controles">
+    <button type="button" class="btn" id="abrir-todo">Abrir todos los temas</button>
+    <button type="button" class="btn secundario" id="cerrar-todo">Cerrar todos</button>
+  </div>
+
+  <details class="tema t1" open>
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Tema 1 · Sintaxis compleja y control experto de convenciones</h2>
+        <div class="subtitulo">Semanas 1–2 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: 5–6.W.CS.1 · 5–6.W.CS.2 · SLO Language 1–3</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 1.1 · Sintaxis compleja y cláusulas variadas</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante construye oraciones de sintaxis compleja combinando cláusulas independientes y subordinadas de distinto tipo (sustantivas, adjetivas, adverbiales) para expresar relaciones lógicas precisas.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto académico con oraciones de sintaxis compleja analizadas; tabla de tipos de cláusula. <em>Modalidad:</em> lectura sintáctica — el estudiante identifica y clasifica las cláusulas de cada oración.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Combina con precisión» — actividad sincrónica en parejas: los estudiantes fusionan varias oraciones simples en una compleja que conserve todas las relaciones. Asincrónica: foro donde cada estudiante redacta dos oraciones complejas con distintos tipos de cláusula subordinada.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — clasificar el tipo de cláusula, elegir la combinación que expresa mejor la relación lógica, corregir una oración con subordinación incorrecta. Tiempo: 25 min. 2 intentos.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (4 criterios × 4 niveles): identifica tipos de cláusula · combina cláusulas con relación lógica clara · varía la estructura sintáctica · evita la ambigüedad.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 1.2 · Estructura paralela deliberada y control de convenciones</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante aplica la estructura paralela de forma deliberada en enumeraciones y comparaciones, y ejerce un control experto de las convenciones gramaticales en la revisión de su escritura.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto con estructuras paralelas destacadas y un contraejemplo con paralelismo roto. <em>Modalidad:</em> lectura de edición — el estudiante detecta y repara los paralelismos rotos.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Equilibra la oración» — actividad sincrónica en parejas: los estudiantes corrigen enumeraciones sin paralelismo. Asincrónica: foro donde cada estudiante escribe una oración con estructura paralela deliberada y explica su efecto.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — identificar el paralelismo correcto, corregir el paralelismo roto, elegir la enumeración equilibrada. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): reconoce la estructura paralela · corrige paralelismos rotos · aplica el paralelismo con intención estilística.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 1.3 · Puntuación superior y ortografía en textos académicos</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante aplica normas superiores de puntuación (guion largo, paréntesis, punto y coma en series complejas) y una ortografía de nivel avanzado en textos técnicos y académicos.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto académico con puntuación avanzada y terminología especializada; recuadro de normas. <em>Modalidad:</em> lectura de justificación — el estudiante explica cada signo avanzado y su función.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Puntuación de precisión» — actividad sincrónica en parejas: los estudiantes puntúan un párrafo académico complejo y justifican sus decisiones. Asincrónica: foro donde cada estudiante reescribe un párrafo aplicando puntuación superior y ortografía avanzada.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 14 preguntas — elegir el signo de puntuación avanzado correcto, corregir errores en series complejas, seleccionar la ortografía académica adecuada. Tiempo: 25 min. 2 intentos.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> lista de cotejo (4 criterios): aplica el guion largo y los paréntesis ✓ · usa el punto y coma en series complejas ✓ · mantiene la ortografía avanzada ✓ · puntúa con precisión un texto académico ✓.</div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <details class="tema t2">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Tema 2 · Vocabulario avanzado y lenguaje figurado</h2>
+        <div class="subtitulo">Semanas 3–4 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: 5–6.R.VA.1 · 5–6.R.VA.2 · 5–6.R.VA.4 · 5–6.W.VU.1</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 2.1 · Análisis avanzado del contexto; etimologías y referencias especializadas</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante deduce el significado de términos especializados mediante el análisis avanzado del contexto y de la etimología, y consulta referencias especializadas para precisar su uso.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto académico con términos especializados y notas etimológicas; captura de una referencia especializada. <em>Modalidad:</em> lectura etimológica — el estudiante rastrea el origen del término para afinar su significado.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «El origen de la palabra» — actividad sincrónica en grupos: los estudiantes reconstruyen el significado de términos a partir de su etimología. Asincrónica: foro donde cada estudiante analiza un término especializado por su contexto y su etimología, y cita la referencia consultada.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — deducir el significado por contexto avanzado, relacionar el término con su etimología, elegir la referencia adecuada para verificarlo. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): deduce significados por análisis avanzado del contexto · usa la etimología para precisar · consulta referencias especializadas pertinentes.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 2.2 · Lenguaje figurado avanzado: ironía, sátira, paradoja y eufemismo</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante interpreta recursos figurados avanzados (ironía verbal, sátira, paradoja, eufemismo, analogía) y explica el efecto que producen en el sentido y el tono del texto.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto satírico o irónico y un texto con paradojas y eufemismos; glosario de recursos avanzados. <em>Modalidad:</em> lectura crítica — el estudiante distingue el sentido literal del intencionado.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «¿Habla en serio?» — actividad sincrónica en grupos: los estudiantes identifican la ironía o la sátira de un texto y explican su propósito. Asincrónica: foro donde cada estudiante analiza un ejemplo de ironía o paradoja y explica su efecto en el tono.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — clasificar el recurso (ironía / sátira / paradoja / eufemismo / analogía), interpretar su efecto, distinguir el sentido literal del intencionado. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (4 criterios × 4 niveles): identifica recursos figurados avanzados · interpreta su efecto en el tono · distingue el sentido literal del intencionado · reconoce el propósito del autor.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 2.3 · Connotación, matices y precisión léxica</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante distingue la denotación de la connotación, reconoce los matices entre palabras cercanas y selecciona el término más preciso según el propósito y el tono deseados.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto donde la elección léxica marca el tono; escala de palabras por matiz (por ejemplo, de <em>frugal</em> a <em>tacaño</em>). <em>Modalidad:</em> lectura sensible al matiz — el estudiante valora la connotación de cada opción.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «La palabra justa» — actividad sincrónica: los estudiantes eligen entre palabras de matiz distinto según el efecto buscado y lo justifican. Asincrónica: foro donde cada estudiante ordena tres palabras por intensidad y explica su connotación.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — distinguir denotación de connotación, ordenar palabras por matiz, elegir el término preciso según el tono. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): distingue denotación de connotación · reconoce matices entre palabras cercanas · selecciona el término preciso según el propósito.</div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <details class="tema t3">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Tema 3 · Comprensión crítica: temas en interacción e inferencia compleja</h2>
+        <div class="subtitulo">Semanas 5–6 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: 5–6.R.CL.1 · 5–6.R.CL.2 · 5–6.R.CI.1 · 5–6.R.CI.2 · 5–6.R.CI.3</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 3.1 · Dos o más temas en interacción; análisis del desarrollo</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante identifica dos o más temas que interactúan en un texto y analiza cómo se desarrollan y se relacionan a lo largo de la obra.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto literario o informativo con temas entrelazados; organizador de desarrollo temático. <em>Modalidad:</em> lectura temática — el estudiante rastrea cada tema y sus puntos de contacto.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Temas que se cruzan» — actividad sincrónica en grupos: los estudiantes trazan cómo interactúan dos temas del texto. Asincrónica: foro donde cada estudiante explica la relación entre dos temas y cita un momento donde se cruzan.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — identificar los temas del texto, analizar su desarrollo, seleccionar la evidencia de su interacción. Tiempo: 25 min. 2 intentos.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): identifica dos o más temas · analiza su desarrollo en el texto · explica cómo interactúan con evidencia.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 3.2 · Evidencia sólida y exhaustiva; inferencias complejas</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante sostiene su análisis con evidencia textual sólida y exhaustiva, y formula inferencias complejas que integran varias pistas del texto.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto denso que exige integrar múltiples pistas para inferir; guía de evidencia sólida. <em>Modalidad:</em> lectura de análisis profundo — el estudiante reúne varias evidencias antes de concluir.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Toda la evidencia» — actividad sincrónica en grupos: los estudiantes reúnen la evidencia más sólida para sostener una interpretación. Asincrónica: foro donde cada estudiante formula una inferencia compleja apoyada en al menos dos evidencias.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — elegir la evidencia más sólida, formular la inferencia mejor apoyada, descartar evidencia insuficiente o irrelevante. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): selecciona evidencia sólida y exhaustiva · formula inferencias complejas · integra varias pistas en una interpretación.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 3.3 · Resumen objetivo e incertidumbre del texto</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante elabora un resumen objetivo de un texto complejo e identifica los puntos en que el texto deja el asunto abierto o incierto.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto que plantea preguntas sin cerrar del todo; recuadro sobre objetividad y ambigüedad. <em>Modalidad:</em> lectura reflexiva — el estudiante separa lo afirmado de lo que queda incierto.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Lo que no se afirma» — actividad sincrónica en grupos: los estudiantes señalan dónde el texto deja incertidumbre y por qué. Asincrónica: foro donde cada estudiante publica un resumen objetivo e identifica un punto que el texto deja abierto.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — distinguir un resumen objetivo de uno sesgado, identificar dónde el texto deja incertidumbre, seleccionar la afirmación que el texto no sostiene. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): elabora un resumen objetivo · mantiene la objetividad · identifica los puntos de incertidumbre del texto.</div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <details class="tema t4">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Tema 4 · Estructura, retórica y estilo</h2>
+        <div class="subtitulo">Semanas 7–8 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: 5–6.R.CL.4 · 5–6.R.CI.4 · 5–6.R.CI.5 · 5–6.R.CI.6</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 4.1 · Estructuras narrativas complejas: tramas paralelas y retrospección</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante analiza estructuras narrativas complejas (tramas paralelas, escenas retrospectivas, saltos temporales) y explica cómo la organización afecta el efecto de la obra.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un relato con tramas paralelas o retrospección; línea de tiempo de la narración. <em>Modalidad:</em> lectura estructural — el estudiante reconstruye el orden cronológico frente al orden narrativo.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «El orden importa» — actividad sincrónica en grupos: los estudiantes reorganizan la trama en orden cronológico y valoran qué se pierde. Asincrónica: foro donde cada estudiante explica el efecto de una escena retrospectiva del texto.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — distinguir el orden narrativo del cronológico, identificar la retrospección, analizar el efecto de la estructura. Tiempo: 25 min. 2 intentos.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): reconoce estructuras narrativas complejas · reconstruye el orden cronológico · explica el efecto de la organización.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 4.2 · Retórica y estilo del autor</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante analiza los recursos retóricos y estilísticos del autor (elección léxica, ritmo, repetición, tono) y explica cómo contribuyen al efecto del texto.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto de estilo marcado con recursos retóricos destacados; glosario de recursos. <em>Modalidad:</em> lectura estilística — el estudiante identifica el recurso y su efecto.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «El sello del autor» — actividad sincrónica en grupos: los estudiantes analizan el estilo de un fragmento y lo comparan con otro. Asincrónica: foro donde cada estudiante identifica dos recursos retóricos de un texto y explica su efecto.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — identificar el recurso retórico, analizar su efecto en el tono, comparar el estilo de dos fragmentos. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): identifica recursos retóricos y estilísticos · analiza su efecto en el texto · relaciona el estilo con el propósito del autor.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 4.3 · Punto de vista y técnicas de persuasión</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante identifica el punto de vista del autor y las técnicas de persuasión (apelaciones a la lógica, la emoción y la autoridad) que emplea, y valora su eficacia.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto persuasivo con apelaciones destacadas; recuadro de técnicas de persuasión. <em>Modalidad:</em> lectura crítica — el estudiante clasifica cada apelación y valora su fuerza.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «¿Cómo me convence?» — actividad sincrónica en grupos: los estudiantes identifican las técnicas de persuasión de un texto y debaten su eficacia. Asincrónica: foro donde cada estudiante analiza el punto de vista y una técnica de persuasión de un texto.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — identificar el punto de vista, clasificar la apelación (lógica / emoción / autoridad), valorar la eficacia de la persuasión. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): identifica el punto de vista del autor · clasifica las técnicas de persuasión · valora la eficacia de la persuasión con evidencia.</div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <details class="tema t5">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Tema 5 · Evaluar argumentos y sintetizar fuentes</h2>
+        <div class="subtitulo">Semanas 9–10 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: 5–6.R.CI.7 · 5–6.R.CI.8 · 5–6.R.CI.11 · RH.9-10.1 · RH.9-10.6 · RH.11-12.6 · RH.11-12.8 · RH.11-12.9</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 5.1 · Evaluar la validez, relevancia y suficiencia de un argumento</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante evalúa un argumento juzgando la validez del razonamiento, la relevancia de la evidencia y su suficiencia, e identifica los razonamientos falaces.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto argumentativo con razonamientos sólidos y falaces; recuadro de criterios de evaluación. <em>Modalidad:</em> lectura evaluativa — el estudiante juzga cada razón según validez, relevancia y suficiencia.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «¿Se sostiene?» — actividad sincrónica en grupos: los estudiantes evalúan un argumento y detectan la evidencia insuficiente o irrelevante. Asincrónica: foro donde cada estudiante evalúa la suficiencia de la evidencia de un texto y detecta una posible falacia.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — juzgar la validez de un razonamiento, evaluar la relevancia y suficiencia de la evidencia, identificar una falacia. Tiempo: 25 min. 2 intentos.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (4 criterios × 4 niveles): evalúa la validez del razonamiento · juzga la relevancia de la evidencia · valora su suficiencia · identifica razonamientos falaces.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 5.2 · Documentos fundacionales y análisis crítico de fuentes</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante analiza críticamente documentos fundacionales y fuentes históricas, comparando puntos de vista y evaluando las premisas y las evidencias que sostienen.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un fragmento de un documento fundacional y una fuente secundaria que lo interpreta; guía de análisis crítico. <em>Modalidad:</em> lectura crítica de fuentes — el estudiante compara puntos de vista y evalúa premisas.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Dos interpretaciones» — actividad sincrónica en grupos: los estudiantes comparan cómo dos fuentes interpretan el mismo documento. Asincrónica: foro donde cada estudiante evalúa una premisa de una fuente y la evidencia que la sostiene.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — comparar puntos de vista de dos fuentes, evaluar una premisa, identificar la evidencia que sostiene una interpretación. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): analiza críticamente la fuente · compara puntos de vista · evalúa premisas y evidencias.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 5.3 · Integrar y comparar múltiples fuentes y formatos</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante integra y evalúa información de múltiples fuentes en diversos formatos (texto, datos visuales, cuantitativos) para construir una comprensión coherente de un asunto.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> tres fuentes sobre un mismo tema en formatos distintos (un texto, una gráfica y una tabla); matriz de síntesis. <em>Modalidad:</em> lectura de síntesis — el estudiante registra el aporte de cada fuente y busca coincidencias y tensiones.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Une las fuentes» — actividad sincrónica en grupos: los estudiantes construyen una conclusión coherente a partir de las tres fuentes. Asincrónica: foro donde cada estudiante escribe una síntesis breve que integre al menos dos fuentes de formatos distintos.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — atribuir la información a su fuente, identificar coincidencias y tensiones, elegir la conclusión que integra las fuentes. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (4 criterios × 4 niveles): integra fuentes de diversos formatos · reconoce coincidencias y tensiones · evalúa la fiabilidad de cada fuente · construye una síntesis coherente.</div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <details class="tema t6">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Tema 6 · Análisis cuantitativo y científico en las materias</h2>
+        <div class="subtitulo">Semanas 11–12 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: RH.9-10.7 · RH.11-12.7 · RST.9-10.7 · RST.11-12.7 · RST.11-12.8 · RST.11-12.9</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 6.1 · Traducir e integrar datos cuantitativos ↔ representación visual</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante traduce información cuantitativa expresada en palabras a una representación visual y viceversa, e integra los datos con el texto que los acompaña.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto con datos numéricos y su representación en gráfica y tabla; guía de traducción de datos. <em>Modalidad:</em> lectura de traducción — el estudiante convierte el dato textual en gráfica y coteja.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Del texto a la gráfica» — actividad sincrónica en parejas: los estudiantes representan en una gráfica datos dados en prosa y verifican la equivalencia. Asincrónica: foro donde cada estudiante traduce un conjunto de datos a una tabla o gráfica y explica su elección.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — elegir la gráfica que representa unos datos, traducir un valor de la gráfica al texto, detectar una representación incorrecta. Tiempo: 25 min. 2 intentos.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): traduce datos de texto a representación visual · traduce de visual a texto · integra los datos con la prosa que los acompaña.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 6.2 · Evaluar hipótesis, datos y conclusiones científicas</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante evalúa la relación entre la hipótesis, los datos y las conclusiones de un texto científico, y juzga si los datos respaldan la conclusión.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> el informe breve de un experimento con hipótesis, datos y conclusión; guía de evaluación científica. <em>Modalidad:</em> lectura evaluativa — el estudiante coteja la conclusión con los datos.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «¿Los datos lo respaldan?» — actividad sincrónica en grupos: los estudiantes juzgan si la conclusión de un experimento se sostiene en los datos. Asincrónica: foro donde cada estudiante evalúa una conclusión científica y explica si los datos la respaldan.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — relacionar la hipótesis con los datos, juzgar si los datos respaldan la conclusión, identificar una conclusión no respaldada. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): relaciona hipótesis, datos y conclusión · juzga si los datos respaldan la conclusión · detecta conclusiones no sustentadas.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 6.3 · Sintetizar información de fuentes diversas</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante sintetiza información procedente de diversas fuentes científicas y técnicas (experimentos, simulaciones, textos) para responder a una pregunta o resolver una discrepancia.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> tres fuentes técnicas sobre un fenómeno con datos parcialmente discrepantes; matriz de síntesis científica. <em>Modalidad:</em> lectura de síntesis — el estudiante reúne los aportes y resuelve la discrepancia con evidencia.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Resuelve la discrepancia» — actividad sincrónica en grupos: los estudiantes concilian datos de fuentes que difieren y proponen una explicación. Asincrónica: foro donde cada estudiante sintetiza dos fuentes técnicas y explica cómo aborda una diferencia entre ellas.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — atribuir un dato a su fuente, identificar la discrepancia entre fuentes, elegir la síntesis mejor respaldada. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): reúne información de fuentes diversas · resuelve discrepancias con evidencia · construye una síntesis coherente y respaldada.</div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <details class="tema t7">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Tema 7 · Escritura argumentativa y disciplinar</h2>
+        <div class="subtitulo">Semanas 13–14 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: 5–6.W.TT.1 · 5–6.W.TT.2 · 5–6.W.PD.2 · WHST.9-10.1 · WHST.9-10.2 · WHST.11-12.1 · WHST.11-12.2</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 7.1 · Ensayo argumentativo: afirmación, contrargumento y razonamiento válido</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante escribe un ensayo argumentativo con una afirmación precisa, aborda y refuta un contrargumento, sostiene su postura con razonamiento válido y mantiene un tono objetivo.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un ensayo argumentativo modelo con afirmación, contrargumento y refutación señalados; esquema del ensayo. <em>Modalidad:</em> lectura de modelo argumentativo — el estudiante identifica la estructura y el manejo del contrargumento.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Anticipa la objeción» — actividad sincrónica en parejas: los estudiantes formulan un contrargumento a una afirmación y su refutación. Asincrónica: foro donde cada estudiante publica un párrafo argumentativo con afirmación, contrargumento y refutación.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas — identificar la afirmación y el contrargumento, elegir la refutación válida, distinguir el razonamiento válido del falaz, reconocer el tono objetivo. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica de ensayo argumentativo (5 criterios × 4 niveles): afirmación precisa · desarrollo con razones válidas · contrargumento abordado y refutado · tono objetivo · organización con transiciones. Total: 20 puntos.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 7.2 · Texto informativo-explicativo complejo con análisis</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante escribe un texto informativo-explicativo que desarrolla ideas complejas, selecciona y analiza el contenido pertinente y emplea transiciones variadas para guiar al lector.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto informativo-explicativo complejo modelo con análisis y transiciones destacadas. <em>Modalidad:</em> lectura analítica — el estudiante observa la selección del contenido y el uso de transiciones.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Selecciona y analiza» — actividad sincrónica en parejas: los estudiantes eligen, de un conjunto de datos, los más pertinentes para explicar un fenómeno y los analizan. Asincrónica: foro donde cada estudiante escribe un párrafo explicativo complejo con análisis y transiciones variadas.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas — seleccionar el contenido pertinente, distinguir descripción de análisis, elegir la transición adecuada. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica de escritura explicativa (4 criterios × 4 niveles): desarrolla ideas complejas · selecciona contenido pertinente · incorpora análisis · usa transiciones variadas.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 7.3 · Escritura disciplinar y proceso independiente de revisión</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante escribe un argumento disciplinar preciso con evidencia de fuentes documentales, y planifica, revisa, edita y reescribe su texto de forma independiente, publicándolo con tecnología.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un argumento disciplinar modelo con evidencia documental citada y una lista de verificación de revisión independiente. <em>Modalidad:</em> lectura de modelo disciplinar — el estudiante observa la integración de la evidencia documental.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Reviso mi propio texto» — actividad sincrónica en parejas: los estudiantes aplican una lista de verificación de revisión al borrador del compañero. Asincrónica: foro donde cada estudiante publica un argumento disciplinar revisado de forma independiente y describe los cambios que hizo.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas — seleccionar la evidencia documental adecuada, identificar el paso del proceso de escritura, elegir la mejora de revisión más pertinente. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica de escritura disciplinar (4 criterios × 4 niveles): argumento disciplinar preciso · evidencia de fuentes documentales · proceso independiente de revisión · publicación con tecnología.</div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <details class="tema t8">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Tema 8 · Investigación extensa, oralidad y preparación GED</h2>
+        <div class="subtitulo">Semanas 15–16 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: 5–6.W.RB.1 · 5–6.W.RB.2 · 5–6.S.CC.1 · 5–6.S.CC.2 · 5–6.S.CC.3 · 5–6.S.CC.4 · 5–6.S.PK.1 · 5–6.S.PK.2 · 5–6.S.PK.4 · GED RLA</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 8.1 · Investigación extensa: credibilidad, citación y evitar el plagio</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante desarrolla un proyecto de investigación extenso, evalúa la credibilidad de las fuentes, aplica un formato de citación estándar y evita el plagio mediante la paráfrasis y la cita correctas.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un proyecto de investigación modelo con fuentes evaluadas, citas en formato estándar y una lista de referencias; guía para evitar el plagio. <em>Modalidad:</em> lectura de modelo de investigación — el estudiante observa la evaluación de credibilidad y la citación.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «¿Es confiable?» — actividad sincrónica en grupos: los estudiantes evalúan la credibilidad de varias fuentes según criterios (autoría, actualidad, propósito). Asincrónica: foro donde cada estudiante evalúa la credibilidad de una fuente y la cita en formato estándar.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas — evaluar la credibilidad de una fuente, distinguir una cita correcta de un plagio, elegir el formato de citación adecuado. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica de investigación (4 criterios × 4 niveles): evalúa la credibilidad de las fuentes · aplica la citación estándar · parafrasea y cita para evitar el plagio · organiza la lista de referencias.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 8.2 · Preparación GED: estrategias de lectura y tipos de preguntas</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante aplica estrategias de lectura para el examen (lectura activa, gestión del tiempo, descarte de opciones) y reconoce los formatos de preguntas del examen RLA del GED (selección múltiple, arrastrar y soltar, menú desplegable).</div>
+          <div class="componente lectura"><strong>Lectura:</strong> pasajes modelo del examen RLA con preguntas de distintos formatos; guía de estrategias de examen. <em>Modalidad:</em> lectura estratégica — el estudiante practica la lectura activa y el descarte de distractores.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Estrategia de examen» — actividad sincrónica: los estudiantes resuelven en grupo preguntas modelo verbalizando su estrategia de descarte. Asincrónica: foro donde cada estudiante explica la estrategia que usó para responder una pregunta modelo.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 15 preguntas tipo GED en Brightspace — comprensión de pasajes con selección múltiple y formatos interactivos, aplicando gestión del tiempo. Tiempo: 30 min. 2 intentos.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> lista de cotejo de estrategias (4 criterios): aplica la lectura activa ✓ · gestiona el tiempo ✓ · descarta distractores con criterio ✓ · reconoce el formato de cada pregunta ✓.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 8.3 · Respuesta Extendida GED y proyecto final integrador</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante analiza el prompt y las fuentes de la Respuesta Extendida del GED, planifica, redacta y revisa un ensayo argumentativo con evidencia, y presenta un proyecto final que integra las competencias del nivel.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un prompt de Respuesta Extendida con dos fuentes contrapuestas y un ensayo modelo puntuado con la rúbrica oficial. <em>Modalidad:</em> lectura de análisis del prompt — el estudiante identifica la tarea, la postura de cada fuente y la evidencia disponible.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Del prompt al ensayo» — actividad sincrónica: los estudiantes analizan el prompt, planifican su ensayo con un esquema y comparten su tesis. Asincrónica: cada estudiante redacta su Respuesta Extendida en el <em>Assignment</em> de Brightspace y revisa la de un compañero con la rúbrica.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> <strong>Evaluación final sumativa</strong> — pasaje(s) tipo GED con 20 preguntas de opción múltiple e interactivas <strong>más</strong> una <strong>Respuesta Extendida</strong> completa (ensayo argumentativo basado en dos fuentes). Tiempo sugerido: 90 min (45 min para el ensayo). 1 intento para el ensayo.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> <strong>rúbrica de la Respuesta Extendida (modelo GED, 3 rasgos)</strong>: (1) creación de argumentos y uso de evidencia · (2) desarrollo de ideas y estructura organizativa · (3) claridad y dominio de las convenciones del español estándar. Cada rasgo se puntúa de 0 a 2 y se acompaña de la nota de la sección de opción múltiple.</div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  </main>
+
+  <div class="notas"><strong>📝 Notas pedagógicas para revisión:</strong>
+    <ul>
+      <li><strong>Distribución 50/50:</strong> cada lección propone 2 horas sincrónicas + 2 asincrónicas (4 h), que suman las 48 + 48 horas del syllabus.</li>
+      <li><strong>Coherencia con la comparación 1–4:</strong> los 8 temas cubren todas las celdas asignadas al Nivel 4, incluida la lecto-escritura en las materias (RH / RST / WHST) de niveles 9-10 y 11-12 y la preparación específica del GED (estrategias y Respuesta Extendida).</li>
+      <li><strong>Cierre del itinerario:</strong> este nivel consolida al estudiante como lector crítico y escritor argumentativo autónomo, listo para presentar el examen RLA del GED®.</li>
+      <li><strong>Respuesta Extendida:</strong> la rúbrica de tres rasgos replica el modelo oficial del GED (argumento y evidencia; desarrollo y organización; convenciones). Recomiendo cronometrar los simulacros a 45 minutos para el ensayo.</li>
+      <li><strong>Rúbricas DUA:</strong> todas siguen un patrón analítico simple (3–5 criterios × 3–4 niveles), compatible con Brightspace Ally. Usar encabezados <code>&lt;h2&gt;</code> para los criterios al pasarlas a Brightspace.</li>
+      <li><strong>Brightspace HTML:</strong> al trasladar este plan a páginas de Brightspace, no usar <code>&lt;label&gt;</code>, ni <code>rgba()</code>, ni degradados; solo colores hexadecimales sólidos e inline CSS, y reemplazar <code>&lt;details&gt;/&lt;summary&gt;</code> por <code>.caja-acordeon</code> con <code>onClick</code> si la plataforma filtra los <code>&lt;details&gt;</code> nativos.</li>
+      <li><strong>Vínculo con Steck-Vaughn:</strong> alinear cada tema con las secciones de práctica del examen RLA en el workbook <em>Razonamiento a través de las Artes del Lenguaje</em> y con simulacros cronometrados.</li>
+      <li><strong>Código de curso:</strong> el número <code>0170-0314</code> es una propuesta de continuidad; confírmalo o ajústalo según el catálogo oficial.</li>
+    </ul>
+  </div>
+
+  <footer>
+    Plan curricular preparado por el Prof. José M. Fernández (Truman College, CCC) — con Claude.<br>
+    Spanish ASE Language Arts 4 · ABE/GED 0170-0314 · Adult Education · Brightspace D2L<br>
+    © José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago ·
+    Licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">CC BY-NC-SA 4.0</a>.
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var temas = Array.prototype.slice.call(document.querySelectorAll("details.tema"));
+  document.getElementById("abrir-todo").addEventListener("click", function () { temas.forEach(function (d) { d.open = true; }); });
+  document.getElementById("cerrar-todo").addEventListener("click", function () { temas.forEach(function (d) { d.open = false; }); });
+})();
+</script>
+</body>
+</html>

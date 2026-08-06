@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<!--
+  Spanish ASE Language Arts · Comparación de contenidos por nivel (1–4)
+  Autor: José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0).
+  https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+<meta name="license" content="CC BY-NC-SA 4.0">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<title>Spanish ASE Language Arts · Comparación de contenidos por nivel (1–4)</title>
+<style>
+  :root {
+    --tinta:#1f2937; --tinta-suave:#475569; --linea:#e2e8f0;
+    --fondo:#ffffff; --fondo-suave:#fdf2f6; --primario:#9d174d; --foco:#f59e0b;
+    --n1:#1d4ed8; --n2:#065f46; --n3:#6d28d9; --n4:#b91c1c;
+  }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    color:var(--tinta); background:var(--fondo); line-height:1.55; margin:0; padding:0 16px 64px; font-size:17px; }
+  .contenedor { max-width:1080px; margin:0 auto; }
+  .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+    clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  a.salto { position:absolute; left:-9999px; background:var(--primario); color:#fff; padding:10px 16px; border-radius:8px; z-index:100; }
+  a.salto:focus { left:16px; top:16px; }
+
+  header.cabecera { padding:28px 0 8px; border-bottom:4px solid var(--primario); }
+  header.cabecera h1 { font-size:1.8rem; line-height:1.25; margin:0 0 6px; color:var(--primario); }
+  .subtitulo { color:var(--tinta-suave); margin:0; }
+  .subtitulo strong { color:var(--tinta); }
+  .fuente { font-size:.85rem; color:var(--tinta-suave); margin:10px 0 0; }
+
+  .nota-nrs { background:var(--fondo-suave); border:1px solid var(--linea); border-left:6px solid var(--primario);
+    border-radius:10px; padding:12px 18px; margin:20px 0 8px; font-size:.92rem; }
+  .nota-nrs strong { color:var(--tinta); }
+  .como-usar { font-size:.9rem; color:var(--tinta-suave); margin:8px 2px 0; }
+
+  .buscar-zona { margin:20px 0 8px; }
+  .buscar-zona input { width:100%; font-size:1rem; padding:12px 14px; border:2px solid var(--linea); border-radius:10px; background:var(--fondo); }
+  .buscar-zona input:focus { outline:3px solid var(--foco); outline-offset:2px; border-color:var(--primario); }
+  .buscar-info { font-size:.88rem; color:var(--tinta-suave); margin:6px 2px 0; min-height:1.2em; }
+
+  nav.temas-rapidos { margin:12px 0 6px; display:flex; flex-wrap:wrap; gap:8px; }
+  .nav-chip { cursor:pointer; border:1px solid var(--linea); background:var(--fondo); border-left:4px solid var(--accent);
+    border-radius:999px; padding:7px 14px; font-size:.86rem; color:var(--tinta); font-family:inherit;
+    display:inline-flex; align-items:center; gap:7px; }
+  .nav-chip span { background:var(--accent); color:#fff; border-radius:50%; width:20px; height:20px;
+    display:inline-flex; align-items:center; justify-content:center; font-size:.75rem; font-weight:700; }
+  .nav-chip:hover { background:var(--fondo-suave); }
+  .nav-chip:focus { outline:3px solid var(--foco); outline-offset:2px; }
+
+  .controles { display:flex; gap:10px; margin:14px 0 18px; flex-wrap:wrap; }
+  .btn { cursor:pointer; font-family:inherit; font-size:.92rem; font-weight:600; border:none; border-radius:8px;
+    padding:9px 16px; color:#fff; background:var(--primario); }
+  .btn.secundario { background:#475569; }
+  .btn:hover { filter:brightness(1.08); }
+  .btn:focus { outline:3px solid var(--foco); outline-offset:2px; }
+
+  details.seccion-grande { border:1px solid var(--linea); border-radius:14px; margin:14px 0; background:var(--fondo); overflow:hidden; }
+  details.seccion-grande > summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:14px; padding:16px 18px; background:var(--fondo-suave); }
+  details.seccion-grande > summary::-webkit-details-marker { display:none; }
+  details.seccion-grande[open] > summary { border-bottom:1px solid var(--linea); }
+  .sec-num { flex:0 0 auto; width:36px; height:36px; border-radius:50%; color:#fff; font-weight:700; font-size:1.05rem;
+    display:flex; align-items:center; justify-content:center; }
+  .sec-titulo { margin:0; font-size:1.2rem; flex:1 1 auto; color:var(--tinta); }
+  .sec-flecha { transition:transform .2s ease; color:var(--tinta-suave); font-size:1.2rem; }
+  details.seccion-grande[open] .sec-flecha { transform:rotate(180deg); }
+  summary:hover { background:#fbe4ec; }
+  summary:focus-visible { outline:3px solid var(--foco); outline-offset:-3px; }
+  .seccion-cuerpo { padding:8px 18px 20px; }
+
+  .subtema { padding:18px 0 8px; border-bottom:1px dashed var(--linea); }
+  .subtema:last-child { border-bottom:none; }
+  .subtema-cab { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:10px; margin:0 0 10px; }
+  .subtema-titulo { font-size:1.06rem; margin:0; color:var(--tinta); }
+  .std-num { font-size:.82rem; color:var(--tinta-suave); background:var(--fondo-suave);
+    border:1px solid var(--linea); border-radius:6px; padding:3px 10px; white-space:nowrap; }
+  .std-num strong { color:var(--primario); }
+
+  .tabla-wrap { overflow-x:auto; }
+  .tabla-wrap:focus { outline:3px solid var(--foco); outline-offset:2px; border-radius:8px; }
+  table.tabla-niveles { width:100%; border-collapse:collapse; table-layout:fixed; min-width:560px; }
+  table.tabla-niveles th { color:#fff; font-size:.9rem; padding:8px 10px; text-align:left; width:25%; }
+  .th-n1 { background:var(--n1); } .th-n2 { background:var(--n2); }
+  .th-n3 { background:var(--n3); } .th-n4 { background:var(--n4); }
+  table.tabla-niveles td { vertical-align:top; padding:10px; border:1px solid var(--linea); width:25%; }
+  td.vacia { background:repeating-linear-gradient(45deg,#f8fafc,#f8fafc 7px,#f1f5f9 7px,#f1f5f9 14px); }
+  .celda-txt { margin:0; font-size:.9rem; }
+  td.celda-repaso .celda-txt { color:var(--tinta-suave); font-style:italic; }
+  .celda-pie { margin-top:8px; display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+  .std-cel { background:#f1f5f9; color:#334155; font-size:.7rem; font-weight:700; border:1px solid var(--linea);
+    border-radius:5px; padding:2px 7px; letter-spacing:.2px; }
+  .rot-repaso { background:#e2e8f0; color:#334155; font-size:.7rem; font-weight:600; border-radius:5px; padding:2px 7px; }
+
+  mark { background:#fde68a; color:var(--tinta); padding:0 2px; border-radius:3px; }
+  .oculto { display:none !important; }
+
+  footer.pie { margin-top:34px; padding-top:18px; border-top:1px solid var(--linea); font-size:.85rem; color:var(--tinta-suave); }
+  footer.pie a { color:var(--primario); }
+
+  @media (max-width:520px) { body { font-size:16px; } header.cabecera h1 { font-size:1.45rem; } }
+  @media (prefers-reduced-motion:reduce) { .sec-flecha { transition:none; } }
+</style>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido principal</a>
+<div class="contenedor">
+
+  <header class="cabecera">
+    <h1>Spanish ASE Language Arts: comparación de contenidos por nivel (1–4)</h1>
+    <p class="subtitulo"><strong>City Colleges of Chicago — Adult Education</strong> · Artes del Lenguaje · Niveles 1–4 · 96 horas por nivel (48 sincrónicas · 48 asincrónicas)</p>
+    <p class="fuente"><em>Standard Number</em> según los <em>Illinois ABE/ASE English Language Arts Content Standards</em> (ICCB) y los estándares de alfabetización en historia, estudios sociales, ciencias y materias técnicas (<em>RH</em>, <em>RST</em>, <em>WHST</em>).</p>
+  </header>
+
+  <main id="contenido">
+
+  <section class="nota-nrs" aria-label="Correspondencia de niveles">
+    <p style="margin:0"><strong>Correspondencia de niveles (NRS):</strong>
+      Nivel 1 = NRS 1–2 · Nivel 2 = NRS 2–3 · Nivel 3 = NRS 3–4 · Nivel 4 = NRS 4–5 (GED).</p>
+    <p class="como-usar">Cada área es un acordeón. Dentro, cada subtema muestra una tabla con los cuatro niveles:
+      una celda vacía significa que el contenido no se aborda en ese nivel, de modo que la fila completa
+      deja ver la secuencia de aprendizaje. La familia del <em>Standard Number</em> aparece junto al título del subtema,
+      y el código específico de cada nivel, en el pie de su celda.</p>
+  </section>
+
+  <div class="buscar-zona">
+    <input type="search" id="buscador" autocomplete="off"
+      aria-label="Buscar un contenido o subtema"
+      placeholder="Buscar un contenido (p. ej. inferencias, ortografía, argumentación)…">
+    <p class="buscar-info" id="buscar-info" role="status" aria-live="polite"></p>
+  </div>
+
+  <nav class="temas-rapidos" aria-label="Ir a un área"><button type="button" class="nav-chip" data-target="lectura-fundamentos" style="--accent:#9d174d"><span aria-hidden="true">1</span>Lectura: fundamentos y fluidez</button><button type="button" class="nav-chip" data-target="lectura-comprension" style="--accent:#be185d"><span aria-hidden="true">2</span>Lectura: comprensión de textos</button><button type="button" class="nav-chip" data-target="escritura-tipos" style="--accent:#b45309"><span aria-hidden="true">3</span>Escritura: tipos de texto</button><button type="button" class="nav-chip" data-target="escritura-proceso" style="--accent:#b91c1c"><span aria-hidden="true">4</span>Escritura: proceso e investigación</button><button type="button" class="nav-chip" data-target="expresion-oral" style="--accent:#0f766e"><span aria-hidden="true">5</span>Expresión oral y comprensión auditiva</button><button type="button" class="nav-chip" data-target="lenguaje-gramatica" style="--accent:#4d7c0f"><span aria-hidden="true">6</span>Lenguaje: gramática y convenciones</button><button type="button" class="nav-chip" data-target="vocabulario" style="--accent:#0e7490"><span aria-hidden="true">7</span>Vocabulario</button><button type="button" class="nav-chip" data-target="tecnologia" style="--accent:#3730a3"><span aria-hidden="true">8</span>Tecnología y alfabetización digital</button><button type="button" class="nav-chip" data-target="lecto-contenido" style="--accent:#9a3412"><span aria-hidden="true">9</span>Lecto-escritura en historia, estudios sociales, ciencias y materias técnicas</button><button type="button" class="nav-chip" data-target="ged-prep" style="--accent:#831843"><span aria-hidden="true">10</span>Preparación GED®: razonamiento a través de las artes del lenguaje</button></nav>
+
+  <div class="controles">
+    <button type="button" class="btn" id="abrir-todo">Abrir todo</button>
+    <button type="button" class="btn secundario" id="cerrar-todo">Cerrar todo</button>
+  </div>
+
+      <details class="seccion-grande" id="lectura-fundamentos" open>
+        <summary>
+          <span class="sec-num" style="background:#9d174d" aria-hidden="true">1</span>
+          <h2 class="sec-titulo">Lectura: fundamentos y fluidez</h2>
+          <span class="sec-flecha" aria-hidden="true">▾</span>
+        </summary>
+        <div class="seccion-cuerpo">
+        <div class="subtema" data-buscar="conceptos del texto impreso y alfabeto">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Conceptos del texto impreso y alfabeto</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>R.FS</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Conceptos del texto impreso y alfabeto" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Conceptos del texto impreso y alfabeto.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Reconocer letras mayúsculas y minúsculas; seguir el texto de izquierda a derecha; características de la oración.</p><div class="celda-pie"><span class="std-cel">1.R.FS.1</span></div></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="3"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="4"><span class="sr-only">No se aborda en este nivel.</span></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="conciencia fonologica, fonetica y fluidez">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Conciencia fonológica, fonética y fluidez</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>R.FS · R.FL</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Conciencia fonológica, fonética y fluidez" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Conciencia fonológica, fonética y fluidez.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Rimas, sílabas y fonemas; decodificar palabras de una a dos sílabas; palabras frecuentes.</p><div class="celda-pie"><span class="std-cel">1.R.FS.2–4 · 1.R.FL.1</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Vocales largas y cortas; palabras multisilábicas; prefijos y sufijos comunes.</p><div class="celda-pie"><span class="std-cel">2.R.FS.1–2 · 2.R.FL.1</span></div></td><td class="celda-repaso" data-nivel="3"><p class="celda-txt">Fluidez para apoyar la comprensión (incluida en el trabajo con textos complejos).</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="vacia" data-nivel="4"><span class="sr-only">No se aborda en este nivel.</span></td></tr></tbody>
+            </table>
+          </div>
+        </div></div>
+      </details>
+      <details class="seccion-grande" id="lectura-comprension">
+        <summary>
+          <span class="sec-num" style="background:#be185d" aria-hidden="true">2</span>
+          <h2 class="sec-titulo">Lectura: comprensión de textos</h2>
+          <span class="sec-flecha" aria-hidden="true">▾</span>
+        </summary>
+        <div class="seccion-cuerpo">
+        <div class="subtema" data-buscar="ideas principales y detalles de apoyo">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Ideas principales y detalles de apoyo</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>R.CL · R.CI</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Ideas principales y detalles de apoyo" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Ideas principales y detalles de apoyo.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Idea principal; preguntas de quién, qué y dónde; volver a contar historias.</p><div class="celda-pie"><span class="std-cel">1.R.CL.1</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Ideas principales en párrafos múltiples; detalles de apoyo.</p><div class="celda-pie"><span class="std-cel">2.R.CL.1 · 2.R.CI.1</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Tema central o múltiples ideas principales; resumen con quién, qué y cómo.</p><div class="celda-pie"><span class="std-cel">3.R.CL.1 · 3.R.CI.1</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Dos o más temas en interacción; análisis detallado del desarrollo; resumen objetivo.</p><div class="celda-pie"><span class="std-cel">5–6.R.CL.2 · 5–6.R.CI.3</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="evidencia textual e inferencias">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Evidencia textual e inferencias</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>R.CL · R.CI</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Evidencia textual e inferencias" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Evidencia textual e inferencias.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Responder preguntas sobre detalles clave (nivel básico).</p><div class="celda-pie"><span class="std-cel">1.R.CL.1</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Usar ilustraciones y textos; comparar dos textos.</p><div class="celda-pie"><span class="std-cel">2.R.CL.7–8 · 2.R.CI.10–11</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Citar detalles y ejemplos; distinguir lo explícito de lo inferido.</p><div class="celda-pie"><span class="std-cel">3.R.CL.1 · 3.R.CI.1</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Evidencia sólida y exhaustiva; inferencias complejas; identificar dónde el texto deja incertidumbre.</p><div class="celda-pie"><span class="std-cel">5–6.R.CL.1 · 5–6.R.CI.1–2</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="estructura del texto y proposito del autor">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Estructura del texto y propósito del autor</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>R.CL · R.CI</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Estructura del texto y propósito del autor" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Estructura del texto y propósito del autor.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Características del texto (títulos, glosarios, íconos); tema principal apoyado en ilustraciones.</p><div class="celda-pie"><span class="std-cel">1.R.CI.1 · 1.R.CI.3</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Estructura general de una historia; propósito del autor.</p><div class="celda-pie"><span class="std-cel">2.R.CL.3 · 2.R.CI.3–4</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Cronología, comparación y causa-efecto; poema frente a drama y a prosa.</p><div class="celda-pie"><span class="std-cel">3.R.CL.3 · 3.R.CL.5 · 3.R.CI.3</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Tramas paralelas y escenas retrospectivas; retórica y estilo; punto de vista y persuasión.</p><div class="celda-pie"><span class="std-cel">5–6.R.CL.4 · 5–6.R.CI.4–6</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="evaluacion de argumentos e integracion de fuentes">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Evaluación de argumentos e integración de fuentes</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>R.CI</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Evaluación de argumentos e integración de fuentes" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Evaluación de argumentos e integración de fuentes.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Comparar y contrastar dos textos sobre el mismo tema.</p><div class="celda-pie"><span class="std-cel">2.R.CI.10–11</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Razones y evidencias del autor; integrar dos textos.</p><div class="celda-pie"><span class="std-cel">3.R.CI.6–7</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Validez, relevancia y suficiencia; documentos fundacionales; fuentes múltiples y visuales.</p><div class="celda-pie"><span class="std-cel">5–6.R.CI.7–8 · 5–6.R.CI.11</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="lenguaje figurado y literario">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Lenguaje figurado y literario</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>R.VA</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Lenguaje figurado y literario" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Lenguaje figurado y literario.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Significado literal frente al figurado; modismos y expresiones.</p><div class="celda-pie"><span class="std-cel">2.R.VA.2</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Símiles, metáforas y modismos; proverbios.</p><div class="celda-pie"><span class="std-cel">3.R.VA.2–3</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Paradojas, sátira y eufemismos; ironía verbal y analogía; connotación y matices.</p><div class="celda-pie"><span class="std-cel">5–6.R.VA.2 · 5–6.W.VU.1</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div></div>
+      </details>
+      <details class="seccion-grande" id="escritura-tipos">
+        <summary>
+          <span class="sec-num" style="background:#b45309" aria-hidden="true">3</span>
+          <h2 class="sec-titulo">Escritura: tipos de texto</h2>
+          <span class="sec-flecha" aria-hidden="true">▾</span>
+        </summary>
+        <div class="seccion-cuerpo">
+        <div class="subtema" data-buscar="textos de opinion y argumentacion">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Textos de opinión y argumentación</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>W.TT</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Textos de opinión y argumentación" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Textos de opinión y argumentación.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Dibujo, dictado o escritura; tema, opinión y una razón; sentido de cierre.</p><div class="celda-pie"><span class="std-cel">1.W.TT.1</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Postura clara; razones enlazadas con conectores (porque, por lo tanto).</p><div class="celda-pie"><span class="std-cel">2.W.TT.1</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Tema claro e ideas lógicas; razones con hechos; palabras de transición.</p><div class="celda-pie"><span class="std-cel">3.W.TT.1</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Afirmaciones precisas; distinguir contrargumentos; razonamiento válido y tono objetivo.</p><div class="celda-pie"><span class="std-cel">5–6.W.TT.1</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="textos informativos y explicativos">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Textos informativos y explicativos</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>W.TT</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Textos informativos y explicativos" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Textos informativos y explicativos.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Nombrar el tema; aportar datos.</p><div class="celda-pie"><span class="std-cel">1.W.TT.2</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Agrupar la información en categorías; datos, detalles y definiciones; conectores y conclusión.</p><div class="celda-pie"><span class="std-cel">2.W.TT.2</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Vocabulario de dominio; exponer ideas con claridad; conclusión ligada al tema.</p><div class="celda-pie"><span class="std-cel">3.W.TT.2</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Ideas complejas; selección y análisis del contenido; transiciones variadas.</p><div class="celda-pie"><span class="std-cel">5–6.W.TT.2</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="textos narrativos">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Textos narrativos</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>W.TT</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Textos narrativos" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Textos narrativos.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Dos o más eventos en secuencia; palabras temporales; detalles descriptivos.</p><div class="celda-pie"><span class="std-cel">1.W.TT.3</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Situación o escenario; diálogos y secuencia cronológica; acciones, pensamientos y sentimientos.</p><div class="celda-pie"><span class="std-cel">2.W.TT.3</span></div></td><td class="celda-repaso" data-nivel="3"><p class="celda-txt">Narrativa con propósito y audiencia (incluida en el proceso de escritura).</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="celda-repaso" data-nivel="4"><p class="celda-txt">Técnicas narrativas sofisticadas: lenguaje figurado, ritmo y tono; múltiples perspectivas (incluida en la argumentación avanzada).</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div></div>
+      </details>
+      <details class="seccion-grande" id="escritura-proceso">
+        <summary>
+          <span class="sec-num" style="background:#b91c1c" aria-hidden="true">4</span>
+          <h2 class="sec-titulo">Escritura: proceso e investigación</h2>
+          <span class="sec-flecha" aria-hidden="true">▾</span>
+        </summary>
+        <div class="seccion-cuerpo">
+        <div class="subtema" data-buscar="proceso de escritura: planificar, revisar y editar">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Proceso de escritura: planificar, revisar y editar</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>W.PD</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Proceso de escritura: planificar, revisar y editar" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Proceso de escritura: planificar, revisar y editar.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Responder a sugerencias de los pares; añadir detalles.</p><div class="celda-pie"><span class="std-cel">1.W.PD.1</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Planificar, revisar y editar con apoyo de pares y del profesor.</p><div class="celda-pie"><span class="std-cel">2.W.PD.2–3</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Escritura clara y coherente según propósito y audiencia; nuevos enfoques con tecnología.</p><div class="celda-pie"><span class="std-cel">3.W.PD.1–3</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">De forma independiente: planificar, revisar, editar y reescribir; publicar con tecnología.</p><div class="celda-pie"><span class="std-cel">5–6.W.PD.2 · 5–6.W.WL.5</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="investigacion y uso de fuentes">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Investigación y uso de fuentes</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>W.RB</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Investigación y uso de fuentes" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Investigación y uso de fuentes.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Proyectos compartidos; fuentes provistas por el docente.</p><div class="celda-pie"><span class="std-cel">1.W.RB.1–2</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Proyectos compartidos; investigación colaborativa.</p><div class="celda-pie"><span class="std-cel">2.W.RB.1–2</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Proyectos cortos; fuentes impresas y digitales; notas, paráfrasis y lista de fuentes.</p><div class="celda-pie"><span class="std-cel">3.W.RB.1–3</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Proyectos extensos; evaluar la credibilidad de las fuentes; citación estándar y evitar el plagio.</p><div class="celda-pie"><span class="std-cel">5–6.W.RB.1–2</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div></div>
+      </details>
+      <details class="seccion-grande" id="expresion-oral">
+        <summary>
+          <span class="sec-num" style="background:#0f766e" aria-hidden="true">5</span>
+          <h2 class="sec-titulo">Expresión oral y comprensión auditiva</h2>
+          <span class="sec-flecha" aria-hidden="true">▾</span>
+        </summary>
+        <div class="seccion-cuerpo">
+        <div class="subtema" data-buscar="discusiones colaborativas">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Discusiones colaborativas</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>S.CC</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Discusiones colaborativas" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Discusiones colaborativas.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Grupos pequeños y grandes; escuchar y tomar turnos.</p><div class="celda-pie"><span class="std-cel">1.S.CC.1</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Ganar la palabra con respeto; enlazar comentarios; pedir explicaciones.</p><div class="celda-pie"><span class="std-cel">2.S.CC.1–2</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Llegar preparado; normas para discusiones colegiadas; expresar ideas con claridad.</p><div class="celda-pie"><span class="std-cel">3.S.CC.1</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Iniciar y promover intercambios razonados; responder a perspectivas diversas; resolver contradicciones.</p><div class="celda-pie"><span class="std-cel">5–6.S.CC.1</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="comprension auditiva e interpretacion">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Comprensión auditiva e interpretación</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>S.CC</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Comprensión auditiva e interpretación" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Comprensión auditiva e interpretación.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Intercambios múltiples; lenguaje verbal y no verbal.</p><div class="celda-pie"><span class="std-cel">1.S.CC.2–3</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Ideas principales y detalles; hechos, opiniones y causa-efecto.</p><div class="celda-pie"><span class="std-cel">2.S.CC.1 · 2.S.CC.4–5</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Parafrasear y resumir; formatos visuales, cuantitativos y orales.</p><div class="celda-pie"><span class="std-cel">3.S.CC.2–3</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Múltiples fuentes y formatos; evaluar precisión y perspectiva; razonamiento y tono del orador.</p><div class="celda-pie"><span class="std-cel">5–6.S.CC.2–4</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="presentacion oral de conocimientos">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Presentación oral de conocimientos</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>S.PK</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Presentación oral de conocimientos" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Presentación oral de conocimientos.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Describir personas, lugares y cosas; oraciones completas y audibles; apoyo en dibujos o recursos visuales.</p><div class="celda-pie"><span class="std-cel">1.S.PK.1</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Contar historias o experiencias; hechos y detalles descriptivos; grabaciones de audio.</p><div class="celda-pie"><span class="std-cel">2.S.PK.1–3</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Tema organizado con hechos; multimedia o recursos visuales; adaptar el habla a distintos contextos.</p><div class="celda-pie"><span class="std-cel">3.S.PK.1–2 · 3.S.PK.4</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Perspectiva clara y distintiva; línea de razonamiento coherente; abordar alternativas u oposiciones.</p><div class="celda-pie"><span class="std-cel">5–6.S.PK.1</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="uso estrategico de medios y adaptacion">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Uso estratégico de medios y adaptación</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>S.PK</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Uso estratégico de medios y adaptación" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Uso estratégico de medios y adaptación.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Crear grabaciones de audio.</p><div class="celda-pie"><span class="std-cel">2.S.PK.2–3</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Multimedia e integración de recursos visuales.</p><div class="celda-pie"><span class="std-cel">3.S.PK.2 · 3.S.PK.4</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Multimedia estratégico: gráficos, audio y elementos interactivos; dominio del español formal.</p><div class="celda-pie"><span class="std-cel">5–6.S.PK.2 · 5–6.S.PK.4</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div></div>
+      </details>
+      <details class="seccion-grande" id="lenguaje-gramatica">
+        <summary>
+          <span class="sec-num" style="background:#4d7c0f" aria-hidden="true">6</span>
+          <h2 class="sec-titulo">Lenguaje: gramática y convenciones</h2>
+          <span class="sec-flecha" aria-hidden="true">▾</span>
+        </summary>
+        <div class="seccion-cuerpo">
+        <div class="subtema" data-buscar="gramatica: partes de la oracion">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Gramática: partes de la oración</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>W.CS</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Gramática: partes de la oración" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Gramática: partes de la oración.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Sustantivos y pronombres; adjetivos y conjunciones; verbos en pasado, presente y futuro.</p><div class="celda-pie"><span class="std-cel">1.W.CS.1</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Sustantivos (regulares, irregulares, abstractos y colectivos); pronombres reflexivos y adverbios; oraciones simples, compuestas y complejas.</p><div class="celda-pie"><span class="std-cel">2.W.CS.1</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Pronombres relativos; conjunciones subordinantes; tiempos verbales perfectos y progresivos; corregir fragmentos y oraciones corridas.</p><div class="celda-pie"><span class="std-cel">3.W.CS.1</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Sintaxis compleja y cláusulas variadas; estructura paralela deliberada; control experto de las convenciones.</p><div class="celda-pie"><span class="std-cel">5–6.W.CS.1</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="puntuacion y ortografia">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Puntuación y ortografía</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>W.CS</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Puntuación y ortografía" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Puntuación y ortografía.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Punto y signos de interrogación y exclamación; mayúsculas básicas; comas en series y fechas.</p><div class="celda-pie"><span class="std-cel">1.W.CS.2</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Mayúsculas (festividades y topónimos); comas en saludos y diálogo; apóstrofos y ortografía convencional.</p><div class="celda-pie"><span class="std-cel">2.W.CS.2</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Comillas o subrayado para títulos; signos de puntuación variados; mayúsculas avanzadas.</p><div class="celda-pie"><span class="std-cel">3.W.CS.2</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Normas superiores de puntuación; textos técnicos y académicos; ortografía de nivel avanzado.</p><div class="celda-pie"><span class="std-cel">5–6.W.CS.2</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="uso formal e informal del lenguaje">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Uso formal e informal del lenguaje</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>W.KL</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Uso formal e informal del lenguaje" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Uso formal e informal del lenguaje.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Comparar el registro formal y el informal; habla frente a escritura.</p><div class="celda-pie"><span class="std-cel">2.W.KL.1</span></div></td><td class="celda-repaso" data-nivel="3"><p class="celda-txt">Adaptar el habla a contextos formales e informales (incluido en la expresión oral).</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td><td class="celda-repaso" data-nivel="4"><p class="celda-txt">Pleno dominio del español formal; adaptar el discurso a contextos variados (incluido en las presentaciones).</p><div class="celda-pie"><span class="rot-repaso">Repaso / integrado</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div></div>
+      </details>
+      <details class="seccion-grande" id="vocabulario">
+        <summary>
+          <span class="sec-num" style="background:#0e7490" aria-hidden="true">7</span>
+          <h2 class="sec-titulo">Vocabulario</h2>
+          <span class="sec-flecha" aria-hidden="true">▾</span>
+        </summary>
+        <div class="seccion-cuerpo">
+        <div class="subtema" data-buscar="estrategias para descifrar vocabulario">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Estrategias para descifrar vocabulario</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>R.VA</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Estrategias para descifrar vocabulario" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Estrategias para descifrar vocabulario.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Nuevos significados de las palabras; afijos e inflexiones comunes; contexto de la oración.</p><div class="celda-pie"><span class="std-cel">1.R.VA.1</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Pistas de contexto; afijos y raíces; glosarios y diccionarios digitales.</p><div class="celda-pie"><span class="std-cel">2.R.VA.1</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Definiciones y reformulaciones; raíces griegas y latinas; glosarios y diccionarios.</p><div class="celda-pie"><span class="std-cel">3.R.VA.1</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Análisis avanzado del contexto; referencias especializadas; etimologías.</p><div class="celda-pie"><span class="std-cel">5–6.R.VA.1 · 5–6.R.VA.4</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="matices y relaciones entre palabras">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Matices y relaciones entre palabras</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>R.VA · W.VU</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Matices y relaciones entre palabras" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Matices y relaciones entre palabras.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Clasificar palabras en categorías; matices entre verbos o adjetivos similares.</p><div class="celda-pie"><span class="std-cel">1.R.VA.2 · 1.W.VU.1</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Significado literal frente al figurado; conexiones con la vida real; matices de certeza e intensidad.</p><div class="celda-pie"><span class="std-cel">2.R.VA.2 · 2.W.VU.1–2</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Símiles, metáforas y modismos; proverbios, sinónimos y antónimos; vocabulario académico con sus relaciones.</p><div class="celda-pie"><span class="std-cel">3.R.VA.2–3 · 3.W.VU.1</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Paradojas, sátira y eufemismos; ironía y analogía; connotación y matices precisos.</p><div class="celda-pie"><span class="std-cel">5–6.R.VA.2 · 5–6.W.VU.1</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div></div>
+      </details>
+      <details class="seccion-grande" id="tecnologia">
+        <summary>
+          <span class="sec-num" style="background:#3730a3" aria-hidden="true">8</span>
+          <h2 class="sec-titulo">Tecnología y alfabetización digital</h2>
+          <span class="sec-flecha" aria-hidden="true">▾</span>
+        </summary>
+        <div class="seccion-cuerpo">
+        <div class="subtema" data-buscar="alfabetizacion tecnologica">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Alfabetización tecnológica</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>W.PD · R.VA</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Alfabetización tecnológica" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Alfabetización tecnológica.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Herramientas digitales básicas; terminología de la computadora; navegar, copiar y pegar.</p><div class="celda-pie"><span class="std-cel">1.W.PD.2–3 · 1.R.VA.4</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Tecnología para colaborar y publicar la escritura.</p><div class="celda-pie"><span class="std-cel">2.W.PD.3</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Publicar y colaborar en línea; navegación para la investigación.</p><div class="celda-pie"><span class="std-cel">3.W.PD.3</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Producir, publicar y actualizar la escritura con tecnología.</p><div class="celda-pie"><span class="std-cel">5–6.W.PD.2 · 5–6.W.WL.5</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="investigacion y comunicacion digital">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Investigación y comunicación digital</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>W.PD · W.RB</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Investigación y comunicación digital" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Investigación y comunicación digital.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Comunicarse con la terminología tecnológica adecuada.</p><div class="celda-pie"><span class="std-cel">1.W.PD.2</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Proyectos de investigación compartidos.</p><div class="celda-pie"><span class="std-cel">2.W.RB.1</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Fuentes impresas y digitales; notas y paráfrasis.</p><div class="celda-pie"><span class="std-cel">3.W.RB.1–2</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Evaluar la credibilidad de las fuentes; citación estándar; evitar el plagio.</p><div class="celda-pie"><span class="std-cel">5–6.W.RB.1–2</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div></div>
+      </details>
+      <details class="seccion-grande" id="lecto-contenido">
+        <summary>
+          <span class="sec-num" style="background:#9a3412" aria-hidden="true">9</span>
+          <h2 class="sec-titulo">Lecto-escritura en historia, estudios sociales, ciencias y materias técnicas</h2>
+          <span class="sec-flecha" aria-hidden="true">▾</span>
+        </summary>
+        <div class="seccion-cuerpo">
+        <div class="subtema" data-buscar="lectura de imagenes, ilustraciones y textos visuales">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Lectura de imágenes, ilustraciones y textos visuales</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>R.CI · RH · RST</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Lectura de imágenes, ilustraciones y textos visuales" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Lectura de imágenes, ilustraciones y textos visuales.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Imágenes, fotos e ilustraciones; conectar la imagen con el texto; título, leyenda y pies de foto.</p><div class="celda-pie"><span class="std-cel">1.R.CI.1 · 1.R.CI.3</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Integrar información visual (diagramas, tablas, gráficas, fotografías, videos y mapas) con el texto impreso y digital.</p><div class="celda-pie"><span class="std-cel">RH.6-8.7 · RST.6-8.7</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Integrar información cuantitativa o técnica con su versión visual (flujograma, modelo o gráfica); distinguir hechos, juicios y especulaciones.</p><div class="celda-pie"><span class="std-cel">RH.6-8.7–8 · RST.6-8.7–8</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Integrar y evaluar múltiples fuentes en diversos formatos (visual, cuantitativo, textual); traducir información cuantitativa ↔ visual.</p><div class="celda-pie"><span class="std-cel">RH.9-10.7 · RST.9-10.7 · RH.11-12.7 · RST.11-12.7</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="mapas, tablas y graficas">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Mapas, tablas y gráficas</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>RH · RST</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Mapas, tablas y gráficas" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Mapas, tablas y gráficas.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Mapas simples: título, leyenda y puntos cardinales; tablas de dos columnas; gráficas de barras y circulares.</p><div class="celda-pie"><span class="std-cel">RH · RST (adaptados, N1)</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Gráficas de barras, líneas y circulares (título, ejes, escalas y tendencias); tablas de datos; mapas temáticos con leyenda.</p><div class="celda-pie"><span class="std-cel">RH.6-8.7 · RST.6-8.7</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Gráficas complejas (doble barra, líneas múltiples); tablas de varias columnas; mapas temáticos avanzados.</p><div class="celda-pie"><span class="std-cel">RST.6-8.7 · RH.6-8.7</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Análisis cuantitativo (tablas y resultados de investigación); traducir datos numéricos ↔ gráfica; evaluar hipótesis y conclusiones.</p><div class="celda-pie"><span class="std-cel">RST.9-10.7 · RST.11-12.7–9</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="fuentes primarias y secundarias">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Fuentes primarias y secundarias</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>RH</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Fuentes primarias y secundarias" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Fuentes primarias y secundarias.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Introducción: diferencia entre fuente primaria y secundaria; citar evidencia textual; punto de vista del autor.</p><div class="celda-pie"><span class="std-cel">RH.6-8.1 · RH.6-8.2 · RH.6-8.6</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Citar evidencia de fuentes primarias y secundarias; idea central y resumen; estructura del texto; relación entre dos fuentes.</p><div class="celda-pie"><span class="std-cel">RH.6-8.1–2 · RH.6-8.5–6</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Análisis crítico de fuentes; comparar puntos de vista; evaluar premisas y evidencias; integrar fuentes diversas.</p><div class="celda-pie"><span class="std-cel">RH.9-10.1 · RH.9-10.6 · RH.11-12.6 · RH.11-12.8–9</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="textos cientificos y tecnicos">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Textos científicos y técnicos</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>RH · RST</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Textos científicos y técnicos" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Textos científicos y técnicos.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Vocabulario de dominio (ciencias, historia y técnico); contexto, afijos y glosario.</p><div class="celda-pie"><span class="std-cel">RH.6-8.4 · RST.6-8.4</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Seguir procedimientos de pasos múltiples; analizar la estructura del texto; comparar información de experimentos y multimedia.</p><div class="celda-pie"><span class="std-cel">RST.6-8.3 · RST.6-8.5 · RST.6-8.9</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Evaluar hipótesis, datos y conclusiones; sintetizar información de diversas fuentes (experimentos, simulaciones y textos).</p><div class="celda-pie"><span class="std-cel">RST.11-12.8–9</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="escritura en materias especificas">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Escritura en materias específicas</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>WHST</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Escritura en materias específicas" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Escritura en materias específicas.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="celda-nuevo-instr" data-nivel="1"><p class="celda-txt">Escribir oraciones o un párrafo corto que describa la información de una gráfica, mapa o tabla.</p><div class="celda-pie"><span class="std-cel">WHST (adaptado, N1)</span></div></td><td class="celda-nuevo-instr" data-nivel="2"><p class="celda-txt">Textos informativos en historia o ciencias; vocabulario de dominio; conclusión apropiada.</p><div class="celda-pie"><span class="std-cel">WHST.6-8.2 · WHST.6-8.4</span></div></td><td class="celda-nuevo-instr" data-nivel="3"><p class="celda-txt">Argumentos en materias específicas; evidencia relevante y tono objetivo; textos informativos con análisis.</p><div class="celda-pie"><span class="std-cel">WHST.6-8.1 · WHST.6-8.2 · WHST.6-8.4 · WHST.6-8.9</span></div></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Argumentos disciplinares precisos; afirmaciones, contrargumentos y evidencia de fuentes documentales; textos informativos complejos.</p><div class="celda-pie"><span class="std-cel">WHST.9-10.1–2 · WHST.11-12.1–2</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div></div>
+      </details>
+      <details class="seccion-grande" id="ged-prep">
+        <summary>
+          <span class="sec-num" style="background:#831843" aria-hidden="true">10</span>
+          <h2 class="sec-titulo">Preparación GED®: razonamiento a través de las artes del lenguaje</h2>
+          <span class="sec-flecha" aria-hidden="true">▾</span>
+        </summary>
+        <div class="seccion-cuerpo">
+        <div class="subtema" data-buscar="estrategias y tipos de preguntas ged®">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Estrategias y tipos de preguntas GED®</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>GED RLA</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Estrategias y tipos de preguntas GED®" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Estrategias y tipos de preguntas GED®.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="3"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Estrategias de lectura para el examen; preguntas de selección múltiple; formatos de respuesta extendida.</p><div class="celda-pie"><span class="std-cel">GED RLA</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subtema" data-buscar="respuesta extendida ged®">
+          <div class="subtema-cab">
+            <h3 class="subtema-titulo">Respuesta extendida GED®</h3>
+            <span class="std-num" title="Familia del estándar (Standard Number)">Standard&nbsp;No.: <strong>GED RLA</strong></span>
+          </div>
+          <div class="tabla-wrap" role="region" aria-label="Secuencia por nivel: Respuesta extendida GED®" tabindex="0">
+            <table class="tabla-niveles">
+              <caption class="sr-only">Secuencia de aprendizaje por nivel del subtema Respuesta extendida GED®.</caption>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-n1">Nivel&nbsp;1</th>
+                  <th scope="col" class="th-n2">Nivel&nbsp;2</th>
+                  <th scope="col" class="th-n3">Nivel&nbsp;3</th>
+                  <th scope="col" class="th-n4">Nivel&nbsp;4</th>
+                </tr>
+              </thead>
+              <tbody><tr><td class="vacia" data-nivel="1"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="2"><span class="sr-only">No se aborda en este nivel.</span></td><td class="vacia" data-nivel="3"><span class="sr-only">No se aborda en este nivel.</span></td><td class="celda-nuevo-instr" data-nivel="4"><p class="celda-txt">Analizar el prompt y las fuentes; planificar, redactar y revisar; ensayo argumentativo con evidencia.</p><div class="celda-pie"><span class="std-cel">GED RLA</span></div></td></tr></tbody>
+            </table>
+          </div>
+        </div></div>
+      </details>
+
+  </main>
+
+  <footer class="pie">
+    <p>Documento de referencia curricular · Spanish ASE Language Arts, Niveles 1–4 · City Colleges of Chicago, Adult Education.</p>
+    <p>© José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.
+       Licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">CC BY-NC-SA 4.0</a>.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var secciones = Array.prototype.slice.call(document.querySelectorAll("details.seccion-grande"));
+  document.getElementById("abrir-todo").addEventListener("click", function () { secciones.forEach(function (d) { d.open = true; }); });
+  document.getElementById("cerrar-todo").addEventListener("click", function () { secciones.forEach(function (d) { d.open = false; }); });
+
+  Array.prototype.forEach.call(document.querySelectorAll(".nav-chip"), function (b) {
+    b.addEventListener("click", function () {
+      var t = document.getElementById(b.getAttribute("data-target"));
+      if (t) { t.open = true; t.scrollIntoView({behavior:"smooth", block:"start"}); }
+    });
+  });
+
+  if (location.hash) {
+    var dest = document.getElementById(location.hash.slice(1));
+    if (dest && dest.tagName === "DETAILS") { dest.open = true; }
+  }
+
+  var input = document.getElementById("buscador");
+  var info = document.getElementById("buscar-info");
+  var subtemas = Array.prototype.slice.call(document.querySelectorAll(".subtema"));
+  function normaliza(s) { return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
+  function quitarMarcas(el) {
+    Array.prototype.forEach.call(el.querySelectorAll("mark"), function (m) { m.replaceWith(document.createTextNode(m.textContent)); });
+    el.normalize();
+  }
+  function resaltar(titulo, q) {
+    var nodo = titulo.firstChild; if (!nodo || nodo.nodeType !== 3) return;
+    var txt = nodo.nodeValue, idx = normaliza(txt).indexOf(q); if (idx < 0) return;
+    var frag = document.createDocumentFragment();
+    frag.appendChild(document.createTextNode(txt.slice(0, idx)));
+    var mk = document.createElement("mark"); mk.textContent = txt.slice(idx, idx + q.length); frag.appendChild(mk);
+    frag.appendChild(document.createTextNode(txt.slice(idx + q.length)));
+    titulo.replaceChild(frag, nodo);
+  }
+  input.addEventListener("input", function () {
+    var raw = input.value.trim(), q = normaliza(raw);
+    subtemas.forEach(function (st) { quitarMarcas(st.querySelector(".subtema-titulo")); });
+    if (q === "") {
+      subtemas.forEach(function (st) { st.classList.remove("oculto"); });
+      secciones.forEach(function (d) { d.classList.remove("oculto"); });
+      info.textContent = ""; return;
+    }
+    var total = 0;
+    secciones.forEach(function (d) {
+      var vis = 0;
+      Array.prototype.forEach.call(d.querySelectorAll(".subtema"), function (st) {
+        if (normaliza(st.getAttribute("data-buscar")).indexOf(q) >= 0) {
+          st.classList.remove("oculto"); resaltar(st.querySelector(".subtema-titulo"), q); vis++; total++;
+        } else { st.classList.add("oculto"); }
+      });
+      if (vis > 0) { d.classList.remove("oculto"); d.open = true; } else { d.classList.add("oculto"); }
+    });
+    info.textContent = total === 0 ? "Sin coincidencias para «" + raw + "»."
+      : total + (total === 1 ? " subtema encontrado." : " subtemas encontrados.");
+  });
+})();
+</script>
+</body>
+</html>

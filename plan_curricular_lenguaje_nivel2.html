@@ -1,0 +1,690 @@
+<!doctype html>
+<!--
+  Plan curricular · Spanish ASE Language Arts, Nivel 2 (formato acordeón)
+  Autor: José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.
+  Licencia: Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0).
+  https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago">
+  <meta name="license" content="CC BY-NC-SA 4.0">
+  <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+  <title>Plan curricular — Artes del Lenguaje, Nivel 2</title>
+  <style>
+    :root { --acento:#9d174d; --bg:#faf6f8; --tinta:#222; --linea:#e2d5db; --foco:#f59e0b; }
+    * { box-sizing:border-box; }
+    body { font-family:'Segoe UI', system-ui, sans-serif; margin:0; background:var(--bg); color:var(--tinta); line-height:1.55; font-size:16px; }
+    .contenedor { max-width:1100px; margin:0 auto; padding:24px; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    a.salto { position:absolute; left:-9999px; background:var(--acento); color:#fff; padding:10px 16px; border-radius:8px; z-index:100; }
+    a.salto:focus { left:16px; top:16px; }
+
+    header.principal { background:#7a1338; background:linear-gradient(135deg,#7a1338 0%,#9d174d 55%,#be185d 100%);
+      color:#fff; padding:36px 32px; border-radius:14px; margin-bottom:24px; box-shadow:0 4px 14px rgba(122,19,56,.25); }
+    header.principal h1 { margin:0 0 8px; font-size:28px; font-weight:700; }
+    header.principal .meta { font-size:14px; opacity:.94; margin-top:8px; }
+    header.principal .meta strong { font-weight:600; }
+
+    .intro { background:#fff; padding:20px 24px; border-radius:10px; border-left:5px solid var(--acento); margin-bottom:24px; box-shadow:0 1px 4px rgba(0,0,0,.05); }
+    .intro h2 { margin-top:0; color:var(--acento); font-size:20px; }
+    .intro p { margin:8px 0; }
+
+    .tabla-resumen { width:100%; border-collapse:collapse; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,.05); margin-bottom:32px; font-size:14px; }
+    .tabla-resumen caption { text-align:left; padding:12px 12px 0; font-weight:600; color:#555; }
+    .tabla-resumen th, .tabla-resumen td { padding:10px 12px; text-align:left; border-bottom:1px solid #eee; vertical-align:top; }
+    .tabla-resumen th { background:#5c2536; color:#fff; font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.4px; }
+    .tabla-resumen tr:last-child td { border-bottom:none; }
+    .tabla-resumen td.num { text-align:center; width:44px; }
+    .pildora { display:inline-block; padding:2px 10px; border-radius:12px; font-size:12px; font-weight:700; color:#fff; }
+
+    .controles { display:flex; gap:10px; margin:0 0 20px; flex-wrap:wrap; }
+    .btn { cursor:pointer; font-family:inherit; font-size:.92rem; font-weight:600; border:none; border-radius:8px; padding:9px 16px; color:#fff; background:var(--acento); }
+    .btn.secundario { background:#5c2536; }
+    .btn:hover { filter:brightness(1.08); }
+    .btn:focus { outline:3px solid var(--foco); outline-offset:2px; }
+
+    details.tema { background:#fff; border-radius:12px; margin-bottom:20px; box-shadow:0 2px 8px rgba(0,0,0,.07); overflow:hidden; border-top:6px solid #ccc; }
+    details.tema > summary { padding:20px 24px; cursor:pointer; list-style:none; background:#eceff1; outline:none; display:flex; align-items:flex-start; gap:14px; }
+    details.tema > summary::-webkit-details-marker { display:none; }
+    details.tema > summary .chevron { font-size:20px; flex-shrink:0; margin-top:2px; transition:transform .25s; }
+    details.tema[open] > summary .chevron { transform:rotate(90deg); }
+    details.tema > summary .sum-body { flex:1; }
+    details.tema > summary h2 { margin:0 0 5px; font-size:21px; font-weight:700; color:#37474f; }
+    details.tema > summary .subtitulo { font-size:14px; color:#555; font-weight:500; }
+    details.tema > summary .standards { font-size:12px; color:#555; margin-top:6px; font-style:italic; }
+    summary:focus-visible { outline:3px solid var(--foco); outline-offset:-3px; }
+
+    details.tema.t1 { border-top-color:#1565c0; }
+    details.tema.t1 > summary { background:#e3f2fd; }
+    details.tema.t1 > summary h2 { color:#1565c0; }
+    .t1 details.leccion { border-left-color:#1565c0; }
+    details.tema.t2 { border-top-color:#00695c; }
+    details.tema.t2 > summary { background:#e0f2f1; }
+    details.tema.t2 > summary h2 { color:#00695c; }
+    .t2 details.leccion { border-left-color:#00695c; }
+    details.tema.t3 { border-top-color:#2e7d32; }
+    details.tema.t3 > summary { background:#e8f5e9; }
+    details.tema.t3 > summary h2 { color:#2e7d32; }
+    .t3 details.leccion { border-left-color:#2e7d32; }
+    details.tema.t4 { border-top-color:#827717; }
+    details.tema.t4 > summary { background:#f9fbe7; }
+    details.tema.t4 > summary h2 { color:#827717; }
+    .t4 details.leccion { border-left-color:#827717; }
+    details.tema.t5 { border-top-color:#e65100; }
+    details.tema.t5 > summary { background:#fff3e0; }
+    details.tema.t5 > summary h2 { color:#e65100; }
+    .t5 details.leccion { border-left-color:#e65100; }
+    details.tema.t6 { border-top-color:#bf360c; }
+    details.tema.t6 > summary { background:#fbe9e7; }
+    details.tema.t6 > summary h2 { color:#bf360c; }
+    .t6 details.leccion { border-left-color:#bf360c; }
+    details.tema.t7 { border-top-color:#c2185b; }
+    details.tema.t7 > summary { background:#fce4ec; }
+    details.tema.t7 > summary h2 { color:#c2185b; }
+    .t7 details.leccion { border-left-color:#c2185b; }
+    details.tema.t8 { border-top-color:#6a1b9a; }
+    details.tema.t8 > summary { background:#f3e5f5; }
+    details.tema.t8 > summary h2 { color:#6a1b9a; }
+    .t8 details.leccion { border-left-color:#6a1b9a; }
+
+    .lecciones { padding:14px 20px 18px; }
+    details.leccion { border-left:4px solid #ccc; border-radius:0 8px 8px 0; background:#fafafa; margin-bottom:10px; overflow:hidden; }
+    details.leccion > summary { padding:12px 16px; cursor:pointer; list-style:none; display:flex; align-items:center; gap:10px; outline:none; }
+    details.leccion > summary::-webkit-details-marker { display:none; }
+    details.leccion > summary .chevron-s { font-size:13px; transition:transform .2s; flex-shrink:0; }
+    details.leccion[open] > summary .chevron-s { transform:rotate(90deg); }
+    details.leccion > summary h3 { margin:0; font-size:16px; color:#263238; font-weight:600; flex:1; }
+    details.leccion > summary .dur { font-size:12px; color:#555; font-style:italic; white-space:nowrap; }
+
+    .leccion-body { padding:10px 18px 16px; }
+    .obj { font-size:14px; color:#37474f; margin:0 0 12px; padding:8px 12px; background:#fff; border-radius:6px; border:1px solid #e0e0e0; }
+    .componente { margin:8px 0; padding-left:26px; position:relative; font-size:14px; line-height:1.55; }
+    .componente::before { position:absolute; left:0; top:0; font-size:15px; }
+    .componente.lectura::before { content:'📖'; }
+    .componente.discusion::before { content:'💬'; }
+    .componente.quiz::before { content:'✅'; }
+    .componente.rubrica::before { content:'📊'; }
+    .componente strong { color:#263238; font-weight:600; }
+
+    .notas { background:#fff8e1; border-left:4px solid #f9a825; padding:14px 18px; margin:8px 0 24px; border-radius:0 8px 8px 0; font-size:14px; }
+    .notas > strong { color:#8a4b00; }
+    .notas li { margin-bottom:6px; }
+    .notas code { background:#f1f5f9; padding:1px 5px; border-radius:4px; font-size:.9em; }
+
+    footer { text-align:center; padding:24px; color:#555; font-size:13px; margin-top:16px; border-top:1px solid #ddd; }
+    footer a { color:var(--acento); }
+
+    @media print {
+      body { background:#fff; }
+      details.tema { box-shadow:none; border:1px solid #ccc; }
+      details.tema[open], details.leccion[open] { display:block; }
+      header.principal { background:#5c2536 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    }
+    @media (prefers-reduced-motion:reduce) { .chevron, .chevron-s { transition:none; } }
+  </style>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido principal</a>
+<div class="contenedor">
+
+  <header class="principal">
+    <h1>Plan curricular — Artes del Lenguaje, Nivel 2</h1>
+    <div class="meta"><strong>Spanish ASE Language Arts 2</strong> · ABE/GED 0170-0312 · City Colleges of Chicago<br>
+      96 horas totales (48 sincrónicas + 48 asincrónicas) · 16 semanas · NRS Levels 2–3<br>
+      Plataforma: Brightspace D2L · Prof. José M. Fernández, con Claude</div>
+  </header>
+
+  <main id="contenido">
+
+  <section class="intro">
+    <h2>Cómo está organizado este plan</h2>
+    <p>El contenido se distribuye en <strong>8 grandes temas de 12 horas cada uno</strong> (≈ 2 semanas por tema), respetando la progresión del syllabus de 16 semanas y los Student Learning Outcomes, y en coherencia con el documento de comparación de contenidos 1–4.</p>
+    <p>Cada tema contiene <strong>3 lecciones</strong> de 4 horas y, para cada lección, se especifican cuatro componentes: <strong>📖 tipo de lectura</strong>, <strong>💬 formato de discusión</strong>, <strong>✅ tipo de quiz</strong> y <strong>📊 rúbrica sugerida</strong>.</p>
+    <p>Los temas 1–3 consolidan la decodificación avanzada, la gramática de la oración y las convenciones. Los temas 4–6 desarrollan la comprensión (idea principal, comparación de textos, vocabulario y lectura en las materias). Los temas 7–8 cierran con la producción escrita estructurada, la oralidad colaborativa y el proyecto final integrador.</p>
+    <p>El Nivel 2 asume el dominio de los fundamentos del Nivel 1 y prepara la transición hacia la comprensión inferencial y la escritura argumentada del Nivel 3.</p>
+    <p><strong>Uso del acordeón:</strong> pulse el encabezado de cada tema para expandirlo; dentro, pulse cada lección para ver sus componentes. El primer tema ya está abierto. Los botones «Abrir todos / Cerrar todos» controlan todo el plan a la vez.</p>
+  </section>
+
+  <table class="tabla-resumen">
+    <caption>Resumen de los ocho temas del Nivel 2: número, tema, semanas, horas y foco principal.</caption>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tema</th>
+        <th scope="col">Semanas</th>
+        <th scope="col">Horas</th>
+        <th scope="col">Foco principal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#1565c0">1</span></td>
+        <td><strong>Fonética avanzada y fluidez lectora</strong></td>
+        <td>1–2</td><td>12 h</td>
+        <td>Vocales y sílabas complejas, palabras multisilábicas, prefijos y sufijos, fluidez con expresión</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#00695c">2</span></td>
+        <td><strong>Gramática de la oración</strong></td>
+        <td>3–4</td><td>12 h</td>
+        <td>Sustantivos y adverbios, pronombres reflexivos, oraciones simples, compuestas y complejas</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#2e7d32">3</span></td>
+        <td><strong>Puntuación, ortografía y registro</strong></td>
+        <td>5–6</td><td>12 h</td>
+        <td>Mayúsculas y comas, apóstrofos y ortografía convencional, registro formal e informal</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#827717">4</span></td>
+        <td><strong>Comprensión: idea principal y estructura del texto</strong></td>
+        <td>7–8</td><td>12 h</td>
+        <td>Ideas principales en varios párrafos, detalles de apoyo, estructura de la historia, propósito del autor</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#e65100">5</span></td>
+        <td><strong>Comparar textos, vocabulario y lenguaje figurado</strong></td>
+        <td>9–10</td><td>12 h</td>
+        <td>Comparar dos textos, pistas de contexto y afijos, significado literal frente a figurado</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#bf360c">6</span></td>
+        <td><strong>Leer con imágenes y en las materias</strong></td>
+        <td>11–12</td><td>12 h</td>
+        <td>Gráficas y tablas, fuentes primarias y secundarias, vocabulario de dominio en ciencias e historia</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#c2185b">7</span></td>
+        <td><strong>Escribir con estructura: opinión, informativo y narrativo</strong></td>
+        <td>13–14</td><td>12 h</td>
+        <td>Postura y conectores, categorías y conclusión, escenario y diálogo, proceso de revisión</td>
+      </tr>
+      <tr>
+        <td class="num"><span class="pildora" style="background:#6a1b9a">8</span></td>
+        <td><strong>Hablar, colaborar y proyecto final</strong></td>
+        <td>15–16</td><td>12 h</td>
+        <td>Discusiones colaborativas, comprensión auditiva, presentación con audio, proyecto de investigación</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="controles">
+    <button type="button" class="btn" id="abrir-todo">Abrir todos los temas</button>
+    <button type="button" class="btn secundario" id="cerrar-todo">Cerrar todos</button>
+  </div>
+
+  <details class="tema t1" open>
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Tema 1 · Fonética avanzada y fluidez lectora</h2>
+        <div class="subtitulo">Semanas 1–2 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: 2.R.FS.1 · 2.R.FS.2 · 2.R.FL.1 · SLO Reading 2, 4</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 1.1 · Vocales, diptongos y sílabas complejas</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante distingue vocales fuertes y débiles, reconoce diptongos e hiatos, y decodifica sílabas con grupos consonánticos (br, cl, tr, pl) en palabras de dificultad creciente.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> listas graduadas de palabras con diptongos (aire, peine, cuidado) y con grupos consonánticos (brazo, clase, tren); un texto breve auténtico donde aparecen. <em>Modalidad:</em> lectura coral marcando las sílabas con palmadas, seguida de lectura individual en cascada.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Separa y arma» — actividad sincrónica en parejas: un estudiante segmenta una palabra en sílabas y el otro la reconstruye. Asincrónica: foro con audio donde cada estudiante graba la lectura de cinco palabras con diptongo y comenta la de un compañero.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas en Brightspace — separar palabras en sílabas (<em>drag-and-drop</em>), identificar el diptongo, elegir la palabra con grupo consonántico correctamente leído. Tiempo: 15 min. 2 intentos.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> lista de cotejo de decodificación (4 criterios): segmenta correctamente en sílabas ✓ · identifica diptongos e hiatos ✓ · lee grupos consonánticos sin omitir sonidos ✓ · mantiene la precisión en palabras nuevas ✓.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 1.2 · Prefijos y sufijos comunes para leer palabras nuevas</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante identifica prefijos (des-, in-, re-, pre-) y sufijos (-ción, -mente, -oso, -dor) frecuentes, y los usa para decodificar y anticipar el significado de palabras desconocidas.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> tabla ilustrada de prefijos y sufijos con ejemplos; un texto informativo corto donde se subrayan las palabras derivadas. <em>Modalidad:</em> lectura con «lupa de afijos» — el estudiante marca el prefijo, la raíz y el sufijo antes de leer la palabra completa.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Familia de palabras» — actividad sincrónica en grupos: a partir de una raíz (por ejemplo, <em>flor</em>), el grupo forma el mayor número de palabras derivadas y explica cómo cambia el significado. Asincrónica: foro donde cada estudiante aporta tres palabras con el mismo prefijo y su significado.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — separar una palabra en prefijo + raíz + sufijo, emparejar el afijo con su significado, elegir la palabra derivada correcta para una oración. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): identifica correctamente el afijo · relaciona el afijo con su significado · aplica la estrategia para deducir palabras nuevas en contexto.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 1.3 · Fluidez lectora: precisión, ritmo y expresión</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante lee en voz alta un texto de nivel adecuado con precisión, a un ritmo apropiado y con entonación que respeta los signos de puntuación.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto narrativo breve (150–200 palabras) con signos de puntuación variados; grabación modelo del profesor. <em>Modalidad:</em> lectura repetida (tres pasadas) con audio modelo; el estudiante compara su lectura con el modelo.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Teatro leído» — actividad sincrónica: en tríos, los estudiantes leen un diálogo asignando personajes, cuidando la entonación de preguntas y exclamaciones. Asincrónica: cada estudiante sube una grabación de 45 segundos de lectura expresiva al <em>Assignment</em> de Brightspace.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas — elegir la entonación correcta según la puntuación, identificar dónde hacer pausa, reconocer una lectura fluida frente a una entrecortada (con clips de audio). Tiempo: 15 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica de fluidez (4 criterios × 4 niveles): precisión de palabras · ritmo adecuado (ni muy lento ni atropellado) · respeta pausas de puntuación · entonación expresiva. Se aplica a la grabación de 45 segundos.</div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <details class="tema t2">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Tema 2 · Gramática de la oración</h2>
+        <div class="subtitulo">Semanas 3–4 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: 2.W.CS.1 · SLO Writing / Language 1–2</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 2.1 · Sustantivos y adverbios</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante clasifica sustantivos (regulares, irregulares, abstractos y colectivos), y reconoce y usa adverbios de modo, tiempo y lugar para precisar sus oraciones.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto descriptivo con sustantivos de distintos tipos y adverbios destacados por color; tabla de referencia. <em>Modalidad:</em> lectura analítica — el estudiante clasifica los sustantivos subrayados y localiza los adverbios.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «¿Cómo, cuándo, dónde?» — actividad sincrónica en parejas: a partir de una oración simple, los estudiantes la enriquecen añadiendo adverbios. Asincrónica: foro donde cada estudiante escribe tres oraciones, una con sustantivo colectivo, una con abstracto y una con adverbio de modo.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 14 preguntas — clasificar el sustantivo (regular / irregular / abstracto / colectivo), identificar el adverbio y el tipo, completar la oración con el adverbio adecuado. Tiempo: 20 min. 2 intentos.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> lista de cotejo (4 criterios): clasifica correctamente los sustantivos ✓ · reconoce sustantivos abstractos y colectivos ✓ · identifica adverbios ✓ · usa adverbios que aportan precisión ✓.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 2.2 · Pronombres reflexivos y concordancia</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante usa pronombres reflexivos (me, te, se, nos) con verbos pronominales, y mantiene la concordancia de género y número entre sustantivo, adjetivo y verbo.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto sobre rutinas diarias donde abundan los verbos reflexivos (levantarse, vestirse, prepararse); recuadro de concordancia. <em>Modalidad:</em> lectura guiada con marcado del pronombre reflexivo y su verbo.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Mi día» — actividad sincrónica: cada estudiante describe oralmente su rutina usando al menos cinco verbos reflexivos. Asincrónica: foro donde escriben un párrafo de rutina y revisan la concordancia en el texto de un compañero usando una lista de verificación.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — elegir el pronombre reflexivo correcto, corregir errores de concordancia, completar oraciones con la forma verbal concordante. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): usa el pronombre reflexivo adecuado · mantiene la concordancia de género y número · corrige errores de concordancia en un texto dado.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 2.3 · Oraciones simples, compuestas y complejas</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante distingue oraciones simples, compuestas (unidas por conjunciones) y complejas (con una cláusula subordinada), y las construye para variar su escritura.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> tres versiones del mismo mensaje escritas con oraciones simples, compuestas y complejas; conectores destacados. <em>Modalidad:</em> lectura comparativa — el estudiante observa cómo la unión de oraciones mejora la fluidez del texto.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Une las ideas» — actividad sincrónica en parejas: a partir de dos oraciones simples, los estudiantes las combinan usando <em>y, pero, porque, aunque</em>. Asincrónica: foro donde cada estudiante transforma tres pares de oraciones simples en compuestas o complejas.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — clasificar la oración (simple / compuesta / compleja), elegir el conector adecuado, combinar dos oraciones simples en una. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (4 criterios × 4 niveles): clasifica correctamente el tipo de oración · une oraciones con el conector apropiado · construye oraciones complejas con subordinada · varía la estructura para mejorar la fluidez.</div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <details class="tema t3">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Tema 3 · Puntuación, ortografía y registro</h2>
+        <div class="subtitulo">Semanas 5–6 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: 2.W.CS.2 · 2.W.KL.1 · SLO Language 2–3</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 3.1 · Mayúsculas y comas en saludos y diálogo</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante aplica las mayúsculas en nombres propios, festividades y topónimos, y usa la coma en saludos, enumeraciones y para introducir el diálogo.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> una carta breve y un fragmento de diálogo con la puntuación resaltada; recuadro de reglas. <em>Modalidad:</em> lectura con «detective de mayúsculas y comas» — el estudiante justifica cada mayúscula y cada coma.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Corrige el mensaje» — actividad sincrónica en parejas: reciben un texto sin mayúsculas ni comas y lo puntúan correctamente. Asincrónica: foro donde cada estudiante escribe un saludo y un diálogo corto aplicando las reglas.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 14 preguntas — insertar mayúsculas donde corresponde, colocar comas en enumeraciones y saludos, elegir la línea de diálogo correctamente puntuada. Tiempo: 20 min. 2 intentos.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> lista de cotejo (4 criterios): usa mayúscula en nombres propios y topónimos ✓ · aplica la coma en enumeraciones ✓ · puntúa el saludo correctamente ✓ · introduce el diálogo con la puntuación adecuada ✓.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 3.2 · Apóstrofos, tilde y ortografía convencional</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante aplica reglas ortográficas convencionales (uso de b/v, c/s/z, g/j, h muda) y coloca la tilde en palabras de uso frecuente según su sílaba tónica.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto corto con palabras de ortografía frecuente destacadas; lista de palabras problema (haber, hacer, vez, través). <em>Modalidad:</em> lectura con anticipación ortográfica — el estudiante predice la escritura antes de verla.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Dictado cooperativo» — actividad sincrónica: en parejas, uno dicta y el otro escribe; luego intercambian y corrigen con la lista de referencia. Asincrónica: foro de «palabra de la semana» donde cada estudiante explica la regla de una palabra que suele escribir mal.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 15 preguntas — elegir la escritura correcta (b/v, c/s/z), colocar la tilde, corregir la palabra mal escrita en una oración. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): aplica reglas de b/v, c/s/z, g/j · coloca la tilde según la sílaba tónica · autocorrige la ortografía con apoyo de una lista de referencia.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 3.3 · Registro formal e informal: habla frente a escritura</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante distingue el registro formal del informal, y adapta su lenguaje según el destinatario y la situación (mensaje a un amigo frente a una carta a una institución).</div>
+          <div class="componente lectura"><strong>Lectura:</strong> dos versiones del mismo mensaje, una formal y una informal (por ejemplo, pedir un día libre a un amigo y a un supervisor). <em>Modalidad:</em> lectura comparativa con tabla de dos columnas — el estudiante identifica las marcas de cada registro.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Mismo mensaje, dos tonos» — actividad sincrónica en grupos: reciben una situación y producen la versión formal e informal. Asincrónica: foro donde cada estudiante reescribe un mensaje informal en registro formal.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — clasificar un enunciado como formal o informal, elegir la expresión adecuada para un destinatario, transformar una frase informal en formal. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): identifica el registro de un texto · selecciona el registro adecuado al destinatario · transforma un mensaje de un registro a otro conservando el sentido.</div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <details class="tema t4">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Tema 4 · Comprensión: idea principal y estructura del texto</h2>
+        <div class="subtitulo">Semanas 7–8 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: 2.R.CL.1 · 2.R.CI.1 · 2.R.CL.3 · 2.R.CI.3 · 2.R.CI.4 · SLO Reading 1, 3</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 4.1 · Idea principal en varios párrafos y detalles de apoyo</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante identifica la idea principal de un texto de varios párrafos y distingue los detalles que la apoyan de la información secundaria.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto informativo de tres párrafos sobre un tema cotidiano (la alimentación, el transporte); organizador gráfico de idea principal y detalles. <em>Modalidad:</em> lectura guiada — tras cada párrafo, el estudiante formula la idea en una oración.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «La oración estrella» — actividad sincrónica en grupos: cada grupo determina la idea principal del texto y elige los tres detalles que mejor la sostienen. Asincrónica: foro donde cada estudiante resume el texto en dos oraciones (idea principal + un detalle clave).</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — elegir la idea principal del texto, distinguir detalle de apoyo frente a información irrelevante, emparejar cada párrafo con su idea. Tiempo: 25 min. 2 intentos.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (4 criterios × 4 niveles): identifica la idea principal global · distingue detalles de apoyo · descarta información irrelevante · resume el texto con idea principal y detalle.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 4.2 · Estructura de la historia y propósito del autor</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante reconoce la estructura general de una historia (inicio, desarrollo, desenlace) e identifica el propósito del autor (informar, entretener, persuadir).</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un cuento breve y un texto publicitario o informativo sobre el mismo asunto; recuadro de propósitos del autor. <em>Modalidad:</em> lectura con mapa de la historia — el estudiante ubica inicio, desarrollo y desenlace.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «¿Para qué lo escribió?» — actividad sincrónica: el grupo debate el propósito de tres textos cortos y lo justifica con evidencia. Asincrónica: foro donde cada estudiante identifica el propósito de un texto de su entorno (un anuncio, una noticia) y lo explica.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — ordenar los eventos de la historia, identificar el desenlace, elegir el propósito del autor y su evidencia. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): identifica las partes de la historia · reconoce el propósito del autor · justifica el propósito con evidencia del texto.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 4.3 · Leer con ilustraciones y características del texto</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante utiliza las ilustraciones, los títulos, los subtítulos y las palabras en negrita para anticipar y confirmar el contenido de un texto informativo.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto informativo con imágenes, subtítulos y palabras clave en negrita. <em>Modalidad:</em> lectura estratégica — antes de leer, el estudiante predice el contenido a partir de los apoyos visuales; después confirma o ajusta.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Antes y después» — actividad sincrónica en parejas: los estudiantes anotan lo que creen que dirá el texto según las imágenes y los subtítulos, y luego comparan con lo leído. Asincrónica: foro donde cada estudiante explica cómo una imagen o un subtítulo le ayudó a comprender.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas — relacionar la imagen con el párrafo que ilustra, usar el subtítulo para localizar información, predecir el contenido a partir de un título. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> lista de cotejo (3 criterios): usa las imágenes para anticipar el contenido ✓ · localiza información con ayuda de subtítulos ✓ · integra los apoyos visuales con el texto ✓.</div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <details class="tema t5">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Tema 5 · Comparar textos, vocabulario y lenguaje figurado</h2>
+        <div class="subtitulo">Semanas 9–10 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: 2.R.CL.7 · 2.R.CL.8 · 2.R.CI.10 · 2.R.CI.11 · 2.R.VA.1 · 2.R.VA.2 · 2.W.VU.1 · 2.W.VU.2</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 5.1 · Comparar y contrastar dos textos</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante compara y contrasta dos textos sobre el mismo tema, identificando en qué coinciden y en qué se diferencian en información y punto de vista.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> dos textos breves sobre el mismo asunto con enfoques distintos (por ejemplo, dos descripciones de una misma ciudad); diagrama de Venn. <em>Modalidad:</em> lectura paralela — el estudiante lee ambos y completa el diagrama.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Igual y distinto» — actividad sincrónica en grupos: los estudiantes llenan un diagrama de Venn con las semejanzas y diferencias de los dos textos. Asincrónica: foro donde cada estudiante escribe una oración de semejanza y una de diferencia con conectores (<em>ambos, en cambio, mientras que</em>).</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — clasificar una afirmación como semejanza o diferencia, identificar qué texto ofrece cierta información, elegir el conector de comparación adecuado. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (4 criterios × 4 niveles): identifica semejanzas entre los textos · identifica diferencias · reconoce distintos puntos de vista · usa conectores de comparación con precisión.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 5.2 · Vocabulario por contexto: pistas, afijos y raíces</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante deduce el significado de palabras desconocidas a partir de las pistas del contexto, los afijos y las raíces, y consulta glosarios y diccionarios digitales para confirmar.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto con palabras desconocidas marcadas y pistas de contexto cercanas; captura de un diccionario digital. <em>Modalidad:</em> lectura con «estrategia de tres pasos»: releer la oración, buscar pistas y afijos, verificar en el glosario.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Detective de palabras» — actividad sincrónica en parejas: para cada palabra desconocida, los estudiantes proponen un significado con base en el contexto y lo verifican en el diccionario. Asincrónica: foro donde cada estudiante elige una palabra nueva, explica cómo dedujo su significado y lo confirma con una fuente.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — elegir el significado de una palabra según el contexto, identificar la pista que ayudó, seleccionar la definición correcta del diccionario. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): usa las pistas del contexto · aplica el análisis de afijos y raíces · verifica el significado en un glosario o diccionario digital.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 5.3 · Significado literal frente a figurado; modismos</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante distingue el significado literal del figurado, e interpreta modismos y expresiones frecuentes del español según su sentido real.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto con modismos comunes (<em>costar un ojo de la cara, estar en las nubes</em>); tabla de modismos con su significado. <em>Modalidad:</em> lectura interpretativa — el estudiante distingue cuándo una expresión es literal y cuándo figurada.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «¿Qué quiso decir?» — actividad sincrónica en grupos: los estudiantes explican el sentido figurado de varias expresiones y aportan modismos de su propia región. Asincrónica: foro donde cada estudiante comparte un modismo, su significado y una oración de ejemplo.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — clasificar una expresión como literal o figurada, emparejar el modismo con su significado, elegir el uso correcto de una expresión en contexto. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): distingue el significado literal del figurado · interpreta modismos frecuentes · usa una expresión figurada apropiadamente en una oración.</div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <details class="tema t6">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Tema 6 · Leer con imágenes y en las materias</h2>
+        <div class="subtitulo">Semanas 11–12 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: RH.6-8.1 · RH.6-8.2 · RH.6-8.4 · RH.6-8.6 · RH.6-8.7 · RST.6-8.4 · RST.6-8.7</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 6.1 · Gráficas de barras, líneas y circulares; tablas de datos</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante lee e interpreta gráficas de barras, de líneas y circulares, y tablas de datos, identificando el título, los ejes, la escala, las tendencias y los valores.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> cuatro representaciones reales (una gráfica de barras, una de líneas, una circular y una tabla) tomadas de fuentes auténticas; guía de «lectura en cinco pasos». <em>Modalidad:</em> lectura procedimental — título, qué miden los ejes, escala, valores y tendencia.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Lee la gráfica» — actividad sincrónica en grupos: cada grupo interpreta una representación y responde preguntas de valores y tendencias ante la clase. Asincrónica: foro donde cada estudiante busca una gráfica en un periódico o sitio confiable y escribe dos observaciones correctas.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — leer valores en una gráfica, identificar la tendencia, seleccionar la conclusión válida a partir de una tabla. Tiempo: 25 min. 2 intentos.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (4 criterios × 4 niveles): identifica título, ejes y escala · lee valores con precisión · describe la tendencia · integra la información visual con el texto.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 6.2 · Fuentes primarias y secundarias: introducción</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante distingue una fuente primaria de una secundaria, cita evidencia textual sencilla e identifica el punto de vista del autor en un documento breve de historia o estudios sociales.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> una fuente primaria breve (una carta, un testimonio) y una fuente secundaria sobre el mismo hecho; recuadro que define ambos tipos. <em>Modalidad:</em> lectura comparativa — el estudiante clasifica cada fuente y localiza una cita que apoye una idea.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «¿Quién lo dice y desde dónde?» — actividad sincrónica en grupos: los estudiantes determinan el tipo de fuente y el punto de vista del autor, y lo justifican con una cita. Asincrónica: foro donde cada estudiante clasifica una fuente de su elección y copia una oración que muestre el punto de vista del autor.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — clasificar la fuente como primaria o secundaria, seleccionar la cita que apoya una afirmación, identificar el punto de vista del autor. Tiempo: 25 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): distingue fuente primaria de secundaria · cita evidencia textual pertinente · identifica el punto de vista del autor.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 6.3 · Vocabulario de dominio en ciencias e historia</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante comprende y usa vocabulario específico de las materias (ciencias, historia, técnico), apoyándose en el contexto, los afijos y el glosario de la lectura.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> dos textos cortos de dominio, uno de ciencias y uno de historia, con términos técnicos en negrita y un glosario al pie. <em>Modalidad:</em> lectura con glosario activo — el estudiante consulta el término y lo reemplaza mentalmente por su definición.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «El glosario de la clase» — actividad sincrónica: entre todos construyen un glosario ilustrado de diez términos de dominio. Asincrónica: foro donde cada estudiante define con sus palabras dos términos técnicos y los usa en una oración.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas — emparejar el término de dominio con su definición, elegir el término correcto para una oración científica o histórica, deducir el significado por el contexto. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (3 criterios × 4 niveles): comprende términos de dominio con apoyo del glosario · deduce significados por contexto y afijos · emplea el vocabulario técnico con precisión.</div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <details class="tema t7">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Tema 7 · Escribir con estructura: opinión, informativo y narrativo</h2>
+        <div class="subtitulo">Semanas 13–14 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: 2.W.TT.1 · 2.W.TT.2 · 2.W.TT.3 · 2.W.PD.2 · 2.W.PD.3 · WHST.6-8.2 · WHST.6-8.4</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 7.1 · Texto de opinión: postura clara y razones con conectores</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante escribe un texto de opinión con una postura clara, dos o tres razones apoyadas en hechos, conectores adecuados (porque, por lo tanto, además) y una conclusión.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> dos textos de opinión modelo sobre un tema cercano (el uso del teléfono, el reciclaje); recuadro de conectores. <em>Modalidad:</em> lectura analítica — el estudiante localiza la postura, las razones y la conclusión.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Yo opino que…» — actividad sincrónica en grupos: cada estudiante expone oralmente su postura sobre un tema y una razón; el grupo aporta conectores. Asincrónica: foro donde cada estudiante publica un texto de opinión de 6–8 oraciones con postura, dos razones y conclusión.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas — identificar la postura de un texto, distinguir una razón de una opinión sin apoyo, elegir el conector adecuado, seleccionar una buena conclusión. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica de escritura (4 criterios × 4 niveles): postura clara · razones apoyadas en hechos · conectores adecuados · conclusión coherente. Total: 16 puntos.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 7.2 · Texto informativo: categorías, datos y conclusión</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante escribe un texto informativo que agrupa la información en categorías, incorpora datos, detalles y definiciones, usa conectores y cierra con una conclusión ligada al tema; aplica esta estructura a un contenido de historia o ciencias.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un texto informativo modelo con la información organizada en categorías y un texto breve de una materia. <em>Modalidad:</em> lectura con esquema — el estudiante identifica las categorías y los datos que las apoyan.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Organiza la información» — actividad sincrónica en parejas: a partir de un conjunto de datos desordenados, los estudiantes los agrupan en categorías. Asincrónica: foro donde cada estudiante escribe un párrafo informativo sobre un tema de una materia, con al menos dos datos y una conclusión.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas — agrupar información en la categoría correcta, distinguir un dato de una opinión, elegir la conclusión ligada al tema, identificar el conector apropiado. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica de escritura informativa (4 criterios × 4 niveles): agrupa la información en categorías · incorpora datos y definiciones · usa conectores · concluye de forma coherente con el tema.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 7.3 · Narración con escenario y diálogo; proceso de revisión</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante escribe una narración con un escenario definido, una secuencia cronológica y diálogo, y aplica un proceso de revisión con pares (escribir, leer en voz alta, recibir comentarios, revisar).</div>
+          <div class="componente lectura"><strong>Lectura:</strong> una narración modelo con escenario y diálogo bien puntuado, y dos borradores de un mismo texto (inicial y revisado). <em>Modalidad:</em> lectura comparativa — el estudiante observa qué mejoró de un borrador al otro.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Lee y comenta» — actividad sincrónica en parejas: cada estudiante lee su narración al compañero, que ofrece dos sugerencias con frases plantilla («Me gustó cuando…», «¿Podrías añadir…?»). Asincrónica: foro donde cada estudiante publica su narración revisada e indica un cambio que hizo tras la retroalimentación.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas — ordenar los eventos de una narración, identificar el diálogo correctamente puntuado, elegir la mejor sugerencia de revisión, reconocer una mejora entre dos borradores. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica de narración y revisión (4 criterios × 4 niveles): escenario y secuencia claros · incluye diálogo puntuado · aplica una sugerencia de un par · el texto revisado mejora respecto al borrador.</div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  <details class="tema t8">
+    <summary>
+      <span class="chevron" aria-hidden="true">▶</span>
+      <div class="sum-body">
+        <h2>Tema 8 · Hablar, colaborar y proyecto final</h2>
+        <div class="subtitulo">Semanas 15–16 · 12 horas (6 sincrónicas + 6 asincrónicas)</div>
+        <div class="standards">Estándares: 2.S.CC.1 · 2.S.CC.2 · 2.S.CC.4 · 2.S.CC.5 · 2.S.PK.1 · 2.S.PK.2 · 2.S.PK.3 · 2.W.PD.3 · 2.W.RB.1 · 2.W.RB.2</div>
+      </div>
+    </summary>
+    <div class="lecciones">
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 8.1 · Discusiones colaborativas: turnos, enlazar y aclarar</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante participa en discusiones colaborativas ganando la palabra con respeto, enlazando sus comentarios con los de otros y pidiendo o dando aclaraciones cuando es necesario.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un conjunto de normas de discusión y frases plantilla para enlazar comentarios («Estoy de acuerdo con… y añado…», «¿Podrías explicar…?»). <em>Modalidad:</em> lectura dramatizada de un diálogo colaborativo modelo.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Círculo de ideas» — actividad sincrónica en grupos de cuatro con roles (quien inicia, quien enlaza, quien pregunta, quien resume) sobre un texto leído. Asincrónica: foro donde cada estudiante responde a dos compañeros enlazando con sus ideas mediante frases plantilla.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 10 preguntas — identificar la forma respetuosa de tomar el turno, elegir la frase que enlaza con un comentario previo, reconocer cuándo pedir aclaración. Tiempo: 15 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica de participación oral (4 criterios × 3 niveles): respeta los turnos · enlaza su comentario con el de otro · pide o da aclaraciones · escucha con atención al hablante.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 8.2 · Comprensión auditiva y presentación oral con audio</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante identifica ideas principales y detalles en un texto escuchado, distingue hechos de opiniones y relaciones de causa y efecto, y prepara una presentación oral breve apoyada en una grabación de audio, usando herramientas digitales para colaborar.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> la transcripción de un audio breve (una entrevista o una noticia) y una guía de escucha con preguntas. <em>Modalidad:</em> escucha guiada en dos pasadas — la primera para la idea general, la segunda para los detalles.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Cuento mi experiencia» — actividad sincrónica: cada estudiante presenta oralmente una experiencia con hechos y detalles descriptivos (3 minutos). Asincrónica: cada estudiante graba un audio breve sobre el mismo tema y lo comparte en Brightspace, comentando el de un compañero.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> 12 preguntas sobre un audio — elegir la idea principal, distinguir hecho de opinión, identificar una relación de causa y efecto, localizar un detalle. Tiempo: 20 min.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> rúbrica analítica (4 criterios × 4 niveles): identifica ideas y detalles del audio · distingue hechos de opiniones · reconoce causa y efecto · presenta con claridad y apoyo de audio.</div>
+        </div>
+      </details>
+      <details class="leccion">
+        <summary>
+          <span class="chevron-s" aria-hidden="true">▶</span>
+          <h3>Lección 8.3 · Proyecto final integrador de investigación compartida</h3>
+          <span class="dur">4 horas (2 sinc. + 2 asinc.)</span>
+        </summary>
+        <div class="leccion-body">
+          <div class="obj"><strong>Objetivo:</strong> El estudiante presenta un proyecto de investigación compartida («Mi tema, mis fuentes») que combina lectura de dos fuentes, un texto informativo o de opinión, una representación visual y una presentación oral, e inicia el reconocimiento de estrategias básicas de examen.</div>
+          <div class="componente lectura"><strong>Lectura:</strong> un proyecto modelo completo del profesor (dos fuentes + texto + gráfica + guion de presentación) y cinco preguntas modeladas de comprensión con texto y gráfica. <em>Modalidad:</em> lectura modelo y relectura para análisis de la estructura del proyecto.</div>
+          <div class="componente discusion"><strong>Discusión:</strong> «Comparto mi investigación» — actividad sincrónica: cada estudiante presenta su proyecto al grupo (3–4 minutos) y responde una o dos preguntas. Asincrónica: foro donde cada estudiante sube su proyecto completo y comenta el de dos compañeros con frases plantilla.</div>
+          <div class="componente quiz"><strong>Quiz:</strong> <strong>Evaluación final sumativa</strong> — 25 preguntas en Brightspace que integran todo el nivel: 5 de fonética y vocabulario, 5 de gramática y convenciones, 5 de comprensión lectora, 5 de información visual y fuentes, 5 de tipos de texto. Tiempo sugerido: 60 min. 2 intentos.</div>
+          <div class="componente rubrica"><strong>Rúbrica:</strong> <strong>rúbrica analítica del proyecto final</strong> (5 criterios × 4 niveles = 20 puntos): uso de dos fuentes con cita · texto escrito coherente y estructurado · representación visual pertinente · claridad y organización de la presentación oral · uso de la tecnología para publicar y colaborar. Acompaña la nota del quiz sumativo.</div>
+        </div>
+      </details>
+    </div>
+  </details>
+
+  </main>
+
+  <div class="notas"><strong>📝 Notas pedagógicas para revisión:</strong>
+    <ul>
+      <li><strong>Distribución 50/50:</strong> cada lección propone 2 horas sincrónicas + 2 asincrónicas (4 h), que suman las 48 + 48 horas del syllabus.</li>
+      <li><strong>Coherencia con la comparación 1–4:</strong> los 8 temas cubren todas las celdas asignadas al Nivel 2 en el documento de comparación de contenidos, incluida la lecto-escritura en las materias (RH / RST / WHST).</li>
+      <li><strong>Progresión hacia el Nivel 3:</strong> la comprensión inferencial con cita de evidencia, el lenguaje figurado avanzado (símiles, metáforas, proverbios), la escritura argumentada con transiciones y la investigación con fuentes digitales quedan reservados para el Nivel 3.</li>
+      <li><strong>Rúbricas DUA:</strong> todas siguen un patrón analítico simple (3–5 criterios × 3–4 niveles), compatible con Brightspace Ally. Usar encabezados <code>&lt;h2&gt;</code> para los criterios al pasarlas a Brightspace.</li>
+      <li><strong>Brightspace HTML:</strong> al trasladar este plan a páginas de Brightspace, no usar <code>&lt;label&gt;</code>, ni <code>rgba()</code>, ni degradados; solo colores hexadecimales sólidos e inline CSS, y reemplazar <code>&lt;details&gt;/&lt;summary&gt;</code> por <code>.caja-acordeon</code> con <code>onClick</code> si la plataforma filtra los <code>&lt;details&gt;</code> nativos.</li>
+      <li><strong>Vínculo con Steck-Vaughn:</strong> en una segunda fase, alinear cada tema con páginas específicas del workbook <em>Razonamiento a través de las Artes del Lenguaje</em> para dar referencia del libro físico.</li>
+      <li><strong>Código de curso:</strong> el número <code>0170-0312</code> es una propuesta de continuidad con el Nivel 1 (0170-0311); confírmalo o ajústalo según el catálogo oficial.</li>
+    </ul>
+  </div>
+
+  <footer>
+    Plan curricular preparado por el Prof. José M. Fernández (Truman College, CCC) — con Claude.<br>
+    Spanish ASE Language Arts 2 · ABE/GED 0170-0312 · Adult Education · Brightspace D2L<br>
+    © José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago ·
+    Licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">CC BY-NC-SA 4.0</a>.
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var temas = Array.prototype.slice.call(document.querySelectorAll("details.tema"));
+  document.getElementById("abrir-todo").addEventListener("click", function () { temas.forEach(function (d) { d.open = true; }); });
+  document.getElementById("cerrar-todo").addEventListener("click", function () { temas.forEach(function (d) { d.open = false; }); });
+})();
+</script>
+</body>
+</html>
